@@ -1,10 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Intro from '../components/Intro.svelte';
+import Layout from "../layouts/Layout.astro";
+import NetworkLine from "../components/NetworkLine.astro";
+import WhatIDo from "../components/WhatIDo.astro";
+import Intro from "../components/Intro.svelte";
+import Projects from "../components/Projects.svelte";
+import Education from "../components/Education.astro";
+import Skills from "../components/Skills.astro";
 ---
 
 <Layout title="Ryan's Portfolio">
-	<Intro client:load />
+    <Intro client:load />
+    <NetworkLine height="100px" />
+    <WhatIDo />
+    <Projects client:idle />
+    <Education />
+    <Skills />
 </Layout>
-

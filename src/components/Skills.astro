@@ -1,0 +1,44 @@
+---
+import Card from "../components/Card.astro";
+---
+
+<div class="w-full h-[200vh]">
+    <h1 class="text-center text-5xl">Skills</h1>
+    <div class="flex flex-col items-center">
+        <div class="w-1/2 pt-10">
+            <Card primaryColor="#fff">
+                <div class="card-content">
+                    <div class="flex flex-col justify-left w-full mb-3">
+                        <h2 class="font-bold text-xl">
+                            Diploma in Computer Science
+                        </h2><h3>Jan 2022 - Present</h3>
+                    </div>
+                    <hr class="w-full mb-3" />
+                    <h3 class="mb-1 font-bold text-lg">Achievements</h3>
+                    <ul class="list-disc list-inside">
+                        <li>3-time Dean's List recipient</li>
+                        <li>President of Computer Programming Club</li>
+                        <li>Vice President of Diploma Union</li>
+                    </ul>
+                </div>
+            </Card>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        background-image: radial-gradient(
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 1px
+        );
+        background-position: 50% 50%;
+        background-size: 1.1rem 1.1rem;
+        padding: 2rem 2rem;
+        border-radius: 1.25rem;
+        overflow: hidden;
+    }
+</style>
