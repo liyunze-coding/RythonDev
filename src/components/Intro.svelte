@@ -15,33 +15,12 @@
         greeting = "evening";
     }
 
-    // Intro
-    let intro1: string = "I like to make cool stuff";
-    let intro2: string = "as a ";
-    let introState1: string = "";
-    let introState2: string = "";
-    let lineOneFinished: boolean = false;
-
-    async function animateIntro(interval: number) {
-        for (let i = 0; i < intro1.length; i++) {
-            introState1 += intro1[i];
-            await sleep(interval);
-        }
-
-        lineOneFinished = true;
-
-        for (let j = 0; j < intro2.length; j++) {
-            introState2 += intro2[j];
-            await sleep(interval);
-        }
-    }
-
     // Roles
     let roles: string[] = [
-        "developer",
-        "streamer",
-        "content creator",
-        "student",
+        "Developer",
+        "Streamer",
+        "Content creator",
+        "Student",
     ];
     let roleState: string = "";
     let role: string;
@@ -105,91 +84,104 @@
     // after window finish loading, call animateRoles()
     onMount(async () => {
         await sleep(800);
-        await animateIntro(50);
         animateRoles();
     });
 </script>
 
 <div
     id="intro"
-    class="w-full h-[105vh]
+    class="h-fit
         text-white
-        flex justify-center items-end"
+        flex flex-col"
 >
-    <div
-        id="intro-content"
-        class="
-        flex flex-row justify-between items-center
-        w-4/5 h-4/5
-        p-20 mt-24
-        border-[#404040] border-2 border-solid
-        rounded-3xl"
-    >
-        <div class="w-1/2">
-            <h1 class="text-4xl mt-10">Good {greeting}, I'm</h1>
-            <h2
-                id="name"
-                class="animate-gradient text-5xl text-center py-2 font-bold w-fit"
-            >
-                RythonDev
-            </h2>
-            <p class="text-2xl mt-5 leading-7">
-                {introState1}<span
-                    class:animate-pulse={!lineOneFinished}
-                    class:opacity-0={lineOneFinished}>|</span
-                >
-                <br />{introState2}
-                {roleState}<span
-                    class="opacity-0"
-                    class:animate-pulse={lineOneFinished}
-                    class:opacity-1={lineOneFinished}>|</span
-                >
-            </p>
-            <div class="mt-10">
-                <p class="text-lg leading-6">
-                    A computer science undergraduate student, passionate in
-                    frontend web development and content creation.
-                </p>
+    <div class="px-10 pt-10 pb-2 card-content w-full">
+        <div class="flex flex-row h-20">
+            <div class="w-20 mr-1 flex justify-center items-center">
+                <img
+                    src="/images/pfp_transparent_square.png"
+                    alt="Ryan"
+                    width="100"
+                    class="rounded-full max-w-full bg-[#404040]"
+                />
             </div>
-            <div class="mt-10"></div>
+            <div class="flex flex-col justify-center items-start ml-2">
+                <div class="text-2xl font-bold">RythonDev</div>
+                <div class="text-xl w-full">
+                    {roleState}<span class="animate-pulse">|</span>
+                </div>
+            </div>
+        </div>
+        <div class="text-2xl font-bold mt-10">
+            Good {greeting}, I'm Ryan!
+        </div>
+        <p class="mt-3">
+            I am an undergraduate student, passionate in frontend web
+            development. I built this website using Astro, Svelte, TailwindCSS
+            and Typescript!
+        </p>
+        <p class="mt-1">I hope you enjoy your stay here!</p>
+        <div class="flex flex-row justify-center items-center mt-10">
+            <a href="https://github.com/liyunze-coding" target="_blank">
+                <div
+                    class="bg-gray-300 rounded-full w-7 h-7 flex justify-center items-center mr-3 hover:bg-gray-200"
+                >
+                    <img
+                        src="/images/socials/github.svg"
+                        alt="github"
+                        class="aspect-square max-w-full"
+                        width="20"
+                    />
+                </div>
+            </a>
+            <a href="https://codepen.io/liyunze-coding" target="_blank">
+                <div
+                    class="bg-gray-300 rounded-full w-7 h-7 flex justify-center items-center mr-3 hover:bg-gray-200 transition-colors duration-150"
+                >
+                    <img
+                        src="/images/socials/codepen.svg"
+                        alt="codepen"
+                        class="w-5 h-5 aspect-square"
+                    />
+                </div>
+            </a>
+            <a href="https://youtube.com/@RythonDev" target="_blank">
+                <div
+                    class="bg-gray-300 rounded-full w-7 h-7 flex justify-center items-center mr-3 hover:bg-red-400 transition-colors duration-150"
+                >
+                    <img
+                        src="/images/socials/youtube.svg"
+                        alt="youtube"
+                        class="w-5 h-5 aspect-square"
+                    />
+                </div>
+            </a>
+            <a href="https://twitch.tv/RythonDev" target="_blank">
+                <div
+                    class="bg-gray-300 rounded-full w-7 h-7 flex justify-center items-center mr-3 hover:bg-purple-400 transition-colors duration-150"
+                >
+                    <img
+                        src="/images/socials/twitch.svg"
+                        alt="twitch"
+                        class="w-4 h-4 aspect-square"
+                    />
+                </div>
+            </a>
         </div>
     </div>
 </div>
 
 <style>
-    #intro {
-        background: rgba(30, 32, 34, 1);
-        background: linear-gradient(
-            180deg,
-            rgba(30, 32, 34, 1) 0%,
-            rgba(30, 32, 34, 1) 95%,
-            rgba(20, 22, 24, 0) 100%
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        background-image: radial-gradient(
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 1px
         );
-    }
-
-    #intro-content {
-        background: rgb(29, 32, 35);
-        background: linear-gradient(
-            90deg,
-            rgba(29, 32, 35, 1) 0%,
-            rgba(29, 32, 35, 1) 70%,
-            rgba(50, 53, 58, 1) 100%
-        );
-    }
-
-    #name {
-        background: linear-gradient(
-            90deg,
-            #ff7dac 0%,
-            #33d2ff 55%,
-            #9845e8 100%
-        );
-
-        background-size: 300%;
-
-        background-clip: text;
-        -webkit-background-clip: text;
-
-        -webkit-text-fill-color: transparent;
+        background-position: 50% 50%;
+        background-size: 1.1rem 1.1rem;
+        border-radius: 1.25rem;
+        overflow: hidden;
     }
 </style>

@@ -229,17 +229,17 @@
 
     <div class="mt-10 w-full">
         <div
-            class="flex flex-col md:flex-row justify-between h-fit w-full px-20"
+            class="flex flex-col lg:flex-row justify-between h-fit w-full px-10 lg:px-20"
         >
             <div
-                class="image-container w-full md:w-1/2 aspect-video [perspective:200px] relative md:ml-20"
+                class="image-container w-full lg:w-1/2 mb-3 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
             >
                 <img
                     src="/images/projects/coworking-guide.webp"
                     alt="coworking guide"
                     class="absolute max-w-full
                     top-1/2 left-1/2
-                    [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-50%)_translateY(-50%)] opacity-40
+                    [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-45%)_translateY(-50%)] opacity-40
                     border-2 border-solid border-white rounded-xl"
                     width="600"
                 />
@@ -249,7 +249,7 @@
                     width="600"
                     class="absolute max-w-full
                     top-1/2 left-1/2
-                    [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-48%)_translateY(-52%)] opacity-1
+                    [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-43%)_translateY(-52%)] opacity-1
                     border-2 border-solid border-white rounded-xl"
                 />
                 <div
@@ -270,7 +270,7 @@
                 </div>
             </div>
             <div
-                class="w-full md:w-1/2 h-[340px] flex flex-col justify-center md:pr-20"
+                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:pr-20"
             >
                 <h2 class="text-3xl font-bold mb-5">Coworking Guide</h2>
                 <p class="text-xl">
@@ -281,25 +281,27 @@
             </div>
         </div>
         <div
-            class="flex flex-col-reverse md:flex-row justify-between h-fit w-full px-16"
+            class="flex flex-col-reverse lg:flex-row justify-center h-fit w-full px-10 lg:px-16 mt-10"
         >
             <div
-                class="w-full md:w-1/2 h-[340px] flex flex-col justify-center md:pl-20"
+                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10"
             >
-                <h2 class="text-3xl font-bold mb-5">Chat-Task-Tic Widget</h2>
-                <p class="text-xl">
+                <h2 class="text-3xl font-bold mb-5 lg:text-right">
+                    Chat-Task-Tic Widget
+                </h2>
+                <p class="text-xl lg:text-right">
                     A widget for Coworking and Study Twitch streamers, allows
                     the streamer and the chatters to add their tasks to the
                     widget, to be displayed on stream!
                 </p>
             </div>
             <div
-                class="image-container w-full md:w-1/2 aspect-video [perspective:200px] relative md:ml-20"
+                class="image-container w-full lg:w-1/2 aspect-video [perspective:200px] relative"
             >
                 <!-- task bot -->
                 <div
                     class="task-widget absolute flex flex-col opacity-30
-                            w-full h-[99%]
+                            w-[90%] h-[99%]
                             top-1/2 left-1/2 [transform:translateX(-59%)_translateY(-49%)_translateZ(-50px)_rotateY(-3deg)]"
                 >
                     <div
@@ -344,7 +346,7 @@
                 </div>
                 <div
                     class="task-widget absolute flex flex-col
-                            w-full h-[99%]
+                            w-[90%] h-[99%]
                             top-1/2 left-1/2 [transform:translateX(-60%)_translateY(-50%)_translateZ(-50px)_rotateY(-3deg)]"
                 >
                     <div
@@ -389,14 +391,14 @@
                 </div>
 
                 <div
-                    class="visit-div absolute w-full h-full bg-[rgba(0,0,0,0.5)] opacity-0
+                    class="visit-div absolute w-[90%] h-full bg-[rgba(0,0,0,0.5)] opacity-0
                     rounded-md
                     [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
                     border-2 border-solid border-white
                     overflow-hidden"
                 >
                     <a
-                        href="https://github.com/liyunze-coding/multi-task-widget-infinity"
+                        href="https://github.com/liyunze-coding/chat-task-tic-overlay-infinity"
                         target="_blank"
                         class="absolute [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
                         px-5 py-3 bg-blue-500 rounded-xl opacity-1

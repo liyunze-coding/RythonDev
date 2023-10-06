@@ -6,9 +6,20 @@ import Card from "../components/Card.astro";
     <div class="h-[1px] w-1/3 bg-[#404040] mb-5"></div>
     <h1 class="text-center text-5xl mb-10">What I Do</h1>
     <div
-        class="grid grid-cols-1 xl:grid-cols-3 place-content-center justify-center w-4/5 gap-12"
+        class="grid grid-cols-1 w-[400px] lg:w-[90%] lg:grid-cols-3 place-content-center justify-center xl:w-4/5 gap-5 xl:gap-12"
     >
-        <Card primaryColor="#be68ed">
+        <Card primaryColor="#B0D9B1" bgColor="#282828" scaleOnHover={true}>
+            <div class="card-content">
+                <h2 class="font-bold text-xl text-center">Web Development</h2>
+                <hr class="w-full" />
+                <p class="text-center">
+                    I like to code things for the web, particularly on the
+                    frontend. I enjoy bringing ideas to life in the browser.
+                </p>
+            </div>
+        </Card>
+
+        <Card primaryColor="#40F8FF" bgColor="#282828" scaleOnHover={true}>
             <div class="card-content">
                 <h2 class="font-bold text-xl text-center">Data Science</h2>
                 <hr class="w-full" />
@@ -19,24 +30,14 @@ import Card from "../components/Card.astro";
             </div>
         </Card>
 
-        <Card primaryColor="#be68ed">
-            <div class="card-content">
-                <h2 class="font-bold text-xl text-center">Web Development</h2>
-                <hr class="w-full" />
-                <p class="text-center">
-                    I like to code things for the web, whether it's to inform or
-                    to entertain.
-                </p>
-            </div>
-        </Card>
-
-        <Card primaryColor="#be68ed">
+        <Card primaryColor="#9D76C1" bgColor="#282828" scaleOnHover={true}>
             <div class="card-content">
                 <h2 class="font-bold text-xl text-center">Content Creation</h2>
                 <hr class="w-full" />
                 <p class="text-center">
-                    I am experienced in streaming on Twitch and marketing
-                    myself, but I aim to improve my video editing skills.
+                    I am experienced in streaming on Twitch, experienced in
+                    customizing settings in OBS, and aim to improve my video
+                    editing skills.
                 </p>
             </div>
         </Card>
@@ -57,5 +58,6 @@ import Card from "../components/Card.astro";
         padding: 2rem 2rem;
         border-radius: 1.25rem;
         overflow: hidden;
+        min-width: 210px;
     }
 </style>
