@@ -98,9 +98,10 @@
         <div class="flex flex-row h-20">
             <div class="w-20 mr-1 flex justify-center items-center">
                 <img
-                    src="/images/pfp_transparent_square.png"
+                    src="/images/pfp_transparent_square.webp"
                     alt="Ryan"
                     width="100"
+                    height="100"
                     class="rounded-full max-w-full bg-[#505050]"
                 />
             </div>
