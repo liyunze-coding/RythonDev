@@ -101,11 +101,11 @@
                     src="/images/pfp_transparent_square.png"
                     alt="Ryan"
                     width="100"
-                    class="rounded-full max-w-full bg-[#404040]"
+                    class="rounded-full max-w-full bg-[#505050]"
                 />
             </div>
             <div class="flex flex-col justify-center items-start ml-2">
-                <div class="text-2xl font-bold">RythonDev</div>
+                <div id="name" class="text-2xl font-bold">RythonDev</div>
                 <div class="text-xl w-full">
                     {roleState}<span class="animate-pulse">|</span>
                 </div>
@@ -114,13 +114,19 @@
         <div class="text-2xl font-bold mt-10">
             Good {greeting}, I'm Ryan!
         </div>
-        <p class="mt-3">
-            I am an undergraduate student, passionate in frontend web
-            development. I built this website using Astro, Svelte, TailwindCSS
-            and Typescript!
+        <p class="text-left lg:text-justify">
+            I'm passionate in developing open source projects to benefit others,
+            with vast experience in leadership roles.
+            <br /><br />
+            I'm also
+            <b
+                >well networked with various Twitch streamers and content
+                creators</b
+            >, with prominent projects that positively impacted the streaming
+            community. Strongly motivated in the fields of
+            <b> web development, computer vision and data science</b>.
         </p>
-        <p class="mt-1">I hope you enjoy your stay here!</p>
-        <div class="flex flex-row justify-center items-center mt-10">
+        <div class="flex flex-row justify-center items-center mt-5">
             <a href="https://github.com/liyunze-coding" target="_blank">
                 <div
                     class="bg-gray-300 rounded-full w-7 h-7 flex justify-center items-center mr-3 hover:bg-gray-200"
@@ -183,5 +189,21 @@
         background-size: 1.1rem 1.1rem;
         border-radius: 1.25rem;
         overflow: hidden;
+    }
+
+    #name {
+        background: linear-gradient(
+            90deg,
+            #31e1f7 0%,
+            #00ffab 45%,
+            #14c38e 100%
+        );
+
+        background-size: 300%;
+
+        background-clip: text;
+        -webkit-background-clip: text;
+
+        -webkit-text-fill-color: transparent;
     }
 </style>

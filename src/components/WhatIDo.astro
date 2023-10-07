@@ -2,45 +2,54 @@
 import Card from "../components/Card.astro";
 ---
 
-<div class="w-full h-fit flex justify-center items-center flex-col">
-    <div class="h-[1px] w-1/3 bg-[#404040] mb-5"></div>
-    <h1 class="text-center text-5xl mb-10">What I Do</h1>
+<div class="w-full flex flex-col justify-center items-center">
     <div
-        class="grid grid-cols-1 w-[400px] lg:w-[90%] lg:grid-cols-3 place-content-center justify-center xl:w-4/5 gap-5 xl:gap-12"
+        class="w-full h-fit flex flex-col justify-center items-center max-w-[1440px]"
     >
-        <Card primaryColor="#B0D9B1" bgColor="#282828" scaleOnHover={true}>
-            <div class="card-content">
-                <h2 class="font-bold text-xl text-center">Web Development</h2>
-                <hr class="w-full" />
-                <p class="text-center">
-                    I like to code things for the web, particularly on the
-                    frontend. I enjoy bringing ideas to life in the browser.
-                </p>
-            </div>
-        </Card>
+        <div class="h-[1px] w-1/3 bg-[#404040] mb-5"></div>
+        <h1 class="text-center text-5xl mb-10">What I Do</h1>
+        <div
+            class="grid grid-cols-1 w-4/5 sm:w-[350px] lg:w-[90%] lg:grid-cols-3 place-content-center justify-center xl:w-4/5 gap-5 xl:gap-12"
+        >
+            <Card primaryColor="#B0D9B1" bgColor="#282828" scaleOnHover={true}>
+                <div class="card-content">
+                    <h2 class="font-bold text-xl text-center">
+                        Web Development
+                    </h2>
+                    <hr class="w-full" />
+                    <p class="text-center">
+                        Bringing ideas to life on the web is my passion. I enjoy
+                        bringing my imagination to life through web development.
+                    </p>
+                </div>
+            </Card>
 
-        <Card primaryColor="#40F8FF" bgColor="#282828" scaleOnHover={true}>
-            <div class="card-content">
-                <h2 class="font-bold text-xl text-center">Data Science</h2>
-                <hr class="w-full" />
-                <p class="text-center">
-                    I possess knowledge of data science and machine learning,
-                    particularly interested in Computer Vision.
-                </p>
-            </div>
-        </Card>
+            <Card primaryColor="#40F8FF" bgColor="#282828" scaleOnHover={true}>
+                <div class="card-content">
+                    <h2 class="font-bold text-xl text-center">Data Science</h2>
+                    <hr class="w-full" />
+                    <p class="text-center">
+                        Using data to make decisions is a powerful tool. I am
+                        experienced in analyzing data and make decisions based
+                        on data.
+                    </p>
+                </div>
+            </Card>
 
-        <Card primaryColor="#9D76C1" bgColor="#282828" scaleOnHover={true}>
-            <div class="card-content">
-                <h2 class="font-bold text-xl text-center">Content Creation</h2>
-                <hr class="w-full" />
-                <p class="text-center">
-                    I am experienced in streaming on Twitch, experienced in
-                    customizing settings in OBS, and aim to improve my video
-                    editing skills.
-                </p>
-            </div>
-        </Card>
+            <Card primaryColor="#9D76C1" bgColor="#282828" scaleOnHover={true}>
+                <div class="card-content">
+                    <h2 class="font-bold text-xl text-center">
+                        Content Creation
+                    </h2>
+                    <hr class="w-full" />
+                    <p class="text-center">
+                        Everyone has something to give, something to share. I
+                        amassed a loyal following as a streamer on Twitch, and I
+                        strive to help smaller creators grow their brand.
+                    </p>
+                </div>
+            </Card>
+        </div>
     </div>
 </div>
 

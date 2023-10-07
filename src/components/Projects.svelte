@@ -224,15 +224,18 @@
     // });
 </script>
 
-<div id="projects" class="h-fit pt-20 pb-10 [perspective:1000px]">
+<div
+    id="projects"
+    class="h-fit pt-20 [perspective:1000px] flex flex-col items-center"
+>
     <h1 class="text-5xl text-center">Projects</h1>
 
-    <div class="mt-10 w-full">
+    <div class="mt-10 w-full max-w-[1440px]">
         <div
-            class="flex flex-col lg:flex-row justify-between h-fit w-full px-10 lg:px-20"
+            class="flex flex-col lg:flex-row justify-center h-fit w-full px-10 lg:px-20"
         >
             <div
-                class="image-container w-full lg:w-1/2 mb-3 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
+                class="image-container flex w-full lg:ml-auto lg:w-1/2 mb-3 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
             >
                 <img
                     src="/images/projects/coworking-guide.webp"
@@ -241,19 +244,19 @@
                     top-1/2 left-1/2
                     [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-45%)_translateY(-50%)] opacity-40
                     border-2 border-solid border-white rounded-xl"
-                    width="600"
+                    width="700"
                 />
                 <img
                     src="/images/projects/coworking-guide.webp"
                     alt="coworking guide"
-                    width="600"
+                    width="700"
                     class="absolute max-w-full
                     top-1/2 left-1/2
                     [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-43%)_translateY(-52%)] opacity-1
                     border-2 border-solid border-white rounded-xl"
                 />
                 <div
-                    class="visit-div absolute w-[600px] bg-[rgba(0,0,0,0.5)] opacity-0
+                    class="visit-div absolute w-[700px] bg-[rgba(0,0,0,0.5)] opacity-0
                     aspect-video
                     rounded-xl
                     [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
@@ -270,7 +273,7 @@
                 </div>
             </div>
             <div
-                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:pr-20"
+                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10"
             >
                 <h2 class="text-3xl font-bold mb-5">Coworking Guide</h2>
                 <p class="text-xl">
@@ -290,9 +293,10 @@
                     Chat-Task-Tic Widget
                 </h2>
                 <p class="text-xl lg:text-right">
-                    A widget for Coworking and Study Twitch streamers, allows
-                    the streamer and the chatters to add their tasks to the
-                    widget, to be displayed on stream!
+                    Used by 100+ Twitch streamers, allow viewers and streamers
+                    to add their own tasks to the widget for accountability!
+                    Easy to setup and the customization possibilities are
+                    endless!
                 </p>
             </div>
             <div

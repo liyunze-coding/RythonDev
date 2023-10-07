@@ -14,7 +14,7 @@ import Card from "../components/Card.astro";
 <Layout title="Ryan's Portfolio">
     <NavBar />
     <div id="home" class="pt-20 flex justify-center items-center">
-        <div class="w-[90%] lg:w-1/2">
+        <div class="w-[90%] xl:w-1/2 lg:w-1/2 max-w-[1080px]">
             <Card bgColor="#252525" primaryColor="#BEADFA" scaleOnHover={false}>
                 <Intro client:load />
             </Card>
@@ -22,7 +22,7 @@ import Card from "../components/Card.astro";
     </div>
 
     <div id="what-i-do">
-        <NetworkLine height="100px" />
+        <NetworkLine height="70px" />
         <WhatIDo />
     </div>
     <div id="projects">
