@@ -94,7 +94,7 @@
         text-white
         flex flex-col"
 >
-    <div class="px-10 pt-10 pb-2 card-content w-full">
+    <div class="px-1 lg:px-10 pt-10 pb-2 card-content w-full">
         <div class="flex flex-row h-20">
             <div class="w-20 mr-1 flex justify-center items-center">
                 <img
@@ -123,8 +123,9 @@
                 >well networked with various Twitch streamers and content
                 creators</b
             >, with prominent projects that positively impacted the streaming
-            community. Strongly motivated in the fields of
-            <b> web development, computer vision and data science</b>.
+            community. I'm strongly motivated in the fields of
+            <b> web development</b>, <b>computer vision</b> and
+            <b>data science</b>.
         </p>
         <div class="flex flex-row justify-center items-center mt-5">
             <a href="https://github.com/liyunze-coding" target="_blank">
@@ -194,9 +195,9 @@
     #name {
         background: linear-gradient(
             90deg,
-            #31e1f7 0%,
-            #00ffab 45%,
-            #14c38e 100%
+            #16ff00 0%,
+            #72ffff 45%,
+            #0096ff 100%
         );
 
         background-size: 300%;
