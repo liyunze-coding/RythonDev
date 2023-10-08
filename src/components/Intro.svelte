@@ -113,9 +113,11 @@
             </div>
         </div>
         <div class="text-2xl font-bold mt-10">
-            Good {greeting}, I'm Ryan!
+            Good {greeting}, <br class="sm:hidden" />I'm Ryan!
         </div>
         <p class="text-left lg:text-justify">
+            I am born and raised in Malaysia, fluent in Mandarin and English.
+            <br /><br />
             I'm passionate in developing open source projects to benefit others,
             with vast experience in leadership roles.
             <br /><br />

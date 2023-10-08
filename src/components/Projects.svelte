@@ -235,7 +235,7 @@
             class="flex flex-col lg:flex-row justify-center h-fit w-full px-10 lg:px-20"
         >
             <div
-                class="image-container flex w-full lg:ml-auto lg:w-1/2 mb-3 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
+                class="image-container flex w-full lg:ml-auto lg:w-1/2 mb-5 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
             >
                 <img
                     src="/images/projects/coworking-guide.webp"
