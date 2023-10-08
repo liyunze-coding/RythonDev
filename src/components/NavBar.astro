@@ -1,6 +1,6 @@
 <div class="w-full">
     <label
-        class="fixed flex hamburger-menu bg-primary border-2 border-solid border-gray-100 p-2 rounded-lg"
+        class="fixed flex hamburger-menu bg-primary border-2 border-solid border-gray-100 rounded-lg"
         aria-label="Menu"
     >
         <span class="top-bun"></span>
@@ -89,20 +89,25 @@
     .hamburger-menu {
         --x-width: calc(var(--hamburger-height) * 1.41421356237);
 
-        translate: 0 -200px;
+        translate: 0 -20px;
         flex-direction: column;
 
         gap: var(--hamburger-gap);
-        width: max-content;
         top: var(--hamburger-margin);
         right: var(--hamburger-margin);
         z-index: 30;
         cursor: pointer;
         background: var(--foreground);
 
+        padding: 0.5rem;
+
         rotate: 180deg;
 
-        transition: translate var(--animation-timing);
+        transition: all var(--animation-timing);
+    }
+
+    .hamburger-menu.active {
+        padding-right: 0;
     }
 
     .hamburger-menu input:focus-visible {
@@ -137,13 +142,13 @@
     .hamburger-menu .top-bun.active {
         rotate: 45deg;
         width: var(--x-width);
-        translate: 0 calc(var(--bar-height) / -2);
+        translate: calc(-50% + var(--x-width) / 2) calc(var(--bar-height) / -2);
     }
 
     .hamburger-menu .bottom-bun.active {
         rotate: -45deg;
         width: var(--x-width);
-        translate: 0 calc(var(--bar-height) / 2);
+        translate: calc(-50% + var(--x-width) / 2) calc(var(--bar-height) / 2);
     }
 
     .hamburger-menu input:checked {
@@ -179,6 +184,7 @@
     const openSideBar = () => {
         checkbox.checked = true;
         document.querySelector(".sidebar").style.translate = "0";
+        hamburger.classList.add("active");
         topBun.classList.add("active");
         bottomBun.classList.add("active");
     };
@@ -186,6 +192,7 @@
     const closeSideBar = () => {
         checkbox.checked = false;
         document.querySelector(".sidebar").style.translate = "100%";
+        hamburger.classList.remove("active");
         topBun.classList.remove("active");
         bottomBun.classList.remove("active");
     };
