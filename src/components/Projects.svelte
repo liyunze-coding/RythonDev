@@ -300,13 +300,13 @@
                 </p>
             </div>
             <div
-                class="image-container w-full lg:w-1/2 aspect-video [perspective:200px] relative"
+                class="image-container w-full lg:w-1/2 aspect-video [perspective:200px] relative mb-3 lg:mb-0 md:mr-5 mr-0 lg:mr-0"
             >
                 <!-- task bot -->
                 <div
                     class="task-widget absolute flex flex-col opacity-30
-                            w-[90%] h-[99%]
-                            top-1/2 left-1/2 [transform:translateX(-59%)_translateY(-49%)_translateZ(-50px)_rotateY(-3deg)]"
+                            w-full h-[99%]
+                            top-1/2 left-1/2 [transform:translateX(-50%)_translateY(-49%)_translateZ(-50px)_rotateY(-3deg)]"
                 >
                     <div
                         class="w-full bg-black border-solid border-2 border-white
@@ -350,8 +350,8 @@
                 </div>
                 <div
                     class="task-widget absolute flex flex-col
-                            w-[90%] h-[99%]
-                            top-1/2 left-1/2 [transform:translateX(-60%)_translateY(-50%)_translateZ(-50px)_rotateY(-3deg)]"
+                            w-full h-[99%]
+                            top-1/2 left-1/2 [transform:translateX(-51%)_translateY(-50%)_translateZ(-50px)_rotateY(-3deg)]"
                 >
                     <div
                         class="w-full bg-black border-solid border-2 border-white
@@ -395,7 +395,7 @@
                 </div>
 
                 <div
-                    class="visit-div absolute w-[90%] h-full bg-[rgba(0,0,0,0.5)] opacity-0
+                    class="visit-div absolute w-full h-full bg-[rgba(0,0,0,0.5)] opacity-0
                     rounded-md
                     [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
                     border-2 border-solid border-white
