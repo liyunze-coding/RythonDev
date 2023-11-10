@@ -300,7 +300,7 @@
                 </p>
             </div>
             <div
-                class="image-container w-full lg:w-1/2 aspect-video [perspective:200px] relative mb-3 lg:mb-0 md:mr-5 mr-0 lg:mr-0"
+                class="image-container lg:w-1/2 aspect-video [perspective:200px] relative mb-3 lg:mb-0 md:mr-5 mr-0 lg:mr-0 ml-0 lg:ml-1"
             >
                 <!-- task bot -->
                 <div
@@ -409,6 +409,56 @@
                         font-bold">View repository</a
                     >
                 </div>
+            </div>
+        </div>
+        <div
+            class="flex flex-col lg:flex-row justify-center h-fit w-full px-10 lg:px-20 mt-5 lg:mt-0"
+        >
+            <div
+                class="image-container flex w-full lg:ml-auto lg:w-1/2 mb-5 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
+            >
+                <img
+                    src="/images/projects/hexguess.webp"
+                    alt="Hex Guess"
+                    class="absolute max-w-full
+                    top-1/2 left-1/2
+                    [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-45%)_translateY(-50%)] opacity-40
+                    border-2 border-solid border-white rounded-xl"
+                    width="700"
+                />
+                <img
+                    src="/images/projects/hexguess.webp"
+                    alt="Hex Guess"
+                    width="700"
+                    class="absolute max-w-full
+                    top-1/2 left-1/2
+                    [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-43%)_translateY(-52%)] opacity-1
+                    border-2 border-solid border-white rounded-xl"
+                />
+                <div
+                    class="visit-div absolute w-[700px] bg-[rgba(0,0,0,0.5)] opacity-0
+                    aspect-video
+                    rounded-xl
+                    [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
+                    border-2 border-solid border-white
+                    max-w-full"
+                >
+                    <a
+                        href="https://hex-guess.vercel.app/"
+                        target="_blank"
+                        class="absolute [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
+                        px-5 py-3 bg-blue-500 rounded-xl opacity-1
+                        font-bold">Visit site</a
+                    >
+                </div>
+            </div>
+            <div
+                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10"
+            >
+                <h2 class="text-3xl font-bold mb-5">HexGuess</h2>
+                <p class="text-xl">
+                    Decode colours in 5 attempts. Guess the hexadecimal code and receive instant feedback! Built with Next.JS, Tailwind and TypeScript.
+                </p>
             </div>
         </div>
     </div>
