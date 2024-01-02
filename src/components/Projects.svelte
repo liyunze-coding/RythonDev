@@ -466,8 +466,64 @@
             >
                 <h2 class="text-3xl font-bold mb-5">HexGuess</h2>
                 <p class="text-xl">
-                    Decode colours in 5 attempts. Guess the hexadecimal code and receive instant feedback! Built with Next.JS, Tailwind and TypeScript.
+                    Decode colours in 5 attempts. Guess the hexadecimal code and receive instant feedback! Built with Next.JS, TailwindCSS and TypeScript.
                 </p>
+            </div>
+        </div>
+        <div
+            class="flex flex-col-reverse lg:flex-row justify-center h-fit w-full px-10 lg:px-16 mt-10"
+        >
+            <div
+                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10"
+            >
+                <h2 class="text-3xl font-bold mb-5 lg:text-right">
+                    ProductiVue
+                </h2>
+                <p class="text-xl lg:text-right">
+                    Boost your productivity streaming with ProductiVue, 
+                    a sleek minimalism-focused desktop app for Twitch streamers. 
+                    Built using Vue, Tauri, Typescript and TailwindCSS.
+                </p>
+            </div>
+            <div
+                class="image-container flex w-full lg:ml-auto lg:w-1/2 mb-5 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
+            >
+                <img
+                    src="/images/projects/ProductiVue.webp"
+                    alt="Hex Guess"
+                    class="absolute max-w-full
+                    top-1/2 left-1/2 [transform:translateX(-48%)_translateY(-48%)_translateZ(-50px)_rotateY(-3deg)] opacity-40
+                    border-2 border-solid border-white rounded-xl"
+                    width="700"
+                />
+                <img
+                    src="/images/projects/ProductiVue.webp"
+                    alt="Hex Guess"
+                    width="700"
+                    class="absolute max-w-full
+                    top-1/2 left-1/2
+                    [transform:translateX(-50%)_translateY(-50%)_translateZ(-50px)_rotateY(-3deg)] opacity-1
+                    border-2 border-solid border-white rounded-xl"
+                />
+                <div
+                    class="visit-div absolute w-[700px] bg-[rgba(0,0,0,0.5)] opacity-0
+                    aspect-video
+                    rounded-xl
+                    [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
+                    border-2 border-solid border-white
+                    max-w-full"
+                >
+                    <a
+                        href="https://hex-guess.vercel.app/"
+                        target="_blank"
+                        class="absolute [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
+                        px-5 py-3 bg-blue-500 rounded-xl opacity-1
+                        font-bold
+                        transition-colors duration-300
+                        hover:bg-white hover:text-blue-500
+                        ">Visit site</a
+                    >
+                </div>
             </div>
         </div>
     </div>
