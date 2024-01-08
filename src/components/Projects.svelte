@@ -514,14 +514,14 @@
                     max-w-full"
                 >
                     <a
-                        href="https://hex-guess.vercel.app/"
+                        href="https://www.github.com/liyunze-coding/ProductiVue"
                         target="_blank"
                         class="absolute [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
                         px-5 py-3 bg-blue-500 rounded-xl opacity-1
                         font-bold
                         transition-colors duration-300
                         hover:bg-white hover:text-blue-500
-                        ">Visit site</a
+                        ">View Repo</a
                     >
                 </div>
             </div>
