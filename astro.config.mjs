@@ -10,6 +10,6 @@ export default defineConfig({
         port: 8008,
         hostname: "RythonDev",
     },
-    site: "https://ryanpython.me",
+    site: "https://rython.dev",
     base: "/",
 });
