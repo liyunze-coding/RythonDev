@@ -11,5 +11,4 @@ export default defineConfig({
         hostname: "RythonDev",
     },
     site: "https://rython.dev",
-    base: "/",
 });
