@@ -320,7 +320,7 @@
                             font-['Fredoka',_sans-serif]"
                     >
                         <span>Hover here!</span>
-                        <span>0/52</span>
+                        <span>0/100+</span>
                     </div>
                     <div
                         class="scroll-parent relative h-full overflow-hidden font-['Fredoka',_sans-serif]"
