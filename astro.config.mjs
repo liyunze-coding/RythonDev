@@ -10,5 +10,6 @@ export default defineConfig({
         port: 8008,
         hostname: "RythonDev",
     },
-    site: "https://rython.dev",
+    site: "https://liyunze-coding.github.io/",
+    base: "rythondev",
 });
