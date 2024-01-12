@@ -1,6 +1,6 @@
 <div align="center">
     <img src="./public/images/logo_circle.webp" width="100">
-    <h1>ryanpython.me</h1>
+    <h1>rython.dev</h1>
     <p>The 4th iteration of Ryan's personal website</p>
 </div>
 
@@ -21,7 +21,7 @@ Previous iterations: [v1](https://liyunze-coding.github.io/old-portfolio), [v2](
 
 ## 🚨 Forking this repo
 
-If you want to fork this repo, feel free to do so. However, I ask that you please give me credit by linking back to my website - https://ryanpython.me . Thanks!
+If you want to fork this repo, feel free to do so. However, I ask that you please give me credit by linking back to my website - https://rython.dev . Thanks!
 
 ## 📚 License
 
