@@ -1,0 +1,55 @@
+---
+import NavBar from "../components/sections/NavBar.astro";
+import Layout from "../layouts/Layout.astro";
+import ContactComponent from "../components/sections/ContactComponent.astro";
+import Card from "../components/elements/Card.astro";
+---
+
+<Layout
+    title="Contact"
+    description="Find out how to contact RythonDev, for sponsorship offers or collaboration opportunities!"
+>
+    <NavBar />
+    <div id="what-i-do" class="mt-10 pt-20">
+        <h1 class="text-center text-5xl">Contact</h1>
+        <div class="mt-10 flex justify-center items-center">
+            <div class="w-[90%] md:w-[600px]">
+                <Card primaryColor="#40A2D8">
+                    <div class="card-content">
+                        <div class="flex flex-col justify-left w-full mb-3">
+                            <h2 class="font-bold text-xl text-center">
+                                Seeking a young dev with fresh ideas and a
+                                hunger to make a difference?
+                            </h2>
+                        </div>
+                        <hr class="w-full mb-3" />
+                        <div class="text-center">
+                            Whether it's sponsorships or collaboration
+                            opportunities, drop me a line and let's spark some
+                            digital magic!
+                        </div>
+                    </div>
+                </Card>
+            </div>
+        </div>
+        <div class="mt-10">
+            <ContactComponent />
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        background-image: radial-gradient(
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 1px
+        );
+        background-position: 50% 50%;
+        background-size: 1.1rem 1.1rem;
+        padding: 2rem 2rem;
+        border-radius: 1.25rem;
+        overflow: hidden;
+    }
+</style>

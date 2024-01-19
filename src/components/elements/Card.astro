@@ -1,8 +1,8 @@
 ---
 interface Props {
     primaryColor: string;
-    bgColor: string;
-    scaleOnHover: boolean;
+    bgColor?: string | undefined;
+    scaleOnHover?: boolean | undefined;
 }
 
 const { primaryColor, bgColor = "#282828", scaleOnHover = false } = Astro.props;

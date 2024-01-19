@@ -94,7 +94,7 @@
         text-white
         flex flex-col"
 >
-    <div class="px-1 lg:px-10 pt-10 pb-2 card-content w-full">
+    <div class="px-2 lg:px-10 pt-10 pb-2 card-content w-full">
         <div class="flex flex-row h-20">
             <div class="w-20 mr-1 flex justify-center items-center">
                 <img
@@ -116,17 +116,18 @@
             Good {greeting}, <br class="sm:hidden" />I'm Ryan!
         </div>
         <p class="text-left lg:text-justify">
-            I am born and raised in Malaysia, fluent in Mandarin and English.
+            I was born and raised in Malaysia, and fluent in Mandarin and
+            English.
             <br /><br />
-            I'm passionate in developing open source projects to benefit others,
-            with vast experience in leadership roles.
+            I'm passionate about developing open source projects that benefit others,
+            and I have extensive experience in leadership roles.
             <br /><br />
             I'm also
             <b
-                >well networked with various Twitch streamers and content
+                >well-connected with various Twitch streamers and content
                 creators</b
-            >, with prominent projects that positively impacted the streaming
-            community. I'm strongly motivated in the fields of
+            >, thanks to prominent projects that have had a positive impact on
+            the streaming community. I'm strongly motivated in the fields of
             <b> web development</b>, <b>computer vision</b> and
             <b>data science</b>.
         </p>

@@ -1,0 +1,208 @@
+---
+import NavBar from "../components/sections/NavBar.astro";
+import Layout from "../layouts/Layout.astro";
+import WhatIDoComponent from "../components/sections/WhatIDoComponent.astro";
+import Card from "../components/elements/Card.astro";
+import Line from "../components/elements/NetworkLine.astro";
+---
+
+<Layout
+    title="What I Do"
+    description="What Ryan's skillsets are, in Data Science, Web Development and Content Creation"
+>
+    <NavBar />
+    <div id="what-i-do" class="mt-10 pt-20 pb-20">
+        <WhatIDoComponent />
+
+        <div class="mx-auto w-[90%] md:w-[750px] mt-20">
+            <Card primaryColor="#19a7ce">
+                <div class="card-content">
+                    <h2
+                        id="web-dev"
+                        class="font-bold text-2xl animate-gradient"
+                    >
+                        Web Development
+                    </h2>
+                    <hr class="w-full mb-3 mt-3" />
+                    <div class="mb-5">
+                        <h3 class="font-bold text-xl">Websites</h3>
+                        <p class="mt-1 md:text-justify text-left">
+                            I go beyond coding; I'm a developer who translates
+                            your vision into a captivating online presence.
+                            Through custom designs, intuitive user experiences,
+                            and special attention to detail, I weave your unique
+                            narrative into every strand of your website.
+                        </p>
+                    </div>
+                    <div class="mb-5">
+                        <h3 class="font-bold text-xl">Web Apps</h3>
+                        <p class="mt-1 md:text-justify text-left">
+                            I craft solutions that streamline workflows, boost
+                            efficiency, and empower your users to achieve more.
+                            With a focus on intuitive interfaces, powerful
+                            functionality, and data-driven optimization, I
+                            transform complex ideas into elegant tools that
+                            seamlessly integrate into your ecosystem.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl">Widgets</h3>
+                        <p class="mt-1 md:text-justify text-left">
+                            Leveraging my web development skills, I built stream
+                            widgets to level up the stream! Easy to use and
+                            customize, my work have been used by 100+ streamers
+                            from pomodoro timers to to-do lists!
+                        </p>
+                    </div>
+                </div>
+            </Card>
+            <Line height="50px" />
+            <Card primaryColor="#a1eebd">
+                <div class="card-content">
+                    <h2
+                        id="data-science"
+                        class="font-bold text-2xl animate-gradient"
+                    >
+                        Data Science
+                    </h2>
+                    <hr class="w-full mb-3 mt-3" />
+                    <div class="mb-5">
+                        <h3 class="font-bold text-xl">
+                            Data Analysis and Visualization
+                        </h3>
+                        <p class="mt-1 md:text-justify text-left">
+                            I'm your data artist, translating numbers into works
+                            of art that inform, inspire, and guide
+                            decision-making. We'll create visually compelling
+                            narratives that turn dry statistics into captivating
+                            stories using Python and R.
+                        </p>
+                    </div>
+                    <div class="mb-5">
+                        <h3 class="font-bold text-xl">
+                            Statistics and Probability
+                        </h3>
+                        <p class="mt-1 md:text-justify text-left">
+                            Every number tells a story, but it takes the
+                            language of statistics and probability to truly
+                            understand it. Our world is awash in data, but it's
+                            only through these powerful tools that we can
+                            transform it into meaningful insights and actionable
+                            intelligence.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl">Machine Learning</h3>
+                        <p class="mt-1 md:text-justify text-left">
+                            Machine learning isn't just about mimicking human
+                            intelligence, it's about surpassing it. We push the
+                            boundaries of what's possible, collaborating with
+                            code to solve problems beyond human capabilities.
+                        </p>
+                    </div>
+                </div>
+            </Card>
+            <Line height="50px" />
+            <Card primaryColor="#9D76C1">
+                <div class="card-content">
+                    <h2
+                        id="content-creation"
+                        class="font-bold text-2xl animate-gradient"
+                    >
+                        Content Creation
+                    </h2>
+                    <hr class="w-full mb-3 mt-3" />
+                    <div class="mb-5">
+                        <h3 class="font-bold text-xl">Streaming</h3>
+                        <p class="mt-1 md:text-justify text-left">
+                            Streaming isn't just about entertainment, it's about
+                            building a brand that resonates and inspires.
+                            Streaming allows me to enhance my marketing skills
+                            and the ability to entertain and engage with viewers
+                            in real time.
+                        </p>
+                    </div>
+                    <div class="mb-5">
+                        <h3 class="font-bold text-xl">Video Editing</h3>
+                        <p class="mt-1 md:text-justify text-left">
+                            I may be at the beginning of my video editing
+                            adventure, but I'm committed to making your vision a
+                            reality. I'll learn, adapt, and work tirelessly to
+                            translate your ideas into compelling videos that
+                            resonate with your audience.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl">Personality</h3>
+                        <p class="mt-1 md:text-justify text-left">
+                            I believe content should be an adventure, not a
+                            formula. my world is a vibrant playground of
+                            unscripted interactions, quirky challenges, and raw
+                            emotional moments. It's messy, it's exhilarating,
+                            and it's uniquely me.
+                        </p>
+                    </div>
+                </div>
+            </Card>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        background-image: radial-gradient(
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 1px
+        );
+        background-position: 50% 50%;
+        background-size: 1.1rem 1.1rem;
+        padding: 2rem 2rem;
+        border-radius: 1.25rem;
+        overflow: hidden;
+    }
+
+    #web-dev {
+        background: linear-gradient(
+            90deg,
+            #afd3e2 0%,
+            #19a7ce 45%,
+            #a5d7e8 100%
+        );
+
+        background-size: 300%;
+
+        background-clip: text;
+        -webkit-background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+    }
+
+    #data-science {
+        background: linear-gradient(
+            90deg,
+            #a1eebd 0%,
+            #7bd3ea 45%,
+            #f6f7c4 100%
+        );
+
+        background-size: 300%;
+
+        background-clip: text;
+        -webkit-background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+    }
+
+    #content-creation {
+        background: linear-gradient(90deg, #9d76c1 40%, #ff6868 90%);
+
+        background-size: 300%;
+
+        background-clip: text;
+        -webkit-background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+    }
+</style>

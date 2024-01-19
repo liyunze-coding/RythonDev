@@ -1,22 +1,18 @@
 ---
-// @ts-ignore
-import { Spa } from "astro-spa";
-
 interface Props {
     title: string;
+    description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta
-            name="description"
-            content="Ryan is a software developer, streamer and Computer Science undergraduate. Learn more about him and his skills here!"
-        />
+        <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width" /><meta
             name="keywords"
             content="Rython, student, developer, frontend, web developer, streamer, coworking"
@@ -29,7 +25,7 @@ const { title } = Astro.props;
     </head>
     <body>
         <slot />
-        <Spa />
+        <ViewTransitions />
     </body>
 </html>
 <style is:global>
