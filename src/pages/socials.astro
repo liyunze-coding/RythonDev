@@ -1,0 +1,178 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Skills" description="Check out Ryan's socials">
+    <!-- twitch, youtube, github, codepen, discord, instagram, ko-fi,  -->
+    <div class="px-0 pt-10">
+        <div class="flex flex-col justify-center items-center">
+            <div
+                class="overflow-hidden rounded-full
+            border-2 border-white border-solid"
+            >
+                <img
+                    src="/public/images/RyanPogSmol.webp"
+                    alt="Ryan's Avatar"
+                    width="100"
+                />
+            </div>
+            <h2 class="text-lg text-center">@RythonDev</h2>
+            <h3 class="mt-5 text-center">Web Developer, Twitch streamer</h3>
+            <div class="flex flex-row justify-center items-center py-5">
+                <a href="https://github.com/liyunze-coding" target="_blank">
+                    <div
+                        class="bg-gray-300 rounded-full w-7 h-7 flex justify-center items-center mr-3 hover:bg-gray-200"
+                    >
+                        <img
+                            src="/images/socials/github.svg"
+                            alt="github"
+                            class="aspect-square max-w-full"
+                            width="20"
+                        />
+                    </div>
+                </a>
+                <a href="https://codepen.io/liyunze-coding" target="_blank">
+                    <div
+                        class="bg-gray-300 rounded-full w-7 h-7 flex justify-center items-center mr-3 hover:bg-gray-200 transition-colors duration-150"
+                    >
+                        <img
+                            src="/images/socials/codepen.svg"
+                            alt="codepen"
+                            class="w-5 h-5 aspect-square"
+                        />
+                    </div>
+                </a>
+                <a href="https://youtube.com/@RythonDev" target="_blank">
+                    <div
+                        class="bg-gray-300 rounded-full w-7 h-7 flex justify-center items-center mr-3 hover:bg-red-400 transition-colors duration-150"
+                    >
+                        <img
+                            src="/images/socials/youtube.svg"
+                            alt="youtube"
+                            class="w-5 h-5 aspect-square"
+                        />
+                    </div>
+                </a>
+                <a href="https://twitch.tv/RythonDev" target="_blank">
+                    <div
+                        class="bg-gray-300 rounded-full w-7 h-7 flex justify-center items-center mr-3 hover:bg-purple-400 transition-colors duration-150"
+                    >
+                        <img
+                            src="/images/socials/twitch.svg"
+                            alt="twitch"
+                            class="w-4 h-4 aspect-square"
+                        />
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div
+            class="w-full
+            grid grid-cols-1 place-items-center gap-5
+            px-0 py-5
+            text-white"
+        >
+            <!-- SOCIALS START HERE -->
+            <a
+                href="https://twitch.tv/RythonDev"
+                target="_blank"
+                class="inline-block w-[clamp(200px,50vw,600px)]
+            relative
+            rounded-full
+            bg-[#9146FF] border-[#9146FF]
+            border-solid border
+            px-2 py-2
+            text-center text-white
+            hover:bg-transparent hover:text-[#9146FF]
+            transition-colors duration-150"
+            >
+                Twitch
+            </a>
+            <a
+                href="https://youtube.com/@RythonDev"
+                target="_blank"
+                class="inline-block w-[clamp(200px,50vw,600px)]
+            relative
+            rounded-full
+            bg-[#ff0000] border-[#ff0000]
+            border-solid border
+            px-7 py-2
+            text-center text-white
+            hover:bg-transparent hover:text-[#ff0000]
+            transition-colors duration-150"
+            >
+                YouTube
+            </a>
+            <a
+                href="https://rython.dev/discord"
+                target="_blank"
+                class="inline-block w-[clamp(200px,50vw,600px)]
+            relative
+            rounded-full
+            bg-[#5865F2] border-[#5865F2]
+            border-solid border
+            px-7 py-2
+            text-center text-white
+            hover:bg-transparent hover:text-[#5865F2]"
+            >
+                Discord
+            </a>
+            <a
+                href="https://instagram.com/rythondev"
+                target="_blank"
+                class="inline-block w-[clamp(200px,50vw,600px)]
+            relative
+            rounded-full
+            bg-gradient-to-r from-purple-600 via-red-600 to-yellow-400
+            border-solid border
+            px-7 py-2
+            text-center text-white
+            hover:from-transparent hover:via-transparent hover:to-transparent"
+            >
+                Instagram
+            </a>
+            <a
+                href="https://ko-fi/rython"
+                target="_blank"
+                class="inline-block w-[clamp(200px,50vw,600px)]
+            relative
+            rounded-full
+            bg-cyan-500 border-cyan-500
+            border-solid border
+            px-7 py-2
+            text-center text-white
+            hover:bg-transparent hover:text-cyan-500"
+            >
+                Ko-fi
+            </a>
+            <a
+                href="https://github.com/liyunze-coding"
+                target="_blank"
+                class="inline-block w-[clamp(200px,50vw,600px)]
+            relative
+            rounded-full
+            bg-gray-100 border-gray-100
+            border-solid border
+            px-7 py-2
+            text-center text-black
+            hover:bg-transparent hover:text-gray-100"
+            >
+                Github
+            </a>
+            <a
+                href="https://codepen.io/liyunze-coding"
+                target="_blank"
+                class="inline-block w-[clamp(200px,50vw,600px)]
+            relative
+            rounded-full
+            bg-gray-100 border-gray-100
+            border-solid border
+            px-7 py-2
+            text-center text-black
+            hover:bg-transparent hover:text-gray-100"
+            >
+                Codepen
+            </a>
+        </div>
+    </div>
+</Layout>

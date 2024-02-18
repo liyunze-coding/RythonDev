@@ -115,7 +115,7 @@
         <div class="text-2xl font-bold mt-10">
             Good {greeting}, <br class="sm:hidden" />I'm Ryan!
         </div>
-        <p class="text-left lg:text-justify">
+        <p class="text-left">
             I was born and raised in Malaysia, and fluent in Mandarin and
             English.
             <br /><br />
