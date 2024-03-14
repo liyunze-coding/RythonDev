@@ -106,7 +106,9 @@
                 />
             </div>
             <div class="flex flex-col justify-center items-start ml-2">
-                <div id="name" class="text-2xl font-bold">RythonDev</div>
+                <div id="name" class="text-2xl font-bold animate-gradient">
+                    RythonDev
+                </div>
                 <div class="text-xl w-full">
                     {roleState}<span class="animate-pulse">|</span>
                 </div>
