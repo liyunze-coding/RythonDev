@@ -270,16 +270,33 @@
                         px-5 py-3 bg-blue-500 rounded-xl opacity-1
                         font-bold
                         transition-colors duration-300
+                        hidden lg:block
                         hover:bg-white hover:text-blue-500
                         ">Visit site</a
                     >
                 </div>
             </div>
+            <div class="lg:hidden flex justify-center items-center mb-10">
+                <a
+                    href="https://coworking-guide.vercel.app/"
+                    target="_blank"
+                    class="
+                        px-5 py-3 bg-blue-500 rounded-xl opacity-1
+                        font-bold
+                        transition-colors duration-300
+                        hover:bg-white hover:text-blue-500
+                        ">View repository</a
+                >
+            </div>
             <div
-                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10"
+                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center"
             >
-                <h2 class="text-3xl font-bold mb-5">Coworking Guide</h2>
-                <p class="text-xl">
+                <h2 class="text-3xl font-bold mb-5 text-center">
+                    Coworking Guide
+                </h2>
+                <p
+                    class="text-xl text-center lg:text-left lg:max-w-none max-w-lg"
+                >
                     A guide to coworking streams for Twitch streamers, covers
                     wide range of topics from tips on how to get started with
                     setting up stream to how to grow your audience!
@@ -290,17 +307,31 @@
             class="flex flex-col-reverse lg:flex-row justify-center h-fit w-full px-10 lg:px-16 mt-10"
         >
             <div
-                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10"
+                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center"
             >
-                <h2 class="text-3xl font-bold mb-5 lg:text-right">
+                <h2 class="text-3xl font-bold mb-5 lg:text-right text-center">
                     Chat-Task-Tic Widget
                 </h2>
-                <p class="text-xl lg:text-right">
+                <p
+                    class="text-xl lg:text-right text-center lg:max-w-none max-w-lg"
+                >
                     Used by 100+ Twitch streamers, allow viewers and streamers
                     to add their own tasks to the widget for accountability!
                     Easy to setup and the customization possibilities are
                     endless!
                 </p>
+            </div>
+            <div class="lg:hidden flex justify-center items-center mb-10">
+                <a
+                    href="https://github.com/liyunze-coding/chat-task-tic-overlay-infinity"
+                    target="_blank"
+                    class="
+                        px-5 py-3 bg-blue-500 rounded-xl opacity-1
+                        font-bold
+                        transition-colors duration-300
+                        hover:bg-white hover:text-blue-500
+                        ">View repository</a
+                >
             </div>
             <div
                 class="image-container lg:w-1/2 aspect-video [perspective:200px] relative mb-3 lg:mb-0 md:mr-5 mr-0 lg:mr-0 ml-0 lg:ml-1"
@@ -410,6 +441,7 @@
                         class="absolute [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
                         px-5 py-3 bg-blue-500 rounded-xl opacity-1
                         font-bold
+                        hidden lg:block
                         transition-colors duration-300
                         hover:bg-white hover:text-blue-500
                         ">View repository</a
@@ -417,6 +449,7 @@
                 </div>
             </div>
         </div>
+
         <div
             class="flex flex-col lg:flex-row justify-center h-fit w-full px-10 lg:px-20 mt-5 lg:mt-0"
         >
@@ -455,18 +488,35 @@
                         class="absolute [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
                         px-5 py-3 bg-blue-500 rounded-xl opacity-1
                         font-bold
+                        hidden lg:block
                         transition-colors duration-300
                         hover:bg-white hover:text-blue-500
                         ">Visit site</a
                     >
                 </div>
             </div>
+            <div class="lg:hidden flex justify-center items-center mb-10">
+                <a
+                    href="https://hex-guess.vercel.app/"
+                    target="_blank"
+                    class="
+                        px-5 py-3 bg-blue-500 rounded-xl opacity-1
+                        font-bold
+                        transition-colors duration-300
+                        hover:bg-white hover:text-blue-500
+                        ">View repository</a
+                >
+            </div>
             <div
-                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10"
+                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center"
             >
-                <h2 class="text-3xl font-bold mb-5">HexGuess</h2>
-                <p class="text-xl">
-                    Decode colours in 5 attempts. Guess the hexadecimal code and receive instant feedback! Built with Next.JS, TailwindCSS and TypeScript.
+                <h2 class="text-3xl font-bold mb-5 text-center">HexGuess</h2>
+                <p
+                    class="text-xl text-center lg:text-left lg:max-w-none max-w-lg"
+                >
+                    Decode colours in 5 attempts. Guess the hexadecimal code and
+                    receive instant feedback! Built with Next.JS, TailwindCSS
+                    and TypeScript.
                 </p>
             </div>
         </div>
@@ -474,16 +524,31 @@
             class="flex flex-col-reverse lg:flex-row justify-center h-fit w-full px-10 lg:px-16 mt-10"
         >
             <div
-                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10"
+                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center"
             >
-                <h2 class="text-3xl font-bold mb-5 lg:text-right">
+                <h2 class="text-3xl font-bold mb-5 lg:text-right text-center">
                     ProductiVue
                 </h2>
-                <p class="text-xl lg:text-right">
-                    Boost your productivity streaming with ProductiVue, 
-                    a sleek minimalism-focused desktop app for Twitch streamers. 
-                    Built using Vue, Tauri, Typescript and TailwindCSS.
+                <p
+                    class="text-xl text-center lg:text-right lg:max-w-none max-w-lg"
+                >
+                    Boost your productivity streaming with ProductiVue, a sleek
+                    minimalism-focused desktop app for Twitch streamers. Built
+                    using Vue, Tauri, Typescript and TailwindCSS.
                 </p>
+            </div>
+            <div class="lg:hidden flex justify-center items-center mb-10">
+                <a
+                    href="https://www.github.com/liyunze-coding/ProductiVue"
+                    target="_blank"
+                    class="
+                        px-5 py-3 bg-blue-500 rounded-xl opacity-1
+                        font-bold
+                        hidden lg:block
+                        transition-colors duration-300
+                        hover:bg-white hover:text-blue-500
+                        ">View repository</a
+                >
             </div>
             <div
                 class="image-container flex w-full lg:ml-auto lg:w-1/2 mb-5 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
@@ -519,6 +584,7 @@
                         class="absolute [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
                         px-5 py-3 bg-blue-500 rounded-xl opacity-1
                         font-bold
+                        hidden lg:block
                         transition-colors duration-300
                         hover:bg-white hover:text-blue-500
                         ">View Repo</a
@@ -534,16 +600,18 @@
     .image-container .task-widget {
         transition: transform 0.5s ease-in-out;
     }
-    .image-container:hover > img,
-    .image-container:hover > .task-widget {
-        transform: rotateY(0deg) rotateX(0deg) translateZ(0px) translateX(-50%)
-            translateY(-50%);
-    }
+    @media (min-width: 1025px) {
+        .image-container:hover > img,
+        .image-container:hover > .task-widget {
+            transform: rotateY(0deg) rotateX(0deg) translateZ(0px)
+                translateX(-50%) translateY(-50%);
+        }
 
-    .image-container:hover > .visit-div {
-        opacity: 100%;
-        transition: opacity 0.3s ease-in-out;
-        transition-delay: 0.3s;
+        .image-container:hover > .visit-div {
+            opacity: 100%;
+            transition: opacity 0.3s ease-in-out;
+            transition-delay: 0.3s;
+        }
     }
 
     .primary {
