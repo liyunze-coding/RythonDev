@@ -119,8 +119,8 @@
             Good {greeting}, <br class="sm:hidden" />I'm Ryan!
         </div>
         <p class="text-left">
-            I was born and raised in Malaysia, and fluent in Mandarin and
-            English.
+            I was born and raised in Malaysia, and fluent in Mandarin Chinese
+            and English.
             <br /><br />
             I'm passionate about developing open source projects that benefit others,
             and I have extensive experience in leadership roles.
