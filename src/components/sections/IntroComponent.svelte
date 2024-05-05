@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import Socials from "../elements/Socials.svelte";
 
     // Greeting
     let date = new Date();
@@ -134,51 +135,7 @@
             <b>data science</b>.
         </p>
         <div class="flex flex-row justify-center items-center mt-5">
-            <a href="https://github.com/liyunze-coding" target="_blank">
-                <div
-                    class="bg-gray-300 rounded-full w-7 h-7 flex justify-center items-center mr-3 hover:bg-gray-200"
-                >
-                    <img
-                        src="/images/socials/github.svg"
-                        alt="github"
-                        class="aspect-square max-w-full"
-                        width="20"
-                    />
-                </div>
-            </a>
-            <a href="https://codepen.io/liyunze-coding" target="_blank">
-                <div
-                    class="bg-gray-300 rounded-full w-7 h-7 flex justify-center items-center mr-3 hover:bg-gray-200 transition-colors duration-150"
-                >
-                    <img
-                        src="/images/socials/codepen.svg"
-                        alt="codepen"
-                        class="w-5 h-5 aspect-square"
-                    />
-                </div>
-            </a>
-            <a href="https://youtube.com/@RythonDev" target="_blank">
-                <div
-                    class="bg-gray-300 rounded-full w-7 h-7 flex justify-center items-center mr-3 hover:bg-red-400 transition-colors duration-150"
-                >
-                    <img
-                        src="/images/socials/youtube.svg"
-                        alt="youtube"
-                        class="w-5 h-5 aspect-square"
-                    />
-                </div>
-            </a>
-            <a href="https://twitch.tv/RythonDev" target="_blank">
-                <div
-                    class="bg-gray-300 rounded-full w-7 h-7 flex justify-center items-center mr-3 hover:bg-purple-400 transition-colors duration-150"
-                >
-                    <img
-                        src="/images/socials/twitch.svg"
-                        alt="twitch"
-                        class="w-4 h-4 aspect-square"
-                    />
-                </div>
-            </a>
+            <Socials />
         </div>
     </div>
 </div>

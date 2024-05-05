@@ -289,37 +289,83 @@
                 >
             </div>
             <div
-                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center"
+                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center lg:items-start"
             >
-                <h2 class="text-3xl font-bold mb-5 text-center">
+                <h2 class="text-3xl font-bold mb-5 text-center lg:text-left">
                     Coworking Guide
                 </h2>
                 <p
-                    class="text-xl text-center lg:text-left lg:max-w-none max-w-lg"
+                    class="text-xl text-center lg:text-left lg:max-w-none max-w-lg text-balance"
                 >
-                    A guide to coworking streams for Twitch streamers, covers
-                    wide range of topics from tips on how to get started with
-                    setting up stream to how to grow your audience!
+                    A guide to coworking streams for streamers, covers wide
+                    range of topics from tips on how to get started with setting
+                    up stream to how to grow your audience!
                 </p>
+                <div class="w-full flex flex-row flex-wrap mt-5">
+                    <div
+                        class="w-fit bg-white text-black
+                                rounded-full px-3 py-1 mr-1 my-1
+                                transition-colors duration-300"
+                    >
+                        Astro
+                    </div>
+                    <div
+                        class="w-fit bg-[#3178C6] text-white
+                                rounded-full px-3 py-1 mr-1 my-1
+                                transition-colors duration-300"
+                    >
+                        TypeScript
+                    </div>
+                    <div
+                        class="w-fit bg-black text-white
+                                rounded-full px-3 py-1 mr-1 my-1
+                                transition-colors duration-300"
+                    >
+                        Markdown
+                    </div>
+                </div>
             </div>
         </div>
         <div
             class="flex flex-col-reverse lg:flex-row justify-center h-fit w-full px-10 lg:px-16 mt-10"
         >
             <div
-                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center"
+                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center lg:items-end"
             >
                 <h2 class="text-3xl font-bold mb-5 lg:text-right text-center">
                     Chat-Task-Tic Widget
                 </h2>
                 <p
-                    class="text-xl lg:text-right text-center lg:max-w-none max-w-lg"
+                    class="text-xl lg:text-right text-center lg:max-w-none max-w-lg text-balance"
                 >
                     Used by 100+ Twitch streamers, allow viewers and streamers
                     to add their own tasks to the widget for accountability!
                     Easy to setup and the customization possibilities are
                     endless!
                 </p>
+                <div class="w-full flex flex-row flex-wrap justify-end mt-5">
+                    <div
+                        class="w-fit bg-[#E34F26] text-white
+                                rounded-full px-3 py-1 mr-1 my-1
+                                transition-colors duration-300"
+                    >
+                        HTML
+                    </div>
+                    <div
+                        class="w-fit bg-blue-700 text-white
+                                rounded-full px-3 py-1 mr-1 my-1
+                                transition-colors duration-300"
+                    >
+                        CSS
+                    </div>
+                    <div
+                        class="w-fit bg-yellow-400 text-black
+                                rounded-full px-3 py-1 mr-1 my-1
+                                transition-colors duration-300"
+                    >
+                        Javascript
+                    </div>
+                </div>
             </div>
             <div class="lg:hidden flex justify-center items-center mb-10">
                 <a
@@ -361,7 +407,7 @@
                         >
                             {#each streamers as { streamer, task }}
                                 <div
-                                    class="w-full px-5 py-1 bg-white text-black my-2 rounded-full
+                                    class="w-full px-5 py-1 bg-[#404040] text-white my-2 rounded-md
                                     whitespace-nowrap overflow-hidden overflow-ellipsis"
                                 >
                                     O {streamer} : {task}
@@ -373,7 +419,7 @@
                         >
                             {#each streamers as { streamer, task }}
                                 <div
-                                    class="w-full px-5 py-1 bg-white text-black my-2 rounded-full
+                                    class="w-full px-5 py-1 bg-[#404040] text-white my-2 rounded-md
                                     whitespace-nowrap overflow-hidden overflow-ellipsis"
                                 >
                                     O {streamer} : {task}
@@ -406,7 +452,7 @@
                         >
                             {#each streamers as { streamer, task }}
                                 <div
-                                    class="w-full px-5 py-1 bg-white text-black my-2 rounded-full
+                                    class="w-full px-5 py-1 bg-[#404040] text-white my-2 rounded-md
                                     whitespace-nowrap overflow-hidden overflow-ellipsis"
                                 >
                                     O {streamer} : {task}
@@ -418,7 +464,7 @@
                         >
                             {#each streamers as { streamer, task }}
                                 <div
-                                    class="w-full px-5 py-1 bg-white text-black my-2 rounded-full
+                                    class="w-full px-5 py-1 bg-[#404040] text-white my-2 rounded-md
                                     whitespace-nowrap overflow-hidden overflow-ellipsis"
                                 >
                                     O {streamer} : {task}
@@ -508,38 +554,78 @@
                 >
             </div>
             <div
-                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center"
+                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center lg:items-start"
             >
                 <h2 class="text-3xl font-bold mb-5 text-center">HexGuess</h2>
                 <p
-                    class="text-xl text-center lg:text-left lg:max-w-none max-w-lg"
+                    class="text-xl text-center lg:text-left lg:max-w-none max-w-lg text-balance"
                 >
                     Decode colours in 5 attempts. Guess the hexadecimal code and
                     receive instant feedback! Built with Next.JS, TailwindCSS
                     and TypeScript.
                 </p>
+                <div class="w-full flex flex-row flex-wrap justify-start mt-5">
+                    <div
+                        class="w-fit bg-black text-white
+                                rounded-full px-3 py-1 mr-1 my-1
+                                transition-colors duration-300"
+                    >
+                        NextJS
+                    </div>
+                    <div
+                        class="w-fit bg-[#3178C6] text-white
+                                rounded-full px-3 py-1 mr-1 my-1
+                                transition-colors duration-300"
+                    >
+                        Typescript
+                    </div>
+                    <div
+                        class="w-fit bg-[#07B6D4] text-black
+                                rounded-full px-3 py-1 mr-1 my-1
+                                transition-colors duration-300"
+                    >
+                        TailwindCSS
+                    </div>
+                </div>
             </div>
         </div>
         <div
             class="flex flex-col-reverse lg:flex-row justify-center h-fit w-full px-10 lg:px-16 mt-10"
         >
             <div
-                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center"
+                class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center lg:items-end"
             >
                 <h2 class="text-3xl font-bold mb-5 lg:text-right text-center">
-                    ProductiVue
+                    Twitch Plays X
                 </h2>
                 <p
-                    class="text-xl text-center lg:text-right lg:max-w-none max-w-lg"
+                    class="text-xl text-center lg:text-right lg:max-w-none max-w-lg text-balance"
                 >
-                    Boost your productivity streaming with ProductiVue, a sleek
-                    minimalism-focused desktop app for Twitch streamers. Built
-                    using Vue, Tauri, Typescript and TailwindCSS.
+                    Allow Twitch chatters play games such as Pokemon! Chatters
+                    can enter messages such as "up up down down left right B A"
+                    and the Python program will trigger the corresponding
+                    keypresses.
                 </p>
+                <div class="w-full flex flex-row flex-wrap justify-end mt-5">
+                    <div
+                        class="w-fit bg-[#3776AB] text-white
+                                rounded-full px-3 py-1 mr-1 my-1
+                                transition-colors duration-300"
+                    >
+                        Python
+                    </div>
+                    <div
+                        class="w-fit bg-[#0078D4] text-white
+                                rounded-full px-3 py-1 mr-1 my-1
+                                transition-colors duration-300"
+                    >
+                        win32API
+                    </div>
+                </div>
             </div>
             <div class="lg:hidden flex justify-center items-center mb-10">
                 <a
-                    href="https://www.github.com/liyunze-coding/ProductiVue"
+                    href="https://github.com/liyunze-coding/TwitchPlaysX"
                     target="_blank"
                     class="
                         px-5 py-3 bg-blue-500 rounded-xl opacity-1
@@ -554,7 +640,7 @@
                 class="image-container flex w-full lg:ml-auto lg:w-1/2 mb-5 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
             >
                 <img
-                    src="/images/projects/ProductiVue.webp"
+                    src="/images/projects/twitchplays.webp"
                     alt="Hex Guess"
                     class="absolute max-w-full
                     top-1/2 left-1/2 [transform:translateX(-48%)_translateY(-48%)_translateZ(-50px)_rotateY(-3deg)] opacity-40
@@ -562,7 +648,7 @@
                     width="700"
                 />
                 <img
-                    src="/images/projects/ProductiVue.webp"
+                    src="/images/projects/twitchplays.webp"
                     alt="Hex Guess"
                     width="700"
                     class="absolute max-w-full
@@ -579,7 +665,7 @@
                     max-w-full"
                 >
                     <a
-                        href="https://www.github.com/liyunze-coding/ProductiVue"
+                        href="https://github.com/liyunze-coding/TwitchPlaysX"
                         target="_blank"
                         class="absolute [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
                         px-5 py-3 bg-blue-500 rounded-xl opacity-1
@@ -587,7 +673,7 @@
                         hidden lg:block
                         transition-colors duration-300
                         hover:bg-white hover:text-blue-500
-                        ">View Repo</a
+                        ">View repository</a
                     >
                 </div>
             </div>

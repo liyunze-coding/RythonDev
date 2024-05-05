@@ -5,39 +5,39 @@ import NetworkLine from "../components/elements/NetworkLine.astro";
 import WhatIDo from "../components/sections/WhatIDoComponent.astro";
 import Intro from "../components/sections/IntroComponent.svelte";
 import Projects from "../components/sections/ProjectsComponent.svelte";
-import Education from "../components/sections/EducationComponent.astro";
+import Education from "../components/sections/ExperienceComponent.astro";
 import Skills from "../components/sections/SkillsComponent.astro";
-import Contact from "../components/sections/ContactComponent.astro";
+import Contact from "../components/sections/ContactComponent.svelte";
 import Card from "../components/elements/Card.astro";
 ---
 
 <Layout
-    title="Ryan's Portfolio"
-    description="Ryan is a software developer, streamer and Computer Science undergraduate. Learn more about him and his skills here!"
+	title="Ryan's Portfolio"
+	description="Ryan is a software developer, streamer and Computer Science undergraduate. Learn more about him and his skills here!"
 >
-    <NavBar />
-    <div id="home" class="pt-20 flex justify-center items-center">
-        <div class="w-[90%] xl:w-1/2 lg:w-1/2 max-w-[1080px]">
-            <Card bgColor="#252525" primaryColor="#BEADFA">
-                <Intro client:load />
-            </Card>
-        </div>
-    </div>
-    <NetworkLine height="70px" />
-    <div id="what-i-do">
-        <div class="h-[1px] w-1/3 bg-[#404040] mb-10 mx-auto"></div>
-        <WhatIDo />
-    </div>
-    <div id="projects">
-        <Projects client:visible />
-    </div>
-    <div id="skills">
-        <Skills />
-    </div>
-    <div id="education">
-        <Education />
-    </div>
-    <div id="contact">
-        <Contact />
-    </div>
+	<NavBar />
+	<div id="home" class="pt-20 flex justify-center items-center">
+		<div class="w-[90%] xl:w-1/2 lg:w-1/2 max-w-[1080px]">
+			<Card bgColor="#252525" primaryColor="#BEADFA">
+				<Intro client:load />
+			</Card>
+		</div>
+	</div>
+	<NetworkLine height="70px" />
+	<div id="what-i-do">
+		<div class="h-[1px] w-1/3 bg-[#404040] mb-10 mx-auto"></div>
+		<WhatIDo />
+	</div>
+	<div id="projects">
+		<Projects client:visible />
+	</div>
+	<div id="skills">
+		<Skills />
+	</div>
+	<div id="education">
+		<Education />
+	</div>
+	<div id="contact">
+		<Contact client:visible />
+	</div>
 </Layout>
