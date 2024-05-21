@@ -88,6 +88,12 @@
     async function animateGreeting(greeting: string) {
         for (let i = 0; i < greeting.length; i++) {
             greetingState = addCharacter(greetingState, greeting);
+
+            if (i === greeting.length - 1) {
+                greetingPulse.classList.remove("animate-pulse");
+                greetingPulse.classList.add("hidden");
+            }
+
             await sleep(roleInterval);
         }
     }
@@ -95,10 +101,11 @@
     // after window finish loading, call animateRoles()
     onMount(async () => {
         await sleep(800);
-        animateGreeting(greeting).then(() => {
-            greetingPulse.classList.remove("animate-pulse");
-            greetingPulse.classList.add("hidden");
-        });
+        animateGreeting(greeting);
+        // .then(() => {
+        //     greetingPulse.classList.remove("animate-pulse");
+        //     greetingPulse.classList.add("hidden");
+        // });
         await animateRoles();
     });
 </script>
