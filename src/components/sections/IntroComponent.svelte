@@ -2,20 +2,6 @@
     import { onMount } from "svelte";
     import Socials from "../elements/Socials.svelte";
 
-    // Greeting
-    let date = new Date();
-    let hour = date.getHours();
-
-    let greeting: string = "";
-
-    if (hour >= 0 && hour < 12) {
-        greeting = "morning";
-    } else if (hour >= 12 && hour < 18) {
-        greeting = "afternoon";
-    } else if (hour >= 18) {
-        greeting = "evening";
-    }
-
     // Roles
     let roles: string[] = [
         "Developer",
@@ -82,10 +68,38 @@
         }
     }
 
+    // Greeting
+    let date = new Date();
+    let hour = date.getHours();
+
+    let greeting: string = "";
+
+    if (hour >= 0 && hour < 12) {
+        greeting = "morning";
+    } else if (hour >= 12 && hour < 18) {
+        greeting = "afternoon";
+    } else if (hour >= 18) {
+        greeting = "evening";
+    }
+
+    let greetingState: string = "";
+    let greetingPulse: HTMLElement;
+
+    async function animateGreeting(greeting: string) {
+        for (let i = 0; i < greeting.length; i++) {
+            greetingState = addCharacter(greetingState, greeting);
+            await sleep(roleInterval);
+        }
+    }
+
     // after window finish loading, call animateRoles()
     onMount(async () => {
         await sleep(800);
-        animateRoles();
+        animateGreeting(greeting).then(() => {
+            greetingPulse.classList.remove("animate-pulse");
+            greetingPulse.classList.add("hidden");
+        });
+        await animateRoles();
     });
 </script>
 
@@ -116,7 +130,10 @@
             </div>
         </div>
         <div class="text-2xl font-bold mt-10">
-            Good {greeting}, <br class="sm:hidden" />I'm Ryan!
+            Good {greetingState}<span
+                bind:this={greetingPulse}
+                class="animate-pulse font-extralight">|</span
+            >, <br class="sm:hidden" />I'm Ryan!
         </div>
         <p class="text-left">
             I was born and raised in Malaysia, and fluent in Mandarin Chinese
