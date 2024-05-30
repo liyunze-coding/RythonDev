@@ -10,7 +10,7 @@
         />
     </div>
 </a>
-<a href="https://codepen.io/liyunze-coding" target="_blank">
+<a href="https://codepen.io/rythondev" target="_blank">
     <div
         class="bg-white rounded-full w-7 h-7 flex justify-center items-center mr-3 hover:invert transition-[filter] duration-150"
     >
