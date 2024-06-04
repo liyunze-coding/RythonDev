@@ -102,10 +102,6 @@
     onMount(async () => {
         await sleep(800);
         animateGreeting(greeting);
-        // .then(() => {
-        //     greetingPulse.classList.remove("animate-pulse");
-        //     greetingPulse.classList.add("hidden");
-        // });
         await animateRoles();
     });
 </script>
@@ -136,7 +132,14 @@
                 </div>
             </div>
         </div>
-        <div class="text-2xl font-bold mt-10">
+        <div id="uwu" class="hidden justify-center items-center">
+            <img
+                src="/images/RythonDev-UwU-compressed.webp"
+                alt="RythonDev"
+                width="400"
+            />
+        </div>
+        <div class="text-2xl font-bold mt-2">
             Good {greetingState}<span
                 bind:this={greetingPulse}
                 class="animate-pulse font-extralight">|</span

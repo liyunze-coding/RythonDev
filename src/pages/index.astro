@@ -40,4 +40,13 @@ import Card from "../components/elements/Card.astro";
 	<div id="contact">
 		<Contact client:visible />
 	</div>
+	<script is:inline>
+		location.search.includes("?uwu") &&
+			document.documentElement.classList.add("uwu");
+	</script>
+	<style is:global>
+		.uwu #uwu {
+			display: flex;
+		}
+	</style>
 </Layout>
