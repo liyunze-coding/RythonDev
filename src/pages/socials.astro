@@ -804,6 +804,7 @@ let displayDate = new Date().toLocaleDateString("en-UK", {
 	}
 </style>
 <script is:inline>
+	const MY_TIMEZONE = "Asia/Kuala_Lumpur";
 	document.getElementById("cards").onmousemove = (e) => {
 		for (const card of document.getElementsByClassName("social-card")) {
 			const rect = card.getBoundingClientRect(),
