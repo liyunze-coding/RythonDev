@@ -3,9 +3,6 @@ import Layout from "../layouts/Layout.astro";
 
 const MY_TIMEZONE = "Asia/Kuala_Lumpur";
 
-let hoursAhead = 0;
-let minutesAhead = 0;
-
 function getTimezoneDifference(timezone1: string, timezone2: string) {
 	// Create two dates: one in each time zone
 	const date1 = new Date().toLocaleString("en-US", { timeZone: timezone1 });
@@ -57,7 +54,7 @@ let { hours, minutes } = getTimezoneDifference(
 
 let timeDifference = displayTimeDifference(hours, minutes);
 
-let time = new Date().toLocaleTimeString("en-US", {
+let time = new Date().toLocaleTimeString("en-UK", {
 	timeZone: MY_TIMEZONE,
 	hour: "numeric",
 	minute: "numeric",
@@ -73,7 +70,7 @@ let displayDate = new Date().toLocaleDateString("en-UK", {
 });
 ---
 
-<Layout title="Skills" description="Check out Ryan's socials">
+<Layout title="Socials" description="Check out Ryan's socials">
 	<div class="px-0 py-10 flex justify-center items-center flex-col">
 		<div
 			id="cards"
@@ -503,9 +500,13 @@ let displayDate = new Date().toLocaleDateString("en-UK", {
 						<div>
 							<h2 class="font-bold text-xl">Date & Time</h2>
 							<p class="text-[#ccc]">
-								{displayDate}
-								<br />
-								<span id="time-in-aus" class="uppercase">{time}</span> {timeDifference}
+								<div id="display-date">{displayDate}</div>
+								<span id="time-in-aus" class="uppercase"
+									>{time}</span
+								>
+								<span id="time-difference">
+									{timeDifference}
+								</span>
 							</p>
 						</div>
 					</div>
@@ -577,7 +578,29 @@ let displayDate = new Date().toLocaleDateString("en-UK", {
 							</svg>
 						</div>
 						<div>
-							<svg width="48px" height="48px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="512" cy="512" r="512" style="fill:#5865f2"></circle> <path d="M689.43 349a422.21 422.21 0 0 0-104.22-32.32 1.58 1.58 0 0 0-1.68.79 294.11 294.11 0 0 0-13 26.66 389.78 389.78 0 0 0-117.05 0 269.75 269.75 0 0 0-13.18-26.66 1.64 1.64 0 0 0-1.68-.79A421 421 0 0 0 334.44 349a1.49 1.49 0 0 0-.69.59c-66.37 99.17-84.55 195.9-75.63 291.41a1.76 1.76 0 0 0 .67 1.2 424.58 424.58 0 0 0 127.85 64.63 1.66 1.66 0 0 0 1.8-.59 303.45 303.45 0 0 0 26.15-42.54 1.62 1.62 0 0 0-.89-2.25 279.6 279.6 0 0 1-39.94-19 1.64 1.64 0 0 1-.16-2.72c2.68-2 5.37-4.1 7.93-6.22a1.58 1.58 0 0 1 1.65-.22c83.79 38.26 174.51 38.26 257.31 0a1.58 1.58 0 0 1 1.68.2c2.56 2.11 5.25 4.23 8 6.24a1.64 1.64 0 0 1-.14 2.72 262.37 262.37 0 0 1-40 19 1.63 1.63 0 0 0-.87 2.28 340.72 340.72 0 0 0 26.13 42.52 1.62 1.62 0 0 0 1.8.61 423.17 423.17 0 0 0 128-64.63 1.64 1.64 0 0 0 .67-1.18c10.68-110.44-17.88-206.38-75.7-291.42a1.3 1.3 0 0 0-.63-.63zM427.09 582.85c-25.23 0-46-23.16-46-51.6s20.38-51.6 46-51.6c25.83 0 46.42 23.36 46 51.6.02 28.44-20.37 51.6-46 51.6zm170.13 0c-25.23 0-46-23.16-46-51.6s20.38-51.6 46-51.6c25.83 0 46.42 23.36 46 51.6.01 28.44-20.17 51.6-46 51.6z" style="fill:#fff"></path> </g></svg>
+							<svg
+								width="48px"
+								height="48px"
+								viewBox="0 0 1024 1024"
+								xmlns="http://www.w3.org/2000/svg"
+								fill="#000000"
+								><g id="SVGRepo_bgCarrier" stroke-width="0"
+								></g><g
+									id="SVGRepo_tracerCarrier"
+									stroke-linecap="round"
+									stroke-linejoin="round"></g><g
+									id="SVGRepo_iconCarrier"
+								>
+									<circle
+										cx="512"
+										cy="512"
+										r="512"
+										style="fill:#5865f2"></circle>
+									<path
+										d="M689.43 349a422.21 422.21 0 0 0-104.22-32.32 1.58 1.58 0 0 0-1.68.79 294.11 294.11 0 0 0-13 26.66 389.78 389.78 0 0 0-117.05 0 269.75 269.75 0 0 0-13.18-26.66 1.64 1.64 0 0 0-1.68-.79A421 421 0 0 0 334.44 349a1.49 1.49 0 0 0-.69.59c-66.37 99.17-84.55 195.9-75.63 291.41a1.76 1.76 0 0 0 .67 1.2 424.58 424.58 0 0 0 127.85 64.63 1.66 1.66 0 0 0 1.8-.59 303.45 303.45 0 0 0 26.15-42.54 1.62 1.62 0 0 0-.89-2.25 279.6 279.6 0 0 1-39.94-19 1.64 1.64 0 0 1-.16-2.72c2.68-2 5.37-4.1 7.93-6.22a1.58 1.58 0 0 1 1.65-.22c83.79 38.26 174.51 38.26 257.31 0a1.58 1.58 0 0 1 1.68.2c2.56 2.11 5.25 4.23 8 6.24a1.64 1.64 0 0 1-.14 2.72 262.37 262.37 0 0 1-40 19 1.63 1.63 0 0 0-.87 2.28 340.72 340.72 0 0 0 26.13 42.52 1.62 1.62 0 0 0 1.8.61 423.17 423.17 0 0 0 128-64.63 1.64 1.64 0 0 0 .67-1.18c10.68-110.44-17.88-206.38-75.7-291.42a1.3 1.3 0 0 0-.63-.63zM427.09 582.85c-25.23 0-46-23.16-46-51.6s20.38-51.6 46-51.6c25.83 0 46.42 23.36 46 51.6.02 28.44-20.37 51.6-46 51.6zm170.13 0c-25.23 0-46-23.16-46-51.6s20.38-51.6 46-51.6c25.83 0 46.42 23.36 46 51.6.01 28.44-20.17 51.6-46 51.6z"
+										style="fill:#fff"></path>
+								</g></svg
+							>
 						</div>
 						<div>
 							<h2 class="font-bold text-xl">Discord</h2>
@@ -612,7 +635,27 @@ let displayDate = new Date().toLocaleDateString("en-UK", {
 							</svg>
 						</div>
 						<div>
-							<svg width="48px" height="48px" viewBox="126.444 2.281 589 589" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><circle cx="420.944" cy="296.781" r="294.5" fill="#2daae1"></circle><path d="M609.773 179.634c-13.891 6.164-28.811 10.331-44.498 12.204 16.01-9.587 28.275-24.779 34.066-42.86a154.78 154.78 0 0 1-49.209 18.801c-14.125-15.056-34.267-24.456-56.551-24.456-42.773 0-77.462 34.675-77.462 77.473 0 6.064.683 11.98 1.996 17.66-64.389-3.236-121.474-34.079-159.684-80.945-6.672 11.446-10.491 24.754-10.491 38.953 0 26.875 13.679 50.587 34.464 64.477a77.122 77.122 0 0 1-35.097-9.686v.979c0 37.54 26.701 68.842 62.145 75.961-6.511 1.784-13.344 2.716-20.413 2.716-4.998 0-9.847-.473-14.584-1.364 9.859 30.769 38.471 53.166 72.363 53.799-26.515 20.785-59.925 33.175-96.212 33.175-6.25 0-12.427-.373-18.491-1.104 34.291 21.988 75.006 34.824 118.759 34.824 142.496 0 220.428-118.052 220.428-220.428 0-3.361-.074-6.697-.236-10.021a157.855 157.855 0 0 0 38.707-40.158z" fill="#ffffff"></path></g></svg>
+							<svg
+								width="48px"
+								height="48px"
+								viewBox="126.444 2.281 589 589"
+								xmlns="http://www.w3.org/2000/svg"
+								fill="#000000"
+								><g id="SVGRepo_bgCarrier" stroke-width="0"
+								></g><g
+									id="SVGRepo_tracerCarrier"
+									stroke-linecap="round"
+									stroke-linejoin="round"></g><g
+									id="SVGRepo_iconCarrier"
+									><circle
+										cx="420.944"
+										cy="296.781"
+										r="294.5"
+										fill="#2daae1"></circle><path
+										d="M609.773 179.634c-13.891 6.164-28.811 10.331-44.498 12.204 16.01-9.587 28.275-24.779 34.066-42.86a154.78 154.78 0 0 1-49.209 18.801c-14.125-15.056-34.267-24.456-56.551-24.456-42.773 0-77.462 34.675-77.462 77.473 0 6.064.683 11.98 1.996 17.66-64.389-3.236-121.474-34.079-159.684-80.945-6.672 11.446-10.491 24.754-10.491 38.953 0 26.875 13.679 50.587 34.464 64.477a77.122 77.122 0 0 1-35.097-9.686v.979c0 37.54 26.701 68.842 62.145 75.961-6.511 1.784-13.344 2.716-20.413 2.716-4.998 0-9.847-.473-14.584-1.364 9.859 30.769 38.471 53.166 72.363 53.799-26.515 20.785-59.925 33.175-96.212 33.175-6.25 0-12.427-.373-18.491-1.104 34.291 21.988 75.006 34.824 118.759 34.824 142.496 0 220.428-118.052 220.428-220.428 0-3.361-.074-6.697-.236-10.021a157.855 157.855 0 0 0 38.707-40.158z"
+										fill="#ffffff"></path></g
+								></svg
+							>
 						</div>
 						<div>
 							<h2 class="font-bold text-xl">Twitter</h2>
@@ -669,10 +712,12 @@ let displayDate = new Date().toLocaleDateString("en-UK", {
 			</a>
 		</div>
 		<div class="ml-auto mr-[calc((100vw-1024px)/2)] mt-10">
-			Hover Light effect by 
-			<a class="underline text-white hover:text-blue-500" 
-				href="https://www.youtube.com/watch?v=htGfnF1zN4g" 
-				target="_blank">
+			Hover Light effect by
+			<a
+				class="underline text-white hover:text-blue-500"
+				href="https://www.youtube.com/watch?v=htGfnF1zN4g"
+				target="_blank"
+			>
 				Hyperplexed
 			</a>
 		</div>
@@ -770,14 +815,78 @@ let displayDate = new Date().toLocaleDateString("en-UK", {
 		}
 	};
 
-	// const timeDifference = getTimezoneOffset();
-	// console.log(
-	// 	`The time difference between Melbourne and the user's timezone is ${timeDifference} hours.`
-	// );
+	function getTimezoneDifference(timezone1, timezone2) {
+		// Create two dates: one in each time zone
+		const date1 = new Date().toLocaleString("en-US", {
+			timeZone: timezone1,
+		});
+		const date2 = new Date().toLocaleString("en-US", {
+			timeZone: timezone2,
+		});
 
-	let time = null;
+		// Convert the dates to Date objects
+		const dateObj1 = new Date(date1);
+		const dateObj2 = new Date(date2);
 
-	setInterval( () => {
+		// Get the difference in minutes between the two dates
+		const diffMinutes =
+			(dateObj2.getTime() - dateObj1.getTime()) / (1000 * 60);
+
+		// Convert the difference in minutes to hours and minutes
+		const diffHours = Math.floor(diffMinutes / 60);
+		const diffMinutesRemaining = Math.floor(diffMinutes % 60);
+
+		return { hours: diffHours, minutes: diffMinutesRemaining };
+	}
+
+	function displayTimeDifference(hour, minutes) {
+		let ahead = false;
+		if (hour < 0) {
+			hour = 24 + hour;
+		} else {
+			ahead = true;
+		}
+
+		if (hour === 0 && minutes === 0) {
+			return "";
+		}
+
+		let differenceDisplay = ahead ? "ahead" : "behind";
+
+		if (hour === 0) {
+			return `( ${minutes} minutes ${differenceDisplay} )`;
+		}
+
+		if (minutes === 0) {
+			return `( ${hour} hours ${differenceDisplay} )`;
+		}
+
+		return `( ${hour} hours and ${minutes} minutes ${differenceDisplay} )`;
+	}
+
+	let { hours, minutes } = getTimezoneDifference(
+		Intl.DateTimeFormat().resolvedOptions().timeZone,
+		MY_TIMEZONE
+	);
+
+	let timeDifference = displayTimeDifference(hours, minutes);
+
+	let time = new Date().toLocaleTimeString("en-UK", {
+		timeZone: MY_TIMEZONE,
+		hour: "numeric",
+		minute: "numeric",
+		hour12: true,
+	});
+
+	let displayDate = new Date().toLocaleDateString("en-UK", {
+		timeZone: MY_TIMEZONE,
+		weekday: "long",
+		year: "numeric",
+		month: "short",
+		day: "numeric",
+	});
+
+	setInterval(() => {
 		time = new Date().toLocaleTimeString("en-UK", {
 			timeZone: "Asia/Kuala_Lumpur",
 			hour: "numeric",
@@ -786,5 +895,8 @@ let displayDate = new Date().toLocaleDateString("en-UK", {
 		});
 
 		document.getElementById("time-in-aus").innerText = time;
-	}, 2000)
+	}, 2000);
+
+	document.querySelector("#time-difference").innerText = timeDifference;
+	document.querySelector("#display-date").innerText = displayDate;
 </script>
