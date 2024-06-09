@@ -1,73 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-const MY_TIMEZONE = "Asia/Kuala_Lumpur";
-
-function getTimezoneDifference(timezone1: string, timezone2: string) {
-	// Create two dates: one in each time zone
-	const date1 = new Date().toLocaleString("en-US", { timeZone: timezone1 });
-	const date2 = new Date().toLocaleString("en-US", { timeZone: timezone2 });
-
-	// Convert the dates to Date objects
-	const dateObj1 = new Date(date1);
-	const dateObj2 = new Date(date2);
-
-	// Get the difference in minutes between the two dates
-	const diffMinutes = (dateObj2.getTime() - dateObj1.getTime()) / (1000 * 60);
-
-	// Convert the difference in minutes to hours and minutes
-	const diffHours = Math.floor(diffMinutes / 60);
-	const diffMinutesRemaining = Math.floor(diffMinutes % 60);
-
-	return { hours: diffHours, minutes: diffMinutesRemaining };
-}
-
-function displayTimeDifference(hour: number, minutes: number) {
-	let ahead = false;
-	if (hour < 0) {
-		hour = 24 + hour;
-	} else {
-		ahead = true;
-	}
-
-	if (hour === 0 && minutes === 0) {
-		return "";
-	}
-
-	let differenceDisplay = ahead ? "ahead" : "behind";
-
-	if (hour === 0) {
-		return `( ${minutes} minutes ${differenceDisplay} )`;
-	}
-
-	if (minutes === 0) {
-		return `( ${hour} hours ${differenceDisplay} )`;
-	}
-
-	return `( ${hour} hours and ${minutes} minutes ${differenceDisplay} )`;
-}
-
-let { hours, minutes } = getTimezoneDifference(
-	Intl.DateTimeFormat().resolvedOptions().timeZone,
-	MY_TIMEZONE
-);
-
-let timeDifference = displayTimeDifference(hours, minutes);
-
-let time = new Date().toLocaleTimeString("en-UK", {
-	timeZone: MY_TIMEZONE,
-	hour: "numeric",
-	minute: "numeric",
-	hour12: true,
-});
-
-let displayDate = new Date().toLocaleDateString("en-UK", {
-	timeZone: MY_TIMEZONE,
-	weekday: "long",
-	year: "numeric",
-	month: "short",
-	day: "numeric",
-});
 ---
 
 <Layout title="Socials" description="Check out Ryan's socials">
@@ -500,13 +432,9 @@ let displayDate = new Date().toLocaleDateString("en-UK", {
 						<div>
 							<h2 class="font-bold text-xl">Date & Time</h2>
 							<p class="text-[#ccc]">
-								<div id="display-date">{displayDate}</div>
-								<span id="time-in-aus" class="uppercase"
-									>{time}</span
-								>
-								<span id="time-difference">
-									{timeDifference}
-								</span>
+								<div id="display-date"></div>
+								<span id="time-in-aus" class="uppercase"></span>
+								<span id="time-difference"> </span>
 							</p>
 						</div>
 					</div>
@@ -900,4 +828,5 @@ let displayDate = new Date().toLocaleDateString("en-UK", {
 
 	document.querySelector("#time-difference").innerText = timeDifference;
 	document.querySelector("#display-date").innerText = displayDate;
+	document.getElementById("time-in-aus").innerText = time;
 </script>
