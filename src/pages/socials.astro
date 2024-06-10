@@ -308,39 +308,46 @@ import Layout from "../layouts/Layout.astro";
 								</svg>
 							</div>
 							<div
-								id="github-icon"
-								class="icon-box w-12 h-12 bg-white rounded-full flex justify-center items-center"
+								class="relative w-12 h-12 bg-white rounded-full
+								border-8 border-solid border-black z-20"
 							>
-								<svg
-									width="42px"
-									height="42px"
-									viewBox="0 0 48 48"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-									><g id="SVGRepo_bgCarrier" stroke-width="0"
-									></g><g
-										id="SVGRepo_tracerCarrier"
-										stroke-linecap="round"
-										stroke-linejoin="round"></g><g
-										id="SVGRepo_iconCarrier"
-									>
-										<rect
-											width="48"
-											height="48"
-											fill="white"
-											fill-opacity="0.01"></rect>
-										<path
-											fill-rule="evenodd"
-											clip-rule="evenodd"
-											d="M24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4ZM0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z"
-											fill="#000000"></path>
-										<path
-											fill-rule="evenodd"
-											clip-rule="evenodd"
-											d="M19.183 45.4715C18.9896 45.2218 18.9896 42.9972 19.183 38.798C17.1112 38.8695 15.8022 38.7257 15.256 38.3666C14.4368 37.8279 13.6166 36.1666 12.8889 34.9958C12.1612 33.825 10.546 33.6399 9.8938 33.3782C9.24158 33.1164 9.07785 32.0495 11.691 32.8564C14.3042 33.6633 14.4316 35.8606 15.256 36.3744C16.0804 36.8882 18.0512 36.6634 18.9446 36.2518C19.8379 35.8402 19.7722 34.3077 19.9315 33.7006C20.1329 33.1339 19.423 33.0082 19.4074 33.0036C18.5353 33.0036 13.9537 32.0072 12.6952 27.5705C11.4368 23.1339 13.0579 20.234 13.9227 18.9874C14.4992 18.1563 14.4482 16.3851 13.7697 13.6736C16.2333 13.3588 18.1344 14.1342 19.4732 16C19.4745 16.0107 21.2283 14.9571 24 14.9571C26.7718 14.9571 27.7551 15.8153 28.514 16C29.2728 16.1847 29.8798 12.734 34.5666 13.6736C33.5881 15.5968 32.7686 18 33.3941 18.9874C34.0195 19.9748 36.4742 23.1146 34.9664 27.5705C33.9611 30.5412 31.9851 32.3522 29.0382 33.0036C28.7002 33.1114 28.5313 33.2854 28.5313 33.5254C28.5313 33.8855 28.9881 33.9248 29.6463 35.6116C30.085 36.7361 30.1167 39.9479 29.7413 45.2469C28.7904 45.489 28.0506 45.6515 27.5219 45.7346C26.5845 45.8819 25.5667 45.9645 24.5666 45.9964C23.5666 46.0283 23.2193 46.0247 21.8368 45.896C20.9151 45.8102 20.0305 45.6687 19.183 45.4715Z"
-											fill="#000000"></path>
-									</g></svg
+								<div
+									id="github-icon"
+									class="icon-box w-12 h-12 rounded-full 2-10
+									absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
 								>
+									<svg
+										width="38px"
+										height="38px"
+										viewBox="0 0 48 48"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+										><g
+											id="SVGRepo_bgCarrier"
+											stroke-width="0"></g><g
+											id="SVGRepo_tracerCarrier"
+											stroke-linecap="round"
+											stroke-linejoin="round"></g><g
+											id="SVGRepo_iconCarrier"
+										>
+											<rect
+												width="48"
+												height="48"
+												fill="white"
+												fill-opacity="0.01"></rect>
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4ZM0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z"
+												fill="#000000"></path>
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M19.183 45.4715C18.9896 45.2218 18.9896 42.9972 19.183 38.798C17.1112 38.8695 15.8022 38.7257 15.256 38.3666C14.4368 37.8279 13.6166 36.1666 12.8889 34.9958C12.1612 33.825 10.546 33.6399 9.8938 33.3782C9.24158 33.1164 9.07785 32.0495 11.691 32.8564C14.3042 33.6633 14.4316 35.8606 15.256 36.3744C16.0804 36.8882 18.0512 36.6634 18.9446 36.2518C19.8379 35.8402 19.7722 34.3077 19.9315 33.7006C20.1329 33.1339 19.423 33.0082 19.4074 33.0036C18.5353 33.0036 13.9537 32.0072 12.6952 27.5705C11.4368 23.1339 13.0579 20.234 13.9227 18.9874C14.4992 18.1563 14.4482 16.3851 13.7697 13.6736C16.2333 13.3588 18.1344 14.1342 19.4732 16C19.4745 16.0107 21.2283 14.9571 24 14.9571C26.7718 14.9571 27.7551 15.8153 28.514 16C29.2728 16.1847 29.8798 12.734 34.5666 13.6736C33.5881 15.5968 32.7686 18 33.3941 18.9874C34.0195 19.9748 36.4742 23.1146 34.9664 27.5705C33.9611 30.5412 31.9851 32.3522 29.0382 33.0036C28.7002 33.1114 28.5313 33.2854 28.5313 33.5254C28.5313 33.8855 28.9881 33.9248 29.6463 35.6116C30.085 36.7361 30.1167 39.9479 29.7413 45.2469C28.7904 45.489 28.0506 45.6515 27.5219 45.7346C26.5845 45.8819 25.5667 45.9645 24.5666 45.9964C23.5666 46.0283 23.2193 46.0247 21.8368 45.896C20.9151 45.8102 20.0305 45.6687 19.183 45.4715Z"
+												fill="#000000"></path>
+										</g></svg
+									>
+								</div>
 							</div>
 							<div>
 								<h2 class="font-bold text-xl">Github</h2>
@@ -385,8 +392,8 @@ import Layout from "../layouts/Layout.astro";
 									xmlns:xlink="http://www.w3.org/1999/xlink"
 									x="0px"
 									y="0px"
-									width="32px"
-									height="32px"
+									width="28px"
+									height="28px"
 									viewBox="0 0 31.665 31.665"
 									fill="#fff"
 									style="0 0 31.665 31.665;"
@@ -516,8 +523,7 @@ import Layout from "../layouts/Layout.astro";
 								<img
 									src="/images/socials/kofi_s_logo_nolabel.webp"
 									alt="ko-fi logo"
-									class="w-8 h-8"
-									width="32"
+									width="28"
 								/>
 							</div>
 							<div>
@@ -609,10 +615,13 @@ import Layout from "../layouts/Layout.astro";
 										fill="#fff"></path>
 								</svg>
 							</div>
-							<div id="twitter-icon" class="icon-box">
+							<div
+								id="twitter-icon"
+								class="icon-box bg-[#2daae1] rounded-full w-12 h-12 flex justify-center items-center"
+							>
 								<svg
-									width="48px"
-									height="48px"
+									width="38px"
+									height="38px"
 									viewBox="126.444 2.281 589 589"
 									xmlns="http://www.w3.org/2000/svg"
 									fill="#000000"
@@ -664,13 +673,18 @@ import Layout from "../layouts/Layout.astro";
 										fill="#fff"></path>
 								</svg>
 							</div>
-							<div id="threads-icon" class="icon-box w-12 h-12">
+							<div
+								id="threads-icon"
+								class="icon-box w-12 h-12
+									flex justify-center items-center
+									bg-black rounded-full"
+							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									aria-label="Threads"
 									viewBox="0 0 192 192"
-									width="32px"
-									height="32px"
+									width="28px"
+									height="28px"
 									fill="#fff"
 									><path
 										class="x19hqcy"
@@ -783,11 +797,15 @@ import Layout from "../layouts/Layout.astro";
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
 	}
 
 	.icon-box::before {
 		content: "";
-		z-index: 2;
+		z-index: -2;
 		width: 100%;
 		height: 100%;
 		position: absolute;
