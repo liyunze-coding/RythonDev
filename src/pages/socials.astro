@@ -452,7 +452,7 @@ import Layout from "../layouts/Layout.astro";
 							</svg>
 							<div>
 								<h2 class="font-bold text-xl">Location</h2>
-								<p class="text-[#ccc]">Asia, Malaysia</p>
+								<p class="text-[#ccc]">Melbourne, Australia</p>
 							</div>
 						</div>
 						<div
@@ -845,7 +845,7 @@ import Layout from "../layouts/Layout.astro";
 	}
 </style>
 <script is:inline>
-	const MY_TIMEZONE = "Asia/Kuala_Lumpur";
+	const MY_TIMEZONE = "Australia/Melbourne";
 	document.getElementById("cards").onmousemove = (e) => {
 		for (const card of document.getElementsByClassName("social-card")) {
 			const rect = card.getBoundingClientRect(),
@@ -930,7 +930,7 @@ import Layout from "../layouts/Layout.astro";
 
 	setInterval(() => {
 		time = new Date().toLocaleTimeString("en-UK", {
-			timeZone: "Asia/Kuala_Lumpur",
+			timeZone: MY_TIMEZONE,
 			hour: "numeric",
 			minute: "numeric",
 			hour12: true,
