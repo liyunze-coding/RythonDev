@@ -146,7 +146,8 @@
             >, <br class="sm:hidden" />I'm Ryan!
         </div>
         <p class="text-left">
-            I was born and raised in Malaysia, and fluent in Mandarin Chinese
+            I was born and raised in Malaysia, currently studying my Bachelor's
+            in Computer Science in Australia! I speak fluent in Mandarin Chinese
             and English.
             <br /><br />
             I'm passionate about developing open source projects that benefit others,

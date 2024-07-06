@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import StreamScheduleComponent from "../components/sections/StreamSchedule.svelte";
 ---
 
 <Layout title="Socials" description="Check out Ryan's socials">
@@ -421,8 +422,17 @@ import Layout from "../layouts/Layout.astro";
 						</div>
 					</div>
 				</a>
+				<!-- Stream Schedule -->
+				<div class="social-card col-span-2 h-fit">
+					<div
+						class="social-card-content flex justify-center items-center flex-col p-0 md:p-3"
+					>
+						<h2 class="font-bold text-xl mb-3">Stream Schedule</h2>
+						<StreamScheduleComponent client:load />
+					</div>
+				</div>
 				<!-- Location -->
-				<div class="social-card col-span-2">
+				<div class="social-card col-span-2 md:col-span-1 lg:col-span-2">
 					<div
 						class="social-card-content flex flex-col justify-center items-start gap-5"
 					>
@@ -585,11 +595,14 @@ import Layout from "../layouts/Layout.astro";
 							</div>
 							<div>
 								<h2 class="font-bold text-xl">Discord</h2>
-								<p class="text-[#ccc]">rython.dev/discord</p>
+								<p class="text-[#ccc]">
+									rython.dev/<wbr />discord
+								</p>
 							</div>
 						</div>
 					</div>
 				</a>
+				<div class="opacity-0 hidden lg:block"></div>
 				<!-- Twitter -->
 				<a href="https://twitter.com/@RythonDev" target="_blank">
 					<div class="social-card">
@@ -648,6 +661,7 @@ import Layout from "../layouts/Layout.astro";
 						</div>
 					</div>
 				</a>
+				<div class="opacity-0 hidden md:block lg:hidden"></div>
 				<!-- Threads -->
 				<a href="https://www.threads.net/@rythondev" target="_blank">
 					<div class="social-card">
@@ -786,7 +800,6 @@ import Layout from "../layouts/Layout.astro";
 		border-radius: inherit;
 		/* flex-grow: 1; */
 		inset: 1px;
-		padding: 10px;
 		position: absolute;
 		padding: 1.75rem;
 		z-index: 3;
