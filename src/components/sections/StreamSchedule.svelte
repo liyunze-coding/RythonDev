@@ -25,15 +25,6 @@
         // Current time in my timezone
         let now = moment.tz(myLocation);
 
-        // Find the upcoming Friday
-        let upcomingFriday = now.clone().day(5).hour(8).minute(0).second(0);
-        if (now.day() >= 5 && now.format("HH:mm") >= "08:00") {
-            // If today is Friday and it's already past 8am, set to next Friday
-            upcomingFriday.add(1, "week");
-        }
-
-        // Adjust based on the provided day and time
-        let dayDiff = (5 - dayOfWeek + 7) % 7; // Calculate days until Friday
         let inputTime = moment(time24, "HH:mm");
         let upcomingTime = now
             .clone()
@@ -65,6 +56,8 @@
         start: string;
         end: string;
     };
+
+    let sameTimezone = false;
 
     let myStreamSchedule = [];
     let localisedStreamSchedule = [];
@@ -105,30 +98,42 @@
     onMount(() => {
         // Example usage
         displayStreamSchedule();
+
+        if (
+            formattedLocalisedSchedule[0].day === formattedSchedule[0].day &&
+            formattedLocalisedSchedule[0].start ===
+                formattedSchedule[0].start &&
+            formattedLocalisedSchedule[0].end === formattedSchedule[0].end
+        ) {
+            sameTimezone = true;
+        }
     });
 </script>
 
 <!-- TABS -->
-<div
-    class="w-full flex
+{#if !sameTimezone}
+    <div
+        class="w-full flex
         bg-[#141414]
         rounded-xl
         px-1 py-1 z-20"
->
-    <button
-        on:click={() => (adjusted = true)}
-        class="rounded-lg w-1/2 py-2
+    >
+        <button
+            on:click={() => (adjusted = true)}
+            class="rounded-lg w-1/2 py-2
         transition-colors duration-150
         {adjusted ? 'text-white bg-[#303030]' : 'text-gray-400'}"
-        >Your Timezone</button
-    >
-    <button
-        on:click={() => (adjusted = false)}
-        class="rounded-lg flex-grow py-2
+            >Your Timezone</button
+        >
+        <button
+            on:click={() => (adjusted = false)}
+            class="rounded-lg flex-grow py-2
         transition-colors duration-150
-        {adjusted ? 'text-gray-400' : 'text-white bg-[#303030]'}">AEDT</button
-    >
-</div>
+        {adjusted ? 'text-gray-400' : 'text-white bg-[#303030]'}"
+            >AEST/<wbr />AEDT</button
+        >
+    </div>
+{/if}
 <div class="mt-2">
     <table>
         <tr>
@@ -155,3 +160,9 @@
         {/if}
     </table>
 </div>
+
+<style>
+    tr {
+        text-align: center;
+    }
+</style>

@@ -79,7 +79,7 @@
             task: "chat about MBTI",
         },
         {
-            streamer: "Elly78456",
+            streamer: "Ellyskey",
             task: "sell YOUthversity merch",
         },
         {
@@ -125,10 +125,6 @@
         {
             streamer: "lyricalclove",
             task: "teach English",
-        },
-        {
-            streamer: "mikewhatwhere",
-            task: "be a dietician",
         },
         {
             streamer: "msmushh",
