@@ -2,7 +2,16 @@
     import moment from "moment-timezone";
     import { onMount } from "svelte";
 
-    let adjusted = true;
+    const myStreamSchedule = [
+        {
+            start: getUpcomingTimeDevTZ(3, "12:00"),
+            end: getUpcomingTimeDevTZ(3, "15:00"),
+        },
+        {
+            start: getUpcomingTimeDevTZ(5, "10:00"),
+            end: getUpcomingTimeDevTZ(5, "16:00"),
+        },
+    ];
 
     const myLocation = "Australia/Melbourne";
 
@@ -57,26 +66,15 @@
         end: string;
     };
 
-    let sameTimezone = false;
+    let sameTimezone = true;
+    let adjusted = true;
 
-    let myStreamSchedule = [];
     let localisedStreamSchedule = [];
 
     let formattedSchedule: Schedule[] = [];
     let formattedLocalisedSchedule: Schedule[] = [];
 
     function displayStreamSchedule() {
-        myStreamSchedule = [
-            {
-                start: getUpcomingTimeDevTZ(5, "10:00"),
-                end: getUpcomingTimeDevTZ(5, "18:00"),
-            },
-            {
-                start: getUpcomingTimeDevTZ(6, "10:00"),
-                end: getUpcomingTimeDevTZ(6, "18:00"),
-            },
-        ];
-
         localisedStreamSchedule = myStreamSchedule.map((stream) => ({
             start: convertToUserLocalTimezone(stream.start),
             end: convertToUserLocalTimezone(stream.end),
@@ -101,11 +99,11 @@
 
         if (
             formattedLocalisedSchedule[0].day === formattedSchedule[0].day &&
-            formattedLocalisedSchedule[0].start ===
-                formattedSchedule[0].start &&
-            formattedLocalisedSchedule[0].end === formattedSchedule[0].end
+            formattedLocalisedSchedule[0].start === formattedSchedule[0].start
         ) {
             sameTimezone = true;
+        } else {
+            sameTimezone = false;
         }
     });
 </script>
