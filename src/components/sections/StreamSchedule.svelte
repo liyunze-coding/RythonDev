@@ -4,16 +4,16 @@
 
     const myStreamSchedule = [
         {
-            start: getUpcomingTimeDevTZ(3, "12:00"),
-            end: getUpcomingTimeDevTZ(3, "15:00"),
+            start: getUpcomingTimeDevTZ(4, "10:00"),
+            end: getUpcomingTimeDevTZ(4, "19:00"),
         },
         {
             start: getUpcomingTimeDevTZ(5, "10:00"),
-            end: getUpcomingTimeDevTZ(5, "16:00"),
+            end: getUpcomingTimeDevTZ(5, "19:00"),
         },
     ];
 
-    const myLocation = "Australia/Melbourne";
+    const myLocation = "Asia/Singapore";
 
     /**
      * Calculates the upcoming specified time for a given day of the week in my timezone.
@@ -118,21 +118,21 @@
     >
         <button
             on:click={() => (adjusted = true)}
-            class="rounded-lg w-1/2 py-2
+            class="rounded-lg w-1/2 py-1
         transition-colors duration-150
         {adjusted ? 'text-white bg-[#303030]' : 'text-gray-400'}"
             >Your Timezone</button
         >
         <button
             on:click={() => (adjusted = false)}
-            class="rounded-lg flex-grow py-2
+            class="rounded-lg flex-grow py-1
         transition-colors duration-150
         {adjusted ? 'text-gray-400' : 'text-white bg-[#303030]'}"
             >AEST/<wbr />AEDT</button
         >
     </div>
 {/if}
-<div class="mt-2">
+<div class="mt-1">
     <table>
         <tr>
             <th>Day</th>

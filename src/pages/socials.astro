@@ -425,10 +425,18 @@ import StreamScheduleComponent from "../components/sections/StreamSchedule.svelt
 				<!-- Stream Schedule -->
 				<div class="social-card col-span-2 h-fit">
 					<div
-						class="social-card-content flex justify-center items-center flex-col p-0 md:p-3"
+						class="social-card-content flex justify-between items-center flex-col p-0 md:p-3"
 					>
-						<h2 class="font-bold text-xl mb-3">Stream Schedule</h2>
-						<StreamScheduleComponent client:load />
+						<div>
+							<h2 class="font-bold text-xl mb-1">
+								Stream Schedule
+							</h2>
+						</div>
+						<div
+							class="w-full flex flex-col justify-center items-center"
+						>
+							<StreamScheduleComponent client:load />
+						</div>
 					</div>
 				</div>
 				<!-- Location -->
