@@ -13,7 +13,7 @@
         },
     ];
 
-    const myLocation = "Asia/Singapore";
+    const myLocation = "Australia/Melbourne";
 
     /**
      * Calculates the upcoming specified time for a given day of the week in my timezone.
