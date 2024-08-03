@@ -20,20 +20,29 @@ import ProjectsComponent from "../components/sections/ProjectsComponent.svelte";
 						class="image-container flex w-full lg:ml-auto lg:w-1/2 mb-5 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
 					>
 						<video
-							src="/videos/chess_opencv_demo.webm"
 							class="absolute max-w-full
                     top-1/2 left-1/2
                     [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-45%)_translateY(-50%)] opacity-40
                     border-2 border-solid border-white rounded-xl"
-							width="700"></video>
+							width="700"
+						>
+							<source
+								src="/videos/chess_opencv_demo.webm"
+								type="video/webm"
+							/></video
+						>
 						<video
-							src="/videos/chess_opencv_demo.webm"
 							width="700"
 							class="playable absolute max-w-full
-                    top-1/2 left-1/2
-                    [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-43%)_translateY(-52%)] opacity-1
-                    border-2 border-solid border-white rounded-xl"
-						></video>
+							top-1/2 left-1/2
+							[transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-43%)_translateY(-52%)] opacity-1
+							border-2 border-solid border-white rounded-xl"
+						>
+							<source
+								src="/videos/chess_opencv_demo.webm"
+								type="video/webm"
+							/>
+						</video>
 					</div>
 					<div
 						class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center lg:items-start"
@@ -189,19 +198,25 @@ import ProjectsComponent from "../components/sections/ProjectsComponent.svelte";
 	}
 </style>
 
-<script is:inline>
+<script is:inline lang="ts">
 	document.addEventListener("DOMContentLoaded", () => {
 		const videos = document.querySelectorAll(".playable");
 
 		videos.forEach((video) => {
-			video.addEventListener("mouseenter", () => {
-				video.play();
-			});
+			// Ensure the video element supports play and pause methods
+			if (
+				typeof video.play === "function" &&
+				typeof video.pause === "function"
+			) {
+				video.addEventListener("mouseenter", () => {
+					video.play();
+				});
 
-			video.addEventListener("mouseleave", () => {
-				video.pause();
-				video.currentTime = 0;
-			});
+				video.addEventListener("mouseleave", () => {
+					video.pause();
+					video.currentTime = 0;
+				});
+			}
 		});
 	});
 </script>
