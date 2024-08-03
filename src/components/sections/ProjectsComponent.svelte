@@ -295,7 +295,9 @@
                     range of topics from tips on how to get started with setting
                     up stream to how to grow your audience!
                 </p>
-                <div class="w-full flex flex-row flex-wrap mt-5">
+                <div
+                    class="w-full flex flex-row flex-wrap justify-center lg:justify-left mt-5"
+                >
                     <div
                         class="w-fit bg-white text-black
                                 rounded-full px-3 py-1 mr-1 my-1
@@ -337,7 +339,9 @@
                     Easy to setup and the customization possibilities are
                     endless!
                 </p>
-                <div class="w-full flex flex-row flex-wrap justify-end mt-5">
+                <div
+                    class="w-full flex flex-row flex-wrap justify-center lg:justify-end mt-5"
+                >
                     <div
                         class="w-fit bg-[#E34F26] text-white
                                 rounded-full px-3 py-1 mr-1 my-1
@@ -558,7 +562,9 @@
                     receive instant feedback! Built with Next.JS, TailwindCSS
                     and TypeScript.
                 </p>
-                <div class="w-full flex flex-row flex-wrap justify-start mt-5">
+                <div
+                    class="w-full flex flex-row flex-wrap justify-center lg:justify-start mt-5"
+                >
                     <div
                         class="w-fit bg-black text-white
                                 rounded-full px-3 py-1 mr-1 my-1
@@ -600,7 +606,9 @@
                     and the Python program will trigger the corresponding
                     keypresses.
                 </p>
-                <div class="w-full flex flex-row flex-wrap justify-end mt-5">
+                <div
+                    class="w-full flex flex-row flex-wrap justify-center lg:justify-end mt-5"
+                >
                     <div
                         class="w-fit bg-[#3776AB] text-white
                                 rounded-full px-3 py-1 mr-1 my-1
@@ -624,7 +632,6 @@
                     class="
                         px-5 py-3 bg-blue-500 rounded-xl opacity-1
                         font-bold
-                        hidden lg:block
                         transition-colors duration-300
                         hover:bg-white hover:text-blue-500
                         ">View repository</a
