@@ -222,11 +222,9 @@
 
 <div
     id="projects"
-    class="h-fit pt-20 [perspective:1000px] flex flex-col items-center"
+    class="h-fit [perspective:1000px] flex flex-col items-center"
 >
-    <h1 class="text-5xl text-center">Projects</h1>
-
-    <div class="mt-10 w-full max-w-[1440px]">
+    <div class="w-full max-w-[1440px]">
         <div
             class="flex flex-col lg:flex-row justify-center h-fit w-full px-10 lg:px-20"
         >

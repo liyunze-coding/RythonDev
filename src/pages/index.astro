@@ -29,7 +29,10 @@ import Card from "../components/elements/Card.astro";
 		<WhatIDo />
 	</div>
 	<div id="projects">
-		<Projects client:visible />
+		<div class="pt-20">
+			<h1 class="text-5xl text-center mb-10">Projects</h1>
+			<Projects client:visible />
+		</div>
 	</div>
 	<div id="skills">
 		<Skills />
