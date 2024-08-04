@@ -23,7 +23,7 @@
             ) {
                 video.addEventListener("mouseenter", () => {
                     if (userInteracted) {
-                        video.volume = 0.1;
+                        video.volume = 0.2;
                     } else {
                         video.muted = true;
                     }
@@ -54,19 +54,16 @@
             <div
                 class="image-container flex w-full lg:ml-auto lg:w-1/2 mb-5 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
             >
-                <!-- svelte-ignore a11y-media-has-caption -->
-                <video
+                <img
+                    src="/images/projects/chess-opencv.webp"
+                    alt="computer vision chess bot"
                     class="absolute max-w-full
                     top-1/2 left-1/2
                     [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-45%)_translateY(-50%)] opacity-40
                     border-2 border-solid border-white rounded-xl"
                     width="700"
-                >
-                    <source
-                        src="/videos/chess_opencv_demo.webm"
-                        type="video/webm"
-                    />
-                </video>
+                />
+
                 <!-- svelte-ignore a11y-media-has-caption -->
                 <video
                     width="700"
@@ -149,6 +146,13 @@
                         Python
                     </div>
                     <div
+                        class="w-fit bg-[#3178C6] text-white
+                                rounded-full px-3 py-1 mr-1 my-1
+                                transition-colors duration-300"
+                    >
+                        OpenCV
+                    </div>
+                    <div
                         class="w-fit bg-[#0078D4] text-white
                                 rounded-full px-3 py-1 mr-1 my-1
                                 transition-colors duration-300"
@@ -160,16 +164,15 @@
             <div
                 class="image-container flex w-full lg:ml-auto lg:w-1/2 mb-5 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
             >
-                <!-- svelte-ignore a11y-media-has-caption -->
-                <video
-                    src="/videos/aim_lab_demo.webm"
+                <img
+                    src="/images/projects/aim-lab.webp"
+                    alt="aim lab"
                     class="absolute max-w-full
                     top-1/2 left-1/2 [transform:translateX(-48%)_translateY(-48%)_translateZ(-50px)_rotateY(-3deg)] opacity-40
                     border-2 border-solid border-white rounded-xl"
                     width="700"
-                >
-                    <source src="/videos/aim_lab_demo.webm" /></video
-                >
+                />
+
                 <!-- svelte-ignore a11y-media-has-caption -->
                 <video
                     width="700"
@@ -185,10 +188,12 @@
 </div>
 
 <style>
+    .image-container img,
     .image-container video {
         transition: transform 0.5s ease-in-out;
     }
     @media (min-width: 1025px) {
+        .image-container:hover > img,
         .image-container:hover > video {
             transform: rotateY(0deg) rotateX(0deg) translateZ(0px)
                 translateX(-50%) translateY(-50%);
