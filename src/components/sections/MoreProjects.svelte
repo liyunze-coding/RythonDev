@@ -4,6 +4,17 @@
     onMount(() => {
         const videos = document.querySelectorAll<HTMLVideoElement>(".playable");
 
+        let userInteracted = false;
+
+        const handleUserInteraction = () => {
+            userInteracted = true;
+            document.removeEventListener("click", handleUserInteraction);
+            document.removeEventListener("keydown", handleUserInteraction);
+        };
+
+        document.addEventListener("click", handleUserInteraction);
+        document.addEventListener("keydown", handleUserInteraction);
+
         videos.forEach((video) => {
             // Ensure the video element supports play and pause methods
             if (
@@ -11,6 +22,11 @@
                 typeof video.pause === "function"
             ) {
                 video.addEventListener("mouseenter", () => {
+                    if (userInteracted) {
+                        video.volume = 0.1;
+                    } else {
+                        video.muted = true;
+                    }
                     video.play();
                 });
 
@@ -18,24 +34,14 @@
                     video.pause();
                     video.currentTime = 0;
                 });
+
+                // Check if the screen width is less than or equal to 768px (mobile screen size)
+                if (window.innerWidth <= 768) {
+                    video.muted = true;
+                    video.autoplay = true;
+                    video.play();
+                }
             }
-
-            videos.forEach((video) => {
-                if (window.innerWidth < 1025) {
-                    video.muted = true;
-                    video.play();
-                }
-            });
-        });
-
-        // On screen size change
-        window.addEventListener("resize", () => {
-            videos.forEach((video) => {
-                if (window.innerWidth < 1025) {
-                    video.muted = true;
-                    video.play();
-                }
-            });
         });
     });
 </script>
