@@ -296,7 +296,7 @@
                     up stream to how to grow your audience!
                 </p>
                 <div
-                    class="w-full flex flex-row flex-wrap justify-center lg:justify-left mt-5"
+                    class="w-full flex flex-row flex-wrap justify-center lg:justify-start mt-5"
                 >
                     <div
                         class="w-fit bg-white text-black
