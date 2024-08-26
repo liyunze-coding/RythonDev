@@ -9,7 +9,7 @@
         },
         {
             start: getUpcomingTimeDevTZ(4, "10:00"),
-            end: getUpcomingTimeDevTZ(4, "19:00"),
+            end: getUpcomingTimeDevTZ(4, "16:30"),
         },
         {
             start: getUpcomingTimeDevTZ(5, "10:00"),
