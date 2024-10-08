@@ -2,9 +2,7 @@
     import Socials from "../elements/Socials.svelte";
 </script>
 
-<div
-    class="w-full h-fit pb-40 flex flex-col justify-center items-center relative"
->
+<div class="w-full h-fit flex flex-col justify-center items-center relative">
     <div class="flex flex-col justify-center items-center">
         <div
             id="title"
@@ -21,19 +19,10 @@
             href="mailto:rythondev@gmail.com"
             ><span class="text-3xl mr-2">&#9993;</span> Send me an email</a
         >
-    </div>
-    <div
-        class="absolute bottom-20 left-1/2 -translate-x-1/2 text-white flex flex-row"
-    >
-        <Socials />
-    </div>
-    <div
-        class="absolute sm:bottom-10 bottom-5 left-1/2
-        -translate-x-1/2
-        text-gray-300
-        flex flex-row text-center"
-    >
-        © 2023-{new Date().getFullYear()} RythonDev
+
+        <div class="text-white flex flex-row py-10">
+            <Socials />
+        </div>
     </div>
 </div>
 

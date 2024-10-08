@@ -1,0 +1,88 @@
+---
+import NavBar from "../../components/sections/NavBar.astro";
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/elements/Card.astro";
+import Footer from "../../components/sections/FooterComponent.astro";
+import { getCollection } from "astro:content";
+
+const blogPosts = await getCollection("blog");
+---
+
+<Layout
+	title="Blog"
+	description="Find out how to contact RythonDev, for sponsorship offers or collaboration opportunities!"
+>
+	<NavBar />
+
+	<div id="blog-component" class="mt-10 pt-20">
+		<h1 class="text-center text-5xl">Blog</h1>
+		<div class="mt-10 flex flex-col justify-center items-center">
+			<div style="width: clamp(310px, 50vw, 800px);" class="mb-10">
+				<p class="text-center text-lg">
+					This is where I upload my blogs. No paywalls, no ads, no
+					bullshit.
+				</p>
+			</div>
+
+			<!-- Series of blog posts -->
+			<div style="width: clamp(310px, 50vw, 800px);">
+				{
+					blogPosts.map((blog) => (
+						<a class="mb-5 group" href={`/blog/${blog.slug}`}>
+							<Card
+								primaryColor={
+									blog.data.color ?? "rgba(0,0,0,0)"
+								}
+								pixelHeight="50px"
+							>
+								<div class="card-content py-3 px-8 text-left relative">
+									<h2 class="font-bold text-xl mb-1">
+										{blog.data.title}
+									</h2>
+									<p class="line-clamp-2">
+										{blog.data.description}
+									</p>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="1.5"
+										class="size-6 
+										absolute top-3 right-3 
+										group-hover:top-2 group-hover:right-2
+										stroke-white group-hover:stroke-green-400 
+										transition-all duration-150"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+										/>
+									</svg>
+								</div>
+							</Card>
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</div>
+	<div class="mt-10">
+		<Footer />
+	</div>
+</Layout>
+
+<style>
+	.card-content {
+		display: flex;
+		flex-direction: column;
+		background-image: radial-gradient(
+			rgba(255, 255, 255, 0.1) 1px,
+			transparent 1px
+		);
+		background-position: 50% 50%;
+		background-size: 1.1rem 1.1rem;
+		border-radius: 1.25rem;
+		overflow: hidden;
+	}
+</style>

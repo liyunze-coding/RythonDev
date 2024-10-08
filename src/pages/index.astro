@@ -9,6 +9,7 @@ import Education from "../components/sections/ExperienceComponent.astro";
 import Skills from "../components/sections/SkillsComponent.astro";
 import Contact from "../components/sections/ContactComponent.svelte";
 import Card from "../components/elements/Card.astro";
+import Footer from "../components/sections/FooterComponent.astro";
 ---
 
 <Layout
@@ -43,13 +44,14 @@ import Card from "../components/elements/Card.astro";
 	<div id="contact">
 		<Contact client:visible />
 	</div>
-	<script is:inline>
-		location.search.includes("?uwu") &&
-			document.documentElement.classList.add("uwu");
-	</script>
-	<style is:global>
-		.uwu #uwu {
-			display: flex;
-		}
-	</style>
+	<Footer />
 </Layout>
+<script is:inline>
+	location.search.includes("?uwu") &&
+		document.documentElement.classList.add("uwu");
+</script>
+<style is:global>
+	.uwu #uwu {
+		display: flex;
+	}
+</style>

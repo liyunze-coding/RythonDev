@@ -4,89 +4,91 @@ import Layout from "../layouts/Layout.astro";
 import SkillsComponent from "../components/sections/SkillsComponent.astro";
 import Line from "../components/elements/NetworkLine.astro";
 import Card from "../components/elements/Card.astro";
+import Footer from "../components/sections/FooterComponent.astro";
 ---
 
 <Layout
-    title="Skills"
-    description="Learn what skills RythonDev has honed in the past few years"
+	title="Skills"
+	description="Learn what skills RythonDev has honed in the past few years"
 >
-    <NavBar />
-    <div id="skills" class="mt-10 pb-20">
-        <SkillsComponent />
-        <Line height="50px" />
-        <div class="w-[90%] md:w-[600px] mx-auto">
-            <Card primaryColor="#9D76C1">
-                <div class="card-content">
-                    <div class="flex flex-col justify-left w-full">
-                        <h2 class="font-bold text-2xl">Content Creation</h2>
-                    </div>
-                    <hr class="w-full" />
-                    <p class="text-left">
-                        Since I was little, I loved watching YouTube videos and
-                        the idea of bringing joy and laughter to a wider
-                        audience. Thus, I began my journey in content creation
-                        through YouTube videos and Twitch streaming. I typically
-                        do coworking & study streams to keep myself accountable
-                        and encourage productivity amongst viewers. I also do
-                        software and game development streams where I showcase
-                        my work flow.
-                    </p>
-                    <div class="w-full flex flex-row flex-wrap justify-start">
-                        <div
-                            class="w-fit text-white bg-gray-500 hover:bg-[#141414] hover:text-white
+	<NavBar />
+	<div id="skills" class="mt-10 pb-20">
+		<SkillsComponent />
+		<Line height="50px" />
+		<div class="w-[90%] md:w-[600px] mx-auto">
+			<Card primaryColor="#9D76C1">
+				<div class="card-content">
+					<div class="flex flex-col justify-left w-full">
+						<h2 class="font-bold text-2xl">Content Creation</h2>
+					</div>
+					<hr class="w-full" />
+					<p class="text-left">
+						Since I was little, I loved watching YouTube videos and
+						the idea of bringing joy and laughter to a wider
+						audience. Thus, I began my journey in content creation
+						through YouTube videos and Twitch streaming. I typically
+						do coworking & study streams to keep myself accountable
+						and encourage productivity amongst viewers. I also do
+						software and game development streams where I showcase
+						my work flow.
+					</p>
+					<div class="w-full flex flex-row flex-wrap justify-start">
+						<div
+							class="w-fit text-white bg-gray-500 hover:bg-[#141414] hover:text-white
                             rounded-full px-3 py-1 mr-1 my-1
                             cursor-default
                             transition-colors duration-300"
-                        >
-                            OBS
-                        </div>
-                        <div
-                            class="w-fit text-white bg-gray-500 hover:bg-gray-50 hover:text-black
+						>
+							OBS
+						</div>
+						<div
+							class="w-fit text-white bg-gray-500 hover:bg-gray-50 hover:text-black
                             rounded-full px-3 py-1 mr-1 my-1
                             cursor-default
                             transition-colors duration-300"
-                        >
-                            DaVinci Resolve
-                        </div>
-                        <div
-                            class="w-fit text-white bg-gray-500 hover:bg-purple-500
+						>
+							DaVinci Resolve
+						</div>
+						<div
+							class="w-fit text-white bg-gray-500 hover:bg-purple-500
                             rounded-full px-3 py-1 mr-1 my-1
                             cursor-default
                             transition-colors duration-300"
-                        >
-                            Twitch
-                        </div>
-                        <div
-                            class="w-fit text-white bg-gray-500 hover:bg-red-600 hover:text-white
+						>
+							Twitch
+						</div>
+						<div
+							class="w-fit text-white bg-gray-500 hover:bg-red-600 hover:text-white
                             rounded-full px-3 py-1 mr-1 my-1
                             cursor-default
                             transition-colors duration-300"
-                        >
-                            YouTube
-                        </div>
-                    </div>
-                </div>
-            </Card>
-        </div>
-    </div>
+						>
+							YouTube
+						</div>
+					</div>
+				</div>
+			</Card>
+		</div>
+	</div>
+	<Footer />
 </Layout>
 
 <style>
-    .card-content {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        background-image: radial-gradient(
-            rgba(255, 255, 255, 0.1) 1px,
-            transparent 1px
-        );
-        background-position: 50% 50%;
-        background-size: 1.1rem 1.1rem;
-        padding-top: 2rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-bottom: 0.5rem;
-        border-radius: 1.25rem;
-        overflow: hidden;
-    }
+	.card-content {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		background-image: radial-gradient(
+			rgba(255, 255, 255, 0.1) 1px,
+			transparent 1px
+		);
+		background-position: 50% 50%;
+		background-size: 1.1rem 1.1rem;
+		padding-top: 2rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		padding-bottom: 0.5rem;
+		border-radius: 1.25rem;
+		overflow: hidden;
+	}
 </style>

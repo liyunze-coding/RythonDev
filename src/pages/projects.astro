@@ -3,6 +3,7 @@ import NavBar from "../components/sections/NavBar.astro";
 import Layout from "../layouts/Layout.astro";
 import ProjectsComponent from "../components/sections/ProjectsComponent.svelte";
 import MoreProjects from "../components/sections/MoreProjects.svelte";
+import Footer from "../components/sections/FooterComponent.astro";
 ---
 
 <Layout title="Projects" description="View what projects RythonDev has made">
@@ -15,6 +16,7 @@ import MoreProjects from "../components/sections/MoreProjects.svelte";
 	<div class="pb-20">
 		<ProjectsComponent client:load />
 	</div>
+	<Footer />
 </Layout>
 
 <style>
