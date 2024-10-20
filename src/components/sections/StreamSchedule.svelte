@@ -4,15 +4,15 @@
 
     const myStreamSchedule = [
         {
-            start: getUpcomingTimeDevTZ(3, "10:00"),
-            end: getUpcomingTimeDevTZ(3, "14:00"),
+            start: getUpcomingTimeDevTZ(2, "9:30"),
+            end: getUpcomingTimeDevTZ(3, "16:00"),
         },
         {
-            start: getUpcomingTimeDevTZ(4, "10:00"),
-            end: getUpcomingTimeDevTZ(4, "16:30"),
+            start: getUpcomingTimeDevTZ(4, "9:30"),
+            end: getUpcomingTimeDevTZ(4, "16:00"),
         },
         {
-            start: getUpcomingTimeDevTZ(5, "10:00"),
+            start: getUpcomingTimeDevTZ(5, "9:30"),
             end: getUpcomingTimeDevTZ(5, "19:00"),
         },
     ];
