@@ -9,7 +9,7 @@
         "Content creator",
         "Student",
     ];
-    let roleState: string = "";
+    let roleState: string = $state("");
     let role: string;
     let counter: number = 0;
     let roleEmpty: boolean = true;
@@ -82,7 +82,7 @@
         greeting = "evening";
     }
 
-    let greetingState: string = "";
+    let greetingState: string = $state("");
     let greetingPulse: HTMLElement;
 
     async function animateGreeting(greeting: string) {

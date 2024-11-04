@@ -2,6 +2,8 @@
     import moment from "moment-timezone";
     import { onMount } from "svelte";
 
+    const myLocation = "Australia/Melbourne";
+
     const myStreamSchedule = [
         {
             start: getUpcomingTimeDevTZ(2, "9:30"),
@@ -16,8 +18,6 @@
             end: getUpcomingTimeDevTZ(5, "19:00"),
         },
     ];
-
-    const myLocation = "Australia/Melbourne";
 
     /**
      * Calculates the upcoming specified time for a given day of the week in my timezone.
@@ -70,13 +70,13 @@
         end: string;
     };
 
-    let sameTimezone = true;
-    let adjusted = true;
+    let sameTimezone = $state(true);
+    let adjusted = $state(true);
 
     let localisedStreamSchedule = [];
 
-    let formattedSchedule: Schedule[] = [];
-    let formattedLocalisedSchedule: Schedule[] = [];
+    let formattedSchedule: Schedule[] = $state([]);
+    let formattedLocalisedSchedule: Schedule[] = $state([]);
 
     function displayStreamSchedule() {
         localisedStreamSchedule = myStreamSchedule.map((stream) => ({
@@ -121,14 +121,14 @@
         px-1 py-1 z-20"
     >
         <button
-            on:click={() => (adjusted = true)}
+            onclick={() => (adjusted = true)}
             class="rounded-lg w-1/2 py-1
         transition-colors duration-150
         {adjusted ? 'text-white bg-[#303030]' : 'text-gray-400'}"
             >Your Timezone</button
         >
         <button
-            on:click={() => (adjusted = false)}
+            onclick={() => (adjusted = false)}
             class="rounded-lg flex-grow py-1
         transition-colors duration-150
         {adjusted ? 'text-gray-400' : 'text-white bg-[#303030]'}"
@@ -138,28 +138,33 @@
 {/if}
 <div class="mt-1">
     <table>
-        <tr>
-            <th>Day</th>
-            <th>Time</th>
-        </tr>
-        {#if adjusted}
-            {#each formattedLocalisedSchedule as localTime}
-                <tr>
-                    <td class="px-1 md:px-5">{localTime.day}</td>
-                    <td class="px-1 md:px-5"
-                        >{localTime.start} - {localTime.end}</td
-                    >
-                </tr>
-            {/each}
-        {:else}
-            {#each formattedSchedule as devTime}
-                <tr>
-                    <td class="px-1 md:px-5">{devTime.day}</td>
-                    <td class="px-1 md:px-5">{devTime.start} - {devTime.end}</td
-                    >
-                </tr>
-            {/each}
-        {/if}
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {#if adjusted}
+                {#each formattedLocalisedSchedule as localTime}
+                    <tr>
+                        <td class="px-1 md:px-5">{localTime.day}</td>
+                        <td class="px-1 md:px-5"
+                            >{localTime.start} - {localTime.end}</td
+                        >
+                    </tr>
+                {/each}
+            {:else}
+                {#each formattedSchedule as devTime}
+                    <tr>
+                        <td class="px-1 md:px-5">{devTime.day}</td>
+                        <td class="px-1 md:px-5"
+                            >{devTime.start} - {devTime.end}</td
+                        >
+                    </tr>
+                {/each}
+            {/if}
+        </tbody>
     </table>
 </div>
 

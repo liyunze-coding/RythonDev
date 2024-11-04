@@ -1,6 +1,4 @@
 <script lang="ts">
-    // import { onMount } from "svelte";
-
     const streamers = [
         {
             streamer: "4l1c3_0",
