@@ -1,7 +1,7 @@
 ---
 import NavBar from "../components/sections/NavBar.astro";
 import Layout from "../layouts/Layout.astro";
-import ProjectsComponent from "../components/sections/ProjectsComponent.svelte";
+import ProjectsComponent from "../components/sections/ProjectsComponent.astro";
 import MoreProjects from "../components/sections/MoreProjects.svelte";
 import Footer from "../components/sections/FooterComponent.astro";
 ---
@@ -14,7 +14,7 @@ import Footer from "../components/sections/FooterComponent.astro";
 		<MoreProjects client:load />
 	</div>
 	<div class="pb-20">
-		<ProjectsComponent client:load />
+		<ProjectsComponent />
 	</div>
 	<Footer />
 </Layout>

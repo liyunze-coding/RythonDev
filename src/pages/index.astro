@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import NetworkLine from "../components/elements/NetworkLine.astro";
 import WhatIDo from "../components/sections/WhatIDoComponent.astro";
 import Intro from "../components/sections/IntroComponent.svelte";
-import Projects from "../components/sections/ProjectsComponent.svelte";
+import Projects from "../components/sections/ProjectsComponent.astro";
 import Education from "../components/sections/ExperienceComponent.astro";
 import Skills from "../components/sections/SkillsComponent.astro";
 import Contact from "../components/sections/ContactComponent.svelte";
@@ -32,7 +32,7 @@ import Footer from "../components/sections/FooterComponent.astro";
 	<div id="projects">
 		<div class="pt-20">
 			<h1 class="text-5xl text-center mb-10">Projects</h1>
-			<Projects client:visible />
+			<Projects />
 		</div>
 	</div>
 	<div id="skills">
@@ -42,7 +42,7 @@ import Footer from "../components/sections/FooterComponent.astro";
 		<Education />
 	</div>
 	<div id="contact">
-		<Contact client:only />
+		<Contact />
 	</div>
 	<Footer />
 </Layout>
