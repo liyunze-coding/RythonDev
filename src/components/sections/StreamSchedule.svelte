@@ -4,15 +4,20 @@
 
     const myLocation = "Australia/Melbourne";
 
-    const myStreamSchedule = [
-        {
-            start: getUpcomingTimeDevTZ(2, "9:30"),
-            end: getUpcomingTimeDevTZ(2, "16:00"),
-        },
-        {
-            start: getUpcomingTimeDevTZ(4, "9:30"),
-            end: getUpcomingTimeDevTZ(4, "16:00"),
-        },
+    type StreamScheduleDay = {
+        start: moment.Moment;
+        end: moment.Moment;
+    };
+
+    const myStreamSchedule: null | StreamScheduleDay[] = [
+        // {
+        //     start: getUpcomingTimeDevTZ(2, "9:30"),
+        //     end: getUpcomingTimeDevTZ(2, "16:00"),
+        // },
+        // {
+        //     start: getUpcomingTimeDevTZ(4, "9:30"),
+        //     end: getUpcomingTimeDevTZ(4, "16:00"),
+        // },
     ];
 
     /**
@@ -75,6 +80,9 @@
     let formattedLocalisedSchedule: Schedule[] = $state([]);
 
     function displayStreamSchedule() {
+        if (myStreamSchedule == null) {
+            return;
+        }
         localisedStreamSchedule = myStreamSchedule.map((stream) => ({
             start: convertToUserLocalTimezone(stream.start),
             end: convertToUserLocalTimezone(stream.end),
@@ -133,35 +141,45 @@
     </div>
 {/if}
 <div class="mt-1">
-    <table>
-        <thead>
-            <tr>
-                <th>Day</th>
-                <th>Time</th>
-            </tr>
-        </thead>
-        <tbody>
-            {#if adjusted}
-                {#each formattedLocalisedSchedule as localTime}
-                    <tr>
-                        <td class="px-1 md:px-5">{localTime.day}</td>
-                        <td class="px-1 md:px-5"
-                            >{localTime.start} - {localTime.end}</td
-                        >
-                    </tr>
-                {/each}
-            {:else}
-                {#each formattedSchedule as devTime}
-                    <tr>
-                        <td class="px-1 md:px-5">{devTime.day}</td>
-                        <td class="px-1 md:px-5"
-                            >{devTime.start} - {devTime.end}</td
-                        >
-                    </tr>
-                {/each}
-            {/if}
-        </tbody>
-    </table>
+    {#if myStreamSchedule.length}
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {#if adjusted}
+                    {#each formattedLocalisedSchedule as localTime}
+                        <tr>
+                            <td class="px-1 md:px-5">{localTime.day}</td>
+                            <td class="px-1 md:px-5"
+                                >{localTime.start} - {localTime.end}</td
+                            >
+                        </tr>
+                    {/each}
+                {:else}
+                    {#each formattedSchedule as devTime}
+                        <tr>
+                            <td class="px-1 md:px-5">{devTime.day}</td>
+                            <td class="px-1 md:px-5"
+                                >{devTime.start} - {devTime.end}</td
+                            >
+                        </tr>
+                    {/each}
+                {/if}
+            </tbody>
+        </table>
+    {:else}
+        <div>
+            To be announced on <a
+                href="/discord"
+                target="_blank"
+                class="underline hover:text-blue-500">Discord</a
+            >
+        </div>
+    {/if}
 </div>
 
 <style>
