@@ -10,33 +10,32 @@
 		<span class="bottom-bun"></span>
 	</label>
 	<aside class="sidebar flex z-20">
-		<nav class="flex flex-col capitalize" role="navigation">
+		<nav
+			class="flex flex-col justify-center items-center capitalize w-full gap-5"
+			role="navigation"
+		>
 			<a
-				class="sidebar-url px-5 py-2 mt-10 text-center rounded-md hover:text-gray-600 hover:bg-gray-100 transition-colors duration-300"
+				class="text-2xl sidebar-url px-5 py-2 text-center rounded-md hover:text-gray-600 hover:bg-gray-100 transition-colors duration-300"
 				href="/">Home</a
 			>
 			<a
-				class="sidebar-url px-5 py-2 mt-2 text-center rounded-md hover:text-gray-600 hover:bg-gray-100 transition-colors duration-300"
+				class="text-2xl sidebar-url px-5 py-2 text-center rounded-md hover:text-gray-600 hover:bg-gray-100 transition-colors duration-300"
 				href="/what-i-do">What I Do</a
 			>
 			<a
-				class="sidebar-url px-5 py-2 mt-2 text-center rounded-md hover:text-gray-600 hover:bg-gray-100 transition-colors duration-300"
+				class="text-2xl sidebar-url px-5 py-2 text-center rounded-md hover:text-gray-600 hover:bg-gray-100 transition-colors duration-300"
 				href="/projects">Projects</a
 			>
 			<a
-				class="sidebar-url px-5 py-2 mt-2 text-center rounded-md hover:text-gray-600 hover:bg-gray-100 transition-colors duration-300"
+				class="text-2xl sidebar-url px-5 py-2 text-center rounded-md hover:text-gray-600 hover:bg-gray-100 transition-colors duration-300"
 				href="/skills">Skills</a
 			>
 			<a
-				class="sidebar-url px-5 py-2 mt-2 text-center rounded-md hover:text-gray-600 hover:bg-gray-100 transition-colors duration-300"
+				class="text-2xl sidebar-url px-5 py-2 text-center rounded-md hover:text-gray-600 hover:bg-gray-100 transition-colors duration-300"
 				href="/experience">Experience</a
 			>
 			<a
-				class="sidebar-url px-5 py-2 mt-2 text-center rounded-md hover:text-gray-600 hover:bg-gray-100 transition-colors duration-300"
-				href="/Blog">Blog</a
-			>
-			<a
-				class="sidebar-url px-5 py-2 mt-2 text-center rounded-md hover:text-gray-600 hover:bg-gray-100 transition-colors duration-300"
+				class="text-2xl sidebar-url px-5 py-2 text-center rounded-md hover:text-gray-600 hover:bg-gray-100 transition-colors duration-300"
 				href="/contact">Contact</a
 			>
 		</nav>
@@ -74,10 +73,6 @@
 			>
 			<a
 				class="px-3 mx-2 py-1 text-white hover:bg-gray-200 hover:text-black transition-colors duration-300 rounded-md"
-				href="/blog">blog</a
-			>
-			<a
-				class="px-3 mx-2 py-1 text-white hover:bg-gray-200 hover:text-black transition-colors duration-300 rounded-md"
 				href="/contact">contact</a
 			>
 		</div>
@@ -92,7 +87,7 @@
 		--foreground: #141414;
 		--background: white;
 		--hamburger-margin: 20px;
-		--animation-timing: 200ms ease-in-out;
+		--animation-timing: 300ms ease-in-out;
 		--hamburger-height: calc(
 			var(--bar-height) * 3 + var(--hamburger-gap) * 2
 		);
@@ -103,7 +98,7 @@
 
 		display: none;
 
-		translate: 0 -20px;
+		translate: 0 20px;
 		flex-direction: column;
 
 		gap: var(--hamburger-gap);
@@ -182,7 +177,7 @@
 		);
 		background-color: var(--foreground);
 		color: var(--background);
-		max-width: 10rem;
+		width: 100vw;
 		min-height: 100vh;
 	}
 

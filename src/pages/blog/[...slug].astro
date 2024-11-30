@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import NavBar from "../../components/sections/NavBar.astro";
+import BackToBlogs from "../../components/sections/BackToBlogs.astro";
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/sections/FooterComponent.astro";
 
@@ -20,7 +20,7 @@ const { Content } = await entry.render();
 	title="Blog"
 	description="Find out how to contact RythonDev, for sponsorship offers or collaboration opportunities!"
 >
-	<NavBar />
+	<BackToBlogs />
 	<div id="blog-content-component" class="mt-10 pt-10 mx-auto">
 		<h1 class="text-left text-4xl">{entry.data.title}</h1>
 		<p class="text-gray-200 mt-3 text-lg">

@@ -39,6 +39,7 @@
                 if (window.innerWidth <= 768) {
                     video.muted = true;
                     video.autoplay = true;
+                    video.loop = true;
                     video.play();
                 }
             }
@@ -136,7 +137,7 @@
                     win32API to move the mouse and click.
                 </p>
                 <div
-                    class="w-full flex flex-row flex-wrap justify-center lg:justify-end mt-5"
+                    class="w-full flex flex-row flex-wrap justify-center lg:justify-end mt-5 mb-10 lg:mb-0"
                 >
                     <div
                         class="w-fit bg-[#3776AB] text-white
