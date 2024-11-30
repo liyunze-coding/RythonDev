@@ -112,7 +112,7 @@
         text-white
         flex flex-col"
 >
-    <div class="px-2 lg:px-10 pt-10 pb-2 card-content w-full">
+    <div class="px-5 lg:px-10 pt-10 pb-2 card-content w-full">
         <div class="flex flex-row h-20">
             <div class="w-20 mr-1 flex justify-center items-center">
                 <img
@@ -137,6 +137,7 @@
                 src="/images/RythonDev-UwU-compressed.webp"
                 alt="RythonDev"
                 width="400"
+                height="131.8"
             />
         </div>
         <div class="text-2xl font-bold mt-2">
