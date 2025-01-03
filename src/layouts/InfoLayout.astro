@@ -2,10 +2,11 @@
 interface Props {
 	title: string;
 	description: string;
-	thumbnail: string;
+	thumbnail?: string | null;
+	metaURL: string;
 }
 
-const { title, description, thumbnail } = Astro.props;
+const { title, description, thumbnail, metaURL } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,15 +23,23 @@ const { title, description, thumbnail } = Astro.props;
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
 		<!-- "X" meta tags -->
-		<meta name="twitter:image" content={thumbnail} />
+		{
+			thumbnail && (
+				<>
+					<meta name="twitter:image" content={thumbnail} />
+					<meta name="og:image" content={thumbnail} />
+				</>
+			)
+		}
+
 		<meta name="twitter:site" content="@RythonDev" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:creator" content="@RythonDev" />
-		<meta name="og:image" content={thumbnail} />
+
 		<meta name="og:description" content={description} />
-		<meta name="og:url" content="https://rython.dev/live" />
+		<meta name="og:url" content={metaURL} />
 		<meta name="og:type" content="website" />
 
 		<meta name="generator" content={Astro.generator} />

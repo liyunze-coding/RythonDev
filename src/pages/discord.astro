@@ -1,9 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import InfoLayout from "../layouts/InfoLayout.astro";
 ---
 
-<Layout title="Discord" description="Join Ryan's Discord server!">
-	<script is:inline>
-		window.location.href = " https://discord.gg/UnHyHkhbga";
-	</script>
-</Layout>
+<InfoLayout
+	title="RythonDev Discord Server"
+	description="Come join Ryan's Room for tech support or chaotic vibes!"
+	metaURL="https://rython.dev/discord"
+/>
+
+<script is:inline>
+	window.location.href = "https://discord.gg/UnHyHkhbga";
+</script>
