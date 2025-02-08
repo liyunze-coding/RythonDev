@@ -1,7 +1,7 @@
 ---
 interface Props {
-    title: string;
-    description: string;
+	title: string;
+	description: string;
 }
 
 const { title, description } = Astro.props;
@@ -10,62 +10,62 @@ import { ViewTransitions } from "astro:transitions";
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content={description} />
-        <meta name="viewport" content="width=device-width" /><meta
-            name="keywords"
-            content="Rython, student, developer, frontend, web developer, streamer, coworking"
-        />
-        <meta name="author" content="RythonDev" />
-        <meta name="theme-color" content="#2B2D31" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-    </head>
-    <body>
-        <slot />
-        <ViewTransitions />
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" /><meta
+			name="keywords"
+			content="Rython, student, developer, frontend, web developer, streamer, coworking"
+		/>
+		<meta name="author" content="RythonDev" />
+		<meta name="theme-color" content="#2B2D31" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+		<ViewTransitions />
+	</body>
 </html>
 <style is:global>
-    @font-face {
-        font-family: "Fredoka";
-        src: url("/fonts/Fredoka-Regular.ttf") format("truetype");
-        font-weight: normal;
-        font-style: normal;
-    }
+	@font-face {
+		font-family: "Fredoka";
+		src: url("/fonts/Fredoka-Regular.ttf") format("truetype");
+		font-weight: normal;
+		font-style: normal;
+	}
 
-    /* Montserrat Fonts */
-    @font-face {
-        font-family: "Montserrat";
-        src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
-        font-weight: bold;
-        font-style: normal;
-    }
+	/* Montserrat Fonts */
+	@font-face {
+		font-family: "Montserrat";
+		src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
+		font-weight: bold;
+		font-style: normal;
+	}
 
-    @font-face {
-        font-family: "Montserrat";
-        src: url("/fonts/Montserrat-Regular.ttf") format("truetype");
-        font-weight: normal;
-        font-style: normal;
-    }
+	@font-face {
+		font-family: "Montserrat";
+		src: url("/fonts/Montserrat-Regular.ttf") format("truetype");
+		font-weight: normal;
+		font-style: normal;
+	}
 
-    html {
-        scroll-behavior: smooth;
-    }
+	html {
+		scroll-behavior: smooth;
+	}
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
 
-    body {
-        font-family: "Montserrat", sans-serif;
-        color: #fff;
-        background: radial-gradient(circle, #383838 1px, transparent 1px),
-            #202020;
-        background-size: 20px 20px;
-    }
+	body {
+		font-family: "Montserrat", sans-serif;
+		color: #fff;
+		background: radial-gradient(circle, #383838 1px, transparent 1px),
+			#202020;
+		background-size: 20px 20px;
+	}
 </style>

@@ -1,9 +1,10 @@
 ---
 interface Props {
 	primaryColor: string;
-	bgColor?: string | undefined;
-	scaleOnHover?: boolean | undefined;
-	pixelHeight?: string | undefined;
+	bgColor?: string;
+	scaleOnHover?: boolean;
+	pixelHeight?: string;
+	className?: string;
 }
 
 const {
@@ -11,10 +12,11 @@ const {
 	bgColor = "#282828",
 	scaleOnHover = false,
 	pixelHeight = "70px",
+	className = "",
 } = Astro.props;
 ---
 
-<div class="card z-10" class:list={[{ scale: scaleOnHover }]}>
+<div class="card z-10" class:list={[{ scale: scaleOnHover }, className]}>
 	<slot />
 </div>
 

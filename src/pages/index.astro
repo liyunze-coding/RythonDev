@@ -19,7 +19,11 @@ import Footer from "../components/sections/FooterComponent.astro";
 	<NavBar />
 	<div id="home" class="pt-20 flex justify-center items-center">
 		<div class="w-[90%] xl:w-1/2 lg:w-1/2 max-w-[1080px]">
-			<Card bgColor="#252525" primaryColor="#BEADFA">
+			<Card
+				bgColor="#252525"
+				primaryColor="#BEADFA"
+				className="animate-fadeIn"
+			>
 				<Intro client:load />
 			</Card>
 		</div>
