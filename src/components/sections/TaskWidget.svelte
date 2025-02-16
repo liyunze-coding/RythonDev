@@ -85,6 +85,10 @@
             task: "learn about rocks",
         },
         {
+            streamer: "snowxcone",
+            task: "do more leetcode",
+        },
+        {
             streamer: "studypaws",
             task: "be a vet",
         },
