@@ -69,7 +69,7 @@
             task: "Release new Lo-fi music",
         },
         {
-            streamer: "pcc_lanezzz",
+            streamer: "lanezzz_",
             task: "be a supermodel",
         },
         {
@@ -107,10 +107,6 @@
         {
             streamer: "theyolotato",
             task: "be a potato",
-        },
-        {
-            streamer: "valecey",
-            task: "graduate from university",
         },
         {
             streamer: "xeno_hiraeth",
