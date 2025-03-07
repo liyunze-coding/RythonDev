@@ -10,14 +10,14 @@
     };
 
     const myStreamSchedule: null | StreamScheduleDay[] = [
-        // {
-        //     start: getUpcomingTimeDevTZ(2, "9:30"),
-        //     end: getUpcomingTimeDevTZ(2, "16:00"),
-        // },
-        // {
-        //     start: getUpcomingTimeDevTZ(4, "9:30"),
-        //     end: getUpcomingTimeDevTZ(4, "16:00"),
-        // },
+        {
+            start: getUpcomingTimeDevTZ(2, "10:00"),
+            end: getUpcomingTimeDevTZ(2, "20:00"),
+        },
+        {
+            start: getUpcomingTimeDevTZ(5, "10:00"),
+            end: getUpcomingTimeDevTZ(5, "20:00"),
+        },
     ];
 
     /**
