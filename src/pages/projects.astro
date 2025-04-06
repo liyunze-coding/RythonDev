@@ -7,102 +7,102 @@ import Footer from "../components/sections/FooterComponent.astro";
 ---
 
 <Layout title="Projects" description="View what projects RythonDev has made">
-	<NavBar />
-	<div id="projects" class="pt-20">
-		<h1 class="text-5xl text-center mt-10">Projects</h1>
-		<!-- other projects -->
-		<MoreProjects client:load />
-	</div>
-	<div class="pb-20">
-		<ProjectsComponent />
-	</div>
-	<Footer />
+    <NavBar />
+    <div id="projects" class="pt-20">
+        <h1 class="mt-10 text-center text-5xl">Projects</h1>
+        <!-- other projects -->
+        <MoreProjects client:load />
+    </div>
+    <div class="pb-20">
+        <ProjectsComponent />
+    </div>
+    <Footer />
 </Layout>
 
 <style>
-	.image-container img,
-	.image-container video,
-	.image-container .task-widget {
-		transition: transform 0.5s ease-in-out;
-	}
-	@media (min-width: 1025px) {
-		.image-container:hover > img,
-		.image-container:hover > video,
-		.image-container:hover > .task-widget {
-			transform: rotateY(0deg) rotateX(0deg) translateZ(0px)
-				translateX(-50%) translateY(-50%);
-		}
+    .image-container img,
+    .image-container video,
+    .image-container .task-widget {
+        transition: transform 0.5s ease-in-out;
+    }
+    @media (min-width: 1025px) {
+        .image-container:hover > img,
+        .image-container:hover > video,
+        .image-container:hover > .task-widget {
+            transform: rotateY(0deg) rotateX(0deg) translateZ(0px)
+                translateX(-50%) translateY(-50%);
+        }
 
-		.image-container:hover > .visit-div {
-			opacity: 100%;
-			transition: opacity 0.3s ease-in-out;
-			transition-delay: 0.3s;
-		}
-	}
+        .image-container:hover > .visit-div {
+            opacity: 100%;
+            transition: opacity 0.3s ease-in-out;
+            transition-delay: 0.3s;
+        }
+    }
 
-	.primary {
-		animation: primary 30s linear infinite;
-	}
+    .primary {
+        animation: primary 30s linear infinite;
+    }
 
-	.secondary {
-		animation: secondary 30s linear infinite;
-	}
+    .secondary {
+        animation: secondary 30s linear infinite;
+    }
 
-	@keyframes primary {
-		from {
-			transform: translateY(0);
-		}
-		to {
-			transform: translateY(-2175px);
-		}
-	}
+    @keyframes primary {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-2175px);
+        }
+    }
 
-	@keyframes secondary {
-		from {
-			transform: translateY(2175px);
-		}
-		to {
-			transform: translateY(0);
-		}
-	}
+    @keyframes secondary {
+        from {
+            transform: translateY(2175px);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
 </style>
 
 <script is:inline>
-	document.addEventListener("DOMContentLoaded", () => {
-		const videos = document.querySelectorAll(".playable");
+    document.addEventListener("DOMContentLoaded", () => {
+        const videos = document.querySelectorAll(".playable");
 
-		videos.forEach((video) => {
-			// Ensure the video element supports play and pause methods
-			if (
-				typeof video.play === "function" &&
-				typeof video.pause === "function"
-			) {
-				video.addEventListener("mouseenter", () => {
-					video.play();
-				});
+        videos.forEach((video) => {
+            // Ensure the video element supports play and pause methods
+            if (
+                typeof video.play === "function" &&
+                typeof video.pause === "function"
+            ) {
+                video.addEventListener("mouseenter", () => {
+                    video.play();
+                });
 
-				video.addEventListener("mouseleave", () => {
-					video.pause();
-					video.currentTime = 0;
-				});
-			}
+                video.addEventListener("mouseleave", () => {
+                    video.pause();
+                    video.currentTime = 0;
+                });
+            }
 
-			videos.forEach((video) => {
-				if (window.innerWidth < 1025) {
-					video.muted = true;
-					video.play();
-				}
-			});
-		});
+            videos.forEach((video) => {
+                if (window.innerWidth < 1025) {
+                    video.muted = true;
+                    video.play();
+                }
+            });
+        });
 
-		// on screensize change
-		window.addEventListener("resize", () => {
-			videos.forEach((video) => {
-				if (window.innerWidth < 1025) {
-					video.muted = true;
-					// video.play();
-				}
-			});
-		});
-	});
+        // on screensize change
+        window.addEventListener("resize", () => {
+            videos.forEach((video) => {
+                if (window.innerWidth < 1025) {
+                    video.muted = true;
+                    // video.play();
+                }
+            });
+        });
+    });
 </script>

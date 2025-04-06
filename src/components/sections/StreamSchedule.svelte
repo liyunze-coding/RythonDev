@@ -119,23 +119,23 @@
 <!-- TABS -->
 {#if !sameTimezone}
     <div
-        class="w-full flex
-        bg-[#141414]
+        class="z-20 flex
+        w-full
         rounded-xl
-        px-1 py-1 z-20"
+        bg-[#141414] px-1 py-1"
     >
         <button
             onclick={() => (adjusted = true)}
-            class="rounded-lg w-1/2 py-1
+            class="w-1/2 rounded-lg py-1
         transition-colors duration-150
-        {adjusted ? 'text-white bg-[#303030]' : 'text-gray-400'}"
+        {adjusted ? 'bg-[#303030] text-white' : 'text-gray-400'}"
             >Your Timezone</button
         >
         <button
             onclick={() => (adjusted = false)}
-            class="rounded-lg flex-grow py-1
+            class="flex-grow rounded-lg py-1
         transition-colors duration-150
-        {adjusted ? 'text-gray-400' : 'text-white bg-[#303030]'}"
+        {adjusted ? 'text-gray-400' : 'bg-[#303030] text-white'}"
             >AEST/<wbr />AEDT</button
         >
     </div>

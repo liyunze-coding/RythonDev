@@ -108,31 +108,31 @@
 
 <div
     id="intro"
-    class="h-fit
-        text-white
-        flex flex-col"
+    class="flex
+        h-fit
+        flex-col text-white"
 >
-    <div class="px-5 lg:px-10 pt-10 pb-2 card-content w-full">
-        <div class="flex flex-row h-20">
-            <div class="w-20 mr-1 flex justify-center items-center">
+    <div class="card-content w-full px-5 pb-2 pt-10 lg:px-10">
+        <div class="flex h-20 flex-row">
+            <div class="mr-1 flex w-20 items-center justify-center">
                 <img
                     src="/images/pfp_transparent_square.webp"
                     alt="Ryan"
                     width="100"
                     height="100"
-                    class="rounded-full max-w-full bg-[#505050]"
+                    class="max-w-full rounded-full bg-[#505050]"
                 />
             </div>
-            <div class="flex flex-col justify-center items-start ml-2">
-                <div id="name" class="text-2xl font-bold animate-gradient">
+            <div class="ml-2 flex flex-col items-start justify-center">
+                <div id="name" class="animate-gradient text-2xl font-bold">
                     RythonDev
                 </div>
-                <div class="text-xl w-full">
+                <div class="w-full text-xl">
                     {roleState}<span class="animate-pulse">|</span>
                 </div>
             </div>
         </div>
-        <div id="uwu" class="hidden justify-center items-center">
+        <div id="uwu" class="hidden items-center justify-center">
             <img
                 src="/images/RythonDev-UwU-compressed.webp"
                 alt="RythonDev"
@@ -140,7 +140,7 @@
                 height="131.8"
             />
         </div>
-        <div class="text-2xl font-bold mt-2">
+        <div class="mt-2 text-2xl font-bold">
             Good {greetingState}<span
                 bind:this={greetingPulse}
                 class="animate-pulse font-extralight">|</span
@@ -163,7 +163,7 @@
             <b> web development</b>, <b>computer vision</b> and
             <b>data science</b>.
         </p>
-        <div class="flex flex-row justify-center items-center mt-5">
+        <div class="mt-5 flex flex-row items-center justify-center">
             <Socials />
         </div>
     </div>

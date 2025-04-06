@@ -7,364 +7,300 @@ import TwitchPlays from "./images/projects/twitchplays.webp";
 ---
 
 <div
-	id="projects"
-	class="h-fit [perspective:1000px] flex flex-col items-center"
+    id="projects"
+    class="flex h-fit flex-col items-center [perspective:1000px]"
 >
-	<div class="w-full max-w-[1440px]">
-		<div
-			class="flex flex-col lg:flex-row justify-center h-fit w-full px-10 lg:px-20"
-		>
-			<div
-				class="image-container flex w-full lg:ml-auto lg:w-1/2 mb-5 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
-			>
-				<Image
-					src={CoworkingGuide}
-					alt="coworking guide"
-					class=`absolute max-w-full
+    <div class="w-full max-w-[1440px]">
+        <div
+            class="flex h-fit w-full flex-col justify-center px-10 lg:flex-row lg:px-20"
+        >
+            <div
+                class="image-container relative mb-5 flex aspect-video w-full [perspective:200px] lg:mb-0 lg:ml-auto lg:mr-5 lg:w-1/2"
+            >
+                <Image
+                    src={CoworkingGuide}
+                    alt="coworking guide"
+                    class=`absolute max-w-full
                     top-1/2 left-1/2
                     [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-45%)_translateY(-50%)] opacity-40
                     border-2 border-solid border-white rounded-xl`
-					width="700"
-				/>
-				<Image
-					src={CoworkingGuide}
-					alt="coworking guide"
-					width="700"
-					class=`absolute max-w-full
+                    width="700"
+                />
+                <Image
+                    src={CoworkingGuide}
+                    alt="coworking guide"
+                    width="700"
+                    class=`absolute max-w-full
                     top-1/2 left-1/2
                     [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-43%)_translateY(-52%)] opacity-1
                     border-2 border-solid border-white rounded-xl`
-				/>
-				<div
-					class="visit-div absolute w-[700px] bg-[rgba(0,0,0,0.5)] opacity-0
-                    aspect-video
-                    rounded-xl
-                    [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
-                    border-2 border-solid border-white
-                    max-w-full"
-				>
-					<a
-						href="https://coworking-guide.vercel.app/"
-						target="_blank"
-						class="absolute [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
-                        px-5 py-3 bg-blue-600 rounded-xl opacity-1
-                        font-bold
-                        transition-colors duration-300
-                        hidden lg:block
-                        hover:bg-white hover:text-blue-500"
-						>Visit site</a
-					>
-				</div>
-			</div>
-			<div class="lg:hidden flex justify-center items-center mb-10">
-				<a
-					href="https://coworking-guide.vercel.app/"
-					target="_blank"
-					class="px-5 py-3 bg-blue-600 rounded-xl opacity-1
-                        font-bold
-                        transition-colors duration-300
-                        hover:bg-white hover:text-blue-500"
-					>View repository</a
-				>
-			</div>
-			<div
-				class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center lg:items-start"
-			>
-				<h2 class="text-3xl font-bold mb-5 text-center lg:text-left">
-					Coworking Guide
-				</h2>
-				<p
-					class="text-xl text-center lg:text-left lg:max-w-none max-w-lg text-balance"
-				>
-					A guide to coworking streams for streamers, covers wide
-					range of topics from tips on how to get started with setting
-					up stream to how to grow your audience!
-				</p>
-				<div
-					class="w-full flex flex-row flex-wrap justify-center lg:justify-start mt-5"
-				>
-					<div
-						class="w-fit bg-white text-black
-                                rounded-full px-3 py-1 mr-1 my-1
-                                transition-colors duration-300"
-					>
-						Astro
-					</div>
-					<div
-						class="w-fit bg-[#3178C6] text-white
-                                rounded-full px-3 py-1 mr-1 my-1
-                                transition-colors duration-300"
-					>
-						TypeScript
-					</div>
-					<div
-						class="w-fit bg-black text-white
-                                rounded-full px-3 py-1 mr-1 my-1
-                                transition-colors duration-300"
-					>
-						Markdown
-					</div>
-				</div>
-			</div>
-		</div>
-		<div
-			class="flex flex-col-reverse lg:flex-row justify-center h-fit w-full px-10 lg:px-16 mt-10"
-		>
-			<div
-				class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center lg:items-end"
-			>
-				<h2 class="text-3xl font-bold mb-5 lg:text-right text-center">
-					Chat-Task-Tic Widget
-				</h2>
-				<p
-					class="text-xl lg:text-right text-center lg:max-w-none max-w-lg text-balance"
-				>
-					Used by 100+ Twitch streamers, allow viewers and streamers
-					to add their own tasks to the widget for accountability!
-					Easy to setup and the customization possibilities are
-					endless!
-				</p>
-				<div
-					class="w-full flex flex-row flex-wrap justify-center lg:justify-end mt-5"
-				>
-					<div
-						class="w-fit bg-[#B11700] text-white
-                                rounded-full px-3 py-1 mr-1 my-1
-                                transition-colors duration-300"
-					>
-						HTML
-					</div>
-					<div
-						class="w-fit bg-blue-700 text-white
-                                rounded-full px-3 py-1 mr-1 my-1
-                                transition-colors duration-300"
-					>
-						CSS
-					</div>
-					<div
-						class="w-fit bg-yellow-400 text-black
-                                rounded-full px-3 py-1 mr-1 my-1
-                                transition-colors duration-300"
-					>
-						Javascript
-					</div>
-				</div>
-			</div>
-			<div class="lg:hidden flex justify-center items-center mb-10">
-				<a
-					href="https://github.com/liyunze-coding/chat-task-tic-overlay-infinity"
-					target="_blank"
-					class="px-5 py-3 bg-blue-600 rounded-xl opacity-1
-                        font-bold
-                        transition-colors duration-300
-                        hover:bg-white hover:text-blue-600"
-					>View repository</a
-				>
-			</div>
-			<TaskWidget client:visible />
-		</div>
+                />
+                <div
+                    class="visit-div absolute left-1/2 top-1/2 aspect-video w-[700px] max-w-full rounded-xl border-2 border-solid border-white bg-[rgba(0,0,0,0.5)] opacity-0 [transform:translateX(-50%)_translateY(-50%)]"
+                >
+                    <a
+                        href="https://coworking-guide.vercel.app/"
+                        target="_blank"
+                        class="opacity-1 absolute left-1/2 top-1/2 hidden rounded-xl bg-blue-600 px-5 py-3 font-bold transition-colors duration-300 [transform:translateX(-50%)_translateY(-50%)] hover:bg-white hover:text-blue-500 lg:block"
+                        >Visit site</a
+                    >
+                </div>
+            </div>
+            <div class="mb-10 flex items-center justify-center lg:hidden">
+                <a
+                    href="https://coworking-guide.vercel.app/"
+                    target="_blank"
+                    class="opacity-1 rounded-xl bg-blue-600 px-5 py-3 font-bold transition-colors duration-300 hover:bg-white hover:text-blue-500"
+                    >View repository</a
+                >
+            </div>
+            <div
+                class="flex h-fit w-full flex-col items-center justify-center lg:h-[340px] lg:w-1/2 lg:items-start lg:px-10"
+            >
+                <h2 class="mb-5 text-center text-3xl font-bold lg:text-left">
+                    Coworking Guide
+                </h2>
+                <p
+                    class="max-w-lg text-balance text-center text-xl lg:max-w-none lg:text-left"
+                >
+                    A guide to coworking streams for streamers, covers wide
+                    range of topics from tips on how to get started with setting
+                    up stream to how to grow your audience!
+                </p>
+                <div
+                    class="mt-5 flex w-full flex-row flex-wrap justify-center lg:justify-start"
+                >
+                    <div
+                        class="my-1 mr-1 w-fit rounded-full bg-white px-3 py-1 text-black transition-colors duration-300"
+                    >
+                        Astro
+                    </div>
+                    <div
+                        class="my-1 mr-1 w-fit rounded-full bg-[#3178C6] px-3 py-1 text-white transition-colors duration-300"
+                    >
+                        TypeScript
+                    </div>
+                    <div
+                        class="my-1 mr-1 w-fit rounded-full bg-black px-3 py-1 text-white transition-colors duration-300"
+                    >
+                        Markdown
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="mt-10 flex h-fit w-full flex-col-reverse justify-center px-10 lg:flex-row lg:px-16"
+        >
+            <div
+                class="flex h-fit w-full flex-col items-center justify-center lg:h-[340px] lg:w-1/2 lg:items-end lg:px-10"
+            >
+                <h2 class="mb-5 text-center text-3xl font-bold lg:text-right">
+                    Chat-Task-Tic Widget
+                </h2>
+                <p
+                    class="max-w-lg text-balance text-center text-xl lg:max-w-none lg:text-right"
+                >
+                    Used by 100+ Twitch streamers, allow viewers and streamers
+                    to add their own tasks to the widget for accountability!
+                    Easy to setup and the customization possibilities are
+                    endless!
+                </p>
+                <div
+                    class="mt-5 flex w-full flex-row flex-wrap justify-center lg:justify-end"
+                >
+                    <div
+                        class="my-1 mr-1 w-fit rounded-full bg-[#B11700] px-3 py-1 text-white transition-colors duration-300"
+                    >
+                        HTML
+                    </div>
+                    <div
+                        class="my-1 mr-1 w-fit rounded-full bg-blue-700 px-3 py-1 text-white transition-colors duration-300"
+                    >
+                        CSS
+                    </div>
+                    <div
+                        class="my-1 mr-1 w-fit rounded-full bg-yellow-400 px-3 py-1 text-black transition-colors duration-300"
+                    >
+                        Javascript
+                    </div>
+                </div>
+            </div>
+            <div class="mb-10 flex items-center justify-center lg:hidden">
+                <a
+                    href="https://github.com/liyunze-coding/chat-task-tic-overlay-infinity"
+                    target="_blank"
+                    class="opacity-1 rounded-xl bg-blue-600 px-5 py-3 font-bold transition-colors duration-300 hover:bg-white hover:text-blue-600"
+                    >View repository</a
+                >
+            </div>
+            <TaskWidget client:visible />
+        </div>
 
-		<div
-			class="flex flex-col lg:flex-row justify-center h-fit w-full px-10 lg:px-20 mt-5 lg:mt-0"
-		>
-			<div
-				class="image-container flex w-full lg:ml-auto lg:w-1/2 mb-5 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
-			>
-				<Image
-					src={HexGuess}
-					alt="Hex Guess"
-					class=`absolute max-w-full
+        <div
+            class="mt-5 flex h-fit w-full flex-col justify-center px-10 lg:mt-0 lg:flex-row lg:px-20"
+        >
+            <div
+                class="image-container relative mb-5 flex aspect-video w-full [perspective:200px] lg:mb-0 lg:ml-auto lg:mr-5 lg:w-1/2"
+            >
+                <Image
+                    src={HexGuess}
+                    alt="Hex Guess"
+                    class=`absolute max-w-full
                     top-1/2 left-1/2
                     [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-45%)_translateY(-50%)] opacity-40
                     border-2 border-solid border-white rounded-xl`
-					width="700"
-				/>
-				<Image
-					src={HexGuess}
-					alt="Hex Guess"
-					width="700"
-					class=`absolute max-w-full
+                    width="700"
+                />
+                <Image
+                    src={HexGuess}
+                    alt="Hex Guess"
+                    width="700"
+                    class=`absolute max-w-full
                     top-1/2 left-1/2
                     [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-43%)_translateY(-52%)] opacity-1
                     border-2 border-solid border-white rounded-xl`
-				/>
-				<div
-					class="visit-div absolute w-[700px] bg-[rgba(0,0,0,0.5)] opacity-0
-                    aspect-video
-                    rounded-xl
-                    [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
-                    border-2 border-solid border-white
-                    max-w-full"
-				>
-					<a
-						href="https://hex-guess.vercel.app/"
-						target="_blank"
-						class="absolute [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
-                        px-5 py-3 bg-blue-600 rounded-xl opacity-1
-                        font-bold
-                        hidden lg:block
-                        transition-colors duration-300
-                        hover:bg-white hover:text-blue-500"
-						>Visit site</a
-					>
-				</div>
-			</div>
-			<div class="lg:hidden flex justify-center items-center mb-10">
-				<a
-					href="https://hex-guess.vercel.app/"
-					target="_blank"
-					class="px-5 py-3 bg-blue-600 rounded-xl opacity-1
-                        font-bold
-                        transition-colors duration-300
-                        hover:bg-white hover:text-blue-500"
-					>View repository</a
-				>
-			</div>
-			<div
-				class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center lg:items-start"
-			>
-				<h2 class="text-3xl font-bold mb-5 text-center">HexGuess</h2>
-				<p
-					class="text-xl text-center lg:text-left lg:max-w-none max-w-lg text-balance"
-				>
-					Decode colours in 5 attempts. Guess the hexadecimal code and
-					receive instant feedback! Built with Next.JS, TailwindCSS
-					and TypeScript.
-				</p>
-				<div
-					class="w-full flex flex-row flex-wrap justify-center lg:justify-start mt-5"
-				>
-					<div
-						class="w-fit bg-black text-white
-                                rounded-full px-3 py-1 mr-1 my-1
-                                transition-colors duration-300"
-					>
-						NextJS
-					</div>
-					<div
-						class="w-fit bg-[#3178C6] text-white
-                                rounded-full px-3 py-1 mr-1 my-1
-                                transition-colors duration-300"
-					>
-						Typescript
-					</div>
-					<div
-						class="w-fit bg-[#07B6D4] text-black
-                                rounded-full px-3 py-1 mr-1 my-1
-                                transition-colors duration-300"
-					>
-						TailwindCSS
-					</div>
-				</div>
-			</div>
-		</div>
-		<div
-			class="flex flex-col-reverse lg:flex-row justify-center h-fit w-full px-10 lg:px-16 mt-10"
-		>
-			<div
-				class="w-full h-fit lg:w-1/2 lg:h-[340px] flex flex-col justify-center lg:px-10 items-center lg:items-end"
-			>
-				<h2 class="text-3xl font-bold mb-5 lg:text-right text-center">
-					Twitch Plays X
-				</h2>
-				<p
-					class="text-xl text-center lg:text-right lg:max-w-none max-w-lg text-balance"
-				>
-					Allow Twitch chatters play games such as Pokemon! Chatters
-					can enter messages such as "up up down down left right B A"
-					and the Python program will trigger the corresponding
-					keypresses.
-				</p>
-				<div
-					class="w-full flex flex-row flex-wrap justify-center lg:justify-end mt-5"
-				>
-					<div
-						class="w-fit bg-[#3776AB] text-white
-                                rounded-full px-3 py-1 mr-1 my-1
-                                transition-colors duration-300"
-					>
-						Python
-					</div>
-					<div
-						class="w-fit bg-[#0078D4] text-white
-                                rounded-full px-3 py-1 mr-1 my-1
-                                transition-colors duration-300"
-					>
-						win32API
-					</div>
-				</div>
-			</div>
-			<div class="lg:hidden flex justify-center items-center mb-10">
-				<a
-					href="https://github.com/liyunze-coding/TwitchPlaysX"
-					target="_blank"
-					class="px-5 py-3 bg-blue-600 rounded-xl opacity-1
-                        font-bold
-                        transition-colors duration-300
-                        hover:bg-white hover:text-blue-500"
-					>View repository</a
-				>
-			</div>
-			<div
-				class="image-container flex w-full lg:ml-auto lg:w-1/2 mb-5 lg:mb-0 aspect-video [perspective:200px] relative lg:mr-5"
-			>
-				<Image
-					src={TwitchPlays}
-					alt="Twitch Plays X"
-					class=`absolute max-w-full
+                />
+                <div
+                    class="visit-div absolute left-1/2 top-1/2 aspect-video w-[700px] max-w-full rounded-xl border-2 border-solid border-white bg-[rgba(0,0,0,0.5)] opacity-0 [transform:translateX(-50%)_translateY(-50%)]"
+                >
+                    <a
+                        href="https://hex-guess.vercel.app/"
+                        target="_blank"
+                        class="opacity-1 absolute left-1/2 top-1/2 hidden rounded-xl bg-blue-600 px-5 py-3 font-bold transition-colors duration-300 [transform:translateX(-50%)_translateY(-50%)] hover:bg-white hover:text-blue-500 lg:block"
+                        >Visit site</a
+                    >
+                </div>
+            </div>
+            <div class="mb-10 flex items-center justify-center lg:hidden">
+                <a
+                    href="https://hex-guess.vercel.app/"
+                    target="_blank"
+                    class="opacity-1 rounded-xl bg-blue-600 px-5 py-3 font-bold transition-colors duration-300 hover:bg-white hover:text-blue-500"
+                    >View repository</a
+                >
+            </div>
+            <div
+                class="flex h-fit w-full flex-col items-center justify-center lg:h-[340px] lg:w-1/2 lg:items-start lg:px-10"
+            >
+                <h2 class="mb-5 text-center text-3xl font-bold">HexGuess</h2>
+                <p
+                    class="max-w-lg text-balance text-center text-xl lg:max-w-none lg:text-left"
+                >
+                    Decode colours in 5 attempts. Guess the hexadecimal code and
+                    receive instant feedback! Built with Next.JS, TailwindCSS
+                    and TypeScript.
+                </p>
+                <div
+                    class="mt-5 flex w-full flex-row flex-wrap justify-center lg:justify-start"
+                >
+                    <div
+                        class="my-1 mr-1 w-fit rounded-full bg-black px-3 py-1 text-white transition-colors duration-300"
+                    >
+                        NextJS
+                    </div>
+                    <div
+                        class="my-1 mr-1 w-fit rounded-full bg-[#3178C6] px-3 py-1 text-white transition-colors duration-300"
+                    >
+                        Typescript
+                    </div>
+                    <div
+                        class="my-1 mr-1 w-fit rounded-full bg-[#07B6D4] px-3 py-1 text-black transition-colors duration-300"
+                    >
+                        TailwindCSS
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="mt-10 flex h-fit w-full flex-col-reverse justify-center px-10 lg:flex-row lg:px-16"
+        >
+            <div
+                class="flex h-fit w-full flex-col items-center justify-center lg:h-[340px] lg:w-1/2 lg:items-end lg:px-10"
+            >
+                <h2 class="mb-5 text-center text-3xl font-bold lg:text-right">
+                    Twitch Plays X
+                </h2>
+                <p
+                    class="max-w-lg text-balance text-center text-xl lg:max-w-none lg:text-right"
+                >
+                    Allow Twitch chatters play games such as Pokemon! Chatters
+                    can enter messages such as "up up down down left right B A"
+                    and the Python program will trigger the corresponding
+                    keypresses.
+                </p>
+                <div
+                    class="mt-5 flex w-full flex-row flex-wrap justify-center lg:justify-end"
+                >
+                    <div
+                        class="my-1 mr-1 w-fit rounded-full bg-[#3776AB] px-3 py-1 text-white transition-colors duration-300"
+                    >
+                        Python
+                    </div>
+                    <div
+                        class="my-1 mr-1 w-fit rounded-full bg-[#0078D4] px-3 py-1 text-white transition-colors duration-300"
+                    >
+                        win32API
+                    </div>
+                </div>
+            </div>
+            <div class="mb-10 flex items-center justify-center lg:hidden">
+                <a
+                    href="https://github.com/liyunze-coding/TwitchPlaysX"
+                    target="_blank"
+                    class="opacity-1 rounded-xl bg-blue-600 px-5 py-3 font-bold transition-colors duration-300 hover:bg-white hover:text-blue-500"
+                    >View repository</a
+                >
+            </div>
+            <div
+                class="image-container relative mb-5 flex aspect-video w-full [perspective:200px] lg:mb-0 lg:ml-auto lg:mr-5 lg:w-1/2"
+            >
+                <Image
+                    src={TwitchPlays}
+                    alt="Twitch Plays X"
+                    class=`absolute max-w-full
                     top-1/2 left-1/2 [transform:translateX(-48%)_translateY(-48%)_translateZ(-50px)_rotateY(-3deg)] opacity-40
                     border-2 border-solid border-white rounded-xl`
-					`
-					width="700"
-				/>
-				<Image
-					src={TwitchPlays}
-					alt="Twitch Plays X"
-					width="700"
-					class=`absolute max-w-full
+                    `
+                    width="700"
+                />
+                <Image
+                    src={TwitchPlays}
+                    alt="Twitch Plays X"
+                    width="700"
+                    class=`absolute max-w-full
                     top-1/2 left-1/2
                     [transform:translateX(-50%)_translateY(-50%)_translateZ(-50px)_rotateY(-3deg)] opacity-1
                     border-2 border-solid border-white rounded-xl`
-				/>
-				<div
-					class="visit-div absolute w-[700px] bg-[rgba(0,0,0,0.5)] opacity-0
-                    aspect-video
-                    rounded-xl
-                    [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
-                    border-2 border-solid border-white
-                    max-w-full"
-				>
-					<a
-						href="https://github.com/liyunze-coding/TwitchPlaysX"
-						target="_blank"
-						class="absolute [transform:translateX(-50%)_translateY(-50%)] top-1/2 left-1/2
-                        px-5 py-3 bg-blue-600 rounded-xl opacity-1
-                        font-bold
-                        hidden lg:block
-                        transition-colors duration-300
-                        hover:bg-white hover:text-blue-500"
-						>View repository</a
-					>
-				</div>
-			</div>
-		</div>
-	</div>
+                />
+                <div
+                    class="visit-div absolute left-1/2 top-1/2 aspect-video w-[700px] max-w-full rounded-xl border-2 border-solid border-white bg-[rgba(0,0,0,0.5)] opacity-0 [transform:translateX(-50%)_translateY(-50%)]"
+                >
+                    <a
+                        href="https://github.com/liyunze-coding/TwitchPlaysX"
+                        target="_blank"
+                        class="opacity-1 absolute left-1/2 top-1/2 hidden rounded-xl bg-blue-600 px-5 py-3 font-bold transition-colors duration-300 [transform:translateX(-50%)_translateY(-50%)] hover:bg-white hover:text-blue-500 lg:block"
+                        >View repository</a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
-	.image-container img {
-		transition: transform 0.5s ease-in-out;
-	}
-	@media (min-width: 1025px) {
-		.image-container:hover > img {
-			transform: rotateY(0deg) rotateX(0deg) translateZ(0px)
-				translateX(-50%) translateY(-50%);
-		}
+    .image-container img {
+        transition: transform 0.5s ease-in-out;
+    }
+    @media (min-width: 1025px) {
+        .image-container:hover > img {
+            transform: rotateY(0deg) rotateX(0deg) translateZ(0px)
+                translateX(-50%) translateY(-50%);
+        }
 
-		.image-container:hover > .visit-div {
-			opacity: 100%;
-			transition: opacity 0.3s ease-in-out;
-			transition-delay: 0.3s;
-		}
-	}
+        .image-container:hover > .visit-div {
+            opacity: 100%;
+            transition: opacity 0.3s ease-in-out;
+            transition-delay: 0.3s;
+        }
+    }
 </style>

@@ -6,8 +6,8 @@ interface Props {
 const { height } = Astro.props;
 ---
 
-<div id="line-container" class="flex justify-center items-center p-0 relative">
-    <div id="line" class="w-[1px] h-full"></div>
+<div id="line-container" class="relative flex items-center justify-center p-0">
+    <div id="line" class="h-full w-[1px]"></div>
 </div>
 
 <style define:vars={{ height }}>

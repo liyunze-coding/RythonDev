@@ -2,25 +2,25 @@
     import Socials from "../elements/Socials.svelte";
 </script>
 
-<div class="w-full h-fit flex flex-col justify-center items-center relative">
-    <div class="flex flex-col justify-center items-center">
+<div class="relative flex h-fit w-full flex-col items-center justify-center">
+    <div class="flex flex-col items-center justify-center">
         <div
             id="title"
-            class="animate-gradient text-3xl text-center font-bold mb-3"
+            class="mb-3 animate-gradient text-center text-3xl font-bold"
         >
             Get in Touch with me!
         </div>
-        <div class="text-lg text-center mb-10 px-5">
+        <div class="mb-10 px-5 text-center text-lg">
             I'm always open to new opportunities and collaborations!
         </div>
 
         <a
-            class="text-center flex flex-row justify-center items-center border-2 border-blue-300 text-blue-300 px-5 py-5 hover:bg-blue-300 hover:text-black transition-colors duration-300 ease-in-out rounded-xl"
+            class="flex flex-row items-center justify-center rounded-xl border-2 border-blue-300 px-5 py-5 text-center text-blue-300 transition-colors duration-300 ease-in-out hover:bg-blue-300 hover:text-black"
             href="mailto:rythondev@gmail.com"
-            ><span class="text-3xl mr-2">&#9993;</span> Send me an email</a
+            ><span class="mr-2 text-3xl">&#9993;</span> Send me an email</a
         >
 
-        <div class="text-white flex flex-row py-10">
+        <div class="flex flex-row py-10 text-white">
             <Socials />
         </div>
     </div>

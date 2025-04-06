@@ -1,80 +1,80 @@
 ---
 interface Props {
-	primaryColor: string;
-	bgColor?: string;
-	scaleOnHover?: boolean;
-	pixelHeight?: string;
-	className?: string;
+    primaryColor: string;
+    bgColor?: string;
+    scaleOnHover?: boolean;
+    pixelHeight?: string;
+    className?: string;
 }
 
 const {
-	primaryColor,
-	bgColor = "#282828",
-	scaleOnHover = false,
-	pixelHeight = "70px",
-	className = "",
+    primaryColor,
+    bgColor = "#282828",
+    scaleOnHover = false,
+    pixelHeight = "70px",
+    className = "",
 } = Astro.props;
 ---
 
 <div class="card z-10" class:list={[{ scale: scaleOnHover }, className]}>
-	<slot />
+    <slot />
 </div>
 
 <style define:vars={{ primaryColor, bgColor, pixelHeight }}>
-	* {
-		box-sizing: border-box;
-	}
+    * {
+        box-sizing: border-box;
+    }
 
-	h1,
-	h2,
-	h3,
-	p {
-		margin: 0rem;
-	}
+    h1,
+    h2,
+    h3,
+    p {
+        margin: 0rem;
+    }
 
-	.card {
-		height: inherit;
-		position: relative;
-		background-color: var(--bgColor);
-		border: 1px solid rgb(255 255 255 / 5%);
-		border-radius: 1.5rem;
-		padding: 0.5rem;
-		box-shadow: 0px 5px 5px 5px #141414;
-	}
+    .card {
+        height: inherit;
+        position: relative;
+        background-color: var(--bgColor);
+        border: 1px solid rgb(255 255 255 / 5%);
+        border-radius: 1.5rem;
+        padding: 0.5rem;
+        box-shadow: 0px 5px 5px 5px #141414;
+    }
 
-	.card:after {
-		content: "";
-		height: var(--pixelHeight);
-		width: 1px;
-		position: absolute;
-		left: -1px;
-		top: 65%;
-		transition: top, opacity;
-		transition-duration: 600ms;
-		transition-timing-function: ease;
-		background: linear-gradient(
-			transparent,
-			var(--primaryColor),
-			transparent
-		);
-		opacity: 0;
-	}
+    .card:after {
+        content: "";
+        height: var(--pixelHeight);
+        width: 1px;
+        position: absolute;
+        left: -1px;
+        top: 65%;
+        transition: top, opacity;
+        transition-duration: 600ms;
+        transition-timing-function: ease;
+        background: linear-gradient(
+            transparent,
+            var(--primaryColor),
+            transparent
+        );
+        opacity: 0;
+    }
 
-	.card:after {
-		top: 65%;
-		opacity: 0;
-	}
+    .card:after {
+        top: 65%;
+        opacity: 0;
+    }
 
-	.card:hover:after {
-		top: 25%;
-		opacity: 1;
-	}
+    .card:hover:after {
+        top: 25%;
+        opacity: 1;
+    }
 
-	.card.scale {
-		transition: transform 0.5s ease;
-	}
+    .card.scale {
+        transition: transform 0.5s ease;
+    }
 
-	.card.scale:hover {
-		transform: scale(1.05);
-	}
+    .card.scale:hover {
+        transform: scale(1.05);
+    }
 </style>
