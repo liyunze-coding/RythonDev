@@ -116,10 +116,10 @@
         <div class="flex h-20 flex-row">
             <div class="mr-1 flex w-20 items-center justify-center">
                 <img
-                    src="/images/pfp_transparent_square.webp"
+                    src="/images/pfp_new.webp"
                     alt="Ryan"
-                    width="100"
-                    height="100"
+                    width="80"
+                    height="80"
                     class="max-w-full rounded-full bg-[#505050]"
                 />
             </div>
