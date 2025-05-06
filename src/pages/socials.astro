@@ -2,908 +2,918 @@
 import Layout from "../layouts/Layout.astro";
 import StreamScheduleComponent from "../components/sections/StreamSchedule.svelte";
 import Footer from "../components/sections/FooterComponent.astro";
+import { Image } from "astro:assets";
+import landscape from "./_images/landscape.webp";
+import profile from "./_images/profile.webp";
 ---
 
 <Layout title="Socials" description="Check out Ryan's socials">
-    <div class="flex flex-col items-center justify-center px-0 py-10">
-        <div class="w-[calc(100%-20px)] max-w-[1024px]">
-            <div
-                id="cards"
-                class="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4"
-            >
-                <div
-                    id="intro"
-                    class="social-card col-span-2 h-[450px] md:col-span-3 md:h-[280px] lg:col-span-4"
-                >
-                    <div
-                        class="social-card-content flex flex-col bg-cover bg-center md:flex-row md:justify-between md:gap-3"
-                    >
-                        <div
-                            class="mb-5 mt-auto flex aspect-square w-32 items-center justify-center overflow-hidden rounded-full border-2 border-solid border-white bg-[rgb(20,20,20)] md:mb-0 md:w-72"
-                        >
-                            <img
-                                src="/images/RyanPogSmol.webp"
-                                alt="Ryan"
-                                width="176"
-                                class="aspect-square w-32 md:w-44"
-                            />
-                        </div>
-                        <div class="md:mt-auto md:h-1/2">
-                            <h1 class="mb-2 text-4xl font-bold">RythonDev</h1>
-                            <p class="text-lg text-[#ccc]">
-                                I am a Malaysian Chinese content creator based
-                                in Australia! I mainly stream co-working and
-                                software development, known for developing the
-                                Multi-Task widget!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Website -->
-                <a href="https://rython.dev/" target="_blank">
-                    <div class="social-card">
-                        <div
-                            class="social-card-content group flex flex-col items-start justify-between"
-                        >
-                            <div
-                                class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 46.652 46.652"
-                                >
-                                    <path
-                                        id="Icon_ionic-md-arrow-back"
-                                        data-name="Icon ionic-md-arrow-back"
-                                        d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
-                                        transform="translate(46.652 23.326) rotate(135)"
-                                        fill="#fff"></path>
-                                </svg>
-                            </div>
-                            <div id="website-icon" class="icon-box h-12 w-12">
-                                <svg
-                                    fill="#fff"
-                                    width="26px"
-                                    height="26px"
-                                    viewBox="0 0 32 32"
-                                    version="1.1"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    ><g id="SVGRepo_bgCarrier" stroke-width="0"
-                                    ></g><g
-                                        id="SVGRepo_tracerCarrier"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"></g><g
-                                        id="SVGRepo_iconCarrier"
-                                    >
-                                        <path
-                                            d="M32.032 16c0-8.501-6.677-15.472-15.072-15.969-0.173-0.019-0.346-0.032-0.523-0.032-0.052 0-0.104 0.005-0.156 0.007-0.093-0.002-0.186-0.007-0.281-0.007-8.84 0-16.032 7.178-16.032 16.001s7.192 16.001 16.032 16.001c0.094 0 0.188-0.006 0.281-0.008 0.052 0.002 0.104 0.008 0.156 0.008 0.176 0 0.349-0.012 0.523-0.032 8.395-0.497 15.072-7.468 15.072-15.969zM29.049 21.151c-0.551-0.16-1.935-0.507-4.377-0.794 0.202-1.381 0.313-2.84 0.313-4.357 0-1.196-0.069-2.354-0.197-3.469 3.094-0.37 4.45-0.835 4.54-0.867l-0.372-1.050c0.695 1.659 1.080 3.478 1.080 5.386 0 1.818-0.352 3.555-0.987 5.151zM8.921 16c0-1.119 0.074-2.212 0.21-3.263 1.621 0.127 3.561 0.222 5.839 0.243v6.939c-2.219 0.021-4.114 0.111-5.709 0.234-0.22-1.319-0.34-2.715-0.34-4.154zM16.967 2.132c2.452 0.711 4.552 4.115 5.492 8.628-1.512 0.12-3.332 0.209-5.492 0.229v-8.857zM14.971 2.156v8.832c-2.136-0.021-3.965-0.109-5.502-0.226 0.96-4.457 3.076-7.836 5.502-8.606zM14.971 21.913l0 7.929c-2.263-0.718-4.256-3.705-5.293-7.719 1.492-0.11 3.253-0.189 5.292-0.21zM16.967 29.868l-0-7.955c2.061 0.020 3.814 0.102 5.288 0.217-1.019 4.067-3 7.076-5.288 7.738zM16.967 19.92l0-6.939c2.291-0.021 4.218-0.118 5.818-0.25 0.131 1.053 0.203 2.147 0.203 3.268 0 1.442-0.116 2.84-0.329 4.16-1.575-0.128-3.462-0.219-5.692-0.24zM28.588 9.81c-0.302 0.094-1.564 0.453-4.094 0.751-0.564-2.998-1.584-5.561-2.91-7.412 3.048 1.325 5.535 3.697 7.005 6.661zM11.213 2.831c-1.632 1.873-2.963 4.568-3.691 7.754-2.265-0.245-3.623-0.534-4.166-0.665 1.585-3.27 4.407-5.836 7.856-7.088zM2.614 11.787c0.385 0.104 1.841 0.467 4.549 0.766-0.155 1.107-0.24 2.26-0.24 3.447 0 1.509 0.136 2.96 0.383 4.334-2.325 0.251-3.755 0.552-4.396 0.706-0.607-1.566-0.944-3.264-0.944-5.041 0-1.467 0.228-2.883 0.649-4.213zM3.784 22.886c0.727-0.154 2.029-0.39 3.956-0.591 0.759 2.803 1.993 5.175 3.473 6.874-3.16-1.148-5.79-3.398-7.429-6.282v0zM21.583 28.849c1.195-1.665 2.14-3.907 2.728-6.525 1.982 0.227 3.226 0.494 3.853 0.652-1.5 2.596-3.808 4.669-6.581 5.873z"
-                                        ></path>
-                                    </g></svg
-                                >
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-bold">Website</h2>
-                                <p class="text-[#ccc]">rython.dev</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Twitch -->
-                <a href="https://twitch.tv/RythonDev/" target="_blank">
-                    <div class="social-card">
-                        <div
-                            class="social-card-content group flex flex-col items-start justify-between"
-                        >
-                            <div
-                                class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 46.652 46.652"
-                                >
-                                    <path
-                                        id="Icon_ionic-md-arrow-back"
-                                        data-name="Icon ionic-md-arrow-back"
-                                        d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
-                                        transform="translate(46.652 23.326) rotate(135)"
-                                        fill="#fff"></path>
-                                </svg>
-                            </div>
-                            <div id="twitch-icon" class="icon-box">
-                                <svg
-                                    width="48"
-                                    height="48"
-                                    viewBox="0 0 48 48"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <rect
-                                        width="48"
-                                        height="48"
-                                        rx="24"
-                                        fill="#8C44F7"></rect>
-                                    <path
-                                        d="M20.2022 37.5H23.231L26.2598 34.7227H30.8083L36.7926 28.3192L36.6249 13.5H15.9262L14.0502 18.3838V34.5236H20.2022V37.5ZM17.3935 31.7149V15.2607H35.252V27.1664L30.8712 31.7149H25.7044L22.6755 33.8109V31.7149H17.3935Z"
-                                        fill="white"></path>
-                                    <path
-                                        d="M24.6671 19.5994H26.3231V25.5H24.6671V19.5994Z"
-                                        fill="white"></path>
-                                    <path
-                                        d="M29.006 19.5994H30.662V25.5H29.006V19.5994Z"
-                                        fill="white"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-bold">Twitch</h2>
-                                <p class="text-[#ccc]">RythonDev</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- YouTube -->
-                <a href="https://youtube.com/@RythonDev/" target="_blank">
-                    <div class="social-card">
-                        <div
-                            class="social-card-content group flex flex-col items-start justify-between"
-                        >
-                            <div
-                                class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 46.652 46.652"
-                                >
-                                    <path
-                                        id="Icon_ionic-md-arrow-back"
-                                        data-name="Icon ionic-md-arrow-back"
-                                        d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
-                                        transform="translate(46.652 23.326) rotate(135)"
-                                        fill="#fff"></path>
-                                </svg>
-                            </div>
-                            <div id="youtube-icon" class="icon-box">
-                                <svg
-                                    width="48"
-                                    height="48"
-                                    viewBox="0 0 48 48"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <rect
-                                        width="48"
-                                        height="48"
-                                        rx="24"
-                                        fill="#F10000"></rect>
-                                    <path
-                                        d="M35.469 18.429L35.499 18.625C35.209 17.596 34.426 16.802 33.431 16.513L33.41 16.508C31.5391 16 24.0101 16 24.0101 16C24.0101 16 16.5002 15.99 14.6103 16.508C13.5963 16.802 12.8123 17.596 12.5273 18.604L12.5223 18.625C11.8233 22.2759 11.8183 26.6629 12.5533 30.5718L12.5223 30.3738C12.8123 31.4028 13.5953 32.1968 14.5903 32.4858L14.6113 32.4908C16.4802 32.9998 24.0111 32.9998 24.0111 32.9998C24.0111 32.9998 31.5201 32.9998 33.411 32.4908C34.426 32.1968 35.21 31.4028 35.495 30.3948L35.5 30.3738C35.818 28.6759 36 26.7219 36 24.7259C36 24.6529 36 24.5789 35.999 24.5049C36 24.4369 36 24.3559 36 24.2749C36 22.2779 35.818 20.324 35.469 18.429ZM21.6082 28.1509V20.858L27.8741 24.5099L21.6082 28.1509Z"
-                                        fill="white"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-bold">YouTube</h2>
-                                <p class="text-[#ccc]">@RythonDev</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Instagram -->
-                <a href="https://instagram.com/RythonDev" target="_blank">
-                    <div class="social-card">
-                        <div
-                            class="social-card-content group flex flex-col items-start justify-between"
-                        >
-                            <div
-                                class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 46.652 46.652"
-                                >
-                                    <path
-                                        id="Icon_ionic-md-arrow-back"
-                                        data-name="Icon ionic-md-arrow-back"
-                                        d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
-                                        transform="translate(46.652 23.326) rotate(135)"
-                                        fill="#fff"></path>
-                                </svg>
-                            </div>
-                            <div id="instagram-icon" class="icon-box">
-                                <svg
-                                    width="48"
-                                    height="48"
-                                    viewBox="0 0 48 48"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <rect
-                                        width="48"
-                                        height="48"
-                                        rx="24"
-                                        fill="url(#paint0_radial_973_2817)"
-                                    ></rect>
-                                    <path
-                                        d="M19.2632 12C15.263 12 12 15.263 12 19.2632V28.7368C12 32.7365 15.2629 36 19.2632 36H28.7368C32.7366 36 36 32.7366 36 28.7368V19.2632C36 15.2629 32.7365 12 28.7368 12H19.2632ZM19.2632 13.8947H28.7368C31.7124 13.8947 34.1053 16.287 34.1053 19.2632V28.7368C34.1053 31.7122 31.7122 34.1053 28.7368 34.1053H19.2632C16.287 34.1053 13.8947 31.7124 13.8947 28.7368V19.2632C13.8947 16.2869 16.2869 13.8947 19.2632 13.8947ZM30.3158 16.4211C29.6179 16.4211 29.0526 16.9863 29.0526 17.6842C29.0526 18.3821 29.6179 18.9474 30.3158 18.9474C31.0137 18.9474 31.5789 18.3821 31.5789 17.6842C31.5789 16.9863 31.0137 16.4211 30.3158 16.4211ZM24 17.6842C20.5233 17.6842 17.6842 20.5233 17.6842 24C17.6842 27.4767 20.5233 30.3158 24 30.3158C27.4767 30.3158 30.3158 27.4767 30.3158 24C30.3158 20.5233 27.4767 17.6842 24 17.6842ZM24 19.5789C26.4525 19.5789 28.4211 21.5475 28.4211 24C28.4211 26.4525 26.4525 28.4211 24 28.4211C21.5475 28.4211 19.5789 26.4525 19.5789 24C19.5789 21.5475 21.5475 19.5789 24 19.5789Z"
-                                        fill="white"></path>
-                                    <defs>
-                                        <radialGradient
-                                            id="paint0_radial_973_2817"
-                                            cx="0"
-                                            cy="0"
-                                            r="1"
-                                            gradientUnits="userSpaceOnUse"
-                                            gradientTransform="translate(17.8439 48.0346) scale(59.8337 59.8337)"
-                                        >
-                                            <stop stop-color="#FFDD55"></stop>
-                                            <stop
-                                                offset="0.328"
-                                                stop-color="#FF543F"></stop>
-                                            <stop
-                                                offset="0.348"
-                                                stop-color="#FC5245"></stop>
-                                            <stop
-                                                offset="0.504"
-                                                stop-color="#E64771"></stop>
-                                            <stop
-                                                offset="0.643"
-                                                stop-color="#D53E91"></stop>
-                                            <stop
-                                                offset="0.761"
-                                                stop-color="#CC39A4"></stop>
-                                            <stop
-                                                offset="0.841"
-                                                stop-color="#C837AB"></stop>
-                                        </radialGradient>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-bold">Instagram</h2>
-                                <p class="text-[#ccc]">@RythonDev</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Github -->
-                <a href="https://github.com/liyunze-coding" target="_blank">
-                    <div class="social-card">
-                        <div
-                            class="social-card-content group flex flex-col items-start justify-between"
-                        >
-                            <div
-                                class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 46.652 46.652"
-                                >
-                                    <path
-                                        id="Icon_ionic-md-arrow-back"
-                                        data-name="Icon ionic-md-arrow-back"
-                                        d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
-                                        transform="translate(46.652 23.326) rotate(135)"
-                                        fill="#fff"></path>
-                                </svg>
-                            </div>
-                            <div
-                                class="relative z-20 h-12 w-12 rounded-full border-8 border-solid border-black bg-white"
-                            >
-                                <div
-                                    id="github-icon"
-                                    class="icon-box 2-10 absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full"
-                                >
-                                    <svg
-                                        width="38px"
-                                        height="38px"
-                                        viewBox="0 0 48 48"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        ><g
-                                            id="SVGRepo_bgCarrier"
-                                            stroke-width="0"></g><g
-                                            id="SVGRepo_tracerCarrier"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"></g><g
-                                            id="SVGRepo_iconCarrier"
-                                        >
-                                            <rect
-                                                width="48"
-                                                height="48"
-                                                fill="white"
-                                                fill-opacity="0.01"></rect>
-                                            <path
-                                                fill-rule="evenodd"
-                                                clip-rule="evenodd"
-                                                d="M24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4ZM0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z"
-                                                fill="#000000"></path>
-                                            <path
-                                                fill-rule="evenodd"
-                                                clip-rule="evenodd"
-                                                d="M19.183 45.4715C18.9896 45.2218 18.9896 42.9972 19.183 38.798C17.1112 38.8695 15.8022 38.7257 15.256 38.3666C14.4368 37.8279 13.6166 36.1666 12.8889 34.9958C12.1612 33.825 10.546 33.6399 9.8938 33.3782C9.24158 33.1164 9.07785 32.0495 11.691 32.8564C14.3042 33.6633 14.4316 35.8606 15.256 36.3744C16.0804 36.8882 18.0512 36.6634 18.9446 36.2518C19.8379 35.8402 19.7722 34.3077 19.9315 33.7006C20.1329 33.1339 19.423 33.0082 19.4074 33.0036C18.5353 33.0036 13.9537 32.0072 12.6952 27.5705C11.4368 23.1339 13.0579 20.234 13.9227 18.9874C14.4992 18.1563 14.4482 16.3851 13.7697 13.6736C16.2333 13.3588 18.1344 14.1342 19.4732 16C19.4745 16.0107 21.2283 14.9571 24 14.9571C26.7718 14.9571 27.7551 15.8153 28.514 16C29.2728 16.1847 29.8798 12.734 34.5666 13.6736C33.5881 15.5968 32.7686 18 33.3941 18.9874C34.0195 19.9748 36.4742 23.1146 34.9664 27.5705C33.9611 30.5412 31.9851 32.3522 29.0382 33.0036C28.7002 33.1114 28.5313 33.2854 28.5313 33.5254C28.5313 33.8855 28.9881 33.9248 29.6463 35.6116C30.085 36.7361 30.1167 39.9479 29.7413 45.2469C28.7904 45.489 28.0506 45.6515 27.5219 45.7346C26.5845 45.8819 25.5667 45.9645 24.5666 45.9964C23.5666 46.0283 23.2193 46.0247 21.8368 45.896C20.9151 45.8102 20.0305 45.6687 19.183 45.4715Z"
-                                                fill="#000000"></path>
-                                        </g></svg
-                                    >
-                                </div>
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-bold">Github</h2>
-                                <p class="text-[#ccc]">liyunze-coding</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Codepen -->
-                <a href="https://codepen.io/RythonDev" target="_blank">
-                    <div class="social-card">
-                        <div
-                            class="social-card-content group flex flex-col items-start justify-between"
-                        >
-                            <div
-                                class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 46.652 46.652"
-                                >
-                                    <path
-                                        id="Icon_ionic-md-arrow-back"
-                                        data-name="Icon ionic-md-arrow-back"
-                                        d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
-                                        transform="translate(46.652 23.326) rotate(135)"
-                                        fill="#fff"></path>
-                                </svg>
-                            </div>
-                            <div
-                                id="codepen-icon"
-                                class="icon-box h-12 w-12 rounded-full"
-                            >
-                                <svg
-                                    version="1.1"
-                                    id="Capa_1"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    x="0px"
-                                    y="0px"
-                                    width="28px"
-                                    height="28px"
-                                    viewBox="0 0 31.665 31.665"
-                                    fill="#fff"
-                                    style="0 0 31.665 31.665;"
-                                    xml:space="preserve"
-                                >
-                                    <g>
-                                        <path
-                                            d="M16.878,0.415c-0.854-0.565-1.968-0.552-2.809,0.034L1.485,9.214c-0.671,0.468-1.071,1.233-1.071,2.052v9.444
+	<div class="flex flex-col items-center justify-center px-0 py-10">
+		<div class="w-[calc(100%-20px)] max-w-[1024px]">
+			<div
+				id="cards"
+				class="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4"
+			>
+				<!-- h-[450px] 3  -->
+				<div
+					id="intro"
+					class="social-card col-span-2 h-[450px] md:col-span-3 md:h-[400px] lg:col-span-4"
+				>
+					<div
+						class="social-card-content flex flex-col bg-cover bg-top md:flex-row md:justify-between md:gap-3"
+					>
+						<div
+							class="mt-auto flex flex-col items-start justify-start gap-3 md:h-1/2 md:flex-row md:items-center md:gap-10"
+						>
+							<div
+								class="mb-5 flex aspect-square w-32 items-center justify-center overflow-hidden rounded-full border-2 border-solid border-white bg-[rgb(20,20,20)] md:mb-0 md:w-72"
+							>
+								<Image
+									src={profile}
+									alt="Ryan"
+									width="176"
+									class="aspect-square w-32 md:w-44"
+								/>
+							</div>
+							<div class="">
+								<h1 class="mb-2 text-4xl font-bold">
+									RythonDev
+								</h1>
+								<p class="text-lg text-[#ccc]">
+									I am a Malaysian Chinese content creator
+									based in Australia! I mainly stream
+									co-working and software development, known
+									for developing the Multi-Task widget!
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Website -->
+				<a href="https://rython.dev/" target="_blank">
+					<div class="social-card">
+						<div
+							class="social-card-content group flex flex-col items-start justify-between"
+						>
+							<div
+								class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="32"
+									height="32"
+									viewBox="0 0 46.652 46.652"
+								>
+									<path
+										id="Icon_ionic-md-arrow-back"
+										data-name="Icon ionic-md-arrow-back"
+										d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
+										transform="translate(46.652 23.326) rotate(135)"
+										fill="#fff"></path>
+								</svg>
+							</div>
+							<div id="website-icon" class="icon-box h-12 w-12">
+								<svg
+									fill="#fff"
+									width="26px"
+									height="26px"
+									viewBox="0 0 32 32"
+									version="1.1"
+									xmlns="http://www.w3.org/2000/svg"
+									><g id="SVGRepo_bgCarrier" stroke-width="0"
+									></g><g
+										id="SVGRepo_tracerCarrier"
+										stroke-linecap="round"
+										stroke-linejoin="round"></g><g
+										id="SVGRepo_iconCarrier"
+									>
+										<path
+											d="M32.032 16c0-8.501-6.677-15.472-15.072-15.969-0.173-0.019-0.346-0.032-0.523-0.032-0.052 0-0.104 0.005-0.156 0.007-0.093-0.002-0.186-0.007-0.281-0.007-8.84 0-16.032 7.178-16.032 16.001s7.192 16.001 16.032 16.001c0.094 0 0.188-0.006 0.281-0.008 0.052 0.002 0.104 0.008 0.156 0.008 0.176 0 0.349-0.012 0.523-0.032 8.395-0.497 15.072-7.468 15.072-15.969zM29.049 21.151c-0.551-0.16-1.935-0.507-4.377-0.794 0.202-1.381 0.313-2.84 0.313-4.357 0-1.196-0.069-2.354-0.197-3.469 3.094-0.37 4.45-0.835 4.54-0.867l-0.372-1.050c0.695 1.659 1.080 3.478 1.080 5.386 0 1.818-0.352 3.555-0.987 5.151zM8.921 16c0-1.119 0.074-2.212 0.21-3.263 1.621 0.127 3.561 0.222 5.839 0.243v6.939c-2.219 0.021-4.114 0.111-5.709 0.234-0.22-1.319-0.34-2.715-0.34-4.154zM16.967 2.132c2.452 0.711 4.552 4.115 5.492 8.628-1.512 0.12-3.332 0.209-5.492 0.229v-8.857zM14.971 2.156v8.832c-2.136-0.021-3.965-0.109-5.502-0.226 0.96-4.457 3.076-7.836 5.502-8.606zM14.971 21.913l0 7.929c-2.263-0.718-4.256-3.705-5.293-7.719 1.492-0.11 3.253-0.189 5.292-0.21zM16.967 29.868l-0-7.955c2.061 0.020 3.814 0.102 5.288 0.217-1.019 4.067-3 7.076-5.288 7.738zM16.967 19.92l0-6.939c2.291-0.021 4.218-0.118 5.818-0.25 0.131 1.053 0.203 2.147 0.203 3.268 0 1.442-0.116 2.84-0.329 4.16-1.575-0.128-3.462-0.219-5.692-0.24zM28.588 9.81c-0.302 0.094-1.564 0.453-4.094 0.751-0.564-2.998-1.584-5.561-2.91-7.412 3.048 1.325 5.535 3.697 7.005 6.661zM11.213 2.831c-1.632 1.873-2.963 4.568-3.691 7.754-2.265-0.245-3.623-0.534-4.166-0.665 1.585-3.27 4.407-5.836 7.856-7.088zM2.614 11.787c0.385 0.104 1.841 0.467 4.549 0.766-0.155 1.107-0.24 2.26-0.24 3.447 0 1.509 0.136 2.96 0.383 4.334-2.325 0.251-3.755 0.552-4.396 0.706-0.607-1.566-0.944-3.264-0.944-5.041 0-1.467 0.228-2.883 0.649-4.213zM3.784 22.886c0.727-0.154 2.029-0.39 3.956-0.591 0.759 2.803 1.993 5.175 3.473 6.874-3.16-1.148-5.79-3.398-7.429-6.282v0zM21.583 28.849c1.195-1.665 2.14-3.907 2.728-6.525 1.982 0.227 3.226 0.494 3.853 0.652-1.5 2.596-3.808 4.669-6.581 5.873z"
+										></path>
+									</g></svg
+								>
+							</div>
+							<div>
+								<h2 class="text-xl font-bold">Website</h2>
+								<p class="text-[#ccc]">rython.dev</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<!-- Twitch -->
+				<a href="https://twitch.tv/RythonDev/" target="_blank">
+					<div class="social-card">
+						<div
+							class="social-card-content group flex flex-col items-start justify-between"
+						>
+							<div
+								class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="32"
+									height="32"
+									viewBox="0 0 46.652 46.652"
+								>
+									<path
+										id="Icon_ionic-md-arrow-back"
+										data-name="Icon ionic-md-arrow-back"
+										d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
+										transform="translate(46.652 23.326) rotate(135)"
+										fill="#fff"></path>
+								</svg>
+							</div>
+							<div id="twitch-icon" class="icon-box">
+								<svg
+									width="48"
+									height="48"
+									viewBox="0 0 48 48"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<rect
+										width="48"
+										height="48"
+										rx="24"
+										fill="#8C44F7"></rect>
+									<path
+										d="M20.2022 37.5H23.231L26.2598 34.7227H30.8083L36.7926 28.3192L36.6249 13.5H15.9262L14.0502 18.3838V34.5236H20.2022V37.5ZM17.3935 31.7149V15.2607H35.252V27.1664L30.8712 31.7149H25.7044L22.6755 33.8109V31.7149H17.3935Z"
+										fill="white"></path>
+									<path
+										d="M24.6671 19.5994H26.3231V25.5H24.6671V19.5994Z"
+										fill="white"></path>
+									<path
+										d="M29.006 19.5994H30.662V25.5H29.006V19.5994Z"
+										fill="white"></path>
+								</svg>
+							</div>
+							<div>
+								<h2 class="text-xl font-bold">Twitch</h2>
+								<p class="text-[#ccc]">RythonDev</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<!-- YouTube -->
+				<a href="https://youtube.com/@RythonDev/" target="_blank">
+					<div class="social-card">
+						<div
+							class="social-card-content group flex flex-col items-start justify-between"
+						>
+							<div
+								class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="32"
+									height="32"
+									viewBox="0 0 46.652 46.652"
+								>
+									<path
+										id="Icon_ionic-md-arrow-back"
+										data-name="Icon ionic-md-arrow-back"
+										d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
+										transform="translate(46.652 23.326) rotate(135)"
+										fill="#fff"></path>
+								</svg>
+							</div>
+							<div id="youtube-icon" class="icon-box">
+								<svg
+									width="48"
+									height="48"
+									viewBox="0 0 48 48"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<rect
+										width="48"
+										height="48"
+										rx="24"
+										fill="#F10000"></rect>
+									<path
+										d="M35.469 18.429L35.499 18.625C35.209 17.596 34.426 16.802 33.431 16.513L33.41 16.508C31.5391 16 24.0101 16 24.0101 16C24.0101 16 16.5002 15.99 14.6103 16.508C13.5963 16.802 12.8123 17.596 12.5273 18.604L12.5223 18.625C11.8233 22.2759 11.8183 26.6629 12.5533 30.5718L12.5223 30.3738C12.8123 31.4028 13.5953 32.1968 14.5903 32.4858L14.6113 32.4908C16.4802 32.9998 24.0111 32.9998 24.0111 32.9998C24.0111 32.9998 31.5201 32.9998 33.411 32.4908C34.426 32.1968 35.21 31.4028 35.495 30.3948L35.5 30.3738C35.818 28.6759 36 26.7219 36 24.7259C36 24.6529 36 24.5789 35.999 24.5049C36 24.4369 36 24.3559 36 24.2749C36 22.2779 35.818 20.324 35.469 18.429ZM21.6082 28.1509V20.858L27.8741 24.5099L21.6082 28.1509Z"
+										fill="white"></path>
+								</svg>
+							</div>
+							<div>
+								<h2 class="text-xl font-bold">YouTube</h2>
+								<p class="text-[#ccc]">@RythonDev</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<!-- Instagram -->
+				<a href="https://instagram.com/RythonDev" target="_blank">
+					<div class="social-card">
+						<div
+							class="social-card-content group flex flex-col items-start justify-between"
+						>
+							<div
+								class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="32"
+									height="32"
+									viewBox="0 0 46.652 46.652"
+								>
+									<path
+										id="Icon_ionic-md-arrow-back"
+										data-name="Icon ionic-md-arrow-back"
+										d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
+										transform="translate(46.652 23.326) rotate(135)"
+										fill="#fff"></path>
+								</svg>
+							</div>
+							<div id="instagram-icon" class="icon-box">
+								<svg
+									width="48"
+									height="48"
+									viewBox="0 0 48 48"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<rect
+										width="48"
+										height="48"
+										rx="24"
+										fill="url(#paint0_radial_973_2817)"
+									></rect>
+									<path
+										d="M19.2632 12C15.263 12 12 15.263 12 19.2632V28.7368C12 32.7365 15.2629 36 19.2632 36H28.7368C32.7366 36 36 32.7366 36 28.7368V19.2632C36 15.2629 32.7365 12 28.7368 12H19.2632ZM19.2632 13.8947H28.7368C31.7124 13.8947 34.1053 16.287 34.1053 19.2632V28.7368C34.1053 31.7122 31.7122 34.1053 28.7368 34.1053H19.2632C16.287 34.1053 13.8947 31.7124 13.8947 28.7368V19.2632C13.8947 16.2869 16.2869 13.8947 19.2632 13.8947ZM30.3158 16.4211C29.6179 16.4211 29.0526 16.9863 29.0526 17.6842C29.0526 18.3821 29.6179 18.9474 30.3158 18.9474C31.0137 18.9474 31.5789 18.3821 31.5789 17.6842C31.5789 16.9863 31.0137 16.4211 30.3158 16.4211ZM24 17.6842C20.5233 17.6842 17.6842 20.5233 17.6842 24C17.6842 27.4767 20.5233 30.3158 24 30.3158C27.4767 30.3158 30.3158 27.4767 30.3158 24C30.3158 20.5233 27.4767 17.6842 24 17.6842ZM24 19.5789C26.4525 19.5789 28.4211 21.5475 28.4211 24C28.4211 26.4525 26.4525 28.4211 24 28.4211C21.5475 28.4211 19.5789 26.4525 19.5789 24C19.5789 21.5475 21.5475 19.5789 24 19.5789Z"
+										fill="white"></path>
+									<defs>
+										<radialGradient
+											id="paint0_radial_973_2817"
+											cx="0"
+											cy="0"
+											r="1"
+											gradientUnits="userSpaceOnUse"
+											gradientTransform="translate(17.8439 48.0346) scale(59.8337 59.8337)"
+										>
+											<stop stop-color="#FFDD55"></stop>
+											<stop
+												offset="0.328"
+												stop-color="#FF543F"></stop>
+											<stop
+												offset="0.348"
+												stop-color="#FC5245"></stop>
+											<stop
+												offset="0.504"
+												stop-color="#E64771"></stop>
+											<stop
+												offset="0.643"
+												stop-color="#D53E91"></stop>
+											<stop
+												offset="0.761"
+												stop-color="#CC39A4"></stop>
+											<stop
+												offset="0.841"
+												stop-color="#C837AB"></stop>
+										</radialGradient>
+									</defs>
+								</svg>
+							</div>
+							<div>
+								<h2 class="text-xl font-bold">Instagram</h2>
+								<p class="text-[#ccc]">@RythonDev</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<!-- Github -->
+				<a href="https://github.com/liyunze-coding" target="_blank">
+					<div class="social-card">
+						<div
+							class="social-card-content group flex flex-col items-start justify-between"
+						>
+							<div
+								class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="32"
+									height="32"
+									viewBox="0 0 46.652 46.652"
+								>
+									<path
+										id="Icon_ionic-md-arrow-back"
+										data-name="Icon ionic-md-arrow-back"
+										d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
+										transform="translate(46.652 23.326) rotate(135)"
+										fill="#fff"></path>
+								</svg>
+							</div>
+							<div
+								class="relative z-20 h-12 w-12 rounded-full border-8 border-solid border-black bg-white"
+							>
+								<div
+									id="github-icon"
+									class="icon-box 2-10 absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full"
+								>
+									<svg
+										width="38px"
+										height="38px"
+										viewBox="0 0 48 48"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+										><g
+											id="SVGRepo_bgCarrier"
+											stroke-width="0"></g><g
+											id="SVGRepo_tracerCarrier"
+											stroke-linecap="round"
+											stroke-linejoin="round"></g><g
+											id="SVGRepo_iconCarrier"
+										>
+											<rect
+												width="48"
+												height="48"
+												fill="white"
+												fill-opacity="0.01"></rect>
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4ZM0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z"
+												fill="#000000"></path>
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M19.183 45.4715C18.9896 45.2218 18.9896 42.9972 19.183 38.798C17.1112 38.8695 15.8022 38.7257 15.256 38.3666C14.4368 37.8279 13.6166 36.1666 12.8889 34.9958C12.1612 33.825 10.546 33.6399 9.8938 33.3782C9.24158 33.1164 9.07785 32.0495 11.691 32.8564C14.3042 33.6633 14.4316 35.8606 15.256 36.3744C16.0804 36.8882 18.0512 36.6634 18.9446 36.2518C19.8379 35.8402 19.7722 34.3077 19.9315 33.7006C20.1329 33.1339 19.423 33.0082 19.4074 33.0036C18.5353 33.0036 13.9537 32.0072 12.6952 27.5705C11.4368 23.1339 13.0579 20.234 13.9227 18.9874C14.4992 18.1563 14.4482 16.3851 13.7697 13.6736C16.2333 13.3588 18.1344 14.1342 19.4732 16C19.4745 16.0107 21.2283 14.9571 24 14.9571C26.7718 14.9571 27.7551 15.8153 28.514 16C29.2728 16.1847 29.8798 12.734 34.5666 13.6736C33.5881 15.5968 32.7686 18 33.3941 18.9874C34.0195 19.9748 36.4742 23.1146 34.9664 27.5705C33.9611 30.5412 31.9851 32.3522 29.0382 33.0036C28.7002 33.1114 28.5313 33.2854 28.5313 33.5254C28.5313 33.8855 28.9881 33.9248 29.6463 35.6116C30.085 36.7361 30.1167 39.9479 29.7413 45.2469C28.7904 45.489 28.0506 45.6515 27.5219 45.7346C26.5845 45.8819 25.5667 45.9645 24.5666 45.9964C23.5666 46.0283 23.2193 46.0247 21.8368 45.896C20.9151 45.8102 20.0305 45.6687 19.183 45.4715Z"
+												fill="#000000"></path>
+										</g></svg
+									>
+								</div>
+							</div>
+							<div>
+								<h2 class="text-xl font-bold">Github</h2>
+								<p class="text-[#ccc]">liyunze-coding</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<!-- Codepen -->
+				<a href="https://codepen.io/RythonDev" target="_blank">
+					<div class="social-card">
+						<div
+							class="social-card-content group flex flex-col items-start justify-between"
+						>
+							<div
+								class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="32"
+									height="32"
+									viewBox="0 0 46.652 46.652"
+								>
+									<path
+										id="Icon_ionic-md-arrow-back"
+										data-name="Icon ionic-md-arrow-back"
+										d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
+										transform="translate(46.652 23.326) rotate(135)"
+										fill="#fff"></path>
+								</svg>
+							</div>
+							<div
+								id="codepen-icon"
+								class="icon-box h-12 w-12 rounded-full"
+							>
+								<svg
+									version="1.1"
+									id="Capa_1"
+									xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink"
+									x="0px"
+									y="0px"
+									width="28px"
+									height="28px"
+									viewBox="0 0 31.665 31.665"
+									fill="#fff"
+									style="0 0 31.665 31.665;"
+									xml:space="preserve"
+								>
+									<g>
+										<path
+											d="M16.878,0.415c-0.854-0.565-1.968-0.552-2.809,0.034L1.485,9.214c-0.671,0.468-1.071,1.233-1.071,2.052v9.444
 		c0,0.84,0.421,1.623,1.122,2.086l12.79,8.455c0.836,0.553,1.922,0.553,2.758,0l13.044-8.618c0.7-0.463,1.122-1.246,1.122-2.086
 		v-9.279c0-0.839-0.421-1.622-1.121-2.085L16.878,0.415z M26.621,10.645l-4.821,3.237l-4.521-3.288L17.25,4.127L26.621,10.645z
 		M13.979,4.133v6.329l-4.633,3.24l-4.621-3.099L13.979,4.133z M3.458,13.722l2.991,2.004l-2.991,2.093V13.722z M14.058,27.215
 		l-9.331-6.258l4.661-3.258l4.67,3.133V27.215z M12.286,15.674l3.021-2.113l3.519,2.313l-3.119,2.095L12.286,15.674z M17.354,27.215
 		V20.83l4.463-2.991l4.805,3.159L17.354,27.215z M27.954,17.927l-3.168-2.082l3.168-2.125V17.927z"
-                                        ></path>
-                                    </g>
-                                    <g> </g><g> </g><g> </g><g> </g><g> </g><g>
-                                    </g><g> </g><g> </g><g> </g><g> </g><g>
-                                    </g><g> </g><g> </g><g> </g><g> </g>
-                                </svg>
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-bold">Codepen</h2>
-                                <p class="text-[#ccc]">RythonDev</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Stream Schedule -->
-                <div class="social-card col-span-2 h-fit">
-                    <div
-                        class="social-card-content flex flex-col items-center justify-center p-0 md:p-3"
-                    >
-                        <h2 class="mb-1 text-xl font-bold">Stream Schedule</h2>
-                        <StreamScheduleComponent client:load />
-                    </div>
-                </div>
-                <!-- Location -->
-                <div class="social-card col-span-2 md:col-span-1 lg:col-span-2">
-                    <div
-                        class="social-card-content flex flex-col items-start justify-center gap-5"
-                    >
-                        <div
-                            class="flex flex-row items-center justify-center gap-3"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke="currentColor"
-                                class="size-10"
-                                width="40"
-                                height="40"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                                ></path>
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                                ></path>
-                            </svg>
-                            <div>
-                                <h2 class="text-xl font-bold">Location</h2>
-                                <p class="text-[#ccc]">Melbourne, Australia</p>
-                            </div>
-                        </div>
-                        <div
-                            class="flex flex-row items-center justify-center gap-3"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke="currentColor"
-                                class="size-10"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                                ></path>
-                            </svg>
+										></path>
+									</g>
+									<g> </g><g> </g><g> </g><g> </g><g> </g><g>
+									</g><g> </g><g> </g><g> </g><g> </g><g>
+									</g><g> </g><g> </g><g> </g><g> </g>
+								</svg>
+							</div>
+							<div>
+								<h2 class="text-xl font-bold">Codepen</h2>
+								<p class="text-[#ccc]">RythonDev</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<!-- Stream Schedule -->
+				<div class="social-card col-span-2 h-fit">
+					<div
+						class="social-card-content flex flex-col items-center justify-center p-0 md:p-3"
+					>
+						<h2 class="mb-1 text-xl font-bold">Stream Schedule</h2>
+						<StreamScheduleComponent client:load />
+					</div>
+				</div>
+				<!-- Location -->
+				<div class="social-card col-span-2 md:col-span-1 lg:col-span-2">
+					<div
+						class="social-card-content flex flex-col items-start justify-center gap-5"
+					>
+						<div
+							class="flex flex-row items-center justify-center gap-3"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="size-10"
+								width="40"
+								height="40"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+								></path>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+								></path>
+							</svg>
+							<div>
+								<h2 class="text-xl font-bold">Location</h2>
+								<p class="text-[#ccc]">Melbourne, Australia</p>
+							</div>
+						</div>
+						<div
+							class="flex flex-row items-center justify-center gap-3"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="size-10"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+								></path>
+							</svg>
 
-                            <div>
-                                <h2 class="text-xl font-bold">Date & Time</h2>
-                                <p class="text-[#ccc]">
-                                    <div id="display-date" class="text-[#ccc]">
-                                    </div>
-                                    <span
-                                        id="time-in-aus"
-                                        class="uppercase text-[#ccc]"></span>
-                                    <span
-                                        id="time-difference"
-                                        class="text-[#ccc]"
-                                    >
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Ko-fi -->
-                <a href="https://ko-fi.com/rython" target="_blank">
-                    <div class="social-card">
-                        <div
-                            class="social-card-content group flex flex-col items-start justify-between"
-                        >
-                            <div
-                                class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 46.652 46.652"
-                                >
-                                    <path
-                                        id="Icon_ionic-md-arrow-back"
-                                        data-name="Icon ionic-md-arrow-back"
-                                        d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
-                                        transform="translate(46.652 23.326) rotate(135)"
-                                        fill="#fff"></path>
-                                </svg>
-                            </div>
-                            <div
-                                id="kofi-icon"
-                                class="icon-box flex aspect-square h-12 w-12 items-center justify-center rounded-full bg-[#00BCF2]"
-                            >
-                                <img
-                                    src="/images/socials/kofi_s_logo_nolabel.webp"
-                                    alt="ko-fi logo"
-                                    width="28"
-                                />
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-bold">Ko-fi</h2>
-                                <p class="text-[#ccc]">Rython</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Discord -->
-                <a href="https://rython.dev/discord" target="_blank">
-                    <div class="social-card">
-                        <div
-                            class="social-card-content group flex flex-col items-start justify-between"
-                        >
-                            <div
-                                class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 46.652 46.652"
-                                >
-                                    <path
-                                        id="Icon_ionic-md-arrow-back"
-                                        data-name="Icon ionic-md-arrow-back"
-                                        d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
-                                        transform="translate(46.652 23.326) rotate(135)"
-                                        fill="#fff"></path>
-                                </svg>
-                            </div>
-                            <div id="discord-icon" class="icon-box">
-                                <svg
-                                    width="48px"
-                                    height="48px"
-                                    viewBox="0 0 1024 1024"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="#000000"
-                                    ><g id="SVGRepo_bgCarrier" stroke-width="0"
-                                    ></g><g
-                                        id="SVGRepo_tracerCarrier"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"></g><g
-                                        id="SVGRepo_iconCarrier"
-                                    >
-                                        <circle
-                                            cx="512"
-                                            cy="512"
-                                            r="512"
-                                            style="fill:#5865f2"></circle>
-                                        <path
-                                            d="M689.43 349a422.21 422.21 0 0 0-104.22-32.32 1.58 1.58 0 0 0-1.68.79 294.11 294.11 0 0 0-13 26.66 389.78 389.78 0 0 0-117.05 0 269.75 269.75 0 0 0-13.18-26.66 1.64 1.64 0 0 0-1.68-.79A421 421 0 0 0 334.44 349a1.49 1.49 0 0 0-.69.59c-66.37 99.17-84.55 195.9-75.63 291.41a1.76 1.76 0 0 0 .67 1.2 424.58 424.58 0 0 0 127.85 64.63 1.66 1.66 0 0 0 1.8-.59 303.45 303.45 0 0 0 26.15-42.54 1.62 1.62 0 0 0-.89-2.25 279.6 279.6 0 0 1-39.94-19 1.64 1.64 0 0 1-.16-2.72c2.68-2 5.37-4.1 7.93-6.22a1.58 1.58 0 0 1 1.65-.22c83.79 38.26 174.51 38.26 257.31 0a1.58 1.58 0 0 1 1.68.2c2.56 2.11 5.25 4.23 8 6.24a1.64 1.64 0 0 1-.14 2.72 262.37 262.37 0 0 1-40 19 1.63 1.63 0 0 0-.87 2.28 340.72 340.72 0 0 0 26.13 42.52 1.62 1.62 0 0 0 1.8.61 423.17 423.17 0 0 0 128-64.63 1.64 1.64 0 0 0 .67-1.18c10.68-110.44-17.88-206.38-75.7-291.42a1.3 1.3 0 0 0-.63-.63zM427.09 582.85c-25.23 0-46-23.16-46-51.6s20.38-51.6 46-51.6c25.83 0 46.42 23.36 46 51.6.02 28.44-20.37 51.6-46 51.6zm170.13 0c-25.23 0-46-23.16-46-51.6s20.38-51.6 46-51.6c25.83 0 46.42 23.36 46 51.6.01 28.44-20.17 51.6-46 51.6z"
-                                            style="fill:#fff"></path>
-                                    </g></svg
-                                >
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-bold">Discord</h2>
-                                <p class="text-[#ccc]">
-                                    rython.dev/<wbr />discord
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <div class="hidden opacity-0 lg:block"></div>
-                <!-- Tiktok -->
-                <a href="https://tiktok.com/@RythonDev" target="_blank">
-                    <div class="social-card">
-                        <div
-                            class="social-card-content group flex flex-col items-start justify-between"
-                        >
-                            <div
-                                class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 46.652 46.652"
-                                >
-                                    <path
-                                        id="Icon_ionic-md-arrow-back"
-                                        data-name="Icon ionic-md-arrow-back"
-                                        d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
-                                        transform="translate(46.652 23.326) rotate(135)"
-                                        fill="#fff"></path>
-                                </svg>
-                            </div>
-                            <div
-                                id="tiktok-icon"
-                                class="icon-box flex h-12 w-12 items-center justify-center rounded-full bg-[#111]"
-                            >
-                                <img
-                                    src="/images/socials/tiktok.webp"
-                                    alt="tiktok logo"
-                                    width="24"
-                                />
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-bold">Tiktok</h2>
-                                <p class="text-[#ccc]">@RythonDev</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <div class="hidden opacity-0 md:block lg:hidden"></div>
-                <!-- Bluesky -->
-                <a href="https://bsky.app/profile/rython.dev" target="_blank">
-                    <div class="social-card">
-                        <div
-                            class="social-card-content group flex flex-col items-start justify-between"
-                        >
-                            <div
-                                class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 46.652 46.652"
-                                >
-                                    <path
-                                        id="Icon_ionic-md-arrow-back"
-                                        data-name="Icon ionic-md-arrow-back"
-                                        d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
-                                        transform="translate(46.652 23.326) rotate(135)"
-                                        fill="#fff"></path>
-                                </svg>
-                            </div>
-                            <div
-                                id="bluesky-icon"
-                                class="icon-box flex aspect-square h-12 w-12 items-center justify-center rounded-full bg-[linear-gradient(0deg,_rgba(86,183,254,1)_0%,_rgba(13,125,253,1)_100%)]"
-                            >
-                                <img
-                                    src="/images/socials/bluesky.webp"
-                                    alt="bluesky logo"
-                                    width="35"
-                                />
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-bold">Bluesky</h2>
-                                <p class="text-[#ccc]">@rython.dev</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="mx-auto mt-10 w-fit md:ml-auto">
-                Hover Light effect by
-                <a
-                    class="text-white underline hover:text-blue-500"
-                    href="https://www.youtube.com/watch?v=htGfnF1zN4g"
-                    target="_blank"
-                >
-                    Hyperplexed
-                </a>
-            </div>
-        </div>
-    </div>
-    <Footer />
+							<div>
+								<h2 class="text-xl font-bold">Date & Time</h2>
+								<p class="text-[#ccc]">
+									<div id="display-date" class="text-[#ccc]">
+									</div>
+									<span
+										id="time-in-aus"
+										class="uppercase text-[#ccc]"></span>
+									<span
+										id="time-difference"
+										class="text-[#ccc]"
+									>
+									</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Ko-fi -->
+				<a href="https://ko-fi.com/rython" target="_blank">
+					<div class="social-card">
+						<div
+							class="social-card-content group flex flex-col items-start justify-between"
+						>
+							<div
+								class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="32"
+									height="32"
+									viewBox="0 0 46.652 46.652"
+								>
+									<path
+										id="Icon_ionic-md-arrow-back"
+										data-name="Icon ionic-md-arrow-back"
+										d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
+										transform="translate(46.652 23.326) rotate(135)"
+										fill="#fff"></path>
+								</svg>
+							</div>
+							<div
+								id="kofi-icon"
+								class="icon-box flex aspect-square h-12 w-12 items-center justify-center rounded-full bg-[#00BCF2]"
+							>
+								<img
+									src="/images/socials/kofi_s_logo_nolabel.webp"
+									alt="ko-fi logo"
+									width="28"
+								/>
+							</div>
+							<div>
+								<h2 class="text-xl font-bold">Ko-fi</h2>
+								<p class="text-[#ccc]">Rython</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<!-- Discord -->
+				<a href="https://rython.dev/discord" target="_blank">
+					<div class="social-card">
+						<div
+							class="social-card-content group flex flex-col items-start justify-between"
+						>
+							<div
+								class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="32"
+									height="32"
+									viewBox="0 0 46.652 46.652"
+								>
+									<path
+										id="Icon_ionic-md-arrow-back"
+										data-name="Icon ionic-md-arrow-back"
+										d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
+										transform="translate(46.652 23.326) rotate(135)"
+										fill="#fff"></path>
+								</svg>
+							</div>
+							<div id="discord-icon" class="icon-box">
+								<svg
+									width="48px"
+									height="48px"
+									viewBox="0 0 1024 1024"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="#000000"
+									><g id="SVGRepo_bgCarrier" stroke-width="0"
+									></g><g
+										id="SVGRepo_tracerCarrier"
+										stroke-linecap="round"
+										stroke-linejoin="round"></g><g
+										id="SVGRepo_iconCarrier"
+									>
+										<circle
+											cx="512"
+											cy="512"
+											r="512"
+											style="fill:#5865f2"></circle>
+										<path
+											d="M689.43 349a422.21 422.21 0 0 0-104.22-32.32 1.58 1.58 0 0 0-1.68.79 294.11 294.11 0 0 0-13 26.66 389.78 389.78 0 0 0-117.05 0 269.75 269.75 0 0 0-13.18-26.66 1.64 1.64 0 0 0-1.68-.79A421 421 0 0 0 334.44 349a1.49 1.49 0 0 0-.69.59c-66.37 99.17-84.55 195.9-75.63 291.41a1.76 1.76 0 0 0 .67 1.2 424.58 424.58 0 0 0 127.85 64.63 1.66 1.66 0 0 0 1.8-.59 303.45 303.45 0 0 0 26.15-42.54 1.62 1.62 0 0 0-.89-2.25 279.6 279.6 0 0 1-39.94-19 1.64 1.64 0 0 1-.16-2.72c2.68-2 5.37-4.1 7.93-6.22a1.58 1.58 0 0 1 1.65-.22c83.79 38.26 174.51 38.26 257.31 0a1.58 1.58 0 0 1 1.68.2c2.56 2.11 5.25 4.23 8 6.24a1.64 1.64 0 0 1-.14 2.72 262.37 262.37 0 0 1-40 19 1.63 1.63 0 0 0-.87 2.28 340.72 340.72 0 0 0 26.13 42.52 1.62 1.62 0 0 0 1.8.61 423.17 423.17 0 0 0 128-64.63 1.64 1.64 0 0 0 .67-1.18c10.68-110.44-17.88-206.38-75.7-291.42a1.3 1.3 0 0 0-.63-.63zM427.09 582.85c-25.23 0-46-23.16-46-51.6s20.38-51.6 46-51.6c25.83 0 46.42 23.36 46 51.6.02 28.44-20.37 51.6-46 51.6zm170.13 0c-25.23 0-46-23.16-46-51.6s20.38-51.6 46-51.6c25.83 0 46.42 23.36 46 51.6.01 28.44-20.17 51.6-46 51.6z"
+											style="fill:#fff"></path>
+									</g></svg
+								>
+							</div>
+							<div>
+								<h2 class="text-xl font-bold">Discord</h2>
+								<p class="text-[#ccc]">
+									rython.dev/<wbr />discord
+								</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<div class="hidden opacity-0 lg:block"></div>
+				<!-- Tiktok -->
+				<a href="https://tiktok.com/@RythonDev" target="_blank">
+					<div class="social-card">
+						<div
+							class="social-card-content group flex flex-col items-start justify-between"
+						>
+							<div
+								class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="32"
+									height="32"
+									viewBox="0 0 46.652 46.652"
+								>
+									<path
+										id="Icon_ionic-md-arrow-back"
+										data-name="Icon ionic-md-arrow-back"
+										d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
+										transform="translate(46.652 23.326) rotate(135)"
+										fill="#fff"></path>
+								</svg>
+							</div>
+							<div
+								id="tiktok-icon"
+								class="icon-box flex h-12 w-12 items-center justify-center rounded-full bg-[#111]"
+							>
+								<img
+									src="/images/socials/tiktok.webp"
+									alt="tiktok logo"
+									width="24"
+								/>
+							</div>
+							<div>
+								<h2 class="text-xl font-bold">Tiktok</h2>
+								<p class="text-[#ccc]">@RythonDev</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<div class="hidden opacity-0 md:block lg:hidden"></div>
+				<!-- Bluesky -->
+				<a href="https://bsky.app/profile/rython.dev" target="_blank">
+					<div class="social-card">
+						<div
+							class="social-card-content group flex flex-col items-start justify-between"
+						>
+							<div
+								class="absolute right-5 rotate-45 opacity-0 transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:opacity-100"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="32"
+									height="32"
+									viewBox="0 0 46.652 46.652"
+								>
+									<path
+										id="Icon_ionic-md-arrow-back"
+										data-name="Icon ionic-md-arrow-back"
+										d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
+										transform="translate(46.652 23.326) rotate(135)"
+										fill="#fff"></path>
+								</svg>
+							</div>
+							<div
+								id="bluesky-icon"
+								class="icon-box flex aspect-square h-12 w-12 items-center justify-center rounded-full bg-[linear-gradient(0deg,_rgba(86,183,254,1)_0%,_rgba(13,125,253,1)_100%)]"
+							>
+								<img
+									src="/images/socials/bluesky.webp"
+									alt="bluesky logo"
+									width="35"
+								/>
+							</div>
+							<div>
+								<h2 class="text-xl font-bold">Bluesky</h2>
+								<p class="text-[#ccc]">@rython.dev</p>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="mx-auto mt-10 w-fit md:ml-auto">
+				Hover Light effect by
+				<a
+					class="text-white underline hover:text-blue-500"
+					href="https://www.youtube.com/watch?v=htGfnF1zN4g"
+					target="_blank"
+				>
+					Hyperplexed
+				</a>
+			</div>
+		</div>
+	</div>
+	<Footer />
 </Layout>
 
 <style>
-    :root {
-        --bg-color: rgb(20, 20, 20);
-        --card-color: rgb(23, 23, 23);
-    }
+	:root {
+		--bg-color: rgb(20, 20, 20);
+		--card-color: rgb(23, 23, 23);
+	}
 
-    #cards:hover .social-card::after {
-        opacity: 1;
-    }
+	#cards:hover .social-card::after {
+		opacity: 1;
+	}
 
-    #intro .social-card-content {
-        background-image:
-            linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0) 0%,
-                rgba(20, 20, 20, 1) 50%
-            ),
-            url("/images/ryan-run-TR.webp");
+	#intro .social-card-content {
+		background-image:
+			linear-gradient(
+				to bottom,
+				rgba(0, 0, 0, 0) 0%,
+				rgba(20, 20, 20, 1) 70%
+			),
+			url("/images/socials/landscape.webp");
 
-        background-repeat: no-repeat;
-    }
+		background-repeat: no-repeat;
+	}
 
-    .social-card {
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 3rem;
+	.social-card {
+		background-color: rgba(255, 255, 255, 0.1);
+		border-radius: 3rem;
 
-        position: relative;
-    }
+		position: relative;
+	}
 
-    .social-card:not(#intro) {
-        height: 220px;
-    }
+	.social-card:not(#intro) {
+		height: 220px;
+	}
 
-    .social-card:hover::before {
-        opacity: 1;
-    }
+	.social-card:hover::before {
+		opacity: 1;
+	}
 
-    .social-card::before,
-    .social-card::after {
-        border-radius: inherit;
-        content: "";
-        height: 100%;
-        left: 0px;
-        opacity: 0;
-        position: absolute;
-        top: 0px;
-        transition: opacity 500ms;
-        width: 100%;
-    }
+	.social-card::before,
+	.social-card::after {
+		border-radius: inherit;
+		content: "";
+		height: 100%;
+		left: 0px;
+		opacity: 0;
+		position: absolute;
+		top: 0px;
+		transition: opacity 500ms;
+		width: 100%;
+	}
 
-    .social-card::before {
-        background: radial-gradient(
-            800px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 255, 255, 0.06),
-            transparent 40%
-        );
-        z-index: 3;
-    }
+	.social-card::before {
+		background: radial-gradient(
+			800px circle at var(--mouse-x) var(--mouse-y),
+			rgba(255, 255, 255, 0.06),
+			transparent 40%
+		);
+		z-index: 3;
+	}
 
-    .social-card::after {
-        background: radial-gradient(
-            600px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 255, 255, 0.5),
-            transparent 40%
-        );
-        z-index: 1;
-    }
+	.social-card::after {
+		background: radial-gradient(
+			600px circle at var(--mouse-x) var(--mouse-y),
+			rgba(255, 255, 255, 0.5),
+			transparent 40%
+		);
+		z-index: 1;
+	}
 
-    .social-card > .social-card-content {
-        background-color: var(--card-color);
-        border-radius: inherit;
-        /* flex-grow: 1; */
-        inset: 1px;
-        position: absolute;
-        padding: 1.75rem;
-        z-index: 3;
-    }
+	.social-card > .social-card-content {
+		background-color: var(--card-color);
+		border-radius: inherit;
+		/* flex-grow: 1; */
+		inset: 1px;
+		position: absolute;
+		padding: 1.75rem;
+		z-index: 3;
+	}
 
-    .icon-box {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+	.icon-box {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-    }
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
 
-    .icon-box::before {
-        content: "";
-        z-index: -2;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        border-radius: 999px;
-        --box-shadow-values: 0px 0px 20px 2px;
-    }
+	.icon-box::before {
+		content: "";
+		z-index: -2;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		border-radius: 999px;
+		--box-shadow-values: 0px 0px 20px 2px;
+	}
 
-    #website-icon::before,
-    #github-icon::before,
-    #codepen-icon::before,
-    #tiktok-icon::before {
-        box-shadow: var(--box-shadow-values) #888;
-    }
+	#website-icon::before,
+	#github-icon::before,
+	#codepen-icon::before,
+	#tiktok-icon::before {
+		box-shadow: var(--box-shadow-values) #888;
+	}
 
-    #twitch-icon::before {
-        box-shadow: var(--box-shadow-values) #8c44f7;
-    }
+	#twitch-icon::before {
+		box-shadow: var(--box-shadow-values) #8c44f7;
+	}
 
-    #youtube-icon::before {
-        box-shadow: var(--box-shadow-values) #ff0000;
-    }
+	#youtube-icon::before {
+		box-shadow: var(--box-shadow-values) #ff0000;
+	}
 
-    #instagram-icon::before {
-        box-shadow: var(--box-shadow-values) #f56040;
-    }
+	#instagram-icon::before {
+		box-shadow: var(--box-shadow-values) #f56040;
+	}
 
-    #kofi-icon::before {
-        box-shadow: var(--box-shadow-values) #00bcf2;
-    }
+	#kofi-icon::before {
+		box-shadow: var(--box-shadow-values) #00bcf2;
+	}
 
-    #discord-icon::before {
-        box-shadow: var(--box-shadow-values) #5865f2;
-    }
+	#discord-icon::before {
+		box-shadow: var(--box-shadow-values) #5865f2;
+	}
 
-    #bluesky-icon::before {
-        box-shadow: var(--box-shadow-values) #56b7fe;
-    }
+	#bluesky-icon::before {
+		box-shadow: var(--box-shadow-values) #56b7fe;
+	}
 </style>
 <script is:inline>
-    const MY_TIMEZONE = "Australia/Melbourne";
-    document.getElementById("cards").onmousemove = (e) => {
-        for (const card of document.getElementsByClassName("social-card")) {
-            const rect = card.getBoundingClientRect(),
-                x = e.clientX - rect.left,
-                y = e.clientY - rect.top;
+	const MY_TIMEZONE = "Australia/Melbourne";
+	document.getElementById("cards").onmousemove = (e) => {
+		for (const card of document.getElementsByClassName("social-card")) {
+			const rect = card.getBoundingClientRect(),
+				x = e.clientX - rect.left,
+				y = e.clientY - rect.top;
 
-            card.style.setProperty("--mouse-x", `${x}px`);
-            card.style.setProperty("--mouse-y", `${y}px`);
-        }
-    };
+			card.style.setProperty("--mouse-x", `${x}px`);
+			card.style.setProperty("--mouse-y", `${y}px`);
+		}
+	};
 
-    function getTimezoneDifference(timezone1, timezone2) {
-        // Create two dates: one in each time zone
-        const date1 = new Date().toLocaleString("en-US", {
-            timeZone: timezone1,
-        });
-        const date2 = new Date().toLocaleString("en-US", {
-            timeZone: timezone2,
-        });
+	function getTimezoneDifference(timezone1, timezone2) {
+		// Create two dates: one in each time zone
+		const date1 = new Date().toLocaleString("en-US", {
+			timeZone: timezone1,
+		});
+		const date2 = new Date().toLocaleString("en-US", {
+			timeZone: timezone2,
+		});
 
-        // Convert the dates to Date objects
-        const dateObj1 = new Date(date1);
-        const dateObj2 = new Date(date2);
+		// Convert the dates to Date objects
+		const dateObj1 = new Date(date1);
+		const dateObj2 = new Date(date2);
 
-        // Get the difference in minutes between the two dates
-        const diffMinutes =
-            (dateObj2.getTime() - dateObj1.getTime()) / (1000 * 60);
+		// Get the difference in minutes between the two dates
+		const diffMinutes =
+			(dateObj2.getTime() - dateObj1.getTime()) / (1000 * 60);
 
-        // Convert the difference in minutes to hours and minutes
-        const diffHours = Math.floor(diffMinutes / 60);
-        const diffMinutesRemaining = Math.floor(diffMinutes % 60);
+		// Convert the difference in minutes to hours and minutes
+		const diffHours = Math.floor(diffMinutes / 60);
+		const diffMinutesRemaining = Math.floor(diffMinutes % 60);
 
-        return { hours: diffHours, minutes: diffMinutesRemaining };
-    }
+		return { hours: diffHours, minutes: diffMinutesRemaining };
+	}
 
-    function displayTimeDifference(hour, minutes) {
-        let ahead = false;
-        if (hour < 0) {
-            hour = 24 + hour;
-        } else {
-            ahead = true;
-        }
+	function displayTimeDifference(hour, minutes) {
+		let ahead = false;
+		if (hour < 0) {
+			hour = 24 + hour;
+		} else {
+			ahead = true;
+		}
 
-        if (hour === 0 && minutes === 0) {
-            return "";
-        }
+		if (hour === 0 && minutes === 0) {
+			return "";
+		}
 
-        let differenceDisplay = ahead ? "ahead" : "behind";
+		let differenceDisplay = ahead ? "ahead" : "behind";
 
-        if (hour === 0) {
-            return `( ${minutes} minutes ${differenceDisplay} )`;
-        }
+		if (hour === 0) {
+			return `( ${minutes} minutes ${differenceDisplay} )`;
+		}
 
-        if (minutes === 0) {
-            return `( ${hour} hours ${differenceDisplay} )`;
-        }
+		if (minutes === 0) {
+			return `( ${hour} hours ${differenceDisplay} )`;
+		}
 
-        return `( ${hour} hours and ${minutes} minutes ${differenceDisplay} )`;
-    }
+		return `( ${hour} hours and ${minutes} minutes ${differenceDisplay} )`;
+	}
 
-    let { hours, minutes } = getTimezoneDifference(
-        Intl.DateTimeFormat().resolvedOptions().timeZone,
-        MY_TIMEZONE,
-    );
+	let { hours, minutes } = getTimezoneDifference(
+		Intl.DateTimeFormat().resolvedOptions().timeZone,
+		MY_TIMEZONE
+	);
 
-    let timeDifference = displayTimeDifference(hours, minutes);
+	let timeDifference = displayTimeDifference(hours, minutes);
 
-    let time = new Date().toLocaleTimeString("en-UK", {
-        timeZone: MY_TIMEZONE,
-        hour: "numeric",
-        minute: "numeric",
-        hour12: true,
-    });
+	let time = new Date().toLocaleTimeString("en-UK", {
+		timeZone: MY_TIMEZONE,
+		hour: "numeric",
+		minute: "numeric",
+		hour12: true,
+	});
 
-    let displayDate = new Date().toLocaleDateString("en-UK", {
-        timeZone: MY_TIMEZONE,
-        weekday: "long",
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-    });
+	let displayDate = new Date().toLocaleDateString("en-UK", {
+		timeZone: MY_TIMEZONE,
+		weekday: "long",
+		year: "numeric",
+		month: "short",
+		day: "numeric",
+	});
 
-    setInterval(() => {
-        time = new Date().toLocaleTimeString("en-UK", {
-            timeZone: MY_TIMEZONE,
-            hour: "numeric",
-            minute: "numeric",
-            hour12: true,
-        });
+	setInterval(() => {
+		time = new Date().toLocaleTimeString("en-UK", {
+			timeZone: MY_TIMEZONE,
+			hour: "numeric",
+			minute: "numeric",
+			hour12: true,
+		});
 
-        document.getElementById("time-in-aus").innerText = time;
-    }, 2000);
+		document.getElementById("time-in-aus").innerText = time;
+	}, 2000);
 
-    document.querySelector("#time-difference").innerText = timeDifference;
-    document.querySelector("#display-date").innerText = displayDate;
-    document.getElementById("time-in-aus").innerText = time;
+	document.querySelector("#time-difference").innerText = timeDifference;
+	document.querySelector("#display-date").innerText = displayDate;
+	document.getElementById("time-in-aus").innerText = time;
 </script>
