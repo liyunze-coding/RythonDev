@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    // import Socials from "../elements/Socials.svelte";
+    import Socials from "../elements/Socials.svelte";
 
     // Roles
     let roles = $state(["Developer", "Streamer", "Content creator", "Student"]);
@@ -159,7 +159,7 @@
             <b>data science</b>.
         </p>
         <div class="mt-5 flex flex-row items-center justify-center">
-            <!-- <Socials /> -->
+            <Socials />
         </div>
     </div>
 </div>

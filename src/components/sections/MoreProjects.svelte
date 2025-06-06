@@ -24,10 +24,13 @@
                 video.addEventListener("mouseenter", () => {
                     if (userInteracted) {
                         video.volume = 0.2;
+                        video.muted = false;
+                        video.play();
                     } else {
+                        video.volume = 0;
                         video.muted = true;
+                        video.play();
                     }
-                    video.play();
                 });
 
                 video.addEventListener("mouseleave", () => {
