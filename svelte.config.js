@@ -1,10 +1,8 @@
 import { vitePreprocess } from "@astrojs/svelte";
 
 export default {
-    preprocess: vitePreprocess(),
+    preprocess: vitePreprocess({script:true}),
     compilerOptions: {
-        compatibility: {
-            componentApi: 4,
-        },
+
     },
 };

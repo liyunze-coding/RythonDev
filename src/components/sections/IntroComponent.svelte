@@ -1,17 +1,12 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import Socials from "../elements/Socials.svelte";
+    // import Socials from "../elements/Socials.svelte";
 
     // Roles
-    let roles: string[] = [
-        "Developer",
-        "Streamer",
-        "Content creator",
-        "Student",
-    ];
+    let roles = $state(["Developer", "Streamer", "Content creator", "Student"]);
     let roleState: string = $state("");
     let role: string;
-    let counter: number = 0;
+    let counter: number = $state(0);
     let roleEmpty: boolean = true;
     const roleInterval: number = 50;
     const roleUpdateDelay: number = 2000; // delay after updating
@@ -164,7 +159,7 @@
             <b>data science</b>.
         </p>
         <div class="mt-5 flex flex-row items-center justify-center">
-            <Socials />
+            <!-- <Socials /> -->
         </div>
     </div>
 </div>
