@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@theme {
+    --color-html: #B11700;
+    --color-typescript: #3178C6;
+    --color-svelte: #B11700;
+    --color-react: #00D8FF;
+    --color-wordpress: #21759B;
+    --color-htmx: #3366CC;
+    --color-tailwind: #07B6D4;
+    --color-python: #3776AB;
+    --color-csharp: #672079;
+    --color-java: #ED8B00;
+    --color-kotlin: #7F52FF;
+    --color-php: #3D5694;
+    --color-go: #006080;
+    --color-rust: #B11700;
+    --color-postgresql: #4479A1;
+    --color-mysql: #1D6998;
+    --color-mongodb: #09934E;
+    --color-opencv: #10652F;
+    --color-win32api: #0078D4;
+}

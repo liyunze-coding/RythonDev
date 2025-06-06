@@ -107,7 +107,7 @@
         h-fit
         flex-col text-white"
 >
-    <div class="card-content w-full px-5 pb-2 pt-10 lg:px-10">
+    <div class="card-content w-full px-5 pt-10 pb-2 lg:px-10">
         <div class="flex h-20 flex-row">
             <div class="mr-1 flex w-20 items-center justify-center">
                 <img
