@@ -1,16 +1,23 @@
 import { defineConfig } from "astro/config";
 
-import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 
 import mdx from "@astrojs/mdx";
 
+import tailwindcss from "@tailwindcss/vite";
+
 // https://astro.build/config
 export default defineConfig({
-    integrations: [tailwind(), svelte(), mdx()],
-    server: {
-        port: 8008,
-        hostname: "RythonDev",
-    },
-    site: "https://rython.dev",
+  integrations: [svelte(), mdx()],
+
+  server: {
+      port: 8008,
+      hostname: "RythonDev",
+  },
+
+  site: "https://rython.dev",
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

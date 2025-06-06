@@ -5,7 +5,8 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-import { ViewTransitions } from "astro:transitions";
+import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -25,7 +26,7 @@ import { ViewTransitions } from "astro:transitions";
 	</head>
 	<body>
 		<slot />
-		<ViewTransitions />
+		<ClientRouter />
 	</body>
 </html>
 <style is:global>
@@ -55,17 +56,11 @@ import { ViewTransitions } from "astro:transitions";
 		scroll-behavior: smooth;
 	}
 
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-
 	body {
 		font-family: "Montserrat", sans-serif;
 		color: #fff;
-		background: radial-gradient(circle, #383838 1px, transparent 1px),
-			#202020;
+		background:
+			radial-gradient(circle, #383838 1px, transparent 1px), #202020;
 		background-size: 20px 20px;
 	}
 </style>

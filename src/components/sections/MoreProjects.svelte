@@ -53,25 +53,25 @@
             class="flex h-fit w-full flex-col justify-center px-10 lg:flex-row lg:px-20"
         >
             <div
-                class="image-container relative mb-5 flex aspect-video w-full [perspective:200px] lg:mb-0 lg:ml-auto lg:mr-5 lg:w-1/2"
+                class="image-container relative mb-5 flex aspect-video w-full [perspective:200px] lg:mr-5 lg:mb-0 lg:ml-auto lg:w-1/2"
             >
                 <img
                     src="/images/projects/chess-opencv.webp"
                     alt="computer vision chess bot"
-                    class="absolute left-1/2
-                    top-1/2 max-w-full
-                    rounded-xl border-2
-                    border-solid border-white opacity-40 [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-45%)_translateY(-50%)]"
+                    class="absolute top-1/2
+                    left-1/2 max-w-full
+                    [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-45%)_translateY(-50%)] rounded-xl
+                    border-2 border-solid border-white opacity-40"
                     width="700"
                 />
 
                 <!-- svelte-ignore a11y-media-has-caption -->
                 <video
                     width="700"
-                    class="playable opacity-1 absolute
-							left-1/2 top-1/2
-							max-w-full rounded-xl
-							border-2 border-solid border-white [transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-43%)_translateY(-52%)]"
+                    class="playable absolute top-1/2
+							left-1/2 max-w-full
+							[transform:rotateY(5deg)_rotateX(0deg)_translateZ(-50px)_translateX(-43%)_translateY(-52%)] rounded-xl
+							border-2 border-solid border-white opacity-100"
                 >
                     <source
                         src="/videos/chess_opencv_demo.webm"
@@ -86,7 +86,7 @@
                     Computer Vision Chess bot
                 </h2>
                 <p
-                    class="max-w-lg text-balance text-center text-xl lg:max-w-none lg:text-left"
+                    class="max-w-lg text-center text-xl text-balance lg:max-w-none lg:text-left"
                 >
                     A script that plays against opponents on lichess. Uses
                     OpenCV to detect the board and pieces, and the Stockfish
@@ -130,14 +130,14 @@
                     Computer Vision AimLab Bot
                 </h2>
                 <p
-                    class="max-w-lg text-balance text-center text-xl lg:max-w-none lg:text-right"
+                    class="max-w-lg text-center text-xl text-balance lg:max-w-none lg:text-right"
                 >
                     A script that plays AimLab, a game that helps improve your
                     aim in FPS games. Uses OpenCV to detect the targets and
                     win32API to move the mouse and click.
                 </p>
                 <div
-                    class="mb-10 mt-5 flex w-full flex-row flex-wrap justify-center lg:mb-0 lg:justify-end"
+                    class="mt-5 mb-10 flex w-full flex-row flex-wrap justify-center lg:mb-0 lg:justify-end"
                 >
                     <div
                         class="my-1 mr-1 w-fit
@@ -163,24 +163,24 @@
                 </div>
             </div>
             <div
-                class="image-container relative mb-5 flex aspect-video w-full [perspective:200px] lg:mb-0 lg:ml-auto lg:mr-5 lg:w-1/2"
+                class="image-container relative mb-5 flex aspect-video w-full [perspective:200px] lg:mr-5 lg:mb-0 lg:ml-auto lg:w-1/2"
             >
                 <img
                     src="/images/projects/aim-lab.webp"
                     alt="aim lab"
-                    class="absolute left-1/2
-                    top-1/2 max-w-full rounded-xl border-2
-                    border-solid border-white opacity-40 [transform:translateX(-48%)_translateY(-48%)_translateZ(-50px)_rotateY(-3deg)]"
+                    class="absolute top-1/2
+                    left-1/2 max-w-full [transform:translateX(-48%)_translateY(-48%)_translateZ(-50px)_rotateY(-3deg)] rounded-xl
+                    border-2 border-solid border-white opacity-40"
                     width="700"
                 />
 
                 <!-- svelte-ignore a11y-media-has-caption -->
                 <video
                     width="700"
-                    class="playable opacity-1 absolute
-                    left-1/2 top-1/2
-                    max-w-full rounded-xl
-                    border-2 border-solid border-white [transform:translateX(-50%)_translateY(-50%)_translateZ(-50px)_rotateY(-3deg)]"
+                    class="playable absolute top-1/2
+                    left-1/2 max-w-full
+                    [transform:translateX(-50%)_translateY(-50%)_translateZ(-50px)_rotateY(-3deg)] rounded-xl
+                    border-2 border-solid border-white opacity-100"
                     ><source src="/videos/aim_lab_demo.webm" /></video
                 >
             </div>

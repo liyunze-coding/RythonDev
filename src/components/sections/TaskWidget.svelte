@@ -116,13 +116,13 @@
 </script>
 
 <div
-    class="image-container relative mb-3 ml-0 mr-0 aspect-video [perspective:200px] md:mr-5 lg:mb-0 lg:ml-1 lg:mr-0 lg:w-1/2"
+    class="image-container relative mr-0 mb-3 ml-0 aspect-video [perspective:200px] md:mr-5 lg:mr-0 lg:mb-0 lg:ml-1 lg:w-1/2"
 >
     <!-- task bot -->
     <div
-        class="task-widget absolute left-1/2 top-1/2 flex
+        class="task-widget absolute top-1/2 left-1/2 flex
                             h-[99%] w-full
-                            flex-col opacity-30 [transform:translateX(-50%)_translateY(-49%)_translateZ(-50px)_rotateY(-3deg)]"
+                            [transform:translateX(-50%)_translateY(-49%)_translateZ(-50px)_rotateY(-3deg)] flex-col opacity-30"
     >
         <div
             class="flex w-full flex-row items-center justify-between
@@ -141,8 +141,8 @@
             <div class="scroll-element primary absolute w-full px-1">
                 {#each streamers as { streamer, task }}
                     <div
-                        class="my-2 w-full overflow-hidden overflow-ellipsis whitespace-nowrap rounded-md bg-[#404040]
-                                    px-5 py-1 text-white"
+                        class="my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
+                                    overflow-ellipsis whitespace-nowrap text-white"
                     >
                         O {streamer} : {task}
                     </div>
@@ -151,8 +151,8 @@
             <div class="scroll-element secondary absolute w-full px-1">
                 {#each streamers as { streamer, task }}
                     <div
-                        class="my-2 w-full overflow-hidden overflow-ellipsis whitespace-nowrap rounded-md bg-[#404040]
-                                    px-5 py-1 text-white"
+                        class="my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
+                                    overflow-ellipsis whitespace-nowrap text-white"
                     >
                         O {streamer} : {task}
                     </div>
@@ -161,9 +161,9 @@
         </div>
     </div>
     <div
-        class="task-widget absolute left-1/2 top-1/2
+        class="task-widget absolute top-1/2 left-1/2
                             flex h-[99%]
-                            w-full flex-col [transform:translateX(-51%)_translateY(-50%)_translateZ(-50px)_rotateY(-3deg)]"
+                            w-full [transform:translateX(-51%)_translateY(-50%)_translateZ(-50px)_rotateY(-3deg)] flex-col"
     >
         <div
             class="flex w-full flex-row items-center justify-between
@@ -182,8 +182,8 @@
             <div class="scroll-element primary absolute w-full px-1">
                 {#each streamers as { streamer, task }}
                     <div
-                        class="my-2 w-full overflow-hidden overflow-ellipsis whitespace-nowrap rounded-md bg-[#404040]
-                                    px-5 py-1 text-white"
+                        class="my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
+                                    overflow-ellipsis whitespace-nowrap text-white"
                     >
                         O {streamer} : {task}
                     </div>
@@ -192,8 +192,8 @@
             <div class="scroll-element secondary absolute w-full px-1">
                 {#each streamers as { streamer, task }}
                     <div
-                        class="my-2 w-full overflow-hidden overflow-ellipsis whitespace-nowrap rounded-md bg-[#404040]
-                                    px-5 py-1 text-white"
+                        class="my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
+                                    overflow-ellipsis whitespace-nowrap text-white"
                     >
                         O {streamer} : {task}
                     </div>
@@ -202,20 +202,20 @@
         </div>
     </div>
     <div
-        class="visit-div absolute left-1/2 top-1/2 h-full w-full
-                    overflow-hidden
-                    rounded-md border-2 border-solid
-                    border-white bg-[rgba(0,0,0,0.5)] opacity-0
-                    [transform:translateX(-50%)_translateY(-50%)]"
+        class="visit-div absolute top-1/2 left-1/2 h-full w-full
+                    [transform:translateX(-50%)_translateY(-50%)]
+                    overflow-hidden rounded-md border-2
+                    border-solid border-white bg-[rgba(0,0,0,0.5)]
+                    opacity-0"
     >
         <a
             href="https://github.com/liyunze-coding/chat-task-tic-overlay-infinity"
             target="_blank"
-            class="opacity-1 absolute left-1/2 top-1/2
-                        hidden rounded-xl bg-blue-500 px-5 py-3
+            class="absolute top-1/2 left-1/2 hidden
+                        [transform:translateX(-50%)_translateY(-50%)] rounded-xl bg-blue-500 px-5 py-3
                         font-bold
-                        transition-colors duration-300
-                        [transform:translateX(-50%)_translateY(-50%)] hover:bg-white
+                        opacity-100 transition-colors
+                        duration-300 hover:bg-white
                         hover:text-blue-500 lg:block">View repository</a
         >
     </div>
