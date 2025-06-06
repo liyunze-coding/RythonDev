@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 
 import svelte from "@astrojs/svelte";
 
@@ -20,4 +20,9 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
+  image: {
+    service: passthroughImageService(),
+  },
+
 });
