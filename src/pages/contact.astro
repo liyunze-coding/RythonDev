@@ -7,51 +7,35 @@ import Footer from "../components/sections/FooterComponent.astro";
 ---
 
 <Layout
-    title="Contact"
-    description="Find out how to contact RythonDev, for sponsorship offers or collaboration opportunities!"
+	title="Contact"
+	description="Find out how to contact RythonDev, for sponsorship offers or collaboration opportunities!"
 >
-    <NavBar />
-    <div id="contact-component" class="mt-10 pt-20">
-        <h1 class="text-center text-5xl">Contact</h1>
-        <div class="mt-10 flex items-center justify-center">
-            <div class="w-[90%] md:w-[600px]">
-                <Card primaryColor="#40A2D8">
-                    <div class="card-content">
-                        <div class="justify-left mb-3 flex w-full flex-col">
-                            <h2
-                                class="text-balance text-center text-xl font-bold"
-                            >
-                                Looking for a young developer with fresh ideas?
-                            </h2>
-                        </div>
-                        <hr class="mb-3 w-full" />
-                        <div class="text-balance text-center">
-                            Whether it's sponsorships or collaboration
-                            opportunities, hit me up!
-                        </div>
-                    </div>
-                </Card>
-            </div>
-        </div>
-        <div class="mt-10">
-            <ContactComponent />
-        </div>
-    </div>
-    <Footer />
+	<NavBar />
+	<div id="contact-component" class="mt-10 pt-20">
+		<h1 class="text-center text-5xl">Contact</h1>
+		<div class="mt-10 flex items-center justify-center">
+			<div class="w-[90%] md:w-[600px]">
+				<Card primaryColor="#40A2D8">
+					<div class="px-8 py-8">
+						<div class="justify-left mb-3 flex w-full flex-col">
+							<h2
+								class="text-center text-xl font-bold text-balance"
+							>
+								Looking for a young developer with fresh ideas?
+							</h2>
+						</div>
+						<hr class="my-5 w-full" />
+						<div class="text-center text-balance">
+							Whether it's sponsorships or collaboration
+							opportunities, hit me up!
+						</div>
+					</div>
+				</Card>
+			</div>
+		</div>
+		<div class="mt-10">
+			<ContactComponent />
+		</div>
+	</div>
+	<Footer />
 </Layout>
-
-<style>
-    .card-content {
-        display: flex;
-        flex-direction: column;
-        background-image: radial-gradient(
-            rgba(255, 255, 255, 0.1) 1px,
-            transparent 1px
-        );
-        background-position: 50% 50%;
-        background-size: 1.1rem 1.1rem;
-        padding: 2rem 2rem;
-        border-radius: 1.25rem;
-        overflow: hidden;
-    }
-</style>

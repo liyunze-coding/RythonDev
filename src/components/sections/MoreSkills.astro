@@ -9,11 +9,11 @@ import Line from "../elements/NetworkLine.astro";
 			<Line height="50px" />
 			<div class="mx-auto w-[90%] md:w-[600px]">
 				<Card primaryColor="#9D76C1">
-					<div class="card-content">
+					<div class="px-8 py-8">
 						<div class="justify-left flex w-full flex-col">
 							<h2 class="text-2xl font-bold">Content Creation</h2>
 						</div>
-						<hr class="w-full" />
+						<hr class="my-5 w-full" />
 						<p class="text-left">
 							Since I was little, I loved watching YouTube videos
 							and the idea of bringing joy and laughter to a wider
@@ -55,13 +55,13 @@ import Line from "../elements/NetworkLine.astro";
 			<Line height="50px" />
 			<div class="mx-auto w-[90%] md:w-[600px]">
 				<Card primaryColor="#9D76C1">
-					<div class="card-content">
+					<div class="px-8 py-8">
 						<div class="justify-left flex w-full flex-col">
 							<h2 class="text-2xl font-bold">
 								Mobile Development
 							</h2>
 						</div>
-						<hr class="w-full" />
+						<hr class="my-5 w-full" />
 						<p class="text-left">
 							In my Mobile App Development unit in University, I
 							am tasked to develop Android apps using Android
@@ -77,7 +77,7 @@ import Line from "../elements/NetworkLine.astro";
 							potential.
 						</p>
 						<div
-							class="flex w-full flex-row flex-wrap justify-start"
+							class="mt-5 flex w-full flex-row flex-wrap justify-start"
 						>
 							<div
 								class="my-1 mr-1 w-fit cursor-default rounded-full bg-[#106539] px-3 py-1 text-white transition-colors duration-300 hover:bg-[#106539] hover:text-white md:bg-gray-500"
@@ -101,23 +101,3 @@ import Line from "../elements/NetworkLine.astro";
 		</div>
 	</div>
 </div>
-
-<style>
-	.card-content {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		background-image: radial-gradient(
-			rgba(255, 255, 255, 0.1) 1px,
-			transparent 1px
-		);
-		background-position: 50% 50%;
-		background-size: 1.1rem 1.1rem;
-		padding-top: 2rem;
-		padding-left: 2rem;
-		padding-right: 2rem;
-		padding-bottom: 0.5rem;
-		border-radius: 1.25rem;
-		overflow: hidden;
-	}
-</style>

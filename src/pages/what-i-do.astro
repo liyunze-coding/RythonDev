@@ -12,19 +12,19 @@ import Footer from "../components/sections/FooterComponent.astro";
 	description="What Ryan's skillsets are, in Data Science, Web Development and Content Creation"
 >
 	<NavBar />
-	<div id="what-i-do" class="mt-10 pb-20 pt-20">
+	<div id="what-i-do" class="mt-10 pt-20 pb-20">
 		<WhatIDoComponent />
 
 		<div class="mx-auto mt-20 w-[90%] md:w-[750px]">
 			<Card primaryColor="#19a7ce">
-				<div class="card-content">
+				<div class="px-8 py-8">
 					<h2
 						id="web-dev"
 						class="animate-gradient text-2xl font-bold"
 					>
 						Web Development
 					</h2>
-					<hr class="mb-3 mt-3 w-full" />
+					<hr class="mt-3 mb-3 w-full" />
 					<div class="mb-5">
 						<h3 class="text-xl font-bold">Websites</h3>
 						<p class="mt-1 text-left">
@@ -57,14 +57,14 @@ import Footer from "../components/sections/FooterComponent.astro";
 			</Card>
 			<Line height="50px" />
 			<Card primaryColor="#a1eebd">
-				<div class="card-content">
+				<div class="px-8 py-8">
 					<h2
 						id="data-science"
 						class="animate-gradient text-2xl font-bold"
 					>
 						Data Science
 					</h2>
-					<hr class="mb-3 mt-3 w-full" />
+					<hr class="mt-3 mb-3 w-full" />
 					<div class="mb-5">
 						<h3 class="text-xl font-bold">
 							Data Analysis and Visualization
@@ -102,14 +102,14 @@ import Footer from "../components/sections/FooterComponent.astro";
 			</Card>
 			<Line height="50px" />
 			<Card primaryColor="#9D76C1">
-				<div class="card-content">
+				<div class="px-8 py-8">
 					<h2
 						id="content-creation"
 						class="animate-gradient text-2xl font-bold"
 					>
 						Content Creation
 					</h2>
-					<hr class="mb-3 mt-3 w-full" />
+					<hr class="mt-3 mb-3 w-full" />
 					<div class="mb-5">
 						<h3 class="text-xl font-bold">Streaming</h3>
 						<p class="mt-1 text-left">
@@ -148,20 +148,6 @@ import Footer from "../components/sections/FooterComponent.astro";
 </Layout>
 
 <style>
-	.card-content {
-		display: flex;
-		flex-direction: column;
-		background-image: radial-gradient(
-			rgba(255, 255, 255, 0.1) 1px,
-			transparent 1px
-		);
-		background-position: 50% 50%;
-		background-size: 1.1rem 1.1rem;
-		border-radius: 1.25rem;
-		padding: 2rem;
-		overflow: hidden;
-	}
-
 	#web-dev {
 		background: linear-gradient(
 			90deg,

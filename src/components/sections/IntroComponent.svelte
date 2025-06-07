@@ -107,7 +107,7 @@
         h-fit
         flex-col text-white"
 >
-    <div class="card-content w-full px-5 pt-10 pb-2 lg:px-10">
+    <div class="w-full px-5 pt-10 pb-2 lg:px-10">
         <div class="flex h-20 flex-row">
             <div class="mr-1 flex w-20 items-center justify-center">
                 <img
@@ -165,20 +165,6 @@
 </div>
 
 <style>
-    .card-content {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        background-image: radial-gradient(
-            rgba(255, 255, 255, 0.1) 1px,
-            transparent 1px
-        );
-        background-position: 50% 50%;
-        background-size: 1.1rem 1.1rem;
-        border-radius: 1.25rem;
-        overflow: hidden;
-    }
-
     #name {
         background: linear-gradient(
             90deg,

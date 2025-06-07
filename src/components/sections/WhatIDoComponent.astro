@@ -3,69 +3,51 @@ import Card from "../elements/Card.astro";
 ---
 
 <div class="flex w-full flex-col items-center justify-center">
-    <div
-        class="flex h-fit w-full max-w-[1440px] flex-col items-center justify-center"
-    >
-        <h1 class="mb-10 text-center text-5xl">What I Do</h1>
-        <div
-            class="grid w-[90%] grid-cols-1 place-content-center justify-center gap-5 sm:w-[350px] lg:w-[90%] lg:grid-cols-3 xl:w-4/5 xl:gap-12"
-        >
-            <Card primaryColor="#19a7ce" scaleOnHover={true}>
-                <div class="card-content">
-                    <h2 class="text-center text-xl font-bold">
-                        Web Development
-                    </h2>
-                    <hr class="w-full" />
-                    <p class="text-balance text-center">
-                        Bringing ideas to life on the web is my passion. I enjoy
-                        bringing my imagination to life through web development.
-                    </p>
-                </div>
-            </Card>
+	<div
+		class="flex h-fit w-full max-w-[1440px] flex-col items-center justify-center"
+	>
+		<h1 class="mb-10 text-center text-5xl">What I Do</h1>
+		<div
+			class="grid w-[90%] grid-cols-1 place-content-center justify-center gap-5 sm:w-[350px] lg:w-[90%] lg:grid-cols-3 xl:w-4/5 xl:gap-12"
+		>
+			<Card primaryColor="#19a7ce" scaleOnHover={true}>
+				<div class="px-8 py-8">
+					<h2 class="text-center text-xl font-bold">
+						Web Development
+					</h2>
+					<hr class="my-5 w-full" />
+					<p class="text-center text-balance">
+						Bringing ideas to life on the web is my passion. I enjoy
+						bringing my imagination to life through web development.
+					</p>
+				</div>
+			</Card>
 
-            <Card primaryColor="#a1eebd" scaleOnHover={true}>
-                <div class="card-content">
-                    <h2 class="text-center text-xl font-bold">Data Science</h2>
-                    <hr class="w-full" />
-                    <p class="text-balance text-center">
-                        Using data to make decisions is a powerful tool. I am
-                        experienced in analyzing data and making decisions based
-                        on data.
-                    </p>
-                </div>
-            </Card>
+			<Card primaryColor="#a1eebd" scaleOnHover={true}>
+				<div class="px-8 py-8">
+					<h2 class="text-center text-xl font-bold">Data Science</h2>
+					<hr class="my-5 w-full" />
+					<p class="text-center text-balance">
+						Using data to make decisions is a powerful tool. I am
+						experienced in analyzing data and making decisions based
+						on data.
+					</p>
+				</div>
+			</Card>
 
-            <Card primaryColor="#9D76C1" scaleOnHover={true}>
-                <div class="card-content">
-                    <h2 class="text-center text-xl font-bold">
-                        Content Creation
-                    </h2>
-                    <hr class="w-full" />
-                    <p class="text-balance text-center">
-                        Everyone has something to give, or something to share. I
-                        produce content around productivity and software
-                        development.
-                    </p>
-                </div>
-            </Card>
-        </div>
-    </div>
+			<Card primaryColor="#9D76C1" scaleOnHover={true}>
+				<div class="px-8 py-8">
+					<h2 class="text-center text-xl font-bold">
+						Content Creation
+					</h2>
+					<hr class="my-5 w-full" />
+					<p class="text-center text-balance">
+						Everyone has something to give, or something to share. I
+						produce content around productivity and software
+						development.
+					</p>
+				</div>
+			</Card>
+		</div>
+	</div>
 </div>
-
-<style>
-    .card-content {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        background-image: radial-gradient(
-            rgba(255, 255, 255, 0.1) 1px,
-            transparent 1px
-        );
-        background-position: 50% 50%;
-        background-size: 1.1rem 1.1rem;
-        padding: 2rem 2rem;
-        border-radius: 1.25rem;
-        overflow: hidden;
-        min-width: 210px;
-    }
-</style>
