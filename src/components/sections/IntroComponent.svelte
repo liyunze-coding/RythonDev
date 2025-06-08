@@ -135,7 +135,7 @@
                 height="131.8"
             />
         </div>
-        <div class="mt-2 text-2xl font-bold">
+        <div class="mt-2 mb-5 text-2xl font-bold">
             Good {greetingState}<span
                 bind:this={greetingPulse}
                 class="animate-pulse font-extralight">|</span

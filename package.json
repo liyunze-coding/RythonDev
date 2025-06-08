@@ -13,11 +13,11 @@
         "@astrojs/mdx": "^4.3.0",
         "@astrojs/svelte": "^7.1.0",
         "@tailwindcss/vite": "^4.1.8",
-        "astro": "^5.9.0",
+        "astro": "^5.9.1",
         "caniuse-lite": "^1.0.30001698",
         "moment": "^2.30.1",
         "moment-timezone": "^0.6.0",
-        "svelte": "^5.33.15",
+        "svelte": "^5.33.16",
         "tailwindcss": "^4.1.8",
         "typescript": "^5.8.3"
     },

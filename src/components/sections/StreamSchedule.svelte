@@ -9,16 +9,7 @@
         end: moment.Moment;
     };
 
-    const myStreamSchedule: null | StreamScheduleDay[] = [
-        {
-            start: getUpcomingTimeDevTZ(2, "10:00"),
-            end: getUpcomingTimeDevTZ(2, "17:00"),
-        },
-        {
-            start: getUpcomingTimeDevTZ(5, "10:00"),
-            end: getUpcomingTimeDevTZ(5, "17:00"),
-        },
-    ];
+    const myStreamSchedule: null | StreamScheduleDay[] = [];
 
     /**
      * Calculates the upcoming specified time for a given day of the week in my timezone.
