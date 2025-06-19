@@ -1,15 +1,15 @@
 ---
 import { getCollection } from "astro:content";
-import BackToBlogs from "../../components/sections/BackToBlogs.astro";
+import BackToBlogs from "../../components/blog/BackToBlogs.astro";
 import Layout from "../../layouts/Layout.astro";
-import Footer from "../../components/sections/FooterComponent.astro";
+import Footer from "../../components/global/FooterComponent.astro";
 
 export async function getStaticPaths() {
-    const blogEntries = await getCollection("blog");
-    return blogEntries.map((entry) => ({
-        params: { slug: entry.slug },
-        props: { entry },
-    }));
+	const blogEntries = await getCollection("blog");
+	return blogEntries.map((entry) => ({
+		params: { slug: entry.slug },
+		props: { entry },
+	}));
 }
 
 const { entry } = Astro.props;
@@ -17,118 +17,118 @@ const { Content } = await entry.render();
 ---
 
 <Layout
-    title="Blog"
-    description="Find out how to contact RythonDev, for sponsorship offers or collaboration opportunities!"
+	title="Blog"
+	description="Find out how to contact RythonDev, for sponsorship offers or collaboration opportunities!"
 >
-    <BackToBlogs />
-    <div id="blog-content-component" class="mx-auto mt-10 pt-10">
-        <h1 class="text-left text-4xl">{entry.data.title}</h1>
-        <p class="mt-3 text-lg text-gray-200">
-            Published
-            {
-                new Date(entry.data.pubDate).toLocaleDateString("en-UK", {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
-                })
-            }
-        </p>
-        <p class="text-lg text-gray-200">by {entry.data.author}</p>
-        <p class="text-lg text-white">{entry.data.description}</p>
+	<BackToBlogs />
+	<div id="blog-content-component" class="mx-auto mt-10 pt-10">
+		<h1 class="text-left text-4xl">{entry.data.title}</h1>
+		<p class="mt-3 text-lg text-gray-200">
+			Published
+			{
+				new Date(entry.data.pubDate).toLocaleDateString("en-UK", {
+					day: "numeric",
+					month: "long",
+					year: "numeric",
+				})
+			}
+		</p>
+		<p class="text-lg text-gray-200">by {entry.data.author}</p>
+		<p class="text-lg text-white">{entry.data.description}</p>
 
-        <div class="flex flex-row flex-wrap items-start justify-start">
-            {
-                entry.data.tags?.map((tag) => (
-                    <div class="mr-2 rounded-xl border-2 border-solid border-gray-500 bg-[#282828] px-3 py-1 transition-colors duration-150 hover:border-white hover:bg-gray-300 hover:text-black">
-                        {tag}
-                    </div>
-                ))
-            }
-        </div>
+		<div class="flex flex-row flex-wrap items-start justify-start">
+			{
+				entry.data.tags?.map((tag) => (
+					<div class="mr-2 rounded-xl border-2 border-solid border-gray-500 bg-[#282828] px-3 py-1 transition-colors duration-150 hover:border-white hover:bg-gray-300 hover:text-black">
+						{tag}
+					</div>
+				))
+			}
+		</div>
 
-        <hr class="my-5" />
+		<hr class="my-5" />
 
-        <Content />
-    </div>
-    <div class="mt-10">
-        <Footer />
-    </div>
+		<Content />
+	</div>
+	<div class="mt-10">
+		<Footer />
+	</div>
 </Layout>
 
 <style is:inline>
-    #blog-content-component {
-        width: clamp(310px, 60vw, 800px);
-    }
+	#blog-content-component {
+		width: clamp(310px, 60vw, 800px);
+	}
 
-    a:not(#navbar-div a) {
-        color: lightskyblue;
-        text-decoration: underline;
-        cursor: pointer;
-    }
+	a:not(#navbar-div a) {
+		color: lightskyblue;
+		text-decoration: underline;
+		cursor: pointer;
+	}
 
-    p {
-        display: block;
-        font-size: 1.1rem;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        margin-left: 0;
-        margin-right: 0;
-    }
+	p {
+		display: block;
+		font-size: 1.1rem;
+		margin-top: 1em;
+		margin-bottom: 1em;
+		margin-left: 0;
+		margin-right: 0;
+	}
 
-    h1 {
-        display: block;
-        font-size: 2em;
-        margin-top: 0.67em;
-        margin-bottom: 0.67em;
-        margin-left: 0;
-        margin-right: 0;
-        font-weight: bold;
-    }
+	h1 {
+		display: block;
+		font-size: 2em;
+		margin-top: 0.67em;
+		margin-bottom: 0.67em;
+		margin-left: 0;
+		margin-right: 0;
+		font-weight: bold;
+	}
 
-    h2 {
-        display: block;
-        font-size: 1.5em;
-        margin-top: 0.83em;
-        margin-bottom: 0.83em;
-        margin-left: 0;
-        margin-right: 0;
-        font-weight: bold;
-    }
+	h2 {
+		display: block;
+		font-size: 1.5em;
+		margin-top: 0.83em;
+		margin-bottom: 0.83em;
+		margin-left: 0;
+		margin-right: 0;
+		font-weight: bold;
+	}
 
-    h3 {
-        display: block;
-        font-size: 1.17em;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        margin-left: 0;
-        margin-right: 0;
-        font-weight: bold;
-    }
+	h3 {
+		display: block;
+		font-size: 1.17em;
+		margin-top: 1em;
+		margin-bottom: 1em;
+		margin-left: 0;
+		margin-right: 0;
+		font-weight: bold;
+	}
 
-    ul {
-        display: block;
-        list-style-type: disc;
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 0.5em;
-        padding-left: 40px;
-    }
+	ul {
+		display: block;
+		list-style-type: disc;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 0.5em;
+		padding-left: 40px;
+	}
 
-    ul:not(ul ul) {
-        margin-top: 0.5em;
-    }
+	ul:not(ul ul) {
+		margin-top: 0.5em;
+	}
 
-    li {
-        display: list-item;
-    }
+	li {
+		display: list-item;
+	}
 
-    ol {
-        display: block;
-        list-style-type: decimal;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 40px;
-    }
+	ol {
+		display: block;
+		list-style-type: decimal;
+		margin-top: 1em;
+		margin-bottom: 1em;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 40px;
+	}
 </style>

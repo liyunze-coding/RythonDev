@@ -1,12 +1,12 @@
 <script lang="ts">
-    import Socials from "../elements/Socials.svelte";
+    import Socials from "../socials/Socials.svelte";
 </script>
 
 <div class="relative flex h-fit w-full flex-col items-center justify-center">
     <div class="flex flex-col items-center justify-center">
         <div
             id="title"
-            class="mb-3 animate-gradient text-center text-3xl font-bold"
+            class="animate-gradient mb-3 text-center text-3xl font-bold"
         >
             Get in Touch with me!
         </div>
