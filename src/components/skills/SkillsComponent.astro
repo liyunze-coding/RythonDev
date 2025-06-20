@@ -1,217 +1,172 @@
 ---
 import Card from "../global/Card.astro";
 import Line from "../global/NetworkLine.astro";
+import Skill from "./Skill.astro";
 ---
 
 <div class="h-fit w-full pt-20">
 	<h1 class="text-center text-5xl">Skills</h1>
 	<div class="flex flex-col items-center">
 		<div class="w-[90%] pt-10 md:w-[600px]">
-			<Card primaryColor="#19a7ce">
-				<div class="px-8 py-8">
-					<div class="justify-left flex w-full flex-col">
-						<h2 class="text-2xl font-bold">Frontend Development</h2>
-					</div>
-					<hr class="my-3 w-full" />
-					<p class="text-left">
-						I started my web development journey by building
-						websites and widgets using vanilla HTML, CSS, Javascript
-						and Express. As I learnt more about the fundamentals of
-						web development, I delved into frontend frameworks such
-						as Svelte, React and Astro.
-					</p>
-					<div
-						class="mt-4 flex w-full flex-row flex-wrap justify-start"
-					>
-						<div
-							class="bg-html hover:bg-html my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							HTML
-						</div>
-						<div
-							class="my-1 mr-1 w-fit cursor-default rounded-full bg-blue-700 px-3 py-1 text-white transition-colors duration-300 hover:bg-blue-700 md:bg-gray-500"
-						>
-							CSS
-						</div>
-						<div
-							class="my-1 mr-1 w-fit cursor-default rounded-full bg-yellow-400 px-3 py-1 text-black transition-colors duration-300 hover:bg-yellow-400 md:bg-gray-500 md:text-white md:hover:text-black"
-						>
-							Javascript
-						</div>
-						<div
-							class="bg-typescript hover:bg-typescript my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500 md:text-white md:hover:text-white"
-						>
-							TypeScript
-						</div>
-						<div
-							class="hover:bg-svelte bg-svelte my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							Svelte
-						</div>
-						<div
-							class="bg-react hover:bg-react my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-black transition-colors duration-300 md:bg-gray-500 md:text-white md:hover:text-black"
-						>
-							React
-						</div>
-						<div
-							class="my-1 mr-1 w-fit cursor-default rounded-full bg-green-500 px-3 py-1 text-black transition-colors duration-300 hover:bg-green-500 md:bg-gray-500 md:text-white md:hover:text-black"
-						>
-							Vue
-						</div>
-						<div
-							class="bg-wordpress hover:bg-wordpress my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							WordPress
-						</div>
-						<div
-							class="my-1 mr-1 w-fit cursor-default rounded-full bg-white px-3 py-1 text-black transition-colors duration-300 hover:bg-white md:bg-gray-500 md:text-white md:hover:text-black"
-						>
-							Astro
-						</div>
-						<div
-							class="bg-htmx hover:bg-htmx my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 hover:text-white md:bg-gray-500"
-						>
-							HTMX
-						</div>
-						<div
-							class="bg-tailwind hover:bg-tailwind my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-black transition-colors duration-300 md:bg-gray-500 md:text-white md:hover:text-black"
-						>
-							TailwindCSS
-						</div>
-					</div>
-				</div>
-			</Card>
+			<Skill
+				title="Frontend Development"
+				primaryColor="#19a7ce"
+				tags={[
+					{
+						text: "HTML",
+						bgColor: "var(--color-html)",
+					},
+					{
+						text: "CSS",
+						bgColor: "var(--color-blue-700)",
+					},
+					{
+						text: "Javascript",
+						bgColor: "var(--color-yellow-400)",
+						hoverTextColor: "black",
+					},
+					{
+						text: "Typescript",
+						bgColor: "var(--color-typescript)",
+					},
+					{
+						text: "Svelte",
+						bgColor: "var(--color-svelte)",
+					},
+					{
+						text: "React",
+						bgColor: "var(--color-react)",
+						hoverTextColor: "black",
+					},
+					{
+						text: "Vue",
+						bgColor: "var(--color-green-500)",
+						hoverTextColor: "black",
+					},
+					{
+						text: "WordPress",
+						bgColor: "var(--color-wordpress)",
+					},
+					{
+						text: "Astro",
+						bgColor: "white",
+						hoverTextColor: "black",
+					},
+					{
+						text: "HTMX",
+						bgColor: "var(--color-htmx)",
+					},
+					{
+						text: "TailwindCSS",
+						bgColor: "var(--color-tailwind)",
+						hoverTextColor: "black",
+					},
+				]}
+			>
+				I started my web development journey by building websites and
+				widgets using vanilla HTML, CSS, Javascript and Express. As I
+				learnt more about the fundamentals of web development, I delved
+				into frontend frameworks such as Svelte, React and Astro.
+			</Skill>
+
 			<Line height="50px" />
-			<Card primaryColor="#474F7A">
-				<div class="px-8 py-8">
-					<div class="justify-left flex w-full flex-col">
-						<h2 class="text-2xl font-bold">Backend Development</h2>
-					</div>
-					<hr class="my-3 w-full" />
-					<p class="text-left">
-						With experience in various programming languages, I
-						learnt to setup databases, implement routing and
-						organized my code to ensure maintainability and
-						scalability.
-					</p>
-					<div
-						class="mt-4 flex w-full flex-row flex-wrap justify-start"
-					>
-						<div
-							class="bg-python hover:bg-python my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							Python
-						</div>
-						<div
-							class="bg-csharp hover:bg-csharp my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							C#
-						</div>
-						<div
-							class="bg-java hover:bg-java my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							Java
-						</div>
-						<div
-							class="bg-kotlin hover:bg-kotlin my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							Kotlin
-						</div>
-						<div
-							class="bg-php hover:bg-php my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							PHP
-						</div>
-						<div
-							class="bg-go hover:bg-go my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-30 md:bg-gray-500"
-						>
-							Go
-						</div>
-						<div
-							class="bg-rust hover:bg-rust my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							Rust
-						</div>
-						<div
-							class="bg-postgresql hover:bg-postgresql my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							PostgreSQL
-						</div>
-						<div
-							class="bg-mysql hover:bg-mysql my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							MySQL
-						</div>
-						<div
-							class="bg-mongodb hover:bg-mongodb my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							MongoDB
-						</div>
-					</div>
-				</div>
-			</Card>
+			<Skill
+				title="Backend Development"
+				primaryColor="#474F7A"
+				tags={[
+					{
+						text: "Python",
+						bgColor: "var(--color-python)",
+					},
+					{
+						text: "C#",
+						bgColor: "var(--color-csharp)",
+					},
+					{
+						text: "Java",
+						bgColor: "var(--color-java)",
+					},
+					{
+						text: "Kotlin",
+						bgColor: "var(--color-kotlin)",
+					},
+					{
+						text: "PHP",
+						bgColor: "var(--color-php)",
+					},
+					{
+						text: "Go",
+						bgColor: "var(--color-go)",
+					},
+					{
+						text: "Rust",
+						bgColor: "var(--color-rust)",
+					},
+					{
+						text: "PostgreSQL",
+						bgColor: "var(--color-postgresql)",
+					},
+					{
+						text: "MySQL",
+						bgColor: "var(--color-mysql)",
+					},
+					{
+						text: "MongoDB",
+						bgColor: "var(--color-mongodb)",
+					},
+				]}
+			>
+				With experience in various programming languages, I learnt to
+				setup databases, implement routing and organized my code to
+				ensure maintainability and scalability.
+			</Skill>
 			<Line height="50px" />
-			<Card primaryColor="#a1eebd">
-				<div class="px-8 py-8">
-					<div class="justify-left flex w-full flex-col">
-						<h2 class="text-2xl font-bold">Data Science</h2>
-					</div>
-					<hr class="my-3 w-full" />
-					<p class="text-left">
-						My first exposure to data science was through learning
-						Computer Vision. I learn how to use OpenCV in Python to
-						open a webcam and detect faces. Later on, I took a
-						Diploma course that is focused in data science, where I
-						learnt how to do the fundamentals of data science such
-						as extracting, transforming and loading data, as well as
-						data visualisation.
-					</p>
-					<div
-						class="mt-4 flex w-full flex-row flex-wrap justify-start"
-					>
-						<div
-							class="bg-python hover:bg-python my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							Python
-						</div>
-						<div
-							class="my-1 mr-1 w-fit cursor-default rounded-full bg-cyan-500 px-3 py-1 text-white transition-colors duration-300 hover:bg-cyan-500 md:bg-gray-500"
-						>
-							R
-						</div>
-						<div
-							class="bg-opencv hover:bg-opencv my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							OpenCV
-						</div>
-						<div
-							class="my-1 mr-1 w-fit cursor-default rounded-full bg-blue-500 px-3 py-1 text-black transition-colors duration-300 hover:bg-blue-500 md:bg-gray-500 md:text-white md:hover:text-black"
-						>
-							SAS
-						</div>
-						<div
-							class="bg-mysql hover:bg-mysql my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 text-white transition-colors duration-300 md:bg-gray-500"
-						>
-							MySQL
-						</div>
-						<div
-							class="my-1 mr-1 w-fit cursor-default rounded-full bg-blue-800 px-3 py-1 text-white transition-colors duration-300 hover:bg-blue-800 md:bg-gray-500"
-						>
-							Pandas
-						</div>
-						<div
-							class="my-1 mr-1 w-fit cursor-default rounded-full bg-green-700 px-3 py-1 text-white transition-colors duration-300 hover:bg-green-700 md:bg-gray-500"
-						>
-							Selenium
-						</div>
-						<div
-							class="my-1 mr-1 w-fit cursor-default rounded-full bg-gray-200 px-3 py-1 text-black transition-colors duration-300 hover:bg-gray-200 md:bg-gray-500 md:text-white md:hover:text-black"
-						>
-							BeautifulSoup4
-						</div>
-					</div>
-				</div>
-			</Card>
+			<Skill
+				title="Data Science"
+				primaryColor="#a1eebd"
+				tags={[
+					{
+						text: "Python",
+						bgColor: "var(--color-python)",
+					},
+					{
+						text: "R",
+						bgColor: "var(--color-cyan-500)",
+					},
+					{
+						text: "OpenCV",
+						bgColor: "var(--color-opencv)",
+					},
+					{
+						text: "SAS",
+						bgColor: "var(--color-blue-500)",
+					},
+					{
+						text: "MySQL",
+						bgColor: "var(--color-mysql)",
+					},
+					{
+						text: "Pandas",
+						bgColor: "var(--color-blue-800)",
+					},
+					{
+						text: "Selenium",
+						bgColor: "var(--color-green-700)",
+					},
+					{
+						text: "BeautifulSoup4",
+						bgColor: "white",
+						hoverTextColor: "black",
+					},
+				]}
+			>
+				My first exposure to data science was through learning Computer
+				Vision. I learn how to use OpenCV in Python to open a webcam and
+				detect faces. Later on, I took a Diploma course that is focused
+				in data science, where I learnt how to do the fundamentals of
+				data science such as extracting, transforming and loading data,
+				as well as data visualisation.
+			</Skill>
 		</div>
 	</div>
 </div>
