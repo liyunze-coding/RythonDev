@@ -3,8 +3,7 @@ import TaskWidget from "./TaskWidget.svelte";
 import CoworkingGuide from "../images/projects/coworking-guide.webp";
 import Wnrs from "../images/projects/wnrs.webp";
 import TwitchPlays from "../images/projects/twitchplays.webp";
-import ProjectLeft from "./ProjectLeft.astro";
-import ProjectRight from "./ProjectRight.astro";
+import Project from "./Project.astro";
 ---
 
 <div
@@ -12,7 +11,8 @@ import ProjectRight from "./ProjectRight.astro";
 	class="flex h-fit flex-col items-center [perspective:1000px]"
 >
 	<div class="w-full max-w-[1440px]">
-		<ProjectLeft
+		<Project
+			position="left"
 			image={CoworkingGuide}
 			alt="coworking guide"
 			href="https://coworking-guide.vercel.app/"
@@ -37,55 +37,39 @@ import ProjectRight from "./ProjectRight.astro";
 				},
 			]}
 		/>
-		<div
-			class="mt-10 flex h-fit w-full flex-col-reverse justify-center px-10 lg:flex-row lg:px-16"
+		<Project
+			position="right"
+			href="https://github.com/liyunze-coding/chat-task-tic-overlay-infinity"
+			title="Chat-task-tic widget"
+			label="View Repository"
+			description={`
+				Used by 100+ Twitch streamers, allow viewers and streamers
+				to add their own tasks to the widget for accountability!
+				Easy to setup and the customization possibilities are
+				endless!`}
 		>
-			<div
-				class="flex h-fit w-full flex-col items-center justify-center lg:h-[340px] lg:w-1/2 lg:items-end lg:px-10"
-			>
-				<h2 class="mb-5 text-center text-3xl font-bold lg:text-right">
-					Chat-Task-Tic Widget
-				</h2>
-				<p
-					class="max-w-lg text-center text-xl text-balance lg:max-w-none lg:text-right"
-				>
-					Used by 100+ Twitch streamers, allow viewers and streamers
-					to add their own tasks to the widget for accountability!
-					Easy to setup and the customization possibilities are
-					endless!
-				</p>
-				<div
-					class="mt-5 flex w-full flex-row flex-wrap justify-center lg:justify-end"
-				>
-					<div
-						class="bg-html my-1 mr-1 w-fit rounded-full px-3 py-1 text-white transition-colors duration-300"
-					>
-						HTML
-					</div>
-					<div
-						class="my-1 mr-1 w-fit rounded-full bg-blue-700 px-3 py-1 text-white transition-colors duration-300"
-					>
-						CSS
-					</div>
-					<div
-						class="my-1 mr-1 w-fit rounded-full bg-yellow-400 px-3 py-1 text-black transition-colors duration-300"
-					>
-						Javascript
-					</div>
-				</div>
-			</div>
-			<div class="mb-10 flex items-center justify-center lg:hidden">
-				<a
-					href="https://github.com/liyunze-coding/chat-task-tic-overlay-infinity"
-					target="_blank"
-					class="rounded-xl bg-blue-600 px-5 py-3 font-bold opacity-100 transition-colors duration-300 hover:bg-white hover:text-blue-600"
-					>View repository</a
-				>
-			</div>
-			<TaskWidget client:visible />
-		</div>
+			<TaskWidget
+				classList={`
+					widget
+					[perspective:200px] absolute [transform:translateX(-10px)_translateY(5px)_translateZ(-40px)_rotateY(-3deg)] 
+					w-full h-full
+					opacity-10
+					`}
+				client:visible
+			/>
+			<TaskWidget
+				classList={`
+					widget
+					[perspective:200px] absolute 
+					[transform:translateX(-20px)_translateZ(-40px)_rotateY(-3deg)] 
+					w-full h-full
+					hover:[transform:translateX(0)_translateY(0)_translateZ(0)_rotateY(0)]`}
+				client:visible
+			/>
+		</Project>
 
-		<ProjectLeft
+		<Project
+			position="left"
 			image={Wnrs}
 			alt="We're not really strangers"
 			href="https://liyunze-coding.github.io/wnrs/"
@@ -105,7 +89,8 @@ import ProjectRight from "./ProjectRight.astro";
 				},
 			]}
 		/>
-		<ProjectRight
+		<Project
+			position="right"
 			image={TwitchPlays}
 			alt="Twitch Plays X"
 			href="https://github.com/liyunze-coding/TwitchPlaysX"
@@ -130,14 +115,17 @@ import ProjectRight from "./ProjectRight.astro";
 	</div>
 </div>
 
-<style>
-	.image-container img {
+<style is:global>
+	.image-container img,
+	.image-container .widget {
 		transition: transform 0.5s ease-in-out;
 	}
+
 	@media (min-width: 1025px) {
-		.image-container:hover > img {
-			transform: rotateY(0deg) rotateX(0deg) translateZ(0px)
-				translateX(-50%) translateY(-50%);
+		.image-container:hover > img,
+		.image-container:hover .widget {
+			transform: rotateY(0deg) rotateX(0deg) translateZ(0px) translateX(0)
+				translateY(0);
 		}
 
 		.image-container:hover > .visit-div {

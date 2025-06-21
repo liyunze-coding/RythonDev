@@ -113,24 +113,24 @@
             task: "anki flashcards",
         },
     ];
+
+    interface Props {
+        classList: string;
+    }
+
+    let { classList }: Props = $props();
 </script>
 
-<div
-    class="image-container relative mr-0 mb-3 ml-0 aspect-video [perspective:200px] md:mr-5 lg:mr-0 lg:mb-0 lg:ml-1 lg:w-1/2"
->
+<div class={`${classList} aspect-video`}>
     <!-- task bot -->
-    <div
-        class="task-widget absolute top-1/2 left-1/2 flex
-                            h-[99%] w-full
-                            [transform:translateX(-50%)_translateY(-49%)_translateZ(-50px)_rotateY(-3deg)] flex-col opacity-30"
-    >
+    <div class="task-widget absolute flex h-[99%] w-full flex-col">
         <div
             class="flex w-full flex-row items-center justify-between
-                            rounded-lg
-                            border-2 border-solid
-                            border-white bg-black
-                            px-5 py-2 font-['Fredoka',_sans-serif] text-xl
-                            text-white"
+                    rounded-lg
+                    border-2 border-solid
+                    border-white bg-black
+                    px-5 py-2 font-['Fredoka',_sans-serif] text-xl
+                    text-white"
         >
             <span>Hover here!</span>
             <span>0/100+</span>
@@ -159,85 +159,10 @@
                 {/each}
             </div>
         </div>
-    </div>
-    <div
-        class="task-widget absolute top-1/2 left-1/2
-                            flex h-[99%]
-                            w-full [transform:translateX(-51%)_translateY(-50%)_translateZ(-50px)_rotateY(-3deg)] flex-col"
-    >
-        <div
-            class="flex w-full flex-row items-center justify-between
-                            rounded-lg
-                            border-2 border-solid
-                            border-white bg-black
-                            px-5 py-2 font-['Fredoka',_sans-serif] text-xl
-                            text-white"
-        >
-            <span>Hover here!</span>
-            <span>0/100+</span>
-        </div>
-        <div
-            class="scroll-parent relative h-full overflow-hidden font-['Fredoka',_sans-serif]"
-        >
-            <div class="scroll-element primary absolute w-full px-1">
-                {#each streamers as { streamer, task }}
-                    <div
-                        class="my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
-                                    overflow-ellipsis whitespace-nowrap text-white"
-                    >
-                        O {streamer} : {task}
-                    </div>
-                {/each}
-            </div>
-            <div class="scroll-element secondary absolute w-full px-1">
-                {#each streamers as { streamer, task }}
-                    <div
-                        class="my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
-                                    overflow-ellipsis whitespace-nowrap text-white"
-                    >
-                        O {streamer} : {task}
-                    </div>
-                {/each}
-            </div>
-        </div>
-    </div>
-    <div
-        class="visit-div absolute top-1/2 left-1/2 h-full w-full
-                    [transform:translateX(-50%)_translateY(-50%)]
-                    overflow-hidden rounded-md border-2
-                    border-solid border-white bg-[rgba(0,0,0,0.5)]
-                    opacity-0"
-    >
-        <a
-            href="https://github.com/liyunze-coding/chat-task-tic-overlay-infinity"
-            target="_blank"
-            class="absolute top-1/2 left-1/2 hidden
-                        [transform:translateX(-50%)_translateY(-50%)] rounded-xl bg-blue-500 px-5 py-3
-                        font-bold
-                        opacity-100 transition-colors
-                        duration-300 hover:bg-white
-                        hover:text-blue-500 lg:block">View repository</a
-        >
     </div>
 </div>
 
 <style>
-    .image-container .task-widget {
-        transition: transform 0.5s ease-in-out;
-    }
-    @media (min-width: 1025px) {
-        .image-container:hover > .task-widget {
-            transform: rotateY(0deg) rotateX(0deg) translateZ(0px)
-                translateX(-50%) translateY(-50%);
-        }
-
-        .image-container:hover > .visit-div {
-            opacity: 100%;
-            transition: opacity 0.3s ease-in-out;
-            transition-delay: 0.3s;
-        }
-    }
-
     .primary {
         animation: primary 20s linear infinite;
     }
