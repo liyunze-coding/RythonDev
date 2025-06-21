@@ -1,0 +1,72 @@
+---
+import Card from "../global/Card.astro";
+import Line from "../global/NetworkLine.astro";
+import Skill from "./Skill.astro";
+---
+
+<div id="Experience" class="h-fit">
+	<div class="flex flex-col items-center">
+		<div class="w-[90%] md:w-[600px]">
+			<Line height="50px" />
+			<Skill
+				title="Content Creation"
+				primaryColor="#9D76C1"
+				tags={[
+					{ text: "OBS", bgColor: "#141414" },
+					{
+						text: "DaVinci Resolve",
+						bgColor: "white",
+						hoverTextColor: "black",
+					},
+					{
+						text: "Twitch",
+						bgColor: "var(--color-purple-500)",
+					},
+					{
+						text: "YouTube",
+						bgColor: "red",
+					},
+				]}
+			>
+				Since I was little, I loved watching YouTube videos and the idea
+				of bringing joy and laughter to a wider audience. Thus, I began
+				my journey in content creation through YouTube videos and Twitch
+				streaming. I typically do coworking & study streams to keep
+				myself accountable and encourage productivity amongst viewers. I
+				also do software and game development streams where I showcase
+				my workflow.
+			</Skill>
+			<Line height="50px" />
+			<Skill
+				primaryColor="#9D76C1"
+				title="Mobile Development"
+				tags={[
+					{
+						text: "Android",
+						bgColor: "#106539",
+					},
+					{
+						text: "Java",
+						bgColor: "var(--color-java)",
+					},
+					{
+						text: "Kotlin",
+						bgColor: "var(--color-kotlin)",
+					},
+				]}
+				><p class="text-left">
+					In my Mobile App Development unit in University, I am tasked
+					to develop Android apps using Android Studio. The final app
+					project I had developed was a LLM-powered quiz app with
+					features such as choosing your own topics, viewing your
+					question attempt history afterwards, and upgrading your tier
+					with Google Pay.
+				</p>
+				<p class="text-left">
+					The marking tutor was impressed with my work, and offered me
+					to join a research lab because I had good potential.
+				</p>
+			</Skill>
+		</div>
+	</div>
+</div>

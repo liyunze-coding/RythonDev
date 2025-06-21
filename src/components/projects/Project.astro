@@ -1,0 +1,144 @@
+---
+import { Image } from "astro:assets";
+
+interface Tag {
+	text: string;
+	textColor: string;
+	bgColor: string;
+}
+
+interface Props {
+	position?: "left" | "right";
+	image?: ImageMetadata;
+	alt?: string;
+	href: string;
+	title: string;
+	description: string;
+	label?: string;
+	tags?: Tag[];
+}
+
+const {
+	image,
+	alt,
+	href,
+	title,
+	description,
+	label = "View Repository",
+	tags = [],
+	position = "left",
+} = Astro.props;
+
+const leftProject = position == "left";
+---
+
+<div
+	class="flex h-fit w-full flex-col justify-center px-10 lg:px-20"
+	class:list={leftProject ? "lg:flex-row" : "lg:flex-row-reverse"}
+>
+	<div
+		class="image-container relative mb-5 flex aspect-video w-full [perspective:200px] lg:mr-5 lg:mb-0 lg:ml-auto lg:w-1/2"
+	>
+		<slot />
+		{
+			image && alt &&
+			(
+				<Image
+					src={image}
+					alt={alt}
+					class={`absolute max-w-full
+							aspect-video
+							opacity-40
+							border-2 border-solid border-white rounded-xl`}
+					class:list={leftProject
+						? "[transform:translateX(50px)_translateY(5px)_rotateY(5deg)_rotateX(0deg)_translateZ(-50px)]"
+						: "[transform:translateX(10px)_translateY(5px)_translateZ(-50px)_rotateY(-3deg)]"}
+					width="700"
+				/>
+				<Image
+					src={image}
+					alt={alt}
+					width="700"
+					class={`absolute max-w-full
+							aspect-video
+							opacity-100
+							border-2 border-solid border-white rounded-xl`}
+					class:list={leftProject
+						? "[transform:rotateY(5deg)_rotateX(0deg)_translateX(60px)_translateZ(-50px)]"
+						: "[transform:translateZ(-50px)_rotateY(-3deg)]"}
+				/>
+			)
+		}
+		
+		<div
+			class="visit-div absolute top-1/2 left-1/2 aspect-video w-[700px] max-w-full [transform:translateX(-50%)_translateY(-50%)] rounded-xl border-2 border-solid border-white bg-[rgba(0,0,0,0.5)] opacity-0"
+		>
+			<a
+				href={href}
+				target="_blank"
+				class="absolute top-1/2 left-1/2 hidden [transform:translateX(-50%)_translateY(-50%)] rounded-xl bg-blue-600 px-5 py-3 font-bold opacity-100 transition-colors duration-300 hover:bg-white hover:text-blue-500 lg:block"
+				>{label}</a
+			>
+		</div>
+	</div>
+	<div class="mb-10 flex items-center justify-center lg:hidden">
+		<a
+			href={href}
+			target="_blank"
+			class="rounded-xl bg-blue-600 px-5 py-3 font-bold opacity-100 transition-colors duration-300 hover:bg-white hover:text-blue-500"
+			>{label}</a
+		>
+	</div>
+	<div
+		class="flex h-fit w-full flex-col items-center justify-center lg:h-[340px] lg:w-1/2 lg:px-10"
+		class:list={leftProject ? "lg:items-start" : "lg:items-end"}
+	>
+		<h2
+			class="mb-5 text-center text-3xl font-bold"
+			class:list={leftProject ? "lg:text-left" : "lg:text-right"}
+		>
+			{title}
+		</h2>
+		<p
+			class="max-w-lg text-center text-xl text-balance lg:max-w-none"
+			class:list={leftProject ? "lg:text-left" : "lg:text-right"}
+		>
+			{description}
+		</p>
+		<div
+			class="mt-5 flex w-full flex-row flex-wrap justify-center"
+			class:list={leftProject ? "lg:justify-start" : "lg:justify-end"}
+		>
+			{
+				tags.map((tag) => (
+					<div
+						class="my-1 mr-1 w-fit rounded-full px-3 py-1 transition-colors duration-300"
+						style={`
+							background-color: ${tag.bgColor || "black"};
+							color: ${tag.textColor || "white"};
+						`}
+					>
+						{tag.text}
+					</div>
+				))
+			}
+		</div>
+	</div>
+</div>
+
+<style>
+	.image-container img {
+		transition: transform 0.5s ease-in-out;
+	}
+	@media (min-width: 1025px) {
+		.image-container:hover > img {
+			transform: rotateY(0deg) rotateX(0deg) translateZ(0px);
+		}
+
+		.image-container:hover > .visit-div {
+			opacity: 100%;
+			transition: opacity 0.3s ease-in-out;
+			transition-delay: 0.3s;
+		}
+	}
+</style>

@@ -1,0 +1,156 @@
+---
+import TaskWidget from "./TaskWidget.svelte";
+import CoworkingGuide from "../images/projects/coworking-guide.webp";
+import Wnrs from "../images/projects/wnrs.webp";
+import TwitchPlays from "../images/projects/twitchplays.webp";
+import Project from "./Project.astro";
+---
+
+<div
+	id="projects"
+	class="flex h-fit flex-col items-center [perspective:1000px]"
+>
+	<div class="w-full max-w-[1440px]">
+		<Project
+			position="left"
+			image={CoworkingGuide}
+			alt="coworking guide"
+			href="https://coworking-guide.vercel.app/"
+			title="Coworking Guide"
+			label="Visit Site"
+			description="A guide to coworking streams for streamers, covers wide range of topics from tips on how to get started with setting up stream to how to grow your audience!"
+			tags={[
+				{
+					text: "Astro",
+					bgColor: "white",
+					textColor: "black",
+				},
+				{
+					text: "TypeScript",
+					bgColor: "#3178C6",
+					textColor: "white",
+				},
+				{
+					text: "Markdown",
+					bgColor: "black",
+					textColor: "white",
+				},
+			]}
+		/>
+		<Project
+			position="right"
+			href="https://github.com/liyunze-coding/chat-task-tic-overlay-infinity"
+			title="Chat-task-tic widget"
+			label="View Repository"
+			description={`
+				Used by 100+ Twitch streamers, allow viewers and streamers
+				to add their own tasks to the widget for accountability!
+				Easy to setup and the customization possibilities are
+				endless!`}
+			tags={[
+				{
+					text: "HTML",
+					bgColor: "var(--color-html)",
+					textColor: "white",
+				},
+				{
+					text: "CSS",
+					bgColor: "var(--color-blue-600)",
+					textColor: "white",
+				},
+				{
+					text: "Javascript",
+					bgColor: "var(--color-yellow-500)",
+					textColor: "black",
+				},
+			]}
+		>
+			<TaskWidget
+				classList={`
+					widget
+					[perspective:200px] absolute [transform:translateX(-10px)_translateY(5px)_translateZ(-40px)_rotateY(-3deg)] 
+					w-full h-full
+					opacity-10
+					`}
+				client:visible
+			/>
+			<TaskWidget
+				classList={`
+					widget
+					[perspective:200px] absolute 
+					[transform:translateX(-20px)_translateZ(-40px)_rotateY(-3deg)] 
+					w-full h-full
+					hover:[transform:translateX(0)_translateY(0)_translateZ(0)_rotateY(0)]`}
+				client:visible
+			/>
+		</Project>
+
+		<Project
+			position="left"
+			image={Wnrs}
+			alt="We're not really strangers"
+			href="https://liyunze-coding.github.io/wnrs/"
+			label="Visit Site"
+			title="We're not really strangers"
+			description="Otherwise abbreviated as 'WNRS', this is a digitaladaptation of the popular card game designed to foster meaningful connections through engaging questions and prompts."
+			tags={[
+				{
+					text: "React",
+					bgColor: "var(--color-react)",
+					textColor: "black",
+				},
+				{
+					text: "TypeScript",
+					bgColor: "var(--color-typescript)",
+					textColor: "white",
+				},
+			]}
+		/>
+		<Project
+			position="right"
+			image={TwitchPlays}
+			alt="Twitch Plays X"
+			href="https://github.com/liyunze-coding/TwitchPlaysX"
+			title="Twitch Plays X"
+			description={`Allow Twitch chatters to play games such as Pokemon!
+					Chatters can enter messages such as "up up down down left
+					right B A" and the Python program will trigger the
+					corresponding keypresses.`}
+			tags={[
+				{
+					text: "win32API",
+					bgColor: "var(--color-win32api)",
+					textColor: "white",
+				},
+				{
+					text: "Python",
+					bgColor: "var(--color-python)",
+					textColor: "white",
+				},
+			]}
+		/>
+	</div>
+</div>
+
+<style is:global>
+	.image-container img,
+	.image-container .widget,
+	.image-container video {
+		transition: transform 0.5s ease-in-out;
+	}
+
+	@media (min-width: 1025px) {
+		.image-container:hover > img,
+		.image-container:hover .widget,
+		.image-container:hover video {
+			transform: rotateY(0deg) rotateX(0deg) translateZ(0px) translateX(0)
+				translateY(0);
+		}
+
+		.image-container:hover > .visit-div {
+			opacity: 100%;
+			transition: opacity 0.3s ease-in-out;
+			transition-delay: 0.3s;
+		}
+	}
+</style>

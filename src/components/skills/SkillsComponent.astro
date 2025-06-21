@@ -1,0 +1,172 @@
+---
+import Card from "../global/Card.astro";
+import Line from "../global/NetworkLine.astro";
+import Skill from "./Skill.astro";
+---
+
+<div class="h-fit w-full pt-20">
+	<h1 class="text-center text-5xl">Skills</h1>
+	<div class="flex flex-col items-center">
+		<div class="w-[90%] pt-10 md:w-[600px]">
+			<Skill
+				title="Frontend Development"
+				primaryColor="#19a7ce"
+				tags={[
+					{
+						text: "HTML",
+						bgColor: "var(--color-html)",
+					},
+					{
+						text: "CSS",
+						bgColor: "var(--color-blue-700)",
+					},
+					{
+						text: "Javascript",
+						bgColor: "var(--color-yellow-400)",
+						hoverTextColor: "black",
+					},
+					{
+						text: "Typescript",
+						bgColor: "var(--color-typescript)",
+					},
+					{
+						text: "Svelte",
+						bgColor: "var(--color-svelte)",
+					},
+					{
+						text: "React",
+						bgColor: "var(--color-react)",
+						hoverTextColor: "black",
+					},
+					{
+						text: "Vue",
+						bgColor: "var(--color-green-500)",
+						hoverTextColor: "black",
+					},
+					{
+						text: "WordPress",
+						bgColor: "var(--color-wordpress)",
+					},
+					{
+						text: "Astro",
+						bgColor: "white",
+						hoverTextColor: "black",
+					},
+					{
+						text: "HTMX",
+						bgColor: "var(--color-htmx)",
+					},
+					{
+						text: "TailwindCSS",
+						bgColor: "var(--color-tailwind)",
+						hoverTextColor: "black",
+					},
+				]}
+			>
+				I started my web development journey by building websites and
+				widgets using vanilla HTML, CSS, Javascript and Express. As I
+				learnt more about the fundamentals of web development, I delved
+				into frontend frameworks such as Svelte, React and Astro.
+			</Skill>
+
+			<Line height="50px" />
+			<Skill
+				title="Backend Development"
+				primaryColor="#474F7A"
+				tags={[
+					{
+						text: "Python",
+						bgColor: "var(--color-python)",
+					},
+					{
+						text: "C#",
+						bgColor: "var(--color-csharp)",
+					},
+					{
+						text: "Java",
+						bgColor: "var(--color-java)",
+					},
+					{
+						text: "Kotlin",
+						bgColor: "var(--color-kotlin)",
+					},
+					{
+						text: "PHP",
+						bgColor: "var(--color-php)",
+					},
+					{
+						text: "Go",
+						bgColor: "var(--color-go)",
+					},
+					{
+						text: "Rust",
+						bgColor: "var(--color-rust)",
+					},
+					{
+						text: "PostgreSQL",
+						bgColor: "var(--color-postgresql)",
+					},
+					{
+						text: "MySQL",
+						bgColor: "var(--color-mysql)",
+					},
+					{
+						text: "MongoDB",
+						bgColor: "var(--color-mongodb)",
+					},
+				]}
+			>
+				With experience in various programming languages, I learnt to
+				setup databases, implement routing and organized my code to
+				ensure maintainability and scalability.
+			</Skill>
+			<Line height="50px" />
+			<Skill
+				title="Data Science"
+				primaryColor="#a1eebd"
+				tags={[
+					{
+						text: "Python",
+						bgColor: "var(--color-python)",
+					},
+					{
+						text: "R",
+						bgColor: "var(--color-cyan-500)",
+					},
+					{
+						text: "OpenCV",
+						bgColor: "var(--color-opencv)",
+					},
+					{
+						text: "SAS",
+						bgColor: "var(--color-blue-500)",
+					},
+					{
+						text: "MySQL",
+						bgColor: "var(--color-mysql)",
+					},
+					{
+						text: "Pandas",
+						bgColor: "var(--color-blue-800)",
+					},
+					{
+						text: "Selenium",
+						bgColor: "var(--color-green-700)",
+					},
+					{
+						text: "BeautifulSoup4",
+						bgColor: "white",
+						hoverTextColor: "black",
+					},
+				]}
+			>
+				My first exposure to data science was through learning Computer
+				Vision. I learn how to use OpenCV in Python to open a webcam and
+				detect faces. Later on, I took a Diploma course that is focused
+				in data science, where I learnt how to do the fundamentals of
+				data science such as extracting, transforming and loading data,
+				as well as data visualisation.
+			</Skill>
+		</div>
+	</div>
+</div>

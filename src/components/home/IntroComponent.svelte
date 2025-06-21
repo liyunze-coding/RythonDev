@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import Socials from "../elements/Socials.svelte";
+    import Socials from "../socials/Socials.svelte";
 
     // Roles
     let roles = $state(["Developer", "Streamer", "Content creator", "Student"]);
