@@ -47,6 +47,23 @@ import Project from "./Project.astro";
 				to add their own tasks to the widget for accountability!
 				Easy to setup and the customization possibilities are
 				endless!`}
+			tags={[
+				{
+					text: "HTML",
+					bgColor: "var(--color-html)",
+					textColor: "white",
+				},
+				{
+					text: "CSS",
+					bgColor: "var(--color-blue-600)",
+					textColor: "white",
+				},
+				{
+					text: "Javascript",
+					bgColor: "var(--color-yellow-500)",
+					textColor: "black",
+				},
+			]}
 		>
 			<TaskWidget
 				classList={`
@@ -117,13 +134,15 @@ import Project from "./Project.astro";
 
 <style is:global>
 	.image-container img,
-	.image-container .widget {
+	.image-container .widget,
+	.image-container video {
 		transition: transform 0.5s ease-in-out;
 	}
 
 	@media (min-width: 1025px) {
 		.image-container:hover > img,
-		.image-container:hover .widget {
+		.image-container:hover .widget,
+		.image-container:hover video {
 			transform: rotateY(0deg) rotateX(0deg) translateZ(0px) translateX(0)
 				translateY(0);
 		}
