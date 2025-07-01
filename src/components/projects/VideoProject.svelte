@@ -79,7 +79,7 @@
 </script>
 
 <div
-    class="flex h-fit w-full flex-col justify-center px-10 lg:flex-row lg:px-20"
+    class="mb-10 flex h-fit w-full flex-col justify-center px-10 lg:flex-row lg:px-20"
     class:lg:flex-row={positionLeft}
     class:lg:flex-row-reverse={!positionLeft}
 >

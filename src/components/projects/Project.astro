@@ -33,7 +33,7 @@ const leftProject = position == "left";
 ---
 
 <div
-	class="flex h-fit w-full flex-col justify-center px-10 lg:px-20"
+	class="flex h-fit w-full flex-col justify-center px-10 lg:px-20 mb-10"
 	class:list={leftProject ? "lg:flex-row" : "lg:flex-row-reverse"}
 >
 	<div
@@ -49,10 +49,12 @@ const leftProject = position == "left";
 					class={`absolute max-w-full
 							aspect-video
 							opacity-40
-							border-2 border-solid border-white rounded-xl`}
+							border-2 border-solid border-white rounded-xl
+							top-1/2 left-1/2
+							background-img`}
 					class:list={leftProject
-						? "[transform:translateX(50px)_translateY(5px)_rotateY(5deg)_rotateX(0deg)_translateZ(-50px)]"
-						: "[transform:translateX(10px)_translateY(5px)_translateZ(-50px)_rotateY(-3deg)]"}
+						? "left"
+						: "right"}
 					width="700"
 				/>
 				<Image
@@ -62,10 +64,11 @@ const leftProject = position == "left";
 					class={`absolute max-w-full
 							aspect-video
 							opacity-100
-							border-2 border-solid border-white rounded-xl`}
+							border-2 border-solid border-white rounded-xl
+							top-1/2 left-1/2 frontfacing-img`}
 					class:list={leftProject
-						? "[transform:rotateY(5deg)_rotateX(0deg)_translateX(60px)_translateZ(-50px)]"
-						: "[transform:translateZ(-50px)_rotateY(-3deg)]"}
+						? "left"
+						: "right"}
 				/>
 			)
 		}
@@ -126,19 +129,44 @@ const leftProject = position == "left";
 	</div>
 </div>
 
-<style>
+<style> 
 	.image-container img {
 		transition: transform 0.5s ease-in-out;
 	}
+
+	.background-img.left {
+		transform: translateX(calc(-50% + 25px)) translateY(calc(-50% + 5px)) translateZ(-50px) rotateY(5deg);
+	}
+
+	.background-img.right {
+		transform: translateX(calc(-50%)) translateY(calc(-50% + 5px)) translateZ(-50px) rotateY(-3deg);
+	}
+
+	.frontfacing-img.left {
+		transform: translateX(calc(-50% + 35px)) translateY(calc(-50%)) translateZ(-50px) rotateY(5deg);
+	}
+
+	.frontfacing-img.right {
+		transform: translateX(calc(-50% - 10px)) translateY(-50%) translateZ(-50px) rotateY(-3deg);
+	}
+
 	@media (min-width: 1025px) {
 		.image-container:hover > img {
-			transform: rotateY(0deg) rotateX(0deg) translateZ(0px);
+			transform: rotateY(0deg) rotateX(0deg) translateZ(0px) translateX(-50%) translateY(-50%);
 		}
 
 		.image-container:hover > .visit-div {
 			opacity: 100%;
 			transition: opacity 0.3s ease-in-out;
 			transition-delay: 0.3s;
+		}
+
+		.background-img.left {
+			transform: translateX(-50%) translateY(calc(-50% + 5px)) translateZ(-50px) rotateY(5deg);
+		}
+
+		.frontfacing-img.left {
+			transform: translateX(calc(-50% + 10px)) translateY(calc(-50%)) translateZ(-50px) rotateY(5deg);
 		}
 	}
 </style>
