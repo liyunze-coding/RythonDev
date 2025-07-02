@@ -67,20 +67,22 @@ import Project from "./Project.astro";
 		>
 			<TaskWidget
 				classList={`
-					widget
-					[perspective:200px] absolute [transform:translateX(-10px)_translateY(5px)_translateZ(-40px)_rotateY(-3deg)] 
-					w-full h-full
+					widget aspect-video
+					[perspective:200px] absolute
+					w-full
 					opacity-10
+					top-1/2 left-1/2
+					background-widget right
 					`}
 				client:visible
 			/>
 			<TaskWidget
 				classList={`
-					widget
+					widget aspect-video
 					[perspective:200px] absolute 
-					[transform:translateX(-20px)_translateZ(-40px)_rotateY(-3deg)] 
-					w-full h-full
-					hover:[transform:translateX(0)_translateY(0)_translateZ(0)_rotateY(0)]`}
+					frontfacing-widget right
+					top-1/2 left-1/2
+					w-full`}
 				client:visible
 			/>
 		</Project>
@@ -143,8 +145,8 @@ import Project from "./Project.astro";
 		.image-container:hover > img,
 		.image-container:hover .widget,
 		.image-container:hover video {
-			transform: rotateY(0deg) rotateX(0deg) translateZ(0px) translateX(0)
-				translateY(0);
+			transform: rotateY(0deg) rotateX(0deg) translateZ(0px)
+				translateX(-50%) translateY(-50%);
 		}
 
 		.image-container:hover > .visit-div {

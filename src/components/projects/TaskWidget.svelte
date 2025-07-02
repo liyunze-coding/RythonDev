@@ -121,7 +121,7 @@
     let { classList }: Props = $props();
 </script>
 
-<div class={`${classList} aspect-video`}>
+<div class={`${classList} overflow-hidden`}>
     <!-- task bot -->
     <div class="task-widget absolute flex h-[99%] w-full flex-col">
         <div
@@ -163,6 +163,26 @@
 </div>
 
 <style>
+    .background-widget.left {
+        transform: translateX(calc(-50% + 25px)) translateY(calc(-50% + 5px))
+            translateZ(-50px) rotateY(5deg);
+    }
+
+    .background-widget.right {
+        transform: translateX(calc(-50%)) translateY(calc(-50% + 5px))
+            translateZ(-50px) rotateY(-3deg);
+    }
+
+    .frontfacing-widget.left {
+        transform: translateX(calc(-50% + 35px)) translateY(calc(-50%))
+            translateZ(-50px) rotateY(5deg);
+    }
+
+    .frontfacing-widget.right {
+        transform: translateX(calc(-50% - 10px)) translateY(-50%)
+            translateZ(-50px) rotateY(-3deg);
+    }
+
     .primary {
         animation: primary 20s linear infinite;
     }

@@ -89,24 +89,24 @@
         <img
             src={image_src}
             alt={image_alt}
-            class="absolute max-w-full
-                    rounded-xl
-                    border-2 border-solid border-white opacity-40
-                    {positionLeft
-                ? '[transform:rotateY(5deg)_translateX(50px)_translateY(5px)_translateZ(-50px)]'
-                : '[transform:rotateY(-5deg)_translateX(-20px)_translateY(5px)_translateZ(-50px)]'}"
+            class="background-img absolute
+                    top-1/2
+                    left-1/2 max-w-full rounded-xl border-2
+                    border-solid border-white
+                    opacity-40
+                    {positionLeft ? 'left' : 'right'}"
             width="700"
         />
 
         <!-- svelte-ignore a11y_media_has_caption -->
         <video
             width="700"
-            class="playable absolute max-w-full
-					rounded-xl border-2 border-solid border-white
+            class="playable frontfacing-vid absolute
+					top-1/2 left-1/2 max-w-full rounded-xl
+                    border-2
+                    border-solid border-white
                     opacity-100
-                    {positionLeft
-                ? '[transform:rotateY(5deg)_translateX(60px)_translateZ(-50px)]'
-                : '[transform:rotateY(-5deg)_translateX(-30px)_translateZ(-50px)]'}"
+                    {positionLeft ? 'left' : 'right'}"
         >
             <source src={video_src} type="video/webm" />
         </video>
@@ -147,3 +147,25 @@
         </div>
     </div>
 </div>
+
+<style>
+    .background-img.left {
+        transform: translateX(calc(-50% + 25px)) translateY(calc(-50% + 5px))
+            translateZ(-50px) rotateY(5deg);
+    }
+
+    .background-img.right {
+        transform: translateX(calc(-50%)) translateY(calc(-50% + 5px))
+            translateZ(-50px) rotateY(-3deg);
+    }
+
+    .frontfacing-vid.left {
+        transform: translateX(calc(-50% + 35px)) translateY(calc(-50%))
+            translateZ(-50px) rotateY(5deg);
+    }
+
+    .frontfacing-vid.right {
+        transform: translateX(calc(-50% - 10px)) translateY(-50%)
+            translateZ(-50px) rotateY(-3deg);
+    }
+</style>
