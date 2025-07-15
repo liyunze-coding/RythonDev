@@ -168,4 +168,9 @@
         transform: translateX(calc(-50% - 10px)) translateY(-50%)
             translateZ(-50px) rotateY(-3deg);
     }
+
+    .image-container:hover .frontfacing-vid,
+    .image-container:hover .background-img {
+        transform: translate(-50%, -50%);
+    }
 </style>
