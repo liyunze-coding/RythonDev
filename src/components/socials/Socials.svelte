@@ -43,25 +43,3 @@
         />
     </div>
 </a>
-<a href="https://instagram.com/RythonDev" target="_blank">
-    <div
-        class="mr-3 flex h-7 w-7 items-center justify-center rounded-full bg-white transition-[filter,background-color] duration-150 hover:bg-[#1bbfa0] hover:invert"
-    >
-        <img
-            src="/images/socials/instagram.svg"
-            alt="twitch"
-            class="aspect-square h-4 w-4"
-        />
-    </div>
-</a>
-<a href="https://ko-fi.com/rython" target="_blank">
-    <div
-        class="mr-3 flex h-7 w-7 items-center justify-center rounded-full bg-white transition-colors duration-150 hover:bg-[#FF5E5B]"
-    >
-        <img
-            src="/images/socials/kofi.webp"
-            alt="twitch"
-            class="aspect-square h-4 w-4 translate-x-[1px] scale-125"
-        />
-    </div>
-</a>

@@ -1,13 +1,15 @@
 ---
-interface Props {
+type Props = {
+	href?: string;
 	primaryColor: string;
 	bgColor?: string;
 	scaleOnHover?: boolean;
 	pixelHeight?: string;
 	className?: string;
-}
+};
 
 const {
+	href,
 	primaryColor,
 	bgColor = "#282828",
 	scaleOnHover = false,
@@ -16,11 +18,34 @@ const {
 } = Astro.props;
 ---
 
-<div class="card z-10" class:list={[{ scale: scaleOnHover }, className]}>
-	<div class="card-content">
-		<slot />
-	</div>
-</div>
+<>
+	{
+		href && (
+			<a href={href}>
+				<div
+					class="card z-10"
+					class:list={[{ scale: scaleOnHover }, className]}
+				>
+					<div class="card-content">
+						<slot />
+					</div>
+				</div>
+			</a>
+		)
+	}
+	{
+		!href && (
+			<div
+				class="card z-10"
+				class:list={[{ scale: scaleOnHover }, className]}
+			>
+				<div class="card-content">
+					<slot />
+				</div>
+			</div>
+		)
+	}
+</>
 
 <style define:vars={{ primaryColor, bgColor, pixelHeight }}>
 	* {
@@ -62,15 +87,10 @@ const {
 		opacity: 0;
 	}
 
-	.card:after {
-		top: 65%;
-		opacity: 0;
-	}
-
-	.card:hover:after {
+	/* .card:hover:after {
 		top: 25%;
 		opacity: 1;
-	}
+	} */
 
 	.card.scale {
 		transition: transform 0.5s ease;
