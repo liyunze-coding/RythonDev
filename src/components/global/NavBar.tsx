@@ -24,7 +24,7 @@ export default function Navigationbar() {
         },
     ];
     return (
-        <div className="bg-secondary fixed top-5 left-1/2 z-30 box-border flex w-auto -translate-x-1/2 items-center justify-center gap-5 overflow-auto rounded-full border-2 border-solid border-gray-700 px-5 py-3">
+        <div className="bg-secondary fixed top-5 left-1/2 z-30 box-border flex -translate-x-1/2 items-center justify-center gap-5 overflow-auto rounded-full border-2 border-solid border-gray-700 px-5 py-3">
             <img
                 src="/images/pfp_new.webp"
                 alt="Ryan"

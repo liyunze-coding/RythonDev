@@ -42,7 +42,7 @@ export const HoverNavigation = ({
     return (
         <motion.div
             animate={{
-                width: visible ? "100%" : "0%",
+                width: visible ? "auto" : "0px",
             }}
             className={cn(
                 "flex flex-row items-center justify-center overflow-hidden",
@@ -53,7 +53,7 @@ export const HoverNavigation = ({
                 <a
                     href={item?.link}
                     key={item?.link}
-                    className="group relative block h-full w-auto px-5 py-2"
+                    className="group relative block h-full px-5 py-2"
                     onMouseEnter={() => setHoveredIndex(idx)}
                     onMouseLeave={() => setHoveredIndex(null)}
                 >
