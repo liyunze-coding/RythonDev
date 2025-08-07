@@ -11,7 +11,7 @@ type Props = {
 const {
 	href,
 	primaryColor,
-	bgColor = "#282828",
+	bgColor = "var(--color-secondary)",
 	scaleOnHover = false,
 	pixelHeight = "70px",
 	className = "",
@@ -36,7 +36,7 @@ const {
 	{
 		!href && (
 			<div
-				class="card z-10"
+				class="card z-10 mb-0"
 				class:list={[{ scale: scaleOnHover }, className]}
 			>
 				<div class="card-content">
@@ -63,10 +63,9 @@ const {
 		height: inherit;
 		position: relative;
 		background-color: var(--bgColor);
-		border: 1px solid rgb(255 255 255 / 5%);
+		border: 1px solid rgb(255 255 255 / 10%);
 		border-radius: 1.5rem;
 		padding: 0.5rem;
-		box-shadow: 0px 5px 5px 5px #141414;
 	}
 
 	.card:after {
@@ -104,10 +103,6 @@ const {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		background-image: radial-gradient(
-			rgba(255, 255, 255, 0.1) 1px,
-			transparent 1px
-		);
 		background-position: 50% 50%;
 		background-size: 1.1rem 1.1rem;
 	}

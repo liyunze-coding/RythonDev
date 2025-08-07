@@ -1,0 +1,37 @@
+import { HoverNavigation } from "@/components/ui/HoverNavigation";
+
+export default function Navigationbar() {
+    const navLinks = [
+        {
+            label: "Home",
+            link: "/",
+        },
+        {
+            label: "Experience",
+            link: "/experience",
+        },
+        {
+            label: "Projects",
+            link: "/projects",
+        },
+        {
+            label: "Skills",
+            link: "/skills",
+        },
+        {
+            label: "Contact",
+            link: "/contact",
+        },
+    ];
+    return (
+        <div className="bg-secondary fixed top-5 left-1/2 z-30 box-border flex w-auto -translate-x-1/2 items-center justify-center gap-5 overflow-auto rounded-full border-2 border-solid border-gray-700 px-5 py-3">
+            <img
+                src="/images/pfp_new.webp"
+                alt="Ryan"
+                width={50}
+                className="rounded-full"
+            />
+            <HoverNavigation items={navLinks} />
+        </div>
+    );
+}

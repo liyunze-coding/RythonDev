@@ -2,9 +2,11 @@
 interface Props {
 	title: string;
 	description: string;
+	thumbnail?: string;
+	metaURL?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, thumbnail, metaURL } = Astro.props;
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 ---
@@ -20,6 +22,18 @@ import { ClientRouter } from "astro:transitions";
 		/>
 		<meta name="author" content="RythonDev" />
 		<meta name="theme-color" content="#2B2D31" />
+
+		{
+			thumbnail && (
+				<>
+					<meta name="twitter:image" content={thumbnail} />
+					<meta name="og:image" content={thumbnail} />
+				</>
+			)
+		}
+
+		{metaURL && <meta name="og:url" content={metaURL} />}
+
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -59,8 +73,26 @@ import { ClientRouter } from "astro:transitions";
 	body {
 		font-family: "Montserrat", sans-serif;
 		color: #fff;
+		background: #0e0e11;
 		background:
-			radial-gradient(circle, #383838 1px, transparent 1px), #202020;
+			radial-gradient(circle, #303030 1px, transparent 1px), #101010;
 		background-size: 20px 20px;
 	}
 </style>
+
+<script is:inline>
+	document.addEventListener("astro:page-load", () => {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("view-appear");
+				}
+			});
+		});
+
+		const elements = document.querySelectorAll(".view-fadeUp");
+		elements.forEach((el) => {
+			observer.observe(el);
+		});
+	});
+</script>

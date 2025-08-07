@@ -1,5 +1,5 @@
 ---
-import NavBar from "../components/global/NavBar.astro";
+import NavBar from "../components/global/NavBar.tsx";
 import Layout from "../layouts/Layout.astro";
 import ContactComponent from "../components/contact/ContactComponent.svelte";
 import Card from "../components/global/Card.astro";
@@ -15,7 +15,7 @@ import Footer from "../components/global/FooterComponent.astro";
 		<h1 class="text-center text-5xl">Contact</h1>
 		<div class="mt-10 flex items-center justify-center">
 			<div class="w-[90%] md:w-[600px]">
-				<Card primaryColor="#40A2D8">
+				<Card primaryColor="#40A2D8" className="animate-fadeIn">
 					<div class="px-8 py-8">
 						<div class="justify-left mb-3 flex w-full flex-col">
 							<h2

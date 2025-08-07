@@ -55,6 +55,7 @@
 
     // after window finish loading, call animateRoles()
     onMount(async () => {
+        await sleep(500);
         animateGreeting(greeting);
     });
 </script>

@@ -1,7 +1,7 @@
 ---
-import NavBar from "../components/global/NavBar.astro";
+import NavBar from "../components/global/NavBar.tsx";
 import Layout from "../layouts/Layout.astro";
-import EducationComponent from "../components/experience/ExperienceComponent.astro";
+import ExperienceComponent from "../components/experience/ExperienceComponent.astro";
 import MoreExperience from "../components/experience/MoreExperience.astro";
 import Footer from "../components/global/FooterComponent.astro";
 ---
@@ -11,8 +11,8 @@ import Footer from "../components/global/FooterComponent.astro";
 	description="Find out RythonDev's previous education"
 >
 	<NavBar />
-	<div id="Experience" class="py-20">
-		<EducationComponent />
+	<div id="Experience" class="pt-30">
+		<ExperienceComponent />
 		<MoreExperience />
 	</div>
 	<Footer />

@@ -6,19 +6,21 @@ interface Tag {
 	bgColor: string;
 	textColor?: string;
 	hoverTextColor?: string;
+	className?: string;
 }
 
 interface Props {
 	title: string;
 	tags?: Tag[];
 	primaryColor: string;
+	className?: string;
 }
 
-const { title, tags, primaryColor } = Astro.props;
+const { title, tags, primaryColor, className = "" } = Astro.props;
 ---
 
-<div class="mx-auto w-[90%] md:w-[600px]">
-	<Card primaryColor={primaryColor}>
+<div class="mx-auto w-full">
+	<Card primaryColor={primaryColor} {className}>
 		<div class="px-8 py-8">
 			<div class="flex w-full flex-col">
 				<h2 class="text-2xl font-bold">{title}</h2>
@@ -48,16 +50,5 @@ const { title, tags, primaryColor } = Astro.props;
 	[class*="tag-"] {
 		background-color: var(--tag-bg);
 		color: var(--tag-text);
-
-		@media (width >= 48rem /* 768px */) {
-			background-color: var(--color-gray-500);
-		}
-
-		&:hover {
-			@media (hover: hover) {
-				background-color: var(--tag-bg);
-				color: var(--tag-hover-text);
-			}
-		}
 	}
 </style>

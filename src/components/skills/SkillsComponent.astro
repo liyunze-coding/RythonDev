@@ -7,8 +7,9 @@ import Skill from "./Skill.astro";
 <div class="h-fit w-full pt-20">
 	<h1 class="text-center text-5xl">Skills</h1>
 	<div class="flex flex-col items-center">
-		<div class="w-[90%] pt-10 md:w-[600px]">
+		<div class="w-[90%] pt-10 md:w-[600px] lg:w-1/2">
 			<Skill
+				className="view-fadeUp"
 				title="Frontend Development"
 				primaryColor="#19a7ce"
 				tags={[
@@ -23,7 +24,7 @@ import Skill from "./Skill.astro";
 					{
 						text: "Javascript",
 						bgColor: "var(--color-yellow-400)",
-						hoverTextColor: "black",
+						textColor: "black",
 					},
 					{
 						text: "Typescript",
@@ -36,12 +37,12 @@ import Skill from "./Skill.astro";
 					{
 						text: "React",
 						bgColor: "var(--color-react)",
-						hoverTextColor: "black",
+						textColor: "black",
 					},
 					{
 						text: "Vue",
 						bgColor: "var(--color-green-500)",
-						hoverTextColor: "black",
+						textColor: "black",
 					},
 					{
 						text: "WordPress",
@@ -50,17 +51,18 @@ import Skill from "./Skill.astro";
 					{
 						text: "Astro",
 						bgColor: "white",
-						hoverTextColor: "black",
+						textColor: "black",
 					},
 					{
 						text: "TailwindCSS",
 						bgColor: "var(--color-tailwind)",
-						hoverTextColor: "black",
+						textColor: "black",
 					},
 				]}
 			/>
 			<Line height="50px" />
 			<Skill
+				className="view-fadeUp"
 				title="Backend Development"
 				primaryColor="#474F7A"
 				tags={[
@@ -100,6 +102,7 @@ import Skill from "./Skill.astro";
 			/>
 			<Line height="50px" />
 			<Skill
+				className="view-fadeUp"
 				title="Data Science"
 				primaryColor="#a1eebd"
 				tags={[
@@ -134,7 +137,7 @@ import Skill from "./Skill.astro";
 					{
 						text: "BeautifulSoup4",
 						bgColor: "white",
-						hoverTextColor: "black",
+						textColor: "black",
 					},
 				]}
 			/>

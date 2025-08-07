@@ -1,40 +1,40 @@
 ---
 interface Props {
-    height: string;
+	height: string;
 }
 
 const { height } = Astro.props;
 ---
 
 <div id="line-container" class="relative flex items-center justify-center p-0">
-    <div id="line" class="h-full w-[1px]"></div>
+	<div id="line" class="h-full w-[1px] p-0"></div>
 </div>
 
 <style define:vars={{ height }}>
-    @keyframes gradientAnimation {
-        0% {
-            background-position: 0 50%;
-        }
-        100% {
-            background-position: 0 -100%;
-        }
-    }
-    #line-container {
-        height: var(--height);
-    }
+	@keyframes gradientAnimation {
+		0% {
+			background-position: 0 50%;
+		}
+		100% {
+			background-position: 0 -100%;
+		}
+	}
+	#line-container {
+		height: var(--height);
+	}
 
-    #line {
-        background-image: linear-gradient(
-            to bottom,
-            #404040 5%,
-            #aaa 10%,
-            #404040 15%
-        );
-        background-size: 100% 200%;
-        animation: gradientAnimation 2s linear infinite;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+	#line {
+		background-image: linear-gradient(
+			to bottom,
+			#404040 0%,
+			#aaa 5%,
+			#404040 10%
+		);
+		background-size: 100% 200%;
+		animation: gradientAnimation 2s linear infinite;
+		margin: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 </style>

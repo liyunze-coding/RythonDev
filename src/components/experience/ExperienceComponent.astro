@@ -6,8 +6,8 @@ import Line from "../global/NetworkLine.astro";
 <div id="Experience" class="h-fit">
 	<h1 class="text-center text-5xl">Experience</h1>
 	<div class="flex flex-col items-center pt-10">
-		<div class="w-[90%] md:w-[600px]">
-			<Card primaryColor="#F6DFD8">
+		<div class="w-[90%] md:w-[600px] lg:w-1/2">
+			<Card primaryColor="#F6DFD8" className="animate-fadeIn">
 				<div class="px-4 py-4 md:px-8 md:py-8">
 					<div class="mb-3 flex w-full flex-col justify-start gap-1">
 						<h2 class="text-xl font-bold">Full Stack Developer</h2>
@@ -19,20 +19,27 @@ import Line from "../global/NetworkLine.astro";
 						Led implementation of frontend technology stack for
 						websites. Worked closely with UI/UX designers to
 						translate designs into code, and integrate smoothly with
-						CMS. Performing research and development for backend
+						the CMS. Performing research and development for backend
 						projects.
 					</p>
 					<h3 class="mb-1 text-lg font-bold">Relevant skills:</h3>
-
-					<ul class="list-inside list-disc">
-						<li>Astro</li>
-						<li>Typescript</li>
-						<li>TailwindCSS</li>
-					</ul>
+					<div
+						class="flex flex-col items-start justify-start gap-0 md:flex-row md:gap-10"
+					>
+						<ul class="list-inside list-disc">
+							<li>NextJS</li>
+							<li>React</li>
+							<li>Astro</li>
+						</ul>
+						<ul class="list-inside list-disc">
+							<li>Typescript</li>
+							<li>TailwindCSS</li>
+						</ul>
+					</div>
 				</div>
 			</Card>
 			<Line height="50px" />
-			<Card primaryColor="#F6DFD8">
+			<Card primaryColor="#F6DFD8" className="view-fadeUp">
 				<div class="px-4 py-4 md:px-8 md:py-8">
 					<div class="mb-3 flex w-full flex-col justify-start gap-1">
 						<h2 class="text-xl font-bold">
@@ -42,8 +49,8 @@ import Line from "../global/NetworkLine.astro";
 					</div>
 					<hr class="mb-3 w-full" />
 					<p class="mb-3">
-						Currently pursuing my Bachelor's degree in Computer
-						Science in Australia as a 50% Vice-Chancellor Scholar.
+						Awarded a 50% Vice-Chancellor Scholarship to study
+						Bachelor's in Computer Science.
 					</p>
 					<h3 class="mb-1 text-lg font-bold">Relevant skills:</h3>
 					<div
@@ -53,9 +60,9 @@ import Line from "../global/NetworkLine.astro";
 							<li>Java</li>
 							<li>Kotlin</li>
 							<li>C#</li>
-							<li>Vue.JS</li>
 						</ul>
 						<ul class="list-inside list-disc">
+							<li>Vue.JS</li>
 							<li>MongoDB</li>
 							<li>PostgreSQL</li>
 						</ul>
@@ -64,7 +71,7 @@ import Line from "../global/NetworkLine.astro";
 			</Card>
 
 			<Line height="50px" />
-			<Card primaryColor="#F6DFD8">
+			<Card primaryColor="#F6DFD8" className="view-fadeUp">
 				<div class="px-4 py-4 md:px-8 md:py-8">
 					<div class="mb-3 flex w-full flex-col justify-start gap-1">
 						<h2 class="text-xl font-bold">
