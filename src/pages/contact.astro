@@ -1,7 +1,7 @@
 ---
 import NavBar from "../components/global/NavBar.astro";
 import Layout from "../layouts/Layout.astro";
-import ContactComponent from "../components/contact/ContactComponent.svelte";
+import ContactComponent from "../components/contact/ContactComponent.astro";
 import Card from "../components/global/Card.astro";
 import Footer from "../components/global/FooterComponent.astro";
 ---
@@ -13,26 +13,7 @@ import Footer from "../components/global/FooterComponent.astro";
 	<NavBar />
 	<div id="contact-component" class="mt-10 pt-20">
 		<h1 class="text-center text-5xl">Contact</h1>
-		<div class="mt-10 flex items-center justify-center">
-			<div class="w-[90%] md:w-[600px]">
-				<Card primaryColor="#40A2D8" className="animate-fadeIn">
-					<div class="px-8 py-8">
-						<div class="justify-left mb-3 flex w-full flex-col">
-							<h2
-								class="text-center text-xl font-bold text-balance"
-							>
-								Looking for a young developer with fresh ideas?
-							</h2>
-						</div>
-						<hr class="my-3 w-full" />
-						<div class="text-center text-balance">
-							Whether it's sponsorships or collaboration
-							opportunities, hit me up!
-						</div>
-					</div>
-				</Card>
-			</div>
-		</div>
+
 		<div class="mt-10">
 			<ContactComponent />
 		</div>

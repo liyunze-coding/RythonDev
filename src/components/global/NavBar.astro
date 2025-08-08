@@ -1,7 +1,7 @@
 ---
 import { HoverNavigation } from "@/components/ui/HoverNavigation";
 import { Image } from "astro:assets";
-import pfp from "@/components/images/pfp_new.webp";
+import pfp from "@/components/images/contact_photo_small.webp";
 
 const navLinks = [
 	{
@@ -28,7 +28,7 @@ const navLinks = [
 ---
 
 <div
-	class="bg-secondary fixed top-5 left-1/2 z-30 box-border flex -translate-x-1/2 items-center justify-center overflow-auto rounded-full border-2 border-solid border-gray-700 px-5 py-3"
+	class="bg-secondary/90 fixed top-5 left-1/2 z-30 box-border flex -translate-x-1/2 items-center justify-center overflow-auto rounded-full border-2 border-solid border-gray-700 px-5 py-3"
 >
 	<Image src={pfp} alt="Ryan" width={50} class="mr-3 rounded-full" />
 	<HoverNavigation items={navLinks} client:load />

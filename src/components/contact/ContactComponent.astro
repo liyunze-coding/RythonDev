@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import contactPhoto from "@/components/images/contact_photo.webp";
+import { AnimatedTooltip } from "@/components/ui/AnimatedToolTip";
+---
+
+<div
+	class="relative flex h-[400px] w-full flex-col-reverse items-start justify-center gap-10 lg:flex-row"
+>
+	<div class="relative flex w-1/2 items-end justify-end">
+		<Image
+			src={contactPhoto}
+			alt="Ryan"
+			width={300}
+			class="absolute top-0 right-0 aspect-[3/4] -translate-x-7 translate-y-3 rounded-3xl object-cover"
+		/>
+		<div
+			class="absolute top-0 right-0 -z-10 aspect-[3/4] w-[300px] -translate-x-10 translate-y-5 rounded-3xl bg-[#c98703]"
+		>
+		</div>
+	</div>
+	<div
+		class="flex h-full w-1/2 flex-col items-start justify-center text-left"
+	>
+		<h1
+			class="[font-family:'Antonio',sans-serif] text-5xl leading-14 font-bold uppercase"
+		>
+			have an idea? <br /> let's chat!
+		</h1>
+
+		<div class="mt-10 flex w-fit items-center justify-center">
+			<AnimatedTooltip
+				href="mailto:rythondev@gmail.com"
+				text="Email me!"
+				client:load
+				className="text-xl font-bold underline transition-colors duration-75 hover:text-blue-500"
+				>rythondev@gmail.com</AnimatedTooltip
+			>
+		</div>
+	</div>
+</div>
+
+<style>
+	#title {
+		background: linear-gradient(
+			90deg,
+			#85e6c5 0%,
+			#a084e8 45%,
+			#33bbc5 100%
+		);
+
+		background-size: 300%;
+
+		background-clip: text;
+		-webkit-background-clip: text;
+
+		-webkit-text-fill-color: transparent;
+	}
+</style>
