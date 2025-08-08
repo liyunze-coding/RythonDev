@@ -50,7 +50,7 @@ export const HoverNavigation = ({
 					ease: "easeInOut",
 				}}
 				className={cn(
-					"flex w-0 flex-row items-center justify-center whitespace-nowrap",
+					"flex w-0 flex-row items-center justify-center pr-2 whitespace-nowrap",
 					className,
 				)}
 			>
@@ -61,7 +61,7 @@ export const HoverNavigation = ({
 					Available for work
 				</a>
 				<div
-					className={`relative z-50 ml-3 ${visible ? "hidden" : "inline-block"}`}
+					className={`relative z-50 ml-3 ${visible ? "hidden" : "inline-block px-2"}`}
 				>
 					<div className="absolute top-1/2 left-1/2 aspect-square w-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500"></div>
 					<div className="animate-glow absolute top-1/2 left-1/2 aspect-square w-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500"></div>
