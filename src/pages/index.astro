@@ -1,5 +1,5 @@
 ---
-import NavBar from "../components/global/NavBar.tsx";
+import NavBar from "../components/global/NavBar.astro";
 import Layout from "../layouts/Layout.astro";
 import NetworkLine from "../components/global/NetworkLine.astro";
 import Intro from "../components/home/Intro.astro";
@@ -14,7 +14,7 @@ import Footer from "../components/global/FooterComponent.astro";
 	title="Ryan's Portfolio"
 	description="Ryan is a software developer, streamer and Computer Science undergraduate. Learn more about him and his skills here!"
 >
-	<NavBar client:load />
+	<NavBar />
 	<div id="home" class="flex items-center justify-center pt-32">
 		<Intro />
 	</div>

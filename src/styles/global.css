@@ -25,6 +25,7 @@
 
     --animate-fadeIn: fadeIn 0.5s ease-in-out;
     --animate-fadeUp: fadeUp 0.5s ease-in-out;
+    --animate-glow: glow 2s ease infinite;
 
     @keyframes fadeIn {
         0% {
@@ -42,9 +43,20 @@
             translate: 0px 10px;
         }
 
-        100% {
+        50% {
             opacity: 100%;
             translate: 0px 0px;
+        }
+    }
+
+    @keyframes glow {
+        0% {
+            scale: 1;
+            opacity: 100%;
+        }
+        100% {
+            scale: 4;
+            opacity: 5%;
         }
     }
 }
