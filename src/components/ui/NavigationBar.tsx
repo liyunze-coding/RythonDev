@@ -59,7 +59,7 @@ export const HoverNavigation = ({
 
 	// if on contact page, do not do width 0%
 	useEffect(() => {
-		setOnContactPage(window.location.href.endsWith("/contact"));
+		setOnContactPage(window.location.href.includes("/contact"));
 	}, []);
 
 	useEffect(() => {
