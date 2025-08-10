@@ -5,22 +5,24 @@ import { AnimatedTooltip } from "@/components/ui/AnimatedToolTip";
 ---
 
 <div
-	class="relative flex h-[400px] w-full flex-col-reverse items-start justify-center gap-10 lg:flex-row"
+	class="relative flex w-full flex-col-reverse items-center justify-start gap-10 lg:h-[400px] lg:flex-row lg:items-start lg:justify-center"
 >
-	<div class="relative flex w-1/2 items-end justify-end">
+	<div
+		class="relative flex aspect-[3/4] w-[300px] items-end justify-end lg:w-1/2"
+	>
 		<Image
 			src={contactPhoto}
 			alt="Ryan"
 			width={300}
-			class="absolute top-0 right-0 aspect-[3/4] -translate-x-7 translate-y-3 rounded-3xl object-cover"
+			class="absolute top-1/2 left-1/2 aspect-[3/4] -translate-1/2 rounded-3xl object-cover lg:top-0 lg:right-0 lg:-translate-x-10 lg:translate-y-5"
 		/>
 		<div
-			class="absolute top-0 right-0 -z-10 aspect-[3/4] w-[300px] -translate-x-10 translate-y-5 rounded-3xl bg-[#c98703]"
+			class="absolute top-1/2 left-1/2 -z-10 aspect-[3/4] w-[300px] -translate-1/2 rounded-3xl bg-[#c98703] blur-lg lg:top-0 lg:right-0 lg:-translate-x-10 lg:translate-y-5"
 		>
 		</div>
 	</div>
 	<div
-		class="flex h-full w-1/2 flex-col items-start justify-center text-left"
+		class="flex w-full flex-col items-center justify-start text-left lg:h-full lg:w-1/2 lg:items-start lg:justify-center"
 	>
 		<h1
 			class="[font-family:'Antonio',sans-serif] text-5xl leading-14 font-bold uppercase"

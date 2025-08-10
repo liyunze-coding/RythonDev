@@ -8,13 +8,13 @@ import Experience from "../components/experience/ExperienceComponent.astro";
 import Skills from "../components/skills/SkillsComponent.astro";
 import Contact from "../components/contact/ContactComponent.astro";
 import Footer from "../components/global/FooterComponent.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
 ---
 
-<Layout
+<PageLayout
 	title="Ryan's Portfolio"
 	description="Ryan is a software developer, streamer and Computer Science undergraduate. Learn more about him and his skills here!"
 >
-	<NavBar />
 	<div id="home" class="flex items-center justify-center pt-32">
 		<Intro />
 	</div>
@@ -36,7 +36,7 @@ import Footer from "../components/global/FooterComponent.astro";
 		<Contact />
 	</div>
 	<Footer />
-</Layout>
+</PageLayout>
 <script is:inline>
 	location.search.includes("?uwu") &&
 		document.documentElement.classList.add("uwu");
