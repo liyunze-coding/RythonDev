@@ -185,6 +185,7 @@ export const HoverNavigation = ({
 				<motion.ul
 					animate={{
 						height: hamburgerOpen ? "auto" : "0px",
+						opacity: hamburgerOpen ? "100%" : "0",
 					}}
 					transition={{
 						ease: "easeInOut",
@@ -195,9 +196,7 @@ export const HoverNavigation = ({
 						<a
 							href={item?.link}
 							key={item?.link}
-							className="group relative block h-full px-5 py-2 text-center lg:hidden"
-							onMouseEnter={() => setHoveredIndex(idx)}
-							onMouseLeave={() => setHoveredIndex(null)}
+							className="group relative block px-5 py-2 text-center lg:hidden"
 						>
 							{item.label}
 						</a>
