@@ -146,7 +146,7 @@ export const HoverNavigation = ({
 							<a
 								href={item?.link}
 								key={item?.link}
-								className="group relative block h-full px-5 py-2"
+								className="group relative block h-fit px-5 py-2"
 								onMouseEnter={() => setHoveredIndex(idx)}
 								onMouseLeave={() => setHoveredIndex(null)}
 							>
@@ -189,39 +189,17 @@ export const HoverNavigation = ({
 					transition={{
 						ease: "easeInOut",
 					}}
-					className="h-0 overflow-hidden lg:hidden"
+					className="overflow-hidden"
 				>
 					{items.map((item, idx) => (
 						<a
 							href={item?.link}
 							key={item?.link}
-							className="group relative block h-full px-5 py-2"
+							className="group relative block h-full px-5 py-2 text-center lg:hidden"
 							onMouseEnter={() => setHoveredIndex(idx)}
 							onMouseLeave={() => setHoveredIndex(null)}
 						>
-							<AnimatePresence>
-								{hoveredIndex === idx && (
-									<motion.span
-										className="absolute inset-0 block h-full w-full rounded-3xl bg-neutral-200"
-										layoutId="hoverBackground"
-										initial={{ opacity: 0 }}
-										animate={{
-											opacity: 1,
-											transition: {
-												duration: 0.15,
-											},
-										}}
-										exit={{
-											opacity: 0,
-											transition: {
-												duration: 0.15,
-												delay: 0.2,
-											},
-										}}
-									/>
-								)}
-							</AnimatePresence>
-							<NavBarLink>{item.label}</NavBarLink>
+							{item.label}
 						</a>
 					))}
 				</motion.ul>
@@ -240,7 +218,7 @@ export const NavBarLink = ({
 	return (
 		<div
 			className={cn(
-				"relative z-20 h-full w-full overflow-hidden rounded-2xl text-center transition-all ease-out group-hover:text-black",
+				"relative z-20 h-fit w-full overflow-hidden rounded-2xl text-center transition-all ease-out group-hover:text-black",
 				className,
 			)}
 		>
