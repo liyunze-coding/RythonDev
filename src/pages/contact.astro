@@ -1,16 +1,11 @@
 ---
 import NavBar from "../components/global/NavBar.astro";
-import Layout from "../layouts/Layout.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
 import ContactComponent from "../components/contact/ContactComponent.astro";
-import Card from "../components/global/Card.astro";
 import Footer from "../components/global/FooterComponent.astro";
 ---
 
-<Layout
-	title="Contact"
-	description="Find out how to contact RythonDev, for sponsorship offers or collaboration opportunities!"
->
-	<NavBar />
+<PageLayout title="Contact" description="Have an idea? Contact Ryan here!">
 	<div id="contact-component" class="mt-10 pt-20">
 		<h1 class="text-center text-5xl">Contact</h1>
 
@@ -19,4 +14,4 @@ import Footer from "../components/global/FooterComponent.astro";
 		</div>
 	</div>
 	<Footer />
-</Layout>
+</PageLayout>

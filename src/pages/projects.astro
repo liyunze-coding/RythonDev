@@ -1,13 +1,15 @@
 ---
-import NavBar from "../components/global/NavBar.astro";
-import Layout from "../layouts/Layout.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
 import ProjectsComponent from "../components/projects/ProjectsComponent.astro";
 import MoreProjects from "../components/projects/MoreProjects.svelte";
 import Footer from "../components/global/FooterComponent.astro";
 ---
 
-<Layout title="Projects" description="View what projects RythonDev has made">
-	<NavBar />
+<PageLayout
+	title="Projects"
+	description="View what projects RythonDev has made"
+	thumbnail="/images/profile/contact_photo.webp"
+>
 	<div id="projects" class="pt-20">
 		<h1 class="mt-10 text-center text-5xl">Projects</h1>
 		<!-- other projects -->
@@ -17,7 +19,7 @@ import Footer from "../components/global/FooterComponent.astro";
 		<ProjectsComponent />
 	</div>
 	<Footer />
-</Layout>
+</PageLayout>
 
 <style>
 	.image-container img,
