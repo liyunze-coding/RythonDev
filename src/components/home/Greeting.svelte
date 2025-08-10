@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import Socials from "../socials/Socials.svelte";
 
 	// Roles
 	const typingInterval: number = 50;

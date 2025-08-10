@@ -109,7 +109,7 @@ export const HoverNavigation = ({
 							className="mr-3 rounded-full"
 						/>
 					</a>
-					<div className="mx-5 flex flex-col items-center justify-center">
+					<div className="flex flex-col items-center justify-center">
 						<motion.div
 							animate={{
 								width: availableVisible ? "auto" : "0px",
@@ -118,12 +118,13 @@ export const HoverNavigation = ({
 							className="flex w-auto flex-row items-center justify-center pr-2 whitespace-nowrap opacity-100 lg:w-0 lg:opacity-0"
 						>
 							<a
+								tabIndex={1}
 								href="/contact"
 								className="overflow-hidden whitespace-nowrap transition-colors duration-150 hover:text-green-500"
 							>
 								Available for work
 							</a>
-							<div className={`relative z-50 ml-3`}>
+							<div className="relative z-50 ml-5">
 								<div className="absolute top-1/2 left-1/2 aspect-square w-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500"></div>
 								<div className="animate-glow absolute top-1/2 left-1/2 aspect-square w-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500"></div>
 							</div>
