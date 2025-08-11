@@ -98,33 +98,38 @@ export const HoverNavigation = ({
 	});
 
 	return (
-		<div className="bg-secondary/50 fixed top-5 left-1/2 z-30 box-border flex w-4/5 -translate-x-1/2 items-center justify-center overflow-auto rounded-[40px] border-2 border-solid border-gray-700 px-5 py-3 backdrop-blur-md lg:w-2/3 xl:w-auto">
+		<div className="bg-secondary/50 fixed top-5 left-1/2 z-30 box-border flex w-11/12 -translate-x-1/2 items-center justify-center overflow-auto rounded-[40px] border-2 border-solid border-gray-700 px-5 py-3 backdrop-blur-md sm:w-4/5 lg:w-2/3 xl:w-auto">
 			<div className="flex flex-col">
 				<div className="flex flex-row">
-					<a href="/">
-						<img
-							src="/images/profile/contact_photo_small.webp"
-							alt="Ryan"
-							width={50}
-							className="mr-3 rounded-full"
-						/>
-					</a>
+					<div className="mr-2 flex items-center justify-center sm:mr-3">
+						<a href="/">
+							<img
+								src="/images/profile/contact_photo_small.webp"
+								alt="Ryan"
+								width={50}
+								className="rounded-full"
+							/>
+						</a>
+					</div>
 					<div className="flex flex-col items-center justify-center">
 						<motion.div
 							animate={{
 								width: availableVisible ? "auto" : "0px",
 								opacity: availableVisible ? "100%" : "0%",
 							}}
+							initial={{
+								width: "0px",
+							}}
 							className="flex w-auto flex-row items-center justify-center pr-2 whitespace-nowrap opacity-100 lg:w-0 lg:opacity-0"
 						>
 							<a
 								tabIndex={1}
 								href="/contact"
-								className="overflow-hidden whitespace-nowrap transition-colors duration-150 hover:text-green-500"
+								className="overflow-hidden text-sm whitespace-nowrap transition-colors duration-150 hover:text-green-500 sm:text-base"
 							>
 								Available for work
 							</a>
-							<div className="relative z-50 ml-5">
+							<div className="relative z-50 ml-3">
 								<div className="absolute top-1/2 left-1/2 aspect-square w-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500"></div>
 								<div className="animate-glow absolute top-1/2 left-1/2 aspect-square w-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500"></div>
 							</div>
@@ -176,10 +181,11 @@ export const HoverNavigation = ({
 						))}
 					</motion.div>
 
-					<div className="hamburger-wrapper block lg:hidden">
+					<div className="hamburger-wrapper flex items-center justify-center lg:hidden">
 						<HamburgerCross
 							toggled={hamburgerOpen}
 							toggle={setHamburgerOpen}
+							size={20}
 						></HamburgerCross>
 					</div>
 				</div>
@@ -191,7 +197,10 @@ export const HoverNavigation = ({
 					transition={{
 						ease: "easeInOut",
 					}}
-					className="overflow-hidden"
+					initial={{
+						height: "0px",
+					}}
+					className="h-0 overflow-hidden"
 				>
 					{items.map((item, idx) => (
 						<a
