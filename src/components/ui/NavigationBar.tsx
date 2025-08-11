@@ -117,13 +117,10 @@ export const HoverNavigation = ({
 								width: availableVisible ? "auto" : "0px",
 								opacity: availableVisible ? "100%" : "0%",
 							}}
-							initial={{
-								width: "0px",
-							}}
 							className="flex w-auto flex-row items-center justify-center pr-2 whitespace-nowrap opacity-100 lg:w-0 lg:opacity-0"
 						>
 							<a
-								tabIndex={1}
+								tabIndex={0}
 								href="/contact"
 								className="overflow-hidden text-sm whitespace-nowrap transition-colors duration-150 hover:text-green-500 sm:text-base"
 							>
