@@ -132,54 +132,64 @@ export const HoverNavigation = ({
 							</div>
 						</motion.div>
 					</div>
-					<motion.div
-						animate={{
-							width: navVisible ? "auto" : "0px",
-							opacity: navVisible ? "100%" : "0%",
-						}}
-						transition={{
-							ease: "easeInOut",
-						}}
-						className={cn(
-							"hidden w-0 flex-row items-center justify-center overflow-hidden lg:flex lg:w-auto",
-							className,
-						)}
+					<nav
+						aria-label="Desktop Navigation"
+						className="flex items-center justify-center overflow-hidden"
 					>
-						{items.map((item, idx) => (
-							<a
-								href={item?.link}
-								key={item?.link}
-								className="group relative block h-fit px-5 py-2"
-								onMouseEnter={() => setHoveredIndex(idx)}
-								onMouseLeave={() => setHoveredIndex(null)}
-							>
-								<AnimatePresence>
-									{hoveredIndex === idx && (
-										<motion.span
-											className="absolute inset-0 block h-full w-full rounded-3xl bg-neutral-200"
-											layoutId="hoverBackground"
-											initial={{ opacity: 0 }}
-											animate={{
-												opacity: 1,
-												transition: { duration: 0.15 },
-											}}
-											exit={{
-												opacity: 0,
-												transition: {
-													duration: 0.15,
-													delay: 0.2,
-												},
-											}}
-										/>
-									)}
-								</AnimatePresence>
-								<NavBarLink>{item.label}</NavBarLink>
-							</a>
-						))}
-					</motion.div>
+						<motion.ul
+							className="hidden w-0 flex-row items-center justify-center overflow-hidden lg:flex lg:w-auto"
+							animate={{
+								width: navVisible ? "auto" : "0px",
+								opacity: navVisible ? "100%" : "0%",
+							}}
+							transition={{
+								ease: "easeInOut",
+							}}
+						>
+							{items.map((item, idx) => (
+								<li key={item?.link}>
+									<a
+										href={item?.link}
+										className="group relative block h-fit px-5 py-2"
+										onMouseEnter={() =>
+											setHoveredIndex(idx)
+										}
+										onMouseLeave={() =>
+											setHoveredIndex(null)
+										}
+									>
+										<AnimatePresence>
+											{hoveredIndex === idx && (
+												<motion.span
+													className="absolute inset-0 block h-full w-full rounded-3xl bg-neutral-200"
+													layoutId="hoverBackground"
+													initial={{ opacity: 0 }}
+													animate={{
+														opacity: 1,
+														transition: {
+															duration: 0.15,
+														},
+													}}
+													exit={{
+														opacity: 0,
+														transition: {
+															duration: 0.15,
+															delay: 0.2,
+														},
+													}}
+												/>
+											)}
+										</AnimatePresence>
+										<NavBarLink>{item.label}</NavBarLink>
+									</a>
+								</li>
+							))}
+						</motion.ul>
+					</nav>
 
 					<div className="hamburger-wrapper flex items-center justify-center lg:hidden">
 						<HamburgerCross
+							aria-label="Hamburger"
 							toggled={hamburgerOpen}
 							toggle={setHamburgerOpen}
 							size={20}
@@ -200,13 +210,14 @@ export const HoverNavigation = ({
 					className="h-0 overflow-hidden"
 				>
 					{items.map((item, idx) => (
-						<a
-							href={item?.link}
-							key={item?.link}
-							className="group relative block px-5 py-2 text-center lg:hidden"
-						>
-							{item.label}
-						</a>
+						<li key={item?.link}>
+							<a
+								href={item?.link}
+								className="group relative block px-5 py-2 text-center lg:hidden"
+							>
+								{item.label}
+							</a>
+						</li>
 					))}
 				</motion.ul>
 			</div>
