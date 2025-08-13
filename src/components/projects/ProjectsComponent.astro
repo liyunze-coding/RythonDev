@@ -2,7 +2,7 @@
 import TaskWidget from "./TaskWidget.svelte";
 import CoworkingGuide from "../images/projects/coworking-guide.webp";
 import Wnrs from "../images/projects/wnrs.webp";
-import TwitchPlays from "../images/projects/twitchplays.webp";
+import VideoProject from "./VideoProject.svelte";
 import Project from "./Project.astro";
 ---
 
@@ -37,6 +37,58 @@ import Project from "./Project.astro";
 				},
 			]}
 		/>
+
+		<VideoProject
+			client:visible
+			image_src="/images/projects/aim-lab.webp"
+			image_alt="Computer Vision AimLab Bot"
+			position="right"
+			video_src="/videos/aim_lab_demo.webm"
+			title="Computer Vision AimLab Bot"
+			description={`
+                A script that plays AimLab, a game that helps improve your aim in FPS games. Uses OpenCV to detect the targets and win32API to move the mouse and click.
+            `}
+			tags={[
+				{
+					text: "Python",
+					textColor: "white",
+					bgColor: "var(--color-python)",
+				},
+				{
+					text: "OpenCV",
+					textColor: "white",
+					bgColor: "var(--color-opencv)",
+				},
+				{
+					text: "win32API",
+					textColor: "white",
+					bgColor: "var(--color-win32api)",
+				},
+			]}
+		/>
+
+		<Project
+			position="left"
+			image={Wnrs}
+			alt="We're not really strangers"
+			href="https://liyunze-coding.github.io/wnrs/"
+			label="Visit Site"
+			title="We're not really strangers"
+			description="This is a digital adaptation of the popular card game designed to foster meaningful connections through engaging questions and prompts. Made into a PWA for offline usage on mobile!"
+			tags={[
+				{
+					text: "React",
+					bgColor: "var(--color-react)",
+					textColor: "black",
+				},
+				{
+					text: "TypeScript",
+					bgColor: "var(--color-typescript)",
+					textColor: "white",
+				},
+			]}
+		/>
+
 		<Project
 			position="right"
 			href="https://github.com/liyunze-coding/chat-task-tic-overlay-infinity"
@@ -86,51 +138,6 @@ import Project from "./Project.astro";
 				client:visible
 			/>
 		</Project>
-
-		<Project
-			position="left"
-			image={Wnrs}
-			alt="We're not really strangers"
-			href="https://liyunze-coding.github.io/wnrs/"
-			label="Visit Site"
-			title="We're not really strangers"
-			description="This is a digital adaptation of the popular card game designed to foster meaningful connections through engaging questions and prompts. Made into a PWA for offline usage on mobile!"
-			tags={[
-				{
-					text: "React",
-					bgColor: "var(--color-react)",
-					textColor: "black",
-				},
-				{
-					text: "TypeScript",
-					bgColor: "var(--color-typescript)",
-					textColor: "white",
-				},
-			]}
-		/>
-		<Project
-			position="right"
-			image={TwitchPlays}
-			alt="Twitch Plays X"
-			href="https://github.com/liyunze-coding/TwitchPlaysX"
-			title="Twitch Plays X"
-			description={`Allow Twitch chatters to play games such as Pokemon!
-					Chatters can enter messages such as "up up down down left
-					right B A" and the Python program will trigger the
-					corresponding keypresses.`}
-			tags={[
-				{
-					text: "win32API",
-					bgColor: "var(--color-win32api)",
-					textColor: "white",
-				},
-				{
-					text: "Python",
-					bgColor: "var(--color-python)",
-					textColor: "white",
-				},
-			]}
-		/>
 	</div>
 </div>
 

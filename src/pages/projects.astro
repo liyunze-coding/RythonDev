@@ -1,7 +1,7 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
 import ProjectsComponent from "../components/projects/ProjectsComponent.astro";
-import MoreProjects from "../components/projects/MoreProjects.svelte";
+import MoreProjects from "../components/projects/MoreProjects.astro";
 import Footer from "../components/global/FooterComponent.astro";
 ---
 
@@ -13,7 +13,7 @@ import Footer from "../components/global/FooterComponent.astro";
 	<div id="projects" class="pt-20">
 		<h1 class="mt-10 text-center text-5xl">Projects</h1>
 		<!-- other projects -->
-		<MoreProjects client:load />
+		<MoreProjects />
 	</div>
 	<div class="pb-20">
 		<ProjectsComponent />
