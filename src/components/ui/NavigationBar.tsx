@@ -161,7 +161,7 @@ export const HoverNavigation = ({
 										<AnimatePresence>
 											{hoveredIndex === idx && (
 												<motion.span
-													className="absolute inset-0 block h-full w-full rounded-3xl bg-neutral-200"
+													className="absolute inset-0 z-10 block h-full w-full rounded-3xl bg-neutral-200"
 													layoutId="hoverBackground"
 													initial={{ opacity: 0 }}
 													animate={{
@@ -213,7 +213,7 @@ export const HoverNavigation = ({
 						<li key={item?.link}>
 							<a
 								href={item?.link}
-								className="group relative block px-5 py-2 text-center lg:hidden"
+								className="block px-5 py-2 text-center mix-blend-difference lg:hidden"
 							>
 								{item.label}
 							</a>
@@ -235,7 +235,7 @@ export const NavBarLink = ({
 	return (
 		<div
 			className={cn(
-				"relative z-20 h-fit w-full overflow-hidden rounded-2xl text-center transition-all ease-out group-hover:text-black",
+				"relative z-20 h-fit w-full overflow-hidden rounded-2xl text-center mix-blend-difference transition-all ease-out",
 				className,
 			)}
 		>
