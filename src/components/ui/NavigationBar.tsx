@@ -49,7 +49,7 @@ export const HoverNavigation = ({
 	className?: string;
 }) => {
 	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-	const { scrollYProgress } = useScroll();
+	const { scrollY } = useScroll();
 	const [navVisible, setNavVisible] = useState(true);
 	const [availableVisible, setAvailableVisible] = useState(false);
 
@@ -68,13 +68,13 @@ export const HoverNavigation = ({
 
 	const updateNavBarState = (
 		width: number,
-		scrollProgress: number = 0,
+		scrollPosition: number = 0,
 		scrollUp: boolean = false,
 	) => {
 		if (width && width < 1024) {
 			setNavVisible(false);
 			setAvailableVisible(true);
-		} else if (scrollProgress < 0.05) {
+		} else if (scrollPosition < 50) {
 			setNavVisible(true);
 			setAvailableVisible(false);
 		} else if (!onContactPage) {
@@ -86,12 +86,12 @@ export const HoverNavigation = ({
 		}
 	};
 
-	useMotionValueEvent(scrollYProgress, "change", (current) => {
+	useMotionValueEvent(scrollY, "change", (current) => {
 		// Check if current is not undefined and is a number
 		if (typeof current === "number") {
-			let direction = current! - scrollYProgress.getPrevious()!;
+			let direction = current! - scrollY.getPrevious()!;
 			let scrollUp = direction <= 0;
-			let scrollProgress = scrollYProgress.get();
+			let scrollProgress = scrollY.get();
 
 			updateNavBarState(width, scrollProgress, scrollUp);
 		}
