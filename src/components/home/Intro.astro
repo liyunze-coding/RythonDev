@@ -2,6 +2,8 @@
 import Card from "../global/Card.astro";
 import Socials from "../socials/Socials.astro";
 import Greeting from "./Greeting.svelte";
+import pfp_new from "../images/pfp_new.webp";
+import { Image } from "astro:assets";
 ---
 
 <div class="w-[90%] md:w-[600px] lg:w-1/2">
@@ -10,12 +12,13 @@ import Greeting from "./Greeting.svelte";
 			<div class="w-full px-5 pt-10 pb-2 lg:px-10">
 				<div class="flex h-20 flex-row">
 					<div class="mr-1 flex w-20 items-center justify-center">
-						<img
-							src="/images/profile/pfp_new.webp"
+						<Image
+							src={pfp_new}
 							alt="Ryan"
 							width="80"
 							height="80"
 							class="max-w-full rounded-full bg-[#505050]"
+							loading="eager"
 						/>
 					</div>
 					<div class="ml-2 flex flex-col items-start justify-center">
