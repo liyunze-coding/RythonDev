@@ -115,11 +115,7 @@ const leftProject = position == "left";
 			{
 				tags.map((tag) => (
 					<div
-						class="my-1 mr-1 w-fit rounded-full px-3 py-1 transition-colors duration-300"
-						style={`
-							background-color: ${tag.bgColor || "black"};
-							color: ${tag.textColor || "white"};
-						`}
+						class="my-1 mr-1 w-fit rounded-full px-3 py-1 transition-colors duration-300 text-white bg-secondary"
 					>
 						{tag.text}
 					</div>

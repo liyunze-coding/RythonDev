@@ -33,9 +33,7 @@ const { title, tags, primaryColor, className = "" } = Astro.props;
 				{
 					tags?.map((tag, index) => (
 						<div
-							class={`tag-${index} my-1 mr-1 w-fit cursor-default rounded-full px-3 py-1 transition-colors duration-300`}
-							style={`--tag-bg: ${tag.bgColor || "#000"}; --tag-text: ${tag.textColor || "#ffffff"};
-                        --tag-hover-text: ${tag.hoverTextColor || "#ffffff"}`}
+							class={`tag-${index} my-1 mr-1 w-fit cursor-default rounded-full bg-[#303030] px-3 py-1 text-white transition-colors duration-300`}
 						>
 							{tag.text}
 						</div>
@@ -45,10 +43,3 @@ const { title, tags, primaryColor, className = "" } = Astro.props;
 		</div>
 	</Card>
 </div>
-
-<style>
-	[class*="tag-"] {
-		background-color: var(--tag-bg);
-		color: var(--tag-text);
-	}
-</style>
