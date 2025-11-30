@@ -2,11 +2,12 @@
 import NetworkLine from "../components/global/NetworkLine.astro";
 import Intro from "../components/home/Intro.astro";
 import Projects from "../components/projects/ProjectsComponent.astro";
-import Experience from "../components/experience/ExperienceComponent.astro";
+import Experience from "../components/experience/ExperienceComponent.tsx";
 import Skills from "../components/skills/SkillsComponent.astro";
 import Contact from "../components/contact/ContactComponent.astro";
 import Footer from "../components/global/FooterComponent.astro";
 import PageLayout from "@/layouts/PageLayout.astro";
+import { Button } from "@/components/ui/moving-border";
 ---
 
 <PageLayout
@@ -18,17 +19,31 @@ import PageLayout from "@/layouts/PageLayout.astro";
 		<Intro />
 	</div>
 	<NetworkLine height="70px" />
-	<div id="education">
-		<div class="mx-auto mb-10 h-[1px] w-1/3 bg-[#404040]"></div>
-		<Experience />
+	<div
+		id="experience"
+		class="flex scroll-mt-18 flex-col items-center justify-center"
+	>
+		<!-- horizontal line -->
+		<hr class="mx-auto mb-10 h-[1px] w-1/3 border-[#404040]" />
+		<Experience client:visible />
 	</div>
-	<div id="projects">
-		<div class="pt-20">
+	<div id="projects" class="scroll-mt-12">
+		<div class="flex flex-col items-center justify-center pt-20">
 			<h1 class="mb-10 text-center text-5xl">Projects</h1>
 			<Projects />
+			<Button
+				client:visible
+				borderRadius="1.75rem"
+				className="bg-secondary cursor-pointer border-slate-800 px-5 text-white transition-all duration-300 hover:brightness-125"
+				duration={2000}
+				as={"a"}
+				href="/projects"
+			>
+				VIEW ALL PROJECTS
+			</Button>
 		</div>
 	</div>
-	<div id="skills">
+	<div id="skills" class="scroll-mt-16">
 		<Skills />
 	</div>
 	<div id="contact" class="pt-20">
@@ -36,6 +51,7 @@ import PageLayout from "@/layouts/PageLayout.astro";
 	</div>
 	<Footer />
 </PageLayout>
+
 <script is:inline>
 	location.search.includes("?uwu") &&
 		document.documentElement.classList.add("uwu");

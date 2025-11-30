@@ -1,12 +1,6 @@
 ---
 import { Image } from "astro:assets";
 
-interface Tag {
-	text: string;
-	textColor: string;
-	bgColor: string;
-}
-
 interface Props {
 	position?: "left" | "right";
 	image?: ImageMetadata;
@@ -15,7 +9,7 @@ interface Props {
 	title: string;
 	description: string;
 	label?: string;
-	tags?: Tag[];
+	tags?: Array<string>;
 }
 
 const {
@@ -117,7 +111,7 @@ const leftProject = position == "left";
 					<div
 						class="my-1 mr-1 w-fit rounded-full px-3 py-1 transition-colors duration-300 text-white bg-secondary"
 					>
-						{tag.text}
+						{tag}
 					</div>
 				))
 			}

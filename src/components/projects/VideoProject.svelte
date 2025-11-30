@@ -1,12 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 
-	interface Tag {
-		text: string;
-		textColor: string;
-		bgColor: string;
-	}
-
 	interface Props {
 		position?: "left" | "right";
 		image_src: string;
@@ -14,7 +8,7 @@
 		video_src: string;
 		title: string;
 		description: string;
-		tags?: Tag[];
+		tags?: Array<string>;
 	}
 
 	let {
@@ -137,7 +131,7 @@
                         w-fit rounded-full px-3
                         py-1 text-white transition-colors duration-300"
 				>
-					{tag.text}
+					{tag}
 				</div>
 			{/each}
 		</div>

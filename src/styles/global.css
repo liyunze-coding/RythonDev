@@ -1,27 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-	--color-html: #b11700;
-	--color-typescript: #3178c6;
-	--color-svelte: #b11700;
-	--color-react: #00d8ff;
-	--color-wordpress: #21759b;
-	--color-htmx: #3366cc;
-	--color-tailwind: #07b6d4;
-	--color-python: #3776ab;
-	--color-csharp: #672079;
-	--color-java: #ed8b00;
-	--color-kotlin: #7f52ff;
-	--color-php: #3d5694;
-	--color-go: #006080;
-	--color-rust: #b11700;
-	--color-postgresql: #4479a1;
-	--color-mysql: #1d6998;
-	--color-mongodb: #09934e;
-	--color-opencv: #10652f;
-	--color-win32api: #0078d4;
 	--color-primary: #fafafa;
 	--color-secondary: #1d1c20;
+	--color-accent: #72ffff;
+	--color-muted-foreground: #ccc;
 
 	--animate-fadeIn: fadeIn 0.5s ease-in-out;
 	--animate-fadeUp: fadeUp 0.5s ease-in-out;
