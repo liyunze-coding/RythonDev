@@ -1,18 +1,10 @@
 ---
 import Card from "../global/Card.astro";
 
-interface Tag {
-	text: string;
-	bgColor: string;
-	textColor?: string;
-	hoverTextColor?: string;
-	className?: string;
-}
-
 interface Props {
 	title: string;
-	tags?: Tag[];
-	primaryColor: string;
+	tags?: Array<string>;
+	primaryColor?: string;
 	className?: string;
 }
 
@@ -35,7 +27,7 @@ const { title, tags, primaryColor, className = "" } = Astro.props;
 						<div
 							class={`tag-${index} my-1 mr-1 w-fit cursor-default rounded-full bg-[#303030] px-3 py-1 text-white transition-colors duration-300`}
 						>
-							{tag.text}
+							{tag}
 						</div>
 					))
 				}

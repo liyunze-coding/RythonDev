@@ -49,53 +49,8 @@ export const HoverNavigation = ({
 	className?: string;
 }) => {
 	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-	const { scrollY } = useScroll();
-	const [navVisible, setNavVisible] = useState(true);
-	const [availableVisible, setAvailableVisible] = useState(false);
-
-	const [onContactPage, setOnContactPage] = useState(false);
 	const [hamburgerOpen, setHamburgerOpen] = useState(false);
 	const { width } = useWindowDimensions();
-
-	// if on contact page, do not do width 0%
-	useEffect(() => {
-		setOnContactPage(window.location.href.includes("/contact"));
-	}, []);
-
-	useEffect(() => {
-		updateNavBarState(width);
-	}, [width]);
-
-	const updateNavBarState = (
-		width: number,
-		scrollPosition: number = 0,
-		scrollUp: boolean = false,
-	) => {
-		if (width && width < 1024) {
-			setNavVisible(false);
-			setAvailableVisible(true);
-		} else if (scrollPosition < 50) {
-			setNavVisible(true);
-			setAvailableVisible(false);
-		} else if (!onContactPage) {
-			setNavVisible(scrollUp);
-			setAvailableVisible(!scrollUp);
-		} else {
-			setNavVisible(true);
-			setAvailableVisible(false);
-		}
-	};
-
-	useMotionValueEvent(scrollY, "change", (current) => {
-		// Check if current is not undefined and is a number
-		if (typeof current === "number") {
-			let direction = current! - scrollY.getPrevious()!;
-			let scrollUp = direction <= 0;
-			let scrollProgress = scrollY.get();
-
-			updateNavBarState(width, scrollProgress, scrollUp);
-		}
-	});
 
 	return (
 		<div className="bg-secondary/50 fixed top-5 left-1/2 z-30 box-border flex w-11/12 -translate-x-1/2 items-center justify-center overflow-auto rounded-[40px] border-2 border-solid border-gray-700 px-5 py-3 backdrop-blur-md sm:w-4/5 lg:w-2/3 xl:w-auto">
@@ -112,13 +67,7 @@ export const HoverNavigation = ({
 						</a>
 					</div>
 					<div className="flex flex-col items-center justify-center">
-						<motion.div
-							animate={{
-								width: availableVisible ? "auto" : "0px",
-								opacity: availableVisible ? "100%" : "0%",
-							}}
-							className="flex w-auto flex-row items-center justify-center pr-2 whitespace-nowrap opacity-100 lg:w-0 lg:opacity-0"
-						>
+						<motion.div className="flex w-auto flex-row items-center justify-center pr-2 whitespace-nowrap opacity-100 lg:w-0 lg:opacity-0">
 							<a
 								tabIndex={0}
 								href="/contact"
@@ -138,10 +87,6 @@ export const HoverNavigation = ({
 					>
 						<motion.ul
 							className="hidden w-0 flex-row items-center justify-center overflow-hidden lg:flex lg:w-auto"
-							animate={{
-								width: navVisible ? "auto" : "0px",
-								opacity: navVisible ? "100%" : "0%",
-							}}
 							transition={{
 								ease: "easeInOut",
 							}}
