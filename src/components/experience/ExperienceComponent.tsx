@@ -4,7 +4,7 @@ export default function Experience() {
 	return (
 		<Tabs
 			defaultValue="experience"
-			className="w-[90%] md:w-[600px] lg:w-1/2"
+			className="view-fadeUp w-[90%] md:w-[600px] lg:w-1/2"
 		>
 			<TabsList className="w-full">
 				<TabsTrigger value="experience">Experience</TabsTrigger>
@@ -84,14 +84,14 @@ function ExtracurricularTabContent() {
 	return (
 		<>
 			{Position({
-				title: "University Cybersecurity Association, Development Committee",
+				title: "Cybersecurity Association, Development Committee",
 				dateRange: "Nov 2025 - Now",
 				country: "Australia",
 				summary: `Leading frontend development club's revamped website using Astro framework with Svelte components.`,
 				className: "pb-5",
 			})}
 			{Position({
-				title: "University Software Engineering Club Committee",
+				title: "Software Engineering Club Committee",
 				dateRange: "Sep 2025 - Now",
 				country: "Australia",
 				summary: `Leading and contributing to various club projects:`,

@@ -1,45 +1,58 @@
 ---
 import { Image } from "astro:assets";
 import contactPhoto from "@/components/images/contact_photo.webp";
-import { AnimatedTooltip } from "@/components/ui/AnimatedToolTip";
+import Socials from "../socials/Socials.astro";
+
+import pfp_new from "../images/pfp_new.webp";
+import Card from "../global/Card.astro";
 ---
 
-<div
-	class="relative flex w-full flex-col-reverse items-center justify-start gap-10 lg:h-[400px] lg:flex-row lg:items-start lg:justify-center"
->
-	<div
-		class="relative flex aspect-[3/4] w-[300px] items-end justify-end lg:aspect-auto lg:w-1/2"
-	>
-		<Image
-			src={contactPhoto}
-			alt="Ryan"
-			width={300}
-			loading="lazy"
-			class="absolute top-1/2 left-1/2 aspect-[3/4] -translate-1/2 rounded-3xl object-cover lg:top-0 lg:right-0 lg:-translate-x-10 lg:translate-y-5"
-		/>
-		<div
-			class="absolute top-1/2 left-1/2 -z-10 aspect-[3/4] w-[300px] -translate-1/2 rounded-3xl bg-[#c98703] blur-lg lg:top-0 lg:right-0 lg:-translate-x-10 lg:translate-y-5"
-		>
-		</div>
-	</div>
-	<div
-		class="flex w-full flex-col items-center justify-start text-left lg:h-full lg:w-1/2 lg:items-start lg:justify-center"
-	>
-		<h1
-			class="[font-family:'Antonio',sans-serif] text-5xl leading-14 font-bold uppercase"
-		>
-			have an idea? <br /> let's chat!
-		</h1>
+<div class="relative flex w-full items-center justify-center">
+	<div class="w-[90%] md:w-[600px] lg:w-1/2">
+		<Card shadowColor="rgb(4, 57, 57)" className="animate-fadeIn">
+			<div class="flex flex-col items-center justify-center gap-2 py-10">
+				<div class="px-5">
+					<Image
+						src={pfp_new}
+						alt="Profile picture"
+						class="border-accent aspect-square rounded-full border-2 border-solid object-cover"
+						width={150}
+					/>
+				</div>
+				<div class="text-center">
+					<div class="text-3xl">Ryan Lee</div>
+					<div class="text-muted-foreground text-xl">
+						Software Developer &amp; Content Creator
+					</div>
+				</div>
+				<div
+					class="mt-5 flex flex-col items-stretch justify-center gap-5 md:flex-row"
+				>
+					<div
+						class="flex flex-col justify-center text-center md:text-left"
+					>
+						<div class="text-muted-foreground text-base">
+							Email me at:
+						</div>
+						<div class="text-white">
+							<a
+								href="mailto:rythondev@gmail.com"
+								class="hover:text-blue-400"
+								>rythondev@gmail.com</a
+							>
+						</div>
+					</div>
 
-		<div class="mt-10 flex w-fit items-center justify-center">
-			<AnimatedTooltip
-				href="mailto:rythondev@gmail.com"
-				text="Email me!"
-				client:visible
-				className="text-xl font-bold underline transition-colors duration-75 hover:text-blue-500"
-				>rythondev@gmail.com</AnimatedTooltip
-			>
-		</div>
+					<!-- vertical divider -->
+					<div class="bg-accent h-[1px] w-full md:h-auto md:w-[1px]">
+					</div>
+
+					<div class="flex flex-row items-center justify-center">
+						<Socials />
+					</div>
+				</div>
+			</div>
+		</Card>
 	</div>
 </div>
 
