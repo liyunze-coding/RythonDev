@@ -127,9 +127,9 @@
 		>
 			{#each tags as tag}
 				<div
-					class="bg-secondary my-1 mr-1
+					class="bg-accent my-1 mr-1
                         w-fit rounded-full px-3
-                        py-1 text-white transition-colors duration-300"
+                        py-1 text-black transition-colors duration-300"
 				>
 					{tag}
 				</div>
