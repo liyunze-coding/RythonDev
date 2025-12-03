@@ -6,36 +6,12 @@ import {
 	useMotionValueEvent,
 } from "motion/react";
 import { Cross as HamburgerCross } from "hamburger-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
-function useWindowDimensions() {
-	const hasWindow = typeof window !== "undefined";
-
-	function getWindowDimensions() {
-		const width = hasWindow ? window.innerWidth : 0;
-		const height = hasWindow ? window.innerHeight : 0;
-		return {
-			width,
-			height,
-		};
+declare module "react" {
+	interface CSSProperties {
+		[key: `--${string}`]: string | number;
 	}
-
-	const [windowDimensions, setWindowDimensions] = useState(
-		getWindowDimensions(),
-	);
-
-	useEffect(() => {
-		if (hasWindow) {
-			function handleResize() {
-				setWindowDimensions(getWindowDimensions());
-			}
-
-			window.addEventListener("resize", handleResize);
-			return () => window.removeEventListener("resize", handleResize);
-		}
-	}, [hasWindow]);
-
-	return windowDimensions;
 }
 
 export const HoverNavigation = ({
@@ -50,123 +26,149 @@ export const HoverNavigation = ({
 }) => {
 	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 	const [hamburgerOpen, setHamburgerOpen] = useState(false);
-	const { width } = useWindowDimensions();
+	const hamburgerRef = useRef<HTMLDivElement>(null);
+	const menuRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (
+				hamburgerOpen &&
+				hamburgerRef.current &&
+				menuRef.current &&
+				!hamburgerRef.current.contains(event.target as Node) &&
+				!menuRef.current.contains(event.target as Node)
+			) {
+				setHamburgerOpen(false);
+			}
+		};
+
+		document.addEventListener("mousedown", handleClickOutside);
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, [hamburgerOpen]);
 
 	return (
-		<div className="bg-secondary/50 fixed top-5 left-1/2 z-30 box-border flex w-11/12 -translate-x-1/2 items-center justify-center overflow-auto rounded-[40px] border-2 border-solid border-gray-700 px-5 py-3 backdrop-blur-md sm:w-4/5 lg:w-2/3 xl:w-auto">
-			<div className="flex flex-col">
-				<div className="flex flex-row">
-					<div className="mr-2 flex items-center justify-center sm:mr-3">
-						<a href="/">
-							<img
-								src="/images/profile/contact_photo_small.webp"
-								alt="Ryan"
-								width={50}
-								className="rounded-full"
-							/>
-						</a>
-					</div>
-					<div className="flex flex-col items-center justify-center">
-						<motion.div className="flex w-auto flex-row items-center justify-center pr-2 whitespace-nowrap opacity-100 lg:w-0 lg:opacity-0">
-							<a
-								tabIndex={0}
-								href="/contact"
-								className="overflow-hidden text-sm whitespace-nowrap transition-colors duration-150 hover:text-green-500 sm:text-base"
-							>
-								Available for work
+		<>
+			<div className="bg-secondary/50 fixed top-5 left-1/2 z-30 box-border hidden -translate-x-1/2 items-center justify-center overflow-auto rounded-[40px] border-2 border-solid border-gray-700 px-5 py-3 backdrop-blur-md md:flex md:w-11/12 lg:w-2/3 xl:w-auto">
+				<div className="flex flex-col">
+					<div className="flex flex-row">
+						<div className="mr-2 flex items-center justify-center sm:mr-3">
+							<a href="/">
+								<img
+									src="/images/profile/contact_photo_small.webp"
+									alt="Ryan"
+									width={50}
+									className="rounded-full"
+								/>
 							</a>
-							<div className="relative z-50 ml-3">
-								<div className="absolute top-1/2 left-1/2 aspect-square w-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500"></div>
-								<div className="animate-glow absolute top-1/2 left-1/2 aspect-square w-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500"></div>
-							</div>
-						</motion.div>
-					</div>
-					<nav
-						aria-label="Desktop Navigation"
-						className="flex items-center justify-center overflow-hidden"
-					>
-						<motion.ul
-							className="hidden w-0 flex-row items-center justify-center overflow-hidden lg:flex lg:w-auto"
-							transition={{
-								ease: "easeInOut",
-							}}
+						</div>
+						<nav
+							aria-label="Desktop Navigation"
+							className="flex items-center justify-center overflow-hidden"
 						>
-							{items.map((item, idx) => (
-								<li key={item?.link}>
-									<a
-										href={item?.link}
-										className="group relative block h-fit px-5 py-2"
-										onMouseEnter={() =>
-											setHoveredIndex(idx)
-										}
-										onMouseLeave={() =>
-											setHoveredIndex(null)
-										}
-									>
-										<AnimatePresence>
-											{hoveredIndex === idx && (
-												<motion.span
-													className="absolute inset-0 z-10 block h-full w-full rounded-3xl bg-neutral-200"
-													layoutId="hoverBackground"
-													initial={{ opacity: 0 }}
-													animate={{
-														opacity: 1,
-														transition: {
-															duration: 0.15,
-														},
-													}}
-													exit={{
-														opacity: 0,
-														transition: {
-															duration: 0.15,
-															delay: 0.2,
-														},
-													}}
-												/>
-											)}
-										</AnimatePresence>
-										<NavBarLink>{item.label}</NavBarLink>
-									</a>
-								</li>
-							))}
-						</motion.ul>
-					</nav>
-
-					<div className="hamburger-wrapper flex items-center justify-center lg:hidden">
-						<HamburgerCross
-							aria-label="Hamburger"
-							toggled={hamburgerOpen}
-							toggle={setHamburgerOpen}
-							size={20}
-						></HamburgerCross>
+							<motion.ul
+								className="hidden w-0 flex-row items-center justify-center overflow-hidden md:flex md:w-auto"
+								transition={{
+									ease: "easeInOut",
+								}}
+							>
+								{items.map((item, idx) => (
+									<li key={item?.link}>
+										<a
+											href={item?.link}
+											className="group relative block h-fit px-5 py-2"
+											onMouseEnter={() =>
+												setHoveredIndex(idx)
+											}
+											onMouseLeave={() =>
+												setHoveredIndex(null)
+											}
+										>
+											<AnimatePresence>
+												{hoveredIndex === idx && (
+													<motion.span
+														className="absolute inset-0 z-10 block h-full w-full rounded-3xl bg-neutral-200"
+														layoutId="hoverBackground"
+														initial={{ opacity: 0 }}
+														animate={{
+															opacity: 1,
+															transition: {
+																duration: 0.15,
+															},
+														}}
+														exit={{
+															opacity: 0,
+															transition: {
+																duration: 0.15,
+																delay: 0.2,
+															},
+														}}
+													/>
+												)}
+											</AnimatePresence>
+											<NavBarLink>
+												{item.label}
+											</NavBarLink>
+										</a>
+									</li>
+								))}
+							</motion.ul>
+						</nav>
 					</div>
 				</div>
-				<motion.ul
-					animate={{
-						height: hamburgerOpen ? "auto" : "0px",
-						opacity: hamburgerOpen ? "100%" : "0",
-					}}
-					transition={{
-						ease: "easeInOut",
-					}}
-					initial={{
-						height: "0px",
-					}}
-					className="h-0 overflow-hidden"
-				>
-					{items.map((item, idx) => (
-						<li key={item?.link}>
-							<a
-								href={item?.link}
-								className="block px-5 py-2 text-center mix-blend-difference lg:hidden"
-							>
-								{item.label}
-							</a>
-						</li>
-					))}
-				</motion.ul>
 			</div>
-		</div>
+			<div
+				ref={hamburgerRef}
+				className="bg-secondary fixed right-5 bottom-10 z-50 flex rounded-full border-2 border-white px-1 py-1 md:hidden"
+			>
+				<HamburgerCross
+					toggle={setHamburgerOpen}
+					toggled={hamburgerOpen}
+				></HamburgerCross>
+			</div>
+
+			{/* Mobile Navigation Menu */}
+			<AnimatePresence>
+				{hamburgerOpen && (
+					<motion.div
+						ref={menuRef}
+						initial={{ opacity: 0, scale: 0.95 }}
+						animate={{ opacity: 1, scale: 1 }}
+						exit={{ opacity: 0, scale: 0.95 }}
+						transition={{ duration: 0.2 }}
+						className="bg-secondary/20 border-accent fixed right-5 bottom-32 z-40 rounded-2xl border-2 py-2 backdrop-blur-md md:hidden"
+					>
+						<nav aria-label="Mobile Navigation">
+							<ul className="flex flex-col gap-2">
+								{items.map((item, idx) => (
+									<motion.li
+										key={item?.link}
+										initial={{ opacity: 0, x: -20 }}
+										animate={{ opacity: 1, x: 0 }}
+										transition={{
+											delay: (items.length - idx) * 0.1,
+											duration: 0.3,
+										}}
+										className="rounded-2xl px-3"
+									>
+										<a
+											href={item?.link}
+											className="block rounded-lg px-4 py-3 text-center text-lg transition-colors hover:bg-neutral-700"
+											onClick={() =>
+												setHamburgerOpen(false)
+											}
+										>
+											{item.label}
+										</a>
+									</motion.li>
+								))}
+							</ul>
+						</nav>
+					</motion.div>
+				)}
+			</AnimatePresence>
+		</>
 	);
 };
 
