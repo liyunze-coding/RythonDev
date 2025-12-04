@@ -26,17 +26,6 @@
 	onMount(() => {
 		const videos = document.querySelectorAll<HTMLVideoElement>(".playable");
 
-		let userInteracted = false;
-
-		const handleUserInteraction = () => {
-			userInteracted = true;
-			document.removeEventListener("click", handleUserInteraction);
-			document.removeEventListener("keydown", handleUserInteraction);
-		};
-
-		document.addEventListener("click", handleUserInteraction);
-		document.addEventListener("keydown", handleUserInteraction);
-
 		videos.forEach((video) => {
 			// Ensure the video element supports play and pause methods
 			if (
@@ -44,15 +33,9 @@
 				typeof video.pause === "function"
 			) {
 				video.addEventListener("mouseenter", () => {
-					if (userInteracted) {
-						video.volume = 0.2;
-						video.muted = false;
-						video.play();
-					} else {
-						video.volume = 0;
-						video.muted = true;
-						video.play();
-					}
+					video.volume = 0;
+					video.muted = true;
+					video.play();
 				});
 
 				video.addEventListener("mouseleave", () => {

@@ -120,7 +120,7 @@ export const HoverNavigation = ({
 			</div>
 			<div
 				ref={hamburgerRef}
-				className="bg-secondary fixed right-5 bottom-10 z-50 flex rounded-full border-2 border-white px-1 py-1 md:hidden"
+				className="fixed top-10 right-5 z-50 flex rounded-full bg-gray-100 px-1 py-1 md:hidden [&>div]:rounded-full [&>div_div]:bg-black!"
 			>
 				<HamburgerCross
 					toggle={setHamburgerOpen}
@@ -137,24 +137,24 @@ export const HoverNavigation = ({
 						animate={{ opacity: 1, scale: 1 }}
 						exit={{ opacity: 0, scale: 0.95 }}
 						transition={{ duration: 0.2 }}
-						className="bg-secondary/20 border-accent fixed right-5 bottom-32 z-40 rounded-2xl border-2 py-2 backdrop-blur-md md:hidden"
+						className="fixed top-32 right-5 z-40 rounded-2xl bg-white/90 py-2 text-black backdrop-blur-sm md:hidden"
 					>
 						<nav aria-label="Mobile Navigation">
 							<ul className="flex flex-col gap-2">
 								{items.map((item, idx) => (
 									<motion.li
 										key={item?.link}
-										initial={{ opacity: 0, x: -20 }}
-										animate={{ opacity: 1, x: 0 }}
+										initial={{ opacity: 0, y: -20 }}
+										animate={{ opacity: 1, y: 0 }}
 										transition={{
-											delay: (items.length - idx) * 0.1,
+											delay: idx * 0.1,
 											duration: 0.3,
 										}}
 										className="rounded-2xl px-3"
 									>
 										<a
 											href={item?.link}
-											className="block rounded-lg px-4 py-3 text-center text-lg transition-colors hover:bg-neutral-700"
+											className="block rounded-lg px-4 py-3 text-center text-lg transition-colors"
 											onClick={() =>
 												setHamburgerOpen(false)
 											}
