@@ -37,7 +37,7 @@ const {
 	{
 		!href && (
 			<div
-				class="card z-10 mb-0 rounded-xl shadow-xl"
+				class="card z-10 mb-0 rounded-xl"
 				class:list={[{ scale: scaleOnHover }, className]}
 			>
 				<div class="card-content">
@@ -69,7 +69,7 @@ const {
 			rgba(25, 25, 25, 1) 66%,
 			rgba(19, 19, 19, 1) 100%
 		);
-		--tw-shadow-color: var(--shadowColor);
+		box-shadow: 0 20px 25px 0px var(--shadowColor);
 		padding: 0.5rem;
 	}
 </style>

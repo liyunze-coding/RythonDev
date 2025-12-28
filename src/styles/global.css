@@ -11,6 +11,20 @@
 	--animate-fadeUp: fadeUp 0.5s ease-in-out;
 	--animate-glow: glow 2s ease infinite;
 
+	--animate-gradient: gradient 15s ease infinite;
+
+	@keyframes gradient {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+
 	@keyframes fadeIn {
 		0% {
 			opacity: 0;

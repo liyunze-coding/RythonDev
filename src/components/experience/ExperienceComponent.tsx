@@ -39,8 +39,8 @@ function ExperienceTabContent() {
 	return (
 		<>
 			{Position({
-				title: "Lead Full Stack Developer",
-				institution: "Hyson Horizon",
+				title: "Lead Full Stack Developer (Part Time)",
+				institution: "Hyson Horizon (Startup)",
 				dateRange: "Dec 2024 - Now",
 				country: "Malaysia",
 				summary:
@@ -209,7 +209,7 @@ function Position({
 			<div className="position-el flex flex-row items-start gap-3">
 				<div className="flex flex-col items-center justify-start gap-2 self-stretch pt-2">
 					<div className="bg-accent h-2 w-2 rounded-full"></div>
-					<div className="animate-line-move w-[1px] flex-grow bg-gradient-to-b from-gray-800 from-0% via-gray-300 via-5% to-gray-800 to-10%"></div>
+					<div className="w-[1px] flex-grow bg-gray-700"></div>
 				</div>
 				<div className={className}>
 					<h2 className="text-lg font-bold">{title}</h2>
