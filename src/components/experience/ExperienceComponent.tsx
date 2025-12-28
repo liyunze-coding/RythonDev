@@ -4,7 +4,7 @@ export default function Experience() {
 	return (
 		<Tabs
 			defaultValue="experience"
-			className="w-[90%] md:w-[600px] lg:w-1/2"
+			className="w-[90%] md:w-[600px] lg:w-2/3"
 		>
 			<TabsList className="w-full">
 				<TabsTrigger value="experience">Experience</TabsTrigger>

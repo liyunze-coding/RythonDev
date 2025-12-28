@@ -118,14 +118,16 @@ export const HoverNavigation = ({
 					</div>
 				</div>
 			</div>
-			<div
-				ref={hamburgerRef}
-				className="fixed top-10 right-5 z-50 flex rounded-full bg-gray-100 px-1 py-1 md:hidden [&>div]:rounded-full [&>div_div]:bg-black!"
-			>
-				<HamburgerCross
-					toggle={setHamburgerOpen}
-					toggled={hamburgerOpen}
-				></HamburgerCross>
+			<div className="bg-secondary/50 fixed top-5 left-1/2 z-50 flex w-4/5 -translate-x-1/2 justify-end rounded-full border-2 border-solid border-gray-700 pr-5 backdrop-blur-xl lg:hidden">
+				<div
+					ref={hamburgerRef}
+					className="flex rounded-full px-1 py-1 md:hidden [&>div]:rounded-full [&>div_div]:bg-white!"
+				>
+					<HamburgerCross
+						toggle={setHamburgerOpen}
+						toggled={hamburgerOpen}
+					></HamburgerCross>
+				</div>
 			</div>
 
 			{/* Mobile Navigation Menu */}
@@ -137,7 +139,7 @@ export const HoverNavigation = ({
 						animate={{ opacity: 1, scale: 1 }}
 						exit={{ opacity: 0, scale: 0.95 }}
 						transition={{ duration: 0.2 }}
-						className="fixed top-32 right-5 z-40 rounded-2xl bg-white/90 py-2 text-black backdrop-blur-sm md:hidden"
+						className="bg-secondary/50 fixed top-24 right-0 left-1/2 z-40 w-4/5 -translate-x-1/2 rounded-2xl py-2 text-white backdrop-blur-xl md:hidden"
 					>
 						<nav aria-label="Mobile Navigation">
 							<ul className="flex flex-col gap-2">
