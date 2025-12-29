@@ -15,19 +15,19 @@ export default function Experience() {
 			</TabsList>
 			<TabsContent
 				value="experience"
-				className="bg-secondary rounded-md px-5 py-5"
+				className="rounded-md bg-gradient-to-bl from-[#101010] via-[#272727] to-[#181818] px-5 py-5"
 			>
 				{ExperienceTabContent()}
 			</TabsContent>
 			<TabsContent
 				value="education"
-				className="bg-secondary rounded-md px-5 py-5"
+				className="bg-secondary rounded-md bg-gradient-to-bl from-[#101010] via-[#272727] to-[#181818] px-5 py-5"
 			>
 				{EducationTabContent()}
 			</TabsContent>
 			<TabsContent
 				value="extracurricular"
-				className="bg-secondary rounded-md px-5 py-5"
+				className="bg-secondary rounded-md bg-gradient-to-bl from-[#101010] via-[#272727] to-[#181818] px-5 py-5"
 			>
 				{ExtracurricularTabContent()}
 			</TabsContent>

@@ -1,78 +1,84 @@
 ---
 import Card from "../global/Card.astro";
-import Line from "../global/NetworkLine.astro";
-import Skill from "./Skill.astro";
 ---
 
 <div class="flex h-fit flex-col items-center justify-center pt-20">
 	<h1 class="mb-5 text-center text-5xl">Skills</h1>
 
-	<div
-		class="flex w-[90%] flex-col items-start justify-center gap-x-10 md:w-[600px] lg:w-2/3 lg:flex-row"
-	>
-		<div
-			class="flex flex-col items-start justify-start gap-2 px-5 py-2 text-left"
+	<div class="grid w-[90%] grid-cols-3 gap-x-10 md:w-[600px] lg:w-2/3">
+		<Card
+			shadowColor="rgb(4, 57, 57)"
+			className="bg-gradient-to-br from-[#101010] to-[#202020]"
 		>
-			<div>
-				<div class="text-xl font-bold">Frontend</div>
-				<div
-					class="flex flex-row flex-wrap items-center justify-start gap-2 text-sm"
-				>
-					<div>Typescript,</div>
-					<div>React,</div>
-					<div>TailwindCSS</div>
+			<div
+				class="flex flex-col items-start justify-start gap-2 px-5 py-2 text-left"
+			>
+				<div>
+					<div class="text-xl font-bold">Frontend</div>
+					<div
+						class="flex flex-row flex-wrap items-center justify-start gap-2 text-sm"
+					>
+						<div>Typescript,</div>
+						<div>React,</div>
+						<div>TailwindCSS</div>
+					</div>
+				</div>
+				<div>
+					<div class="text-xl font-bold">Backend</div>
+					<div
+						class="flex flex-row flex-wrap items-center justify-start gap-x-2 text-sm"
+					>
+						<div>Node.js,</div>
+						<div>PHP,</div>
+						<div>Go,</div>
+						<div>Rust</div>
+					</div>
+				</div>
+				<div>
+					<div class="text-xl font-bold">Tools</div>
+					<div
+						class="flex flex-row flex-wrap items-center justify-start gap-x-2 text-sm"
+					>
+						<div>Git,</div>
+						<div>Github,</div>
+						<div>Codeberg,</div>
+						<div>Visual Studio Code</div>
+					</div>
 				</div>
 			</div>
-			<div>
-				<div class="text-xl font-bold">Backend</div>
-				<div
-					class="flex flex-row flex-wrap items-center justify-start gap-x-2 text-sm"
-				>
-					<div>Node.js,</div>
-					<div>PHP,</div>
-					<div>Go,</div>
-					<div>Rust</div>
+		</Card>
+		<Card
+			shadowColor="rgb(4, 57, 57)"
+			className="col-span-2 bg-gradient-to-br from-[#202020] to-[#101010]"
+		>
+			<div class="w-full px-5 py-5 lg:w-4/5">
+				<div class="mb-6">
+					<p class="mb-3">
+						I primarily work on websites on both the frontend and
+						the backend.
+					</p>
+					<p class="mb-3">
+						Other projects I work on include Python scripts, Discord
+						bots, and Streamer.bot C# scripts.
+					</p>
+					<p class="mb-3">
+						Full resume available upon requests via
+						<a
+							href="mailto:rythondev@gmail.com"
+							class="underline hover:text-blue-400">Email</a
+						>.
+					</p>
 				</div>
-			</div>
-			<div>
-				<div class="text-xl font-bold">Tools</div>
-				<div
-					class="flex flex-row flex-wrap items-center justify-start gap-x-2 text-sm"
-				>
-					<div>Git,</div>
-					<div>Github,</div>
-					<div>Codeberg,</div>
-					<div>Visual Studio Code</div>
-				</div>
-			</div>
-		</div>
-		<div class="w-full px-5 py-2 lg:w-1/2">
-			<div class="mb-6">
-				<p class="mb-3">
-					I primarily work on websites on both the frontend and the
-					backend.
-				</p>
-				<p class="mb-3">
-					Other projects I work on include Python scripts, Discord
-					bots, and Streamer.bot C# scripts.
-				</p>
-				<p class="mb-3">
-					Full resume available upon requests via
+				<div class="text-center lg:text-left">
 					<a
-						href="mailto:rythondev@gmail.com"
-						class="underline hover:text-blue-400">Email</a
-					>.
-				</p>
+						href="./RyanLee_SoftwareDeveloper_Resume.pdf"
+						target="_blank"
+						class="bg-primary text-secondary hover:bg-accent rounded-full px-5 py-2 font-semibold transition-colors duration-150"
+					>
+						View Resume
+					</a>
+				</div>
 			</div>
-			<div class="text-center lg:text-left">
-				<a
-					href="./RyanLee_SoftwareDeveloper_Resume.pdf"
-					target="_blank"
-					class="bg-primary text-secondary hover:bg-accent rounded-full px-5 py-2 font-semibold transition-colors duration-150"
-				>
-					View Resume
-				</a>
-			</div>
-		</div>
+		</Card>
 	</div>
 </div>
