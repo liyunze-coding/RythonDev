@@ -5,13 +5,15 @@ import Card from "../global/Card.astro";
 <div class="flex h-fit flex-col items-center justify-center pt-20">
 	<h1 class="mb-5 text-center text-5xl">Skills</h1>
 
-	<div class="grid w-[90%] grid-cols-3 gap-x-10 md:w-[600px] lg:w-2/3">
+	<div
+		class="grid w-[90%] grid-cols-1 gap-x-10 gap-y-5 md:w-[600px] lg:w-2/3 lg:grid-cols-3"
+	>
 		<Card
 			shadowColor="rgb(4, 57, 57)"
 			className="bg-gradient-to-br from-[#101010] to-[#202020]"
 		>
 			<div
-				class="flex flex-col items-start justify-start gap-2 px-5 py-2 text-left"
+				class="flex flex-col items-start justify-start gap-2 px-5 py-5 text-left"
 			>
 				<div>
 					<div class="text-xl font-bold">Frontend</div>
@@ -49,7 +51,7 @@ import Card from "../global/Card.astro";
 		</Card>
 		<Card
 			shadowColor="rgb(4, 57, 57)"
-			className="col-span-2 bg-gradient-to-br from-[#202020] to-[#101010]"
+			className="bg-gradient-to-br from-[#202020] to-[#101010] lg:col-span-2"
 		>
 			<div class="w-full px-5 py-5 lg:w-4/5">
 				<div class="mb-6">
