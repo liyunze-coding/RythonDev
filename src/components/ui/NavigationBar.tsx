@@ -78,7 +78,7 @@ export const HoverNavigation = ({
 											<AnimatePresence>
 												{hoveredIndex === idx && (
 													<motion.span
-														className="absolute inset-0 z-10 block h-full w-full rounded-3xl bg-neutral-200"
+														className="absolute inset-0 z-10 block h-full w-full rounded-3xl bg-neutral-100"
 														layoutId="hoverBackground"
 														initial={{ opacity: 0 }}
 														animate={{
