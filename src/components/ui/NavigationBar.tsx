@@ -53,16 +53,6 @@ export const HoverNavigation = ({
 			<div className="bg-secondary/50 fixed top-5 left-1/2 z-30 box-border hidden -translate-x-1/2 items-center justify-center overflow-auto rounded-[40px] border-2 border-solid border-gray-700 px-5 py-3 backdrop-blur-md md:flex md:w-11/12 lg:w-2/3 xl:w-auto">
 				<div className="flex flex-col">
 					<div className="flex flex-row">
-						<div className="mr-2 flex items-center justify-center sm:mr-3">
-							<a href="/">
-								<img
-									src="/images/profile/contact_photo_small.webp"
-									alt="Ryan"
-									width={50}
-									className="rounded-full"
-								/>
-							</a>
-						</div>
 						<nav
 							aria-label="Desktop Navigation"
 							className="flex items-center justify-center overflow-hidden"

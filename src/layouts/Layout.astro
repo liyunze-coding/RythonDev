@@ -23,13 +23,7 @@ import { ClientRouter } from "astro:transitions";
 		<meta name="author" content="RythonDev" />
 		<meta name="theme-color" content="#2B2D31" />
 
-		{
-			thumbnail && (
-				<>
-					<meta name="twitter:image" content={thumbnail} />
-				</>
-			)
-		}
+		{thumbnail && <meta name="twitter:image" content={thumbnail} />}
 
 		{metaURL && <meta name="og:url" content={metaURL} />}
 
