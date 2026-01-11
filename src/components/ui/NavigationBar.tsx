@@ -1,10 +1,5 @@
 import { cn } from "@/lib/utils";
-import {
-	AnimatePresence,
-	motion,
-	useScroll,
-	useMotionValueEvent,
-} from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { Cross as HamburgerCross } from "hamburger-react";
 import { useEffect, useState, useRef } from "react";
 
@@ -25,9 +20,47 @@ export const HoverNavigation = ({
 	className?: string;
 }) => {
 	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+	const [activeIndex, setActiveIndex] = useState<number | null>(null);
 	const [hamburgerOpen, setHamburgerOpen] = useState(false);
 	const hamburgerRef = useRef<HTMLDivElement>(null);
 	const menuRef = useRef<HTMLDivElement>(null);
+
+	// Track which section is in view
+	useEffect(() => {
+		const sectionIds = items.map((item) => {
+			const url = new URL(item.link, window.location.origin);
+			return url.hash.replace("#", "");
+		});
+
+		const observers: IntersectionObserver[] = [];
+
+		sectionIds.forEach((id, idx) => {
+			if (!id) return;
+
+			const element = document.getElementById(id);
+			if (!element) return;
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							setActiveIndex(idx);
+						}
+					});
+				},
+				{
+					rootMargin: "-20% 0px -50% 0px",
+				},
+			);
+
+			observer.observe(element);
+			observers.push(observer);
+		});
+
+		return () => {
+			observers.forEach((observer) => observer.disconnect());
+		};
+	}, [items]);
 
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
@@ -47,6 +80,9 @@ export const HoverNavigation = ({
 			document.removeEventListener("mousedown", handleClickOutside);
 		};
 	}, [hamburgerOpen]);
+
+	// Use hoveredIndex when hovering, otherwise use activeIndex
+	const displayIndex = hoveredIndex !== null ? hoveredIndex : activeIndex;
 
 	return (
 		<>
@@ -76,7 +112,7 @@ export const HoverNavigation = ({
 											}
 										>
 											<AnimatePresence>
-												{hoveredIndex === idx && (
+												{displayIndex === idx && (
 													<motion.span
 														className="absolute inset-0 z-10 block h-full w-full rounded-3xl bg-neutral-100"
 														layoutId="hoverBackground"
