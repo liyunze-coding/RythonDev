@@ -27,7 +27,7 @@ const leftProject = position == "left";
 ---
 
 <div
-	class="flex h-fit w-full flex-col justify-center px-10 lg:px-20 mb-10"
+	class="mb-10 flex h-fit w-full flex-col justify-center px-10 lg:px-20"
 	class:list={leftProject ? "lg:flex-row" : "lg:flex-row-reverse"}
 >
 	<div
@@ -35,45 +35,33 @@ const leftProject = position == "left";
 	>
 		<slot />
 		{
-			image && alt &&
-			(
-				<Image
-					src={image}
-					alt={alt}
-					class={`absolute max-w-full
-							aspect-video
-							opacity-40
-							border-2 border-solid border-gray-800 rounded-xl
-							top-1/2 left-1/2
-							background-img`}
-					class:list={leftProject
-						? "left"
-						: "right"}
-					width={700}
-				/>
-				<Image
-					src={image}
-					alt={alt}
-					width={700}
-					class={`absolute max-w-full
-							aspect-video
-							opacity-100
-							border-2 border-solid border-gray-800 rounded-xl
-							top-1/2 left-1/2 frontfacing-img`}
-					class:list={leftProject
-						? "left"
-						: "right"}
-				/>
+			image && alt && (
+				<>
+					<Image
+						src={image}
+						alt={alt}
+						class="background-img absolute top-1/2 left-1/2 aspect-video max-w-full rounded-xl border-2 border-solid border-gray-800 opacity-40"
+						class:list={leftProject ? "left" : "right"}
+						width={700}
+					/>
+					<Image
+						src={image}
+						alt={alt}
+						width={700}
+						class="frontfacing-img absolute top-1/2 left-1/2 aspect-video max-w-full rounded-xl border-2 border-solid border-gray-800 opacity-100"
+						class:list={leftProject ? "left" : "right"}
+					/>
+				</>
 			)
 		}
-		
+
 		<div
 			class="visit-div absolute top-1/2 left-1/2 aspect-video w-[700px] max-w-full [transform:translateX(-50%)_translateY(-50%)] rounded-xl border-2 border-solid border-gray-600 bg-[rgba(0,0,0,0.5)] opacity-0"
 		>
 			<a
 				href={href}
 				target="_blank"
-				class="absolute top-1/2 left-1/2 hidden [transform:translateX(-50%)_translateY(-50%)] rounded-xl bg-black text-accent px-5 py-3 border-2 border-accent font-bold opacity-100 transition-colors duration-300 hover:bg-accent hover:text-black lg:block"
+				class="text-accent border-accent hover:bg-accent absolute top-1/2 left-1/2 hidden [transform:translateX(-50%)_translateY(-50%)] rounded-xl border-2 bg-black px-5 py-3 font-bold opacity-100 transition-colors duration-300 hover:text-black lg:block"
 				>{label}</a
 			>
 		</div>
@@ -82,7 +70,7 @@ const leftProject = position == "left";
 		<a
 			href={href}
 			target="_blank"
-			class="rounded-xl bg-blue-600 px-5 py-3 font-bold opacity-100 transition-colors duration-300 hover:bg-white hover:text-accent"
+			class="hover:text-accent rounded-4xl bg-blue-600 px-5 py-3 font-bold opacity-100 transition-colors duration-300 hover:bg-white"
 			>{label}</a
 		>
 	</div>
@@ -108,9 +96,7 @@ const leftProject = position == "left";
 		>
 			{
 				tags.map((tag) => (
-					<div
-						class="my-1 mr-1 w-fit rounded-full px-3 py-1 transition-colors duration-300 bg-accent text-black"
-					>
+					<div class="bg-accent my-1 mr-1 w-fit rounded-full px-3 py-1 text-black transition-colors duration-300">
 						{tag}
 					</div>
 				))
@@ -119,7 +105,7 @@ const leftProject = position == "left";
 	</div>
 </div>
 
-<style> 
+<style>
 	.image-container img {
 		transition: transform 0.5s ease-in-out;
 	}
@@ -142,25 +128,30 @@ const leftProject = position == "left";
 
 	@media (min-width: 426px) {
 		.background-img.left {
-			transform: translateX(calc(-50% + 25px)) translateY(calc(-50% + 5px)) translateZ(-50px) rotateY(5deg);
+			transform: translateX(calc(-50% + 25px))
+				translateY(calc(-50% + 5px)) translateZ(-50px) rotateY(5deg);
 		}
 
 		.background-img.right {
-			transform: translateX(calc(-50%)) translateY(calc(-50% + 5px)) translateZ(-50px) rotateY(-3deg);
+			transform: translateX(calc(-50%)) translateY(calc(-50% + 5px))
+				translateZ(-50px) rotateY(-3deg);
 		}
 
 		.frontfacing-img.left {
-			transform: translateX(calc(-50% + 35px)) translateY(calc(-50%)) translateZ(-50px) rotateY(5deg);
+			transform: translateX(calc(-50% + 35px)) translateY(calc(-50%))
+				translateZ(-50px) rotateY(5deg);
 		}
 
 		.frontfacing-img.right {
-			transform: translateX(calc(-50% - 10px)) translateY(-50%) translateZ(-50px) rotateY(-3deg);
+			transform: translateX(calc(-50% - 10px)) translateY(-50%)
+				translateZ(-50px) rotateY(-3deg);
 		}
 	}
 
 	@media (min-width: 1025px) {
 		.image-container:hover > img {
-			transform: rotateY(0deg) rotateX(0deg) translateZ(0px) translateX(-50%) translateY(-50%);
+			transform: rotateY(0deg) rotateX(0deg) translateZ(0px)
+				translateX(-50%) translateY(-50%);
 		}
 
 		.image-container:hover > .visit-div {
@@ -170,11 +161,13 @@ const leftProject = position == "left";
 		}
 
 		.background-img.left {
-			transform: translateX(-50%) translateY(calc(-50% + 5px)) translateZ(-50px) rotateY(5deg);
+			transform: translateX(-50%) translateY(calc(-50% + 5px))
+				translateZ(-50px) rotateY(5deg);
 		}
 
 		.frontfacing-img.left {
-			transform: translateX(calc(-50% + 10px)) translateY(calc(-50%)) translateZ(-50px) rotateY(5deg);
+			transform: translateX(calc(-50% + 10px)) translateY(calc(-50%))
+				translateZ(-50px) rotateY(5deg);
 		}
 	}
 </style>
