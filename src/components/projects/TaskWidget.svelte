@@ -126,7 +126,7 @@
 	<div class="task-widget absolute flex h-full min-h-[50vh] w-full flex-col">
 		<div
 			class="flex w-full flex-row items-center justify-between
-                    rounded-lg
+                    rounded-md
                     border-3 border-solid
                     border-gray-600 bg-black
                     px-5 py-2 font-['Fredoka',_sans-serif] text-sm text-white
@@ -136,7 +136,7 @@
 			<span>0/100+</span>
 		</div>
 		<div
-			class="scroll-parent relative h-full min-h-64 overflow-hidden font-['Fredoka',_sans-serif]"
+			class="scroll-parent relative h-[82%] overflow-hidden rounded-br-2xl rounded-bl-2xl font-['Fredoka',_sans-serif] lg:min-h-0"
 		>
 			<div class="scroll-element primary absolute w-full px-1">
 				{#each streamers as { streamer, task }}
