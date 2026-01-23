@@ -63,6 +63,7 @@ export const HoverNavigation = ({
 	}, [items]);
 
 	useEffect(() => {
+		// hamburger stuff
 		const handleClickOutside = (event: MouseEvent) => {
 			if (
 				hamburgerOpen &&
@@ -74,6 +75,13 @@ export const HoverNavigation = ({
 				setHamburgerOpen(false);
 			}
 		};
+
+		// set hover index on projects when on "/projects"
+		const splittedURL = window.location.href.split("/");
+
+		if (splittedURL[splittedURL.length - 1]) {
+			setHoveredIndex(2);
+		}
 
 		document.addEventListener("mousedown", handleClickOutside);
 		return () => {
