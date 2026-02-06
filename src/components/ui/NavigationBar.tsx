@@ -57,6 +57,13 @@ export const HoverNavigation = ({
 			observers.push(observer);
 		});
 
+		// set hover index on projects when on "/projects"
+		const splittedURL = window.location.href.split("/");
+
+		if (splittedURL[splittedURL.length - 1]) {
+			setActiveIndex(2);
+		}
+
 		return () => {
 			observers.forEach((observer) => observer.disconnect());
 		};
@@ -75,13 +82,6 @@ export const HoverNavigation = ({
 				setHamburgerOpen(false);
 			}
 		};
-
-		// set hover index on projects when on "/projects"
-		const splittedURL = window.location.href.split("/");
-
-		if (splittedURL[splittedURL.length - 1]) {
-			setHoveredIndex(2);
-		}
 
 		document.addEventListener("mousedown", handleClickOutside);
 		return () => {
