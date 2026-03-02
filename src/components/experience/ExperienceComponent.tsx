@@ -84,14 +84,17 @@ function ExtracurricularTabContent() {
 	return (
 		<>
 			{Position({
-				title: "Cybersecurity Association, Development Committee",
+				title: "Development Committee of Cybersecurity Association",
 				dateRange: "Nov 2025 - Now",
 				country: "Australia",
-				summary: `Leading frontend development club's revamped website using Astro framework with Svelte components.`,
+				summary: `Contributing and leading development of cybersecurity association's software projects`,
 				className: "pb-5",
+				highlights: [
+					`Leading frontend development club's revamped website using Astro framework with Svelte components.`,
+				],
 			})}
 			{Position({
-				title: "Software Engineering Club Committee",
+				title: "Web Dev Lead of Software Engineering Club",
 				dateRange: "Sep 2025 - Now",
 				country: "Australia",
 				summary: `Leading and contributing to various club projects:`,
@@ -102,7 +105,7 @@ function ExtracurricularTabContent() {
 				],
 			})}
 			{Position({
-				title: "Malaysian Association, Marketing Officer",
+				title: "Marketing Officer of Malaysian Association",
 				dateRange: "Mar 2025 - Oct 2025",
 				country: "Australia",
 				summary: `Contributed to marketing strategy through video ideation, execution (including on-screen presence and filming), and video editing.`,

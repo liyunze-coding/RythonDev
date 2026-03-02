@@ -2,7 +2,7 @@
 	import moment from "moment-timezone";
 	import { onMount } from "svelte";
 
-	const myLocation = "Asia/Singapore";
+	const myLocation = "Australia/Melbourne";
 
 	type StreamScheduleDay = {
 		start: moment.Moment;
@@ -10,10 +10,14 @@
 	};
 
 	const myStreamSchedule: null | StreamScheduleDay[] = [
-		// {
-		// 	start: getUpcomingTimeDevTZ(4, "11:00"),
-		// 	end: getUpcomingTimeDevTZ(4, "16:00"),
-		// },
+		{
+			start: getUpcomingTimeDevTZ(4, "10:00"),
+			end: getUpcomingTimeDevTZ(4, "20:00"),
+		},
+		{
+			start: getUpcomingTimeDevTZ(5, "16:00"),
+			end: getUpcomingTimeDevTZ(5, "20:00"),
+		},
 	];
 
 	/**
