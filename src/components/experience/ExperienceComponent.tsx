@@ -7,9 +7,13 @@ export default function Experience() {
 			className="w-[90%] md:w-[600px] lg:w-2/3"
 		>
 			<TabsList className="w-full">
-				<TabsTrigger value="experience">Experience</TabsTrigger>
-				<TabsTrigger value="education">Education</TabsTrigger>
-				<TabsTrigger value="extracurricular">
+				<TabsTrigger tabIndex={1} value="experience">
+					Experience
+				</TabsTrigger>
+				<TabsTrigger tabIndex={2} value="education">
+					Education
+				</TabsTrigger>
+				<TabsTrigger tabIndex={3} value="extracurricular">
 					Extracurricular
 				</TabsTrigger>
 			</TabsList>
