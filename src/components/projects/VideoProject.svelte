@@ -26,17 +26,6 @@
 	onMount(() => {
 		const videos = document.querySelectorAll<HTMLVideoElement>(".playable");
 
-		let userInteracted = false;
-
-		const handleUserInteraction = () => {
-			userInteracted = true;
-			document.removeEventListener("click", handleUserInteraction);
-			document.removeEventListener("keydown", handleUserInteraction);
-		};
-
-		document.addEventListener("click", handleUserInteraction);
-		document.addEventListener("keydown", handleUserInteraction);
-
 		videos.forEach((video) => {
 			// Ensure the video element supports play and pause methods
 			if (
@@ -44,15 +33,9 @@
 				typeof video.pause === "function"
 			) {
 				video.addEventListener("mouseenter", () => {
-					if (userInteracted) {
-						video.volume = 0.2;
-						video.muted = false;
-						video.play();
-					} else {
-						video.volume = 0;
-						video.muted = true;
-						video.play();
-					}
+					video.volume = 0;
+					video.muted = true;
+					video.play();
 				});
 
 				video.addEventListener("mouseleave", () => {
@@ -86,7 +69,7 @@
 			class="background-img absolute
                     top-1/2
                     left-1/2 max-w-full rounded-xl border-2
-                    border-solid border-white
+                    border-solid border-gray-800
                     opacity-40
                     {positionLeft ? 'left' : 'right'}"
 			width="700"
@@ -98,7 +81,7 @@
 			class="playable frontfacing-vid absolute
 					top-1/2 left-1/2 max-w-full rounded-xl
                     border-2
-                    border-solid border-white
+                    border-solid border-gray-800
                     opacity-100
                     {positionLeft ? 'left' : 'right'}"
 		>
@@ -127,9 +110,9 @@
 		>
 			{#each tags as tag}
 				<div
-					class="bg-secondary my-1 mr-1
+					class="bg-accent my-1 mr-1
                         w-fit rounded-full px-3
-                        py-1 text-white transition-colors duration-300"
+                        py-1 text-black transition-colors duration-300"
 				>
 					{tag}
 				</div>
@@ -140,27 +123,45 @@
 
 <style>
 	.background-img.left {
-		transform: translateX(calc(-50% + 25px)) translateY(calc(-50% + 5px))
-			translateZ(-50px) rotateY(5deg);
+		transform: translate(-50%, -50%);
 	}
 
 	.background-img.right {
-		transform: translateX(calc(-50%)) translateY(calc(-50% + 5px))
-			translateZ(-50px) rotateY(-3deg);
+		transform: translate(-50%, -50%);
 	}
 
 	.frontfacing-vid.left {
-		transform: translateX(calc(-50% + 35px)) translateY(calc(-50%))
-			translateZ(-50px) rotateY(5deg);
+		transform: translate(-50%, -50%);
 	}
 
 	.frontfacing-vid.right {
-		transform: translateX(calc(-50% - 10px)) translateY(-50%)
-			translateZ(-50px) rotateY(-3deg);
+		transform: translate(-50%, -50%);
 	}
 
-	.image-container:hover .frontfacing-vid,
-	.image-container:hover .background-img {
-		transform: translate(-50%, -50%);
+	@media (min-width: 426px) {
+		.background-img.left {
+			transform: translateX(calc(-50% + 25px))
+				translateY(calc(-50% + 5px)) translateZ(-50px) rotateY(5deg);
+		}
+
+		.background-img.right {
+			transform: translateX(calc(-50%)) translateY(calc(-50% + 5px))
+				translateZ(-50px) rotateY(-3deg);
+		}
+
+		.frontfacing-vid.left {
+			transform: translateX(calc(-50% + 35px)) translateY(calc(-50%))
+				translateZ(-50px) rotateY(5deg);
+		}
+
+		.frontfacing-vid.right {
+			transform: translateX(calc(-50% - 10px)) translateY(-50%)
+				translateZ(-50px) rotateY(-3deg);
+		}
+
+		.image-container:hover .frontfacing-vid,
+		.image-container:hover .background-img {
+			transform: translate(-50%, -50%);
+		}
 	}
 </style>

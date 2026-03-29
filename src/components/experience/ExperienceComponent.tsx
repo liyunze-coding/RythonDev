@@ -4,30 +4,34 @@ export default function Experience() {
 	return (
 		<Tabs
 			defaultValue="experience"
-			className="w-[90%] md:w-[600px] lg:w-1/2"
+			className="w-[90%] md:w-[600px] lg:w-2/3"
 		>
 			<TabsList className="w-full">
-				<TabsTrigger value="experience">Experience</TabsTrigger>
-				<TabsTrigger value="education">Education</TabsTrigger>
-				<TabsTrigger value="extracurricular">
+				<TabsTrigger tabIndex={1} value="experience">
+					Experience
+				</TabsTrigger>
+				<TabsTrigger tabIndex={2} value="education">
+					Education
+				</TabsTrigger>
+				<TabsTrigger tabIndex={3} value="extracurricular">
 					Extracurricular
 				</TabsTrigger>
 			</TabsList>
 			<TabsContent
 				value="experience"
-				className="bg-secondary rounded-md px-5 py-5"
+				className="rounded-md bg-gradient-to-bl from-[#101010] via-[#272727] to-[#181818] px-5 py-5"
 			>
 				{ExperienceTabContent()}
 			</TabsContent>
 			<TabsContent
 				value="education"
-				className="bg-secondary rounded-md px-5 py-5"
+				className="bg-secondary rounded-md bg-gradient-to-bl from-[#101010] via-[#272727] to-[#181818] px-5 py-5"
 			>
 				{EducationTabContent()}
 			</TabsContent>
 			<TabsContent
 				value="extracurricular"
-				className="bg-secondary rounded-md px-5 py-5"
+				className="bg-secondary rounded-md bg-gradient-to-bl from-[#101010] via-[#272727] to-[#181818] px-5 py-5"
 			>
 				{ExtracurricularTabContent()}
 			</TabsContent>
@@ -39,21 +43,34 @@ function ExperienceTabContent() {
 	return (
 		<>
 			{Position({
-				title: "Lead Full Stack Developer",
-				institution: "Hyson Horizon",
-				dateRange: "Dec 2024 - Now",
+				title: "Application Developer Intern",
+				dateRange: "Mar 2026 - Now",
+				country: "Australia",
+				highlights: [
+					"Quickly adapted to Ruby on Rails codebase to resolve Jira tickets.",
+					"Communicated clearly about obstacles, suggested probable cause and provided solutions or workarounds.",
+				],
+				className: "pb-5",
+			})}
+			{Position({
+				title: "Full Stack Developer (Part Time)",
+				dateRange: "Dec 2024 - Feb 2026",
 				country: "Malaysia",
-				summary:
-					"Led development of clients' Astro websites with Payload CMS backend implementation, managed Github Actions CI/CD and deployments.",
+				highlights: [
+					"Led a team to develop Astro websites with Payload CMS backend implementation.",
+					"Managed Github Actions CI/CD and deployments.",
+				],
 				className: "pb-5",
 			})}
 			{Position({
 				title: "Frontend Web Developer Intern",
-				institution: "Studio20",
 				dateRange: "Jan 2024 - Apr 2024",
 				country: "Malaysia",
-				summary:
-					"Developed WordPress sites and NextJS apps for clients. Used lazy-loading to optimise page load speeds. Ensured CMS allowed easy yet flexible customisations for clients.",
+				highlights: [
+					"Developed WordPress sites and NextJS apps for clients.",
+					"Used lazy-loading to optimise page load speeds. ",
+					"Ensured CMS allowed easy yet flexible customisations for clients.",
+				],
 			})}
 		</>
 	);
@@ -84,28 +101,34 @@ function ExtracurricularTabContent() {
 	return (
 		<>
 			{Position({
-				title: "University Cybersecurity Association, Development Committee",
+				title: "Development Committee of Cybersecurity Association",
 				dateRange: "Nov 2025 - Now",
 				country: "Australia",
-				summary: `Leading frontend development club's revamped website using Astro framework with Svelte components.`,
-				className: "pb-5",
-			})}
-			{Position({
-				title: "University Software Engineering Club Committee",
-				dateRange: "Sep 2025 - Now",
-				country: "Australia",
-				summary: `Leading and contributing to various club projects:`,
 				className: "pb-5",
 				highlights: [
-					`Rust Discord Bot, includes club membership verification feature using Supabase.`,
-					`Python web scraping AI project, using BeautifulSoup4 and Gemini API.`,
+					`Leading frontend development of club's revamped website in Astro.`,
+					"Hosted study sessions to encourage productivity amongst students."
 				],
 			})}
 			{Position({
-				title: "Malaysian Association, Marketing Officer",
+				title: "Web Dev Lead of Software Engineering Club",
+				dateRange: "Sep 2025 - Now",
+				country: "Australia",
+				className: "pb-5",
+				highlights: [
+					`Developed Rust Discord Bot, includes club membership verification feature using Supabase.`,
+					`Hosted a Typescript workshop using Bun.`,
+				],
+			})}
+			{Position({
+				title: "Marketing Officer of Malaysian Association",
 				dateRange: "Mar 2025 - Oct 2025",
 				country: "Australia",
-				summary: `Contributed to marketing strategy through video ideation, execution (including on-screen presence and filming), and video editing.`,
+				highlights: [
+					"Directed actors during video filming process.",
+					"Frequently starred in videos, followed directions while also suggesting improvements.",
+					"Edited raw footage into high quality videos."
+				]
 			})}
 		</>
 	);
@@ -188,10 +211,9 @@ const lineMoveCSS = `
 
 function Position({
 	title,
-	institution,
 	dateRange,
 	country,
-	summary,
+	summary = "",
 	className = "",
 	highlights = [],
 }: {
@@ -199,7 +221,7 @@ function Position({
 	institution?: string;
 	dateRange: string;
 	country: string;
-	summary: string;
+	summary?: string;
 	className?: string;
 	highlights?: Array<string>;
 }) {
@@ -209,7 +231,7 @@ function Position({
 			<div className="position-el flex flex-row items-start gap-3">
 				<div className="flex flex-col items-center justify-start gap-2 self-stretch pt-2">
 					<div className="bg-accent h-2 w-2 rounded-full"></div>
-					<div className="animate-line-move w-[1px] flex-grow bg-gradient-to-b from-gray-800 from-0% via-gray-300 via-5% to-gray-800 to-10%"></div>
+					<div className="w-[1px] flex-grow bg-gray-700"></div>
 				</div>
 				<div className={className}>
 					<h2 className="text-lg font-bold">{title}</h2>
@@ -218,21 +240,19 @@ function Position({
 							{CalendarIcon()} {dateRange}
 						</div>
 						<div className="text-muted-foreground mb-2 flex w-full flex-row items-center justify-start gap-5 text-xs">
-							{institution && (
-								<div className="flex flex-row items-center justify-start gap-1">
-									{BriefCaseIcon()} {institution}
-								</div>
-							)}
-
 							<div className="flex flex-row items-center justify-start gap-1">
 								{LocationIcon()} {country}
 							</div>
 						</div>
 					</div>
-					<p className="text-base">{summary}</p>
+					{
+						summary && (
+							<p className="text-base">{summary}</p>
+						)
+					}
 					<ul className="list-inside list-disc">
-						{highlights.map((highlight) => (
-							<li>{highlight}</li>
+						{highlights.map((highlight, i) => (
+							<li key={`highlight-{i}`}>{highlight}</li>
 						))}
 					</ul>
 				</div>

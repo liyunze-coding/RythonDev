@@ -4,43 +4,58 @@
 	--color-primary: #fafafa;
 	--color-secondary: #1d1c20;
 	--color-accent: #72ffff;
+	--color-accent-2: #16ff00;
 	--color-muted-foreground: #ccc;
 
 	--animate-fadeIn: fadeIn 0.5s ease-in-out;
 	--animate-fadeUp: fadeUp 0.5s ease-in-out;
 	--animate-glow: glow 2s ease infinite;
 
-	@keyframes fadeIn {
-		0% {
-			opacity: 0;
-		}
+	--animate-gradient: gradient 15s ease infinite;
+}
 
-		100% {
-			opacity: 100%;
-		}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
 	}
 
-	@keyframes fadeUp {
-		0% {
-			opacity: 0;
-			translate: 0px 10px;
-		}
+	100% {
+		opacity: 100%;
+	}
+}
 
-		50% {
-			opacity: 100%;
-			translate: 0px 0px;
-		}
+@keyframes fadeUp {
+	0% {
+		opacity: 0;
+		translate: 0px 10px;
 	}
 
-	@keyframes glow {
-		0% {
-			scale: 1;
-			opacity: 100%;
-		}
-		100% {
-			scale: 4;
-			opacity: 5%;
-		}
+	50% {
+		opacity: 100%;
+		translate: 0px 0px;
+	}
+}
+
+@keyframes glow {
+	0% {
+		scale: 1;
+		opacity: 100%;
+	}
+	100% {
+		scale: 4;
+		opacity: 5%;
 	}
 }
 

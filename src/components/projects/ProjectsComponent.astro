@@ -1,7 +1,7 @@
 ---
 import TaskWidget from "./TaskWidget.svelte";
 import CoworkingGuide from "../images/projects/coworking-guide.webp";
-import Wnrs from "../images/projects/wnrs.webp";
+import PortfolioRoastBot from "../images/projects/portfolio-roast-bot.webp";
 import VideoProject from "./VideoProject.svelte";
 import Project from "./Project.astro";
 ---
@@ -37,13 +37,13 @@ import Project from "./Project.astro";
 
 		<Project
 			position="left"
-			image={Wnrs}
-			alt="We're not really strangers"
-			href="https://liyunze-coding.github.io/wnrs/"
-			label="Visit Site"
-			title="We're not really strangers"
-			description="This is a digital adaptation of the popular card game designed to foster meaningful connections through engaging questions and prompts. Made into a PWA for offline usage on mobile!"
-			tags={["React", "Typescript"]}
+			image={PortfolioRoastBot}
+			alt="Portfolio Roast Bot"
+			href="https://codeberg.org/RythonDev/portfolio-roast-bot"
+			label="View Repository"
+			title="Portfolio Roast Bot"
+			description="A Discord bot that retrieves specific portfolio tips via slash commands, removing the need for members to manually search the FAQ forum for website best practices."
+			tags={["Rust", "SQLite", "Forgejo Actions"]}
 		/>
 
 		<Project
@@ -60,7 +60,7 @@ import Project from "./Project.astro";
 		>
 			<TaskWidget
 				classList={`
-					widget aspect-video
+					widget h-full
 					[perspective:200px] absolute
 					w-full
 					opacity-10
@@ -71,7 +71,7 @@ import Project from "./Project.astro";
 			/>
 			<TaskWidget
 				classList={`
-					widget aspect-video
+					widget h-full
 					[perspective:200px] absolute 
 					frontfacing-widget right
 					top-1/2 left-1/2
