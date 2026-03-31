@@ -53,16 +53,27 @@ function ExperienceTabContent() {
 				className: "pb-5",
 			})}
 			{Position({
-				title: "Full Stack Developer (Part Time)",
-				dateRange: "Dec 2024 - Feb 2026",
-				country: "Malaysia",
+				title: "Student Project Frontend Lead",
+				dateRange: "Mar 2026 - Now",
+				country: "Australia",
 				highlights: [
-					"Led a team to develop Astro websites with Payload CMS backend implementation.",
-					"Managed Github Actions CI/CD and deployments.",
+					"Led the migration from 40+ Javascript files to Typescript while preserving original functionality with minor bug fixes.",
+					"Improved navigation adhering to UX principles.",
 				],
 				className: "pb-5",
 			})}
 			{Position({
+				title: "Lead Full Stack Developer (Part Time)",
+				dateRange: "Dec 2024 - Feb 2026",
+				country: "Malaysia",
+				highlights: [
+					"Led a team to develop Astro websites with Payload CMS backend implementation.",
+					"Translated Figma wireframes into website implementation efficiently.",
+					"Managed Github Actions CI/CD and deployments.",
+				],
+				className: "pb-5",
+			})}
+			{/* {Position({
 				title: "Frontend Web Developer Intern",
 				dateRange: "Jan 2024 - Apr 2024",
 				country: "Malaysia",
@@ -71,7 +82,7 @@ function ExperienceTabContent() {
 					"Used lazy-loading to optimise page load speeds. ",
 					"Ensured CMS allowed easy yet flexible customisations for clients.",
 				],
-			})}
+			})} */}
 		</>
 	);
 }
@@ -210,53 +221,58 @@ const lineMoveCSS = `
 `;
 
 function Position({
-	title,
-	dateRange,
-	country,
-	summary = "",
-	className = "",
-	highlights = [],
+    title,
+    institution,
+    dateRange,
+    country,
+    summary = "",
+    className = "",
+    highlights = [],
 }: {
-	title: string;
-	institution?: string;
-	dateRange: string;
-	country: string;
-	summary?: string;
-	className?: string;
-	highlights?: Array<string>;
+    title: string;
+    institution?: string;
+    dateRange: string;
+    country: string;
+    summary?: string;
+    className?: string;
+    highlights?: Array<string>;
 }) {
-	return (
-		<>
-			<style>{lineMoveCSS}</style>
-			<div className="position-el flex flex-row items-start gap-3">
-				<div className="flex flex-col items-center justify-start gap-2 self-stretch pt-2">
-					<div className="bg-accent h-2 w-2 rounded-full"></div>
-					<div className="w-[1px] flex-grow bg-gray-700"></div>
-				</div>
-				<div className={className}>
-					<h2 className="text-lg font-bold">{title}</h2>
-					<div className="mt-1 flex flex-col items-start justify-start gap-1">
-						<div className="text-muted-foreground flex flex-row items-center justify-start gap-1 bg-size-[100%_200%] text-xs">
-							{CalendarIcon()} {dateRange}
-						</div>
-						<div className="text-muted-foreground mb-2 flex w-full flex-row items-center justify-start gap-5 text-xs">
-							<div className="flex flex-row items-center justify-start gap-1">
-								{LocationIcon()} {country}
-							</div>
-						</div>
-					</div>
-					{
-						summary && (
-							<p className="text-base">{summary}</p>
-						)
-					}
-					<ul className="list-inside list-disc">
-						{highlights.map((highlight, i) => (
-							<li key={`highlight-{i}`}>{highlight}</li>
-						))}
-					</ul>
-				</div>
-			</div>
-		</>
-	);
+    return (
+        <>
+            <style>{lineMoveCSS}</style>
+            <div className="position-el flex flex-row items-start gap-3">
+                <div className="flex flex-col items-center justify-start gap-2 self-stretch pt-2">
+                    <div className="bg-accent h-2 w-2 rounded-full"></div>
+                    <div className="w-[1px] flex-grow bg-gray-700"></div>
+                </div>
+                <div className={className}>
+                    <h2 className="text-lg font-bold">{title}</h2>
+                    <div className="mt-1 flex flex-col items-start justify-start gap-1">
+                        <div className="text-muted-foreground flex flex-row items-center justify-start gap-1 text-xs">
+                            <CalendarIcon /> {dateRange}
+                        </div>
+                        <div className="text-muted-foreground mb-2 flex w-full flex-row items-center justify-start gap-5 text-xs">
+                            {institution && (
+                                <div className="flex flex-row items-center justify-start gap-1">
+                                    <BriefCaseIcon /> {institution}
+                                </div>
+                            )}
+
+                            <div className="flex flex-row items-center justify-start gap-1">
+                                <LocationIcon /> {country}
+                            </div>
+                        </div>
+
+                        {summary && <p className="text-base">{summary}</p>}
+
+                        <ul className="list-inside list-disc">
+                            {highlights.map((highlight, i) => (
+                                <li key={`highlight-${i}`}>{highlight}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
 }
