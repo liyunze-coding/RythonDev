@@ -11,11 +11,11 @@
 
 	const myStreamSchedule: null | StreamScheduleDay[] = [
 		{
-			start: getUpcomingTimeDevTZ(4, "10:00"),
-			end: getUpcomingTimeDevTZ(4, "20:00"),
+			start: getUpcomingTimeDevTZ(4, "11:00"),
+			end: getUpcomingTimeDevTZ(4, "16:00"),
 		},
 		{
-			start: getUpcomingTimeDevTZ(5, "14:00"),
+			start: getUpcomingTimeDevTZ(5, "11:00"),
 			end: getUpcomingTimeDevTZ(5, "20:00"),
 		},
 	];
