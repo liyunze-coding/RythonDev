@@ -1,0 +1,13 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    viewBox="0 0 46.652 46.652"
+>
+    <path
+        id="Icon_ionic-md-arrow-back"
+        data-name="Icon ionic-md-arrow-back"
+        d="M32.988,14.432H7.938L19.484,2.886,16.494,0,0,16.494,16.494,32.988,19.38,30.1,7.938,18.556h25.05Z"
+        transform="translate(46.652 23.326) rotate(135)"
+        fill="#fff"></path>
+</svg>
