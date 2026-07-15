@@ -44,17 +44,17 @@ function ExperienceTabContent() {
 		<>
 			{Position({
 				title: "Application Developer Intern",
-				dateRange: "Mar 2026 - Now",
+				dateRange: "Mar 2026 - Apr 2026",
 				country: "Australia",
 				highlights: [
-					"Quickly adapted to Ruby on Rails codebase to resolve Jira tickets.",
+					"Successfully merged 13 pull requests to the Ruby on Rails codebase, fixing bugs and adding new features.",
 					"Communicated clearly about obstacles, suggested probable cause and provided solutions or workarounds.",
 				],
 				className: "pb-5",
 			})}
 			{Position({
 				title: "Student Project Frontend Lead",
-				dateRange: "Mar 2026 - Now",
+				dateRange: "Feb 2026 - May 2026",
 				country: "Australia",
 				highlights: [
 					"Led the migration from 40+ Javascript files to Typescript while preserving original functionality with minor bug fixes.",

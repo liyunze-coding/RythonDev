@@ -32,29 +32,43 @@ export const HoverNavigation = ({
 			return url.hash.replace("#", "");
 		});
 
-		const observers: IntersectionObserver[] = [];
+		const sectionElements: (Element | null)[] = sectionIds.map((id) => {
+			if (!id) return null;
+			return document.getElementById(id);
+		});
 
-		sectionIds.forEach((id, idx) => {
-			if (!id) return;
+		const visibilityMap = new Map<Element, number>();
 
-			const element = document.getElementById(id);
-			if (!element) return;
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					visibilityMap.set(entry.target, entry.intersectionRatio);
+				});
 
-			const observer = new IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
-						if (entry.isIntersecting) {
-							setActiveIndex(idx);
-						}
-					});
-				},
-				{
-					rootMargin: "-20% 0px -50% 0px",
-				},
-			);
+				let maxRatio = 0;
+				let maxIdx = -1;
 
-			observer.observe(element);
-			observers.push(observer);
+				sectionElements.forEach((el, idx) => {
+					if (!el) return;
+					const ratio = visibilityMap.get(el) ?? 0;
+					if (ratio > maxRatio) {
+						maxRatio = ratio;
+						maxIdx = idx;
+					}
+				});
+
+				if (maxIdx !== -1 && maxRatio > 0) {
+					setActiveIndex(maxIdx);
+				}
+			},
+			{
+				rootMargin: "-20% 0px -50% 0px",
+				threshold: [0, 0.25, 0.5, 0.75, 1],
+			},
+		);
+
+		sectionElements.forEach((el) => {
+			if (el) observer.observe(el);
 		});
 
 		// set hover index on projects when on "/projects"
@@ -64,9 +78,7 @@ export const HoverNavigation = ({
 			setActiveIndex(2);
 		}
 
-		return () => {
-			observers.forEach((observer) => observer.disconnect());
-		};
+		return () => observer.disconnect();
 	}, [items]);
 
 	useEffect(() => {
