@@ -21,7 +21,7 @@
 		tags = [],
 	}: Props = $props();
 
-	const positionLeft = position == "left";
+	const positionLeft: boolean = $state(position == "left");
 
 	onMount(() => {
 		const videos = document.querySelectorAll<HTMLVideoElement>(".playable");

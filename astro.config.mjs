@@ -10,20 +10,20 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [mdx(), svelte(), react()],
+	integrations: [mdx(), svelte({ extensions: [".svelte"] }), react()],
 
-    server: {
-        port: 8008,
-        hostname: "RythonDev",
-    },
+	server: {
+		port: 8008,
+		hostname: "RythonDev",
+	},
 
-    site: "https://rython.dev",
+	site: "https://rython.dev",
 
-    vite: {
-        plugins: [tailwindcss()],
-    },
+	vite: {
+		plugins: [tailwindcss()],
+	},
 
-    image: {
-        service: passthroughImageService(),
-    },
+	image: {
+		service: passthroughImageService(),
+	},
 });

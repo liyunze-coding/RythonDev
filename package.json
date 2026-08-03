@@ -10,14 +10,14 @@
         "astro": "astro"
     },
     "dependencies": {
-        "@astrojs/mdx": "4.3.13",
-        "@astrojs/react": "4.4.2",
-        "@astrojs/svelte": "7.2.5",
+        "@astrojs/mdx": "7.0.5",
+        "@astrojs/react": "6.0.2",
+        "@astrojs/svelte": "^9.0.1",
         "@radix-ui/react-tabs": "^1.1.13",
         "@tailwindcss/vite": "^4.1.8",
         "@types/react": "^19.1.9",
         "@types/react-dom": "^19.1.7",
-        "astro": "5.16.8",
+        "astro": "7.1.6",
         "caniuse-lite": "^1.0.30001698",
         "clsx": "^2.1.1",
         "hamburger-react": "^2.5.2",
@@ -26,10 +26,10 @@
         "motion": "^12.23.12",
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
-        "svelte": "^5.33.16",
+        "svelte": "^5.56.8",
         "tailwind-merge": "^3.3.1",
         "tailwindcss": "^4.1.8",
-        "typescript": "^5.8.3"
+        "typescript": "^6.0.3"
     },
     "devDependencies": {
         "prettier": "^3.5.3",
