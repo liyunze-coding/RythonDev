@@ -47,7 +47,7 @@ function ExperienceTabContent() {
 				dateRange: "Mar 2026 - Apr 2026",
 				country: "Australia",
 				highlights: [
-					"Successfully merged 13 pull requests to the Ruby on Rails codebase, fixing bugs and adding new features.",
+					"Successfully merged 13+ pull requests to the Ruby on Rails codebase, fixing bugs and adding new features.",
 					"Communicated clearly about obstacles, suggested probable cause and provided solutions or workarounds.",
 				],
 				className: "pb-5",
@@ -58,7 +58,8 @@ function ExperienceTabContent() {
 				country: "Australia",
 				highlights: [
 					"Led the migration from 40+ Javascript files to Typescript while preserving original functionality with minor bug fixes.",
-					"Improved navigation adhering to UX principles.",
+					"Reviewed 35+ pull requests with only 70% approval rate to maintain codebase quality.",
+					"Contributed 12+ pull requests into frontend and CI/CD to add new features and fix bugs.",
 				],
 				className: "pb-5",
 			})}
@@ -92,10 +93,11 @@ function EducationTabContent() {
 		<>
 			{Position({
 				title: "Bachelors of Computer Science",
-				dateRange: "June 2024 - Now",
+				dateRange: "June 2024 - September 2026",
 				country: "Australia",
 				summary: `Awarded 50% Vice-Chancellor Scholarship to study
-						Bachelor's in Computer Science, minoring in Full Stack Development. Active committee member in cybersecurity association and software engineering club.`,
+						Bachelor's in Computer Science, minoring in Full Stack Development.
+						Active committee member in various clubs including Cybersecurity association and Software Engineering club.`,
 				className: "pb-5",
 			})}
 			{Position({
@@ -110,25 +112,28 @@ function EducationTabContent() {
 
 function ExtracurricularTabContent() {
 	return (
-		<>
+    <>
+      {Position({
+				title: "Web Dev Lead of Software Engineering Club",
+				dateRange: "Sep 2025 - Now",
+				country: "Australia",
+				className: "pb-5",
+				highlights: [
+          "Developed Rust Discord Bot, includes club membership verification feature using Supabase.",
+					"Improve engagement of Discord server by introducing daily leetcode challenges.",
+          "Hosted a Typescript workshop using Bun and Svelte.",
+					"Featured as a panelist on Our Internship Experience, sharing tips and advice to students."
+				],
+			})}
 			{Position({
 				title: "Development Committee of Cybersecurity Association",
 				dateRange: "Nov 2025 - Now",
 				country: "Australia",
 				className: "pb-5",
 				highlights: [
-					`Leading frontend development of club's revamped website in Astro.`,
+          "Leading frontend development of club's revamped website in Astro.",
+					"Contributing to Discord bot development migration from Typescript to Python for lower barrier of entry.",
 					"Hosted study sessions to encourage productivity amongst students.",
-				],
-			})}
-			{Position({
-				title: "Web Dev Lead of Software Engineering Club",
-				dateRange: "Sep 2025 - Now",
-				country: "Australia",
-				className: "pb-5",
-				highlights: [
-					`Developed Rust Discord Bot, includes club membership verification feature using Supabase.`,
-					`Hosted a Typescript workshop using Bun.`,
 				],
 			})}
 			{Position({

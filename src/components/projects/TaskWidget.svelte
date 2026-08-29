@@ -1,116 +1,136 @@
 <script lang="ts">
-	const streamers = [
+	type Task = {
+		name: string;
+		completed: boolean;
+	};
+	type UserListItem = {
+		streamer: string;
+		tasks: Array<Task>;
+	};
+	const streamers: Array<UserListItem> = [
 		{
 			streamer: "4l1c3_0",
-			task: "mental breakdance",
+			tasks: [{ name: "mental breakdance", completed: true }],
 		},
 		{
 			streamer: "arcanexviii",
-			task: "babysit",
+			tasks: [{ name: "babysit", completed: false }],
 		},
 		{
-			streamer: "brisim_claimhte",
-			task: "rewrite history thesis",
+			streamer: "B1obaBoba",
+			tasks: [{ name: "Move to Norway", completed: false }],
 		},
 		{
 			streamer: "Bubxmicn",
-			task: "drive a truck",
+			tasks: [
+				{ name: "drive a truck", completed: false },
+				{
+					name: "get Masters in Public Health degree",
+					completed: false,
+				},
+			],
+		},
+		{
+			streamer: "bunnie_bytes",
+			tasks: [{ name: "Work as a software developer", completed: true }],
 		},
 		{
 			streamer: "charliosaurus",
-			task: "praise the lord",
+			tasks: [
+				{ name: "praise the lord", completed: true },
+				{ name: "graduate from university", completed: true },
+			],
 		},
 		{
 			streamer: "clari_miu",
-			task: "be sweaty",
+			tasks: [{ name: "be sweaty", completed: false }],
 		},
 		{
 			streamer: "cloudydayzzz",
-			task: "stay up at night",
-		},
-		{
-			streamer: "creativepepper",
-			task: "develop mobile app",
+			tasks: [{ name: "stay up at night", completed: false }],
 		},
 		{
 			streamer: "DATJI_",
-			task: "IRL KBBQ stream",
-		},
-		{
-			streamer: "EarliestTea",
-			task: "chat about MBTI",
+			tasks: [{ name: "IRL KBBQ stream", completed: true }],
 		},
 		{
 			streamer: "Ellyskey",
-			task: "sell YOUthversity merch",
+			tasks: [{ name: "sell YOUthversity merch", completed: false }],
 		},
 		{
 			streamer: "HarryIsTrying",
-			task: "be a strategy consultant",
+			tasks: [{ name: "be a strategy consultant", completed: true }],
 		},
 		{
 			streamer: "itsbrandonut",
-			task: "cowork then league",
+			tasks: [{ name: "cowork then league", completed: false }],
 		},
 		{
 			streamer: "lala_xitlali",
-			task: "design fashionable clothes",
+			tasks: [{ name: "design fashionable clothes", completed: false }],
 		},
 		{
 			streamer: "lyricalclove",
-			task: "teach English",
+			tasks: [{ name: "teach English", completed: false }],
 		},
 		{
 			streamer: "nachoburrit0",
-			task: "update spreadsheets",
+			tasks: [{ name: "update spreadsheets", completed: false }],
 		},
 		{
 			streamer: "nihn_",
-			task: "Release new Lo-fi music",
+			tasks: [{ name: "Release new Lo-fi music", completed: false }],
 		},
 		{
 			streamer: "lanezzz_",
-			task: "be a supermodel",
+			tasks: [{ name: "be a supermodel", completed: false }],
 		},
 		{
 			streamer: "PineappleEffect",
-			task: "edit video",
+			tasks: [{ name: "edit video", completed: false }],
 		},
 		{
 			streamer: "pinsaregood",
-			task: "go on another hiatus",
+			tasks: [{ name: "go on another hiatus", completed: false }],
+		},
+		{
+			streamer: "potatoing_2d",
+			tasks: [{ name: "be a potato", completed: false }],
 		},
 		{
 			streamer: "lilylikesrocks",
-			task: "learn about rocks",
+			tasks: [{ name: "learn about rocks", completed: false }],
+		},
+		{
+			streamer: "RythonDev",
+			tasks: [
+				{ name: "Graduate with Bachelors degree", completed: true },
+				{ name: "Masters in Teaching (secondary)", completed: false },
+			],
 		},
 		{
 			streamer: "snowxcone",
-			task: "do more leetcode",
+			tasks: [{ name: "do more leetcode", completed: false }],
 		},
 		{
 			streamer: "studypaws",
-			task: "be a vet",
+			tasks: [{ name: "be a vet", completed: false }],
 		},
 		{
 			streamer: "sunfflawer",
-			task: "be a sunflower",
+			tasks: [{ name: "be a sunflower", completed: false }],
 		},
 		{
 			streamer: "Supernaturalwriter",
-			task: "hit the gym",
+			tasks: [{ name: "hit the gym", completed: false }],
 		},
 		{
 			streamer: "ThePainfulPhD",
-			task: "study about pain",
-		},
-		{
-			streamer: "theyolotato",
-			task: "be a potato",
+			tasks: [{ name: "get PhD", completed: true }],
 		},
 		{
 			streamer: "xeno_hiraeth",
-			task: "anki flashcards",
+			tasks: [{ name: "finished med school", completed: true }],
 		},
 	];
 
@@ -139,22 +159,42 @@
 			class="scroll-parent relative h-[82%] overflow-hidden rounded-br-2xl rounded-bl-2xl font-['Fredoka',_sans-serif] lg:min-h-0"
 		>
 			<div class="scroll-element primary absolute w-full px-1">
-				{#each streamers as { streamer, task }}
+				{#each streamers as { streamer, tasks }}
 					<div
 						class="my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
                                     text-sm overflow-ellipsis whitespace-nowrap text-white lg:text-base"
 					>
-						O {streamer} : {task}
+						{streamer} :
+						<ol class="list-inside list-decimal">
+							{#each tasks as task}
+								<li
+									class={task.completed
+										? "text-gray-400 line-through"
+										: "text-white"}
+								>
+									{task.name}
+								</li>
+							{/each}
+						</ol>
 					</div>
 				{/each}
 			</div>
 			<div class="scroll-element secondary absolute w-full px-1">
-				{#each streamers as { streamer, task }}
+				{#each streamers as { streamer, tasks }}
 					<div
 						class="my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
                                     text-sm overflow-ellipsis whitespace-nowrap text-white lg:text-base"
 					>
-						O {streamer} : {task}
+						{streamer} :
+						<ol class="list-inside list-decimal">
+							{#each tasks as task}
+								<li
+									class={task.completed ? "line-through" : ""}
+								>
+									{task.name}
+								</li>
+							{/each}
+						</ol>
 					</div>
 				{/each}
 			</div>
@@ -202,11 +242,11 @@
 	}
 
 	.primary {
-		animation: primary 20s linear infinite;
+		animation: primary 30s linear infinite;
 	}
 
 	.secondary {
-		animation: secondary 20s linear infinite;
+		animation: secondary 30s linear infinite;
 	}
 
 	@keyframes primary {
@@ -214,13 +254,13 @@
 			transform: translateY(0);
 		}
 		to {
-			transform: translateY(-1175px);
+			transform: translateY(-1890px);
 		}
 	}
 
 	@keyframes secondary {
 		from {
-			transform: translateY(1175px);
+			transform: translateY(1890px);
 		}
 		to {
 			transform: translateY(0);
