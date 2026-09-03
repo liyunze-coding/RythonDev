@@ -21,7 +21,20 @@ import { ClientRouter } from "astro:transitions";
 			content="Rython, student, developer, frontend, web developer, streamer, coworking"
 		/>
 		<meta name="author" content="RythonDev" />
-		<meta name="theme-color" content="#2B2D31" />
+		<meta name="theme-color" content="#101010" />
+		<script is:inline>
+			(() => {
+				const savedTheme = localStorage.getItem("theme");
+				const theme =
+					savedTheme === "light" || savedTheme === "dark"
+						? savedTheme
+						: window.matchMedia("(prefers-color-scheme: light)").matches
+							? "light"
+							: "dark";
+
+				document.documentElement.dataset.theme = theme;
+			})();
+		</script>
 
 		{thumbnail && <meta name="twitter:image" content={thumbnail} />}
 
@@ -72,15 +85,23 @@ import { ClientRouter } from "astro:transitions";
 
 	html {
 		scroll-behavior: smooth;
+		color-scheme: dark;
+	}
+
+	html[data-theme="light"] {
+		color-scheme: light;
 	}
 
 	body {
 		font-family: "Montserrat", sans-serif;
-		color: #fff;
-		background: #1d1c20;
+		color: var(--page-foreground);
 		background:
-			radial-gradient(circle, #303030 1px, transparent 1px), #101010;
+			radial-gradient(circle, var(--page-dot) 1px, transparent 1px),
+			var(--page-background);
 		background-size: 20px 20px;
+		transition:
+			color 0.25s ease,
+			background-color 0.25s ease;
 	}
 </style>
 
