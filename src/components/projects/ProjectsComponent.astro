@@ -2,7 +2,7 @@
 import TaskWidget from "./TaskWidget.svelte";
 import CoworkingGuide from "../images/projects/coworking-guide.webp";
 import PortfolioRoastBot from "../images/projects/portfolio-roast-bot.webp";
-import VideoProject from "./VideoProject.svelte";
+import DsecNotebook from "../images/projects/dsec-notebook.webp";
 import Project from "./Project.astro";
 ---
 
@@ -22,17 +22,15 @@ import Project from "./Project.astro";
 			tags={["Astro", "Typescript", "Markdown"]}
 		/>
 
-		<VideoProject
-			client:visible
-			image_src="/images/projects/aim-lab.webp"
-			image_alt="Computer Vision AimLab Bot"
+		<Project
 			position="right"
-			video_src="/videos/aim_lab_demo.webm"
-			title="Computer Vision AimLab Bot"
-			description={`
-                A script that plays AimLab, a game that helps improve your aim in FPS games. Uses OpenCV to detect the targets and win32API to move the mouse and click.
-            `}
-			tags={["Python", "OpenCV", "win32API"]}
+			image={DsecNotebook}
+			alt="DSEC Notebook"
+			href="https://notebook.dsec.club/"
+			title="DSEC Notebook"
+			label="Visit Site"
+			description="A centralised community-provided resource hub for University students. Students can create an account, post notes, comment and vote the quality of the notes."
+			tags={["Sveltekit", "Typescript", "SQLite"]}
 		/>
 
 		<Project
@@ -72,7 +70,7 @@ import Project from "./Project.astro";
 			<TaskWidget
 				classList={`
 					widget h-full
-					[perspective:200px] absolute 
+					[perspective:200px] absolute
 					frontfacing-widget right
 					top-1/2 left-1/2
 					w-full`}

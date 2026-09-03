@@ -9,7 +9,7 @@ import TwitchPlays from "../images/projects/twitchplays.webp";
 		<VideoProject
 			image_src="/images/projects/chess-opencv.webp"
 			image_alt="computer vision chess bot"
-			position="left"
+			position="right"
 			video_src="/videos/chess_opencv_demo.webm"
 			title="Computer Vision Chess Bot"
 			description={`
@@ -22,7 +22,7 @@ import TwitchPlays from "../images/projects/twitchplays.webp";
 			client:visible
 		/>
 		<Project
-			position="right"
+			position="left"
 			image={TwitchPlays}
 			alt="Twitch Plays X"
 			href="https://github.com/liyunze-coding/TwitchPlaysX"
@@ -32,6 +32,18 @@ import TwitchPlays from "../images/projects/twitchplays.webp";
 					right B A" and the Python program will trigger the
 					corresponding keypresses.`}
 			tags={["win32API", "Python"]}
+		/>
+		<VideoProject
+			client:visible
+			image_src="/images/projects/aim-lab.webp"
+			image_alt="Computer Vision AimLab Bot"
+			position="right"
+			video_src="/videos/aim_lab_demo.webm"
+			title="Computer Vision AimLab Bot"
+			description={`
+                A script that plays AimLab, a game that helps improve your aim in FPS games. Uses OpenCV to detect the targets and win32API to move the mouse and click.
+            `}
+			tags={["Python", "OpenCV", "win32API"]}
 		/>
 	</div>
 </div>
