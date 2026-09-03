@@ -145,7 +145,7 @@
 	<!-- task bot -->
 	<div class="task-widget absolute flex h-full min-h-[50vh] w-full flex-col">
 		<div
-			class="flex w-full flex-row items-center justify-between
+			class="task-widget-header flex w-full flex-row items-center justify-between
                     rounded-md
                     border-3 border-solid
                     border-gray-600 bg-black
@@ -161,7 +161,7 @@
 			<div class="scroll-element primary absolute w-full px-1">
 				{#each streamers as { streamer, tasks }}
 					<div
-						class="my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
+						class="task-widget-item my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
                                     text-sm overflow-ellipsis whitespace-nowrap text-white lg:text-base"
 					>
 						{streamer} :
@@ -169,8 +169,8 @@
 							{#each tasks as task}
 								<li
 									class={task.completed
-										? "text-gray-400 line-through"
-										: "text-white"}
+										? "task-completed text-gray-400 line-through"
+										: "task-incomplete text-white"}
 								>
 									{task.name}
 								</li>
@@ -182,14 +182,16 @@
 			<div class="scroll-element secondary absolute w-full px-1">
 				{#each streamers as { streamer, tasks }}
 					<div
-						class="my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
+						class="task-widget-item my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
                                     text-sm overflow-ellipsis whitespace-nowrap text-white lg:text-base"
 					>
 						{streamer} :
 						<ol class="list-inside list-decimal">
 							{#each tasks as task}
 								<li
-									class={task.completed ? "line-through" : ""}
+									class={task.completed
+										? "task-completed line-through"
+										: "task-incomplete"}
 								>
 									{task.name}
 								</li>
@@ -203,6 +205,25 @@
 </div>
 
 <style>
+	:global(html[data-theme="light"]) .task-widget-header {
+		border-color: #cbd5e1;
+		background-color: #f8fafc;
+		color: #0f172a;
+	}
+
+	:global(html[data-theme="light"]) .task-widget-item {
+		background-color: #e2e8f0;
+		color: #0f172a;
+	}
+
+	:global(html[data-theme="light"]) .task-incomplete {
+		color: #0f172a;
+	}
+
+	:global(html[data-theme="light"]) .task-completed {
+		color: #64748b;
+	}
+
 	.background-widget.left {
 		transform: translate(-50%, -50%);
 	}

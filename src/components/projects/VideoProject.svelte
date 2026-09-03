@@ -66,7 +66,7 @@
 		<img
 			src={image_src}
 			alt={image_alt}
-			class="background-img absolute
+			class="project-media background-img absolute
                     top-1/2
                     left-1/2 max-w-full rounded-xl border-2
                     border-solid border-gray-800
@@ -78,7 +78,7 @@
 		<!-- svelte-ignore a11y_media_has_caption -->
 		<video
 			width="700"
-			class="playable frontfacing-vid absolute
+			class="project-media playable frontfacing-vid absolute
 					top-1/2 left-1/2 max-w-full rounded-xl
                     border-2
                     border-solid border-gray-800
@@ -122,6 +122,10 @@
 </div>
 
 <style>
+	:global(html[data-theme="light"]) .project-media {
+		border-color: #cbd5e1;
+	}
+
 	.background-img.left {
 		transform: translate(-50%, -50%);
 	}

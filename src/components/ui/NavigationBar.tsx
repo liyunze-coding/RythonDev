@@ -22,8 +22,30 @@ export const HoverNavigation = ({
 	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
 	const [hamburgerOpen, setHamburgerOpen] = useState(false);
+	const [theme, setTheme] = useState<"light" | "dark">("dark");
 	const hamburgerRef = useRef<HTMLDivElement>(null);
 	const menuRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		setTheme(
+			document.documentElement.dataset.theme === "light"
+				? "light"
+				: "dark",
+		);
+	}, []);
+
+	const toggleTheme = () => {
+		const nextTheme = theme === "dark" ? "light" : "dark";
+		document.documentElement.dataset.theme = nextTheme;
+		localStorage.setItem("theme", nextTheme);
+		document
+			.querySelector('meta[name="theme-color"]')
+			?.setAttribute(
+				"content",
+				nextTheme === "dark" ? "#101010" : "#fafafa",
+			);
+		setTheme(nextTheme);
+	};
 
 	// Track which section is in view
 	useEffect(() => {
@@ -106,7 +128,7 @@ export const HoverNavigation = ({
 
 	return (
 		<>
-			<div className="bg-secondary/50 fixed top-5 left-1/2 z-30 box-border hidden -translate-x-1/2 items-center justify-center overflow-auto rounded-[40px] border-2 border-solid border-gray-700 px-5 py-3 backdrop-blur-md md:flex md:w-11/12 lg:w-2/3 xl:w-auto">
+			<div className="theme-surface bg-secondary/50 fixed top-5 left-1/2 z-30 box-border hidden -translate-x-1/2 items-center justify-center overflow-auto rounded-[40px] border-2 border-solid border-gray-700 px-5 py-3 backdrop-blur-md md:flex md:w-11/12 lg:w-2/3 xl:w-auto">
 				<div className="flex flex-col">
 					<div className="flex flex-row">
 						<nav
@@ -161,13 +183,15 @@ export const HoverNavigation = ({
 								))}
 							</motion.ul>
 						</nav>
+						<ThemeToggle theme={theme} onToggle={toggleTheme} />
 					</div>
 				</div>
 			</div>
-			<div className="bg-secondary/50 fixed top-5 left-1/2 z-50 flex w-4/5 -translate-x-1/2 justify-end rounded-full border-2 border-solid border-gray-700 pr-5 backdrop-blur-xl lg:hidden">
+			<div className="theme-surface bg-secondary/50 fixed top-5 left-1/2 z-50 flex w-4/5 -translate-x-1/2 items-center justify-end rounded-full border-2 border-solid border-gray-700 pr-5 backdrop-blur-xl lg:hidden">
+				<ThemeToggle theme={theme} onToggle={toggleTheme} />
 				<div
 					ref={hamburgerRef}
-					className="flex rounded-full px-1 py-1 md:hidden [&>div]:rounded-full [&>div_div]:bg-white!"
+					className="flex rounded-full px-1 py-1 md:hidden [&>div]:rounded-full [&>div_div]:bg-current!"
 				>
 					<HamburgerCross
 						toggle={setHamburgerOpen}
@@ -185,7 +209,7 @@ export const HoverNavigation = ({
 						animate={{ opacity: 1, scale: 1 }}
 						exit={{ opacity: 0, scale: 0.95 }}
 						transition={{ duration: 0.2 }}
-						className="bg-secondary/50 fixed top-24 right-0 left-1/2 z-40 w-4/5 -translate-x-1/2 rounded-2xl py-2 text-white backdrop-blur-xl md:hidden"
+						className="theme-surface bg-secondary/50 fixed top-24 right-0 left-1/2 z-40 w-4/5 -translate-x-1/2 rounded-2xl py-2 backdrop-blur-xl md:hidden"
 					>
 						<nav aria-label="Mobile Navigation">
 							<ul className="flex flex-col gap-2">
@@ -220,6 +244,49 @@ export const HoverNavigation = ({
 	);
 };
 
+const ThemeToggle = ({
+	theme,
+	onToggle,
+}: {
+	theme: "light" | "dark";
+	onToggle: () => void;
+}) => (
+	<button
+		type="button"
+		onClick={onToggle}
+		aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+		title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+		className="ml-2 grid size-10 shrink-0 cursor-pointer place-items-center rounded-full transition-colors hover:bg-current/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+	>
+		{theme === "dark" ? (
+			<svg
+				viewBox="0 0 24 24"
+				aria-hidden="true"
+				className="size-5"
+				fill="none"
+				stroke="currentColor"
+				strokeWidth="2"
+			>
+				<circle cx="12" cy="12" r="4" />
+				<path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" />
+			</svg>
+		) : (
+			<svg
+				viewBox="0 0 24 24"
+				aria-hidden="true"
+				className="size-5"
+				fill="none"
+				stroke="currentColor"
+				strokeWidth="2"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			>
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+			</svg>
+		)}
+	</button>
+);
+
 export const NavBarLink = ({
 	className,
 	children,
@@ -230,7 +297,7 @@ export const NavBarLink = ({
 	return (
 		<div
 			className={cn(
-				"relative z-20 h-fit w-full overflow-hidden rounded-2xl text-center mix-blend-difference transition-all ease-out",
+				"theme-nav-link relative z-20 h-fit w-full overflow-hidden rounded-2xl text-center mix-blend-difference transition-all ease-out",
 				className,
 			)}
 		>

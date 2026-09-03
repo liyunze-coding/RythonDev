@@ -1,8 +1,11 @@
 ---
 import TaskWidget from "./TaskWidget.svelte";
 import CoworkingGuide from "../images/projects/coworking-guide.webp";
+import CoworkingGuideLight from "../images/projects/coworking-guide-light.webp";
 import PortfolioRoastBot from "../images/projects/portfolio-roast-bot.webp";
+import PortfolioRoastBotLight from "../images/projects/portfolio-roast-bot-light.webp";
 import DsecNotebook from "../images/projects/dsec-notebook.webp";
+import DsecNotebookLight from "../images/projects/dsec-notebook-light.webp";
 import Project from "./Project.astro";
 ---
 
@@ -14,6 +17,7 @@ import Project from "./Project.astro";
 		<Project
 			position="left"
 			image={CoworkingGuide}
+			image_light={CoworkingGuideLight}
 			alt="coworking guide"
 			href="https://coworking-guide.vercel.app/"
 			title="Coworking Guide"
@@ -25,6 +29,7 @@ import Project from "./Project.astro";
 		<Project
 			position="right"
 			image={DsecNotebook}
+			image_light={DsecNotebookLight}
 			alt="DSEC Notebook"
 			href="https://notebook.dsec.club/"
 			title="DSEC Notebook"
@@ -36,6 +41,7 @@ import Project from "./Project.astro";
 		<Project
 			position="left"
 			image={PortfolioRoastBot}
+			image_light={PortfolioRoastBotLight}
 			alt="Portfolio Roast Bot"
 			href="https://codeberg.org/RythonDev/portfolio-roast-bot"
 			label="View Repository"

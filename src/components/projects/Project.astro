@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 interface Props {
 	position?: "left" | "right";
 	image?: ImageMetadata;
+	image_light?: ImageMetadata;
 	alt?: string;
 	href: string;
 	title: string;
@@ -14,6 +15,7 @@ interface Props {
 
 const {
 	image,
+	image_light,
 	alt,
 	href,
 	title,
@@ -40,17 +42,41 @@ const leftProject = position == "left";
 					<Image
 						src={image}
 						alt={alt}
-						class="background-img absolute top-1/2 left-1/2 aspect-video max-w-full rounded-xl border-2 border-solid border-gray-800 opacity-40"
-						class:list={leftProject ? "left" : "right"}
+						class="project-image-dark background-img absolute top-1/2 left-1/2 aspect-video max-w-full rounded-xl border-2 border-solid border-gray-800 opacity-40"
+						class:list={[
+							leftProject ? "left" : "right",
+							{ "has-light-image": Boolean(image_light) },
+						]}
 						width={700}
 					/>
 					<Image
 						src={image}
 						alt={alt}
 						width={700}
-						class="frontfacing-img absolute top-1/2 left-1/2 aspect-video max-w-full rounded-xl border-2 border-solid border-gray-800 opacity-100"
-						class:list={leftProject ? "left" : "right"}
+						class="project-image-dark frontfacing-img absolute top-1/2 left-1/2 aspect-video max-w-full rounded-xl border-2 border-solid border-gray-800 opacity-100"
+						class:list={[
+							leftProject ? "left" : "right",
+							{ "has-light-image": Boolean(image_light) },
+						]}
 					/>
+					{image_light && (
+						<>
+							<Image
+								src={image_light}
+								alt={alt}
+								class="project-image-light background-img absolute top-1/2 left-1/2 hidden aspect-video max-w-full rounded-xl border-2 border-solid border-gray-300 opacity-40"
+								class:list={leftProject ? "left" : "right"}
+								width={700}
+							/>
+							<Image
+								src={image_light}
+								alt={alt}
+								width={700}
+								class="project-image-light frontfacing-img absolute top-1/2 left-1/2 hidden aspect-video max-w-full rounded-xl border-2 border-solid border-gray-300 opacity-100"
+								class:list={leftProject ? "left" : "right"}
+							/>
+						</>
+					)}
 				</>
 			)
 		}
@@ -61,7 +87,7 @@ const leftProject = position == "left";
 			<a
 				href={href}
 				target="_blank"
-				class="text-accent border-accent hover:bg-accent absolute top-1/2 left-1/2 hidden [transform:translateX(-50%)_translateY(-50%)] rounded-xl border-2 bg-black px-5 py-3 font-bold opacity-100 transition-colors duration-300 hover:text-black lg:block"
+				class="visit-label text-accent border-accent hover:bg-accent absolute top-1/2 left-1/2 hidden [transform:translateX(-50%)_translateY(-50%)] rounded-xl border-2 bg-black px-5 py-3 font-bold opacity-100 transition-colors duration-300 hover:text-black lg:block"
 				>{label}</a
 			>
 		</div>
@@ -70,7 +96,7 @@ const leftProject = position == "left";
 		<a
 			href={href}
 			target="_blank"
-			class="hover:text-accent rounded-4xl bg-blue-600 px-5 py-3 font-bold opacity-100 transition-colors duration-300 hover:bg-white"
+			class="visit-label-mobile hover:text-accent rounded-4xl bg-blue-600 px-5 py-3 font-bold opacity-100 transition-colors duration-300 hover:bg-white"
 			>{label}</a
 		>
 	</div>
@@ -106,6 +132,44 @@ const leftProject = position == "left";
 </div>
 
 <style>
+	:global(html[data-theme="light"]) .project-image-dark.has-light-image {
+		display: none;
+	}
+
+	:global(html[data-theme="light"]) .project-image-light {
+		display: block;
+	}
+
+	:global(html[data-theme="light"]) .project-image-dark {
+		border-color: #cbd5e1;
+	}
+
+	:global(html[data-theme="light"]) .visit-div {
+		border-color: #cbd5e1;
+		background-color: rgb(255 255 255 / 0.55);
+	}
+
+	:global(html[data-theme="light"]) .visit-label {
+		background-color: #ffffff;
+		color: #0f172a;
+		border-color: #72ffff;
+	}
+
+	:global(html[data-theme="light"]) .visit-label:hover {
+		background-color: #72ffff;
+		color: #000000;
+	}
+
+	:global(html[data-theme="light"]) .visit-label-mobile {
+		background-color: #72ffff;
+		color: #000000;
+	}
+
+	:global(html[data-theme="light"]) .visit-label-mobile:hover {
+		background-color: #ffffff;
+		color: #0f172a;
+	}
+
 	.image-container img {
 		transition: transform 0.5s ease-in-out;
 	}
