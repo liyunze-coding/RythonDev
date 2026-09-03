@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 interface Props {
 	position?: "left" | "right";
 	image?: ImageMetadata;
+	image_light?: ImageMetadata;
 	alt?: string;
 	href: string;
 	title: string;
@@ -14,6 +15,7 @@ interface Props {
 
 const {
 	image,
+	image_light,
 	alt,
 	href,
 	title,
@@ -40,17 +42,41 @@ const leftProject = position == "left";
 					<Image
 						src={image}
 						alt={alt}
-						class="background-img absolute top-1/2 left-1/2 aspect-video max-w-full rounded-xl border-2 border-solid border-gray-800 opacity-40"
-						class:list={leftProject ? "left" : "right"}
+						class="project-image-dark background-img absolute top-1/2 left-1/2 aspect-video max-w-full rounded-xl border-2 border-solid border-gray-800 opacity-40"
+						class:list={[
+							leftProject ? "left" : "right",
+							{ "has-light-image": Boolean(image_light) },
+						]}
 						width={700}
 					/>
 					<Image
 						src={image}
 						alt={alt}
 						width={700}
-						class="frontfacing-img absolute top-1/2 left-1/2 aspect-video max-w-full rounded-xl border-2 border-solid border-gray-800 opacity-100"
-						class:list={leftProject ? "left" : "right"}
+						class="project-image-dark frontfacing-img absolute top-1/2 left-1/2 aspect-video max-w-full rounded-xl border-2 border-solid border-gray-800 opacity-100"
+						class:list={[
+							leftProject ? "left" : "right",
+							{ "has-light-image": Boolean(image_light) },
+						]}
 					/>
+					{image_light && (
+						<>
+							<Image
+								src={image_light}
+								alt={alt}
+								class="project-image-light background-img absolute top-1/2 left-1/2 hidden aspect-video max-w-full rounded-xl border-2 border-solid border-gray-300 opacity-40"
+								class:list={leftProject ? "left" : "right"}
+								width={700}
+							/>
+							<Image
+								src={image_light}
+								alt={alt}
+								width={700}
+								class="project-image-light frontfacing-img absolute top-1/2 left-1/2 hidden aspect-video max-w-full rounded-xl border-2 border-solid border-gray-300 opacity-100"
+								class:list={leftProject ? "left" : "right"}
+							/>
+						</>
+					)}
 				</>
 			)
 		}
@@ -106,6 +132,14 @@ const leftProject = position == "left";
 </div>
 
 <style>
+	:global(html[data-theme="light"]) .project-image-dark.has-light-image {
+		display: none;
+	}
+
+	:global(html[data-theme="light"]) .project-image-light {
+		display: block;
+	}
+
 	.image-container img {
 		transition: transform 0.5s ease-in-out;
 	}
