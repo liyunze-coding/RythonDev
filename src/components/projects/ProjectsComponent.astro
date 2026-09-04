@@ -62,26 +62,7 @@ import Project from "./Project.astro";
 				endless!`}
 			tags={["HTML", "CSS", "Javascript", "C#"]}
 		>
-			<TaskWidget
-				classList={`
-					widget h-full
-					[perspective:200px] absolute
-					w-full
-					opacity-10
-					top-1/2 left-1/2
-					background-widget right
-					`}
-				client:visible
-			/>
-			<TaskWidget
-				classList={`
-					widget h-full
-					[perspective:200px] absolute
-					frontfacing-widget right
-					top-1/2 left-1/2
-					w-full`}
-				client:visible
-			/>
+			<TaskWidget position="right" client:visible />
 		</Project>
 	</div>
 </div>

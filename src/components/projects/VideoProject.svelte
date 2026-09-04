@@ -21,7 +21,8 @@
 		tags = [],
 	}: Props = $props();
 
-	const positionLeft: boolean = (() => position == "left")();
+	const positionLeft = $derived(position === "left");
+	const side = $derived(positionLeft ? "left" : "right");
 
 	onMount(() => {
 		const videos = document.querySelectorAll<HTMLVideoElement>(".playable");
@@ -63,30 +64,31 @@
 	<div
 		class="image-container relative mb-5 flex aspect-video w-full [perspective:200px] lg:mr-5 lg:mb-0 lg:ml-auto lg:w-1/2"
 	>
-		<img
-			src={image_src}
-			alt={image_alt}
-			class="project-media background-img absolute
-                    top-1/2
-                    left-1/2 max-w-full rounded-xl border-2
-                    border-solid border-gray-800
-                    opacity-40
-                    {positionLeft ? 'left' : 'right'}"
-			width="700"
-		/>
+		{#snippet renderLayer(
+			kind: "image" | "video",
+			layerClass: string,
+			extraClass: string,
+		)}
+			{#if kind === "image"}
+				<img
+					src={image_src}
+					alt={image_alt}
+					class="project-media absolute top-1/2 left-1/2 max-w-full rounded-xl border-2 border-solid border-gray-800 {layerClass} {extraClass} {side}"
+					width="700"
+				/>
+			{:else}
+				<!-- svelte-ignore a11y_media_has_caption -->
+				<video
+					width="700"
+					class="project-media playable absolute top-1/2 left-1/2 max-w-full rounded-xl border-2 border-solid border-gray-800 {layerClass} {extraClass} {side}"
+				>
+					<source src={video_src} type="video/webm" />
+				</video>
+			{/if}
+		{/snippet}
 
-		<!-- svelte-ignore a11y_media_has_caption -->
-		<video
-			width="700"
-			class="project-media playable frontfacing-vid absolute
-					top-1/2 left-1/2 max-w-full rounded-xl
-                    border-2
-                    border-solid border-gray-800
-                    opacity-100
-                    {positionLeft ? 'left' : 'right'}"
-		>
-			<source src={video_src} type="video/webm" />
-		</video>
+		{@render renderLayer("image", "background-img", "opacity-40 brightness-75")}
+		{@render renderLayer("video", "frontfacing-vid", "opacity-100")}
 	</div>
 	<div
 		class="flex h-fit w-full flex-col items-center justify-center lg:h-[340px] lg:w-1/2 lg:px-10

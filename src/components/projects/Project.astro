@@ -26,6 +26,35 @@ const {
 } = Astro.props;
 
 const leftProject = position == "left";
+const side = leftProject ? "left" : "right";
+const layers = ["background", "frontfacing"] as const;
+
+const renderLayer = (
+	src: ImageMetadata,
+	theme: "dark" | "light",
+	layer: (typeof layers)[number],
+) => {
+	const isBackground = layer === "background";
+	const isLight = theme === "light";
+
+	return {
+		src,
+		class: [
+			"absolute top-1/2 left-1/2 aspect-video max-w-full rounded-xl border-2 border-solid",
+			isLight
+				? "project-image-light hidden border-gray-300"
+				: "project-image-dark border-gray-800",
+			isBackground ? "background-img opacity-40" : "frontfacing-img opacity-100",
+			isBackground && isLight ? "brightness-75" : "",
+			side,
+		]
+			.filter(Boolean)
+			.join(" "),
+		classList: {
+			"has-light-image": !isLight && Boolean(image_light),
+		},
+	};
+};
 ---
 
 <div
@@ -37,48 +66,34 @@ const leftProject = position == "left";
 	>
 		<slot />
 		{
-			image && alt && (
-				<>
-					<Image
-						src={image}
-						alt={alt}
-						class="project-image-dark background-img absolute top-1/2 left-1/2 aspect-video max-w-full rounded-xl border-2 border-solid border-gray-800 opacity-40"
-						class:list={[
-							leftProject ? "left" : "right",
-							{ "has-light-image": Boolean(image_light) },
-						]}
-						width={700}
-					/>
-					<Image
-						src={image}
-						alt={alt}
-						width={700}
-						class="project-image-dark frontfacing-img absolute top-1/2 left-1/2 aspect-video max-w-full rounded-xl border-2 border-solid border-gray-800 opacity-100"
-						class:list={[
-							leftProject ? "left" : "right",
-							{ "has-light-image": Boolean(image_light) },
-						]}
-					/>
-					{image_light && (
-						<>
-							<Image
-								src={image_light}
-								alt={alt}
-								class="project-image-light background-img absolute top-1/2 left-1/2 hidden aspect-video max-w-full rounded-xl border-2 border-solid border-gray-300 opacity-40"
-								class:list={leftProject ? "left" : "right"}
-								width={700}
-							/>
-							<Image
-								src={image_light}
-								alt={alt}
-								width={700}
-								class="project-image-light frontfacing-img absolute top-1/2 left-1/2 hidden aspect-video max-w-full rounded-xl border-2 border-solid border-gray-300 opacity-100"
-								class:list={leftProject ? "left" : "right"}
-							/>
-						</>
-					)}
-				</>
-			)
+			image &&
+				layers.map((layer) => {
+					const layerProps = renderLayer(image, "dark", layer);
+					return (
+						<Image
+							src={layerProps.src}
+							alt={alt ?? ""}
+							width={700}
+							class={layerProps.class}
+							class:list={layerProps.classList}
+						/>
+					);
+				})
+		}
+		{
+			image_light &&
+				layers.map((layer) => {
+					const layerProps = renderLayer(image_light, "light", layer);
+					return (
+						<Image
+							src={layerProps.src}
+							alt={alt ?? ""}
+							width={700}
+							class={layerProps.class}
+							class:list={layerProps.classList}
+						/>
+					);
+				})
 		}
 
 		<div

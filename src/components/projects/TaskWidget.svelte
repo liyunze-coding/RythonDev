@@ -135,74 +135,83 @@
 	];
 
 	interface Props {
-		classList: string;
+		position?: "left" | "right";
 	}
 
-	let { classList }: Props = $props();
+	let { position = "right" }: Props = $props();
+	const side = $derived(position === "left" ? "left" : "right");
 </script>
 
-<div class={`${classList} overflow-hidden`}>
-	<!-- task bot -->
-	<div class="task-widget absolute flex h-full min-h-[50vh] w-full flex-col">
+{#snippet widgetLayer(layerClass: string, extraClass: string)}
+	<div
+		class={`widget absolute top-1/2 left-1/2 h-full w-full overflow-hidden [perspective:200px] ${layerClass} ${side} ${extraClass}`}
+	>
 		<div
-			class="task-widget-header flex w-full flex-row items-center justify-between
+			class="task-widget absolute flex h-full min-h-[50vh] w-full flex-col"
+		>
+			<div
+				class="task-widget-header flex w-full flex-row items-center justify-between
                     rounded-md
                     border-3 border-solid
                     border-gray-600 bg-black
                     px-5 py-2 font-['Fredoka',_sans-serif] text-sm text-white
                     lg:text-xl"
-		>
-			<span>Hover here!</span>
-			<span>0/100+</span>
-		</div>
-		<div
-			class="scroll-parent relative h-[82%] overflow-hidden rounded-br-2xl rounded-bl-2xl font-['Fredoka',_sans-serif] lg:min-h-0"
-		>
-			<div class="scroll-element primary absolute w-full px-1">
-				{#each streamers as { streamer, tasks }}
-					<div
-						class="task-widget-item my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
-                                    text-sm overflow-ellipsis whitespace-nowrap text-white lg:text-base"
-					>
-						{streamer} :
-						<ol class="list-inside list-decimal">
-							{#each tasks as task}
-								<li
-									class={task.completed
-										? "task-completed text-gray-400 line-through"
-										: "task-incomplete text-white"}
-								>
-									{task.name}
-								</li>
-							{/each}
-						</ol>
-					</div>
-				{/each}
+			>
+				<span>Hover here!</span>
+				<span>0/100+</span>
 			</div>
-			<div class="scroll-element secondary absolute w-full px-1">
-				{#each streamers as { streamer, tasks }}
-					<div
-						class="task-widget-item my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
+			<div
+				class="scroll-parent relative h-[82%] overflow-hidden rounded-br-2xl rounded-bl-2xl font-['Fredoka',_sans-serif] lg:min-h-0"
+			>
+				<div class="scroll-element primary absolute w-full px-1">
+					{#each streamers as { streamer, tasks }}
+						<div
+							class="task-widget-item my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
                                     text-sm overflow-ellipsis whitespace-nowrap text-white lg:text-base"
-					>
-						{streamer} :
-						<ol class="list-inside list-decimal">
-							{#each tasks as task}
-								<li
-									class={task.completed
-										? "task-completed line-through"
-										: "task-incomplete"}
-								>
-									{task.name}
-								</li>
-							{/each}
-						</ol>
-					</div>
-				{/each}
+						>
+							{streamer} :
+							<ol class="list-inside list-decimal">
+								{#each tasks as task}
+									<li
+										class={task.completed
+											? "task-completed text-gray-400 line-through"
+											: "task-incomplete text-white"}
+									>
+										{task.name}
+									</li>
+								{/each}
+							</ol>
+						</div>
+					{/each}
+				</div>
+				<div class="scroll-element secondary absolute w-full px-1">
+					{#each streamers as { streamer, tasks }}
+						<div
+							class="task-widget-item my-2 w-full overflow-hidden rounded-md bg-[#404040] px-5 py-1
+                                    text-sm overflow-ellipsis whitespace-nowrap text-white lg:text-base"
+						>
+							{streamer} :
+							<ol class="list-inside list-decimal">
+								{#each tasks as task}
+									<li
+										class={task.completed
+											? "task-completed line-through"
+											: "task-incomplete"}
+									>
+										{task.name}
+									</li>
+								{/each}
+							</ol>
+						</div>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+{/snippet}
+
+{@render widgetLayer("background-widget", "opacity-40 brightness-75")}
+{@render widgetLayer("frontfacing-widget", "opacity-100")}
 
 <style>
 	:global(html[data-theme="light"]) .task-widget-header {
