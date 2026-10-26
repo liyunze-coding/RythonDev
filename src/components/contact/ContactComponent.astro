@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Socials from "../socials/Socials.astro";
 
 import pfp_new from "../images/pfp_new_medium.webp";
+import pfp_light from "../images/pfp_light.webp";
 import Card from "../global/Card.astro";
 ---
 
@@ -17,7 +18,13 @@ import Card from "../global/Card.astro";
 					<Image
 						src={pfp_new}
 						alt="Profile picture"
-						class="border-accent aspect-square rounded-full border-2 border-solid object-cover"
+						class="profile-image-dark border-accent aspect-square rounded-full border-2 border-solid object-cover"
+						width={150}
+					/>
+					<Image
+						src={pfp_light}
+						alt="Profile picture"
+						class="profile-image-light border-accent hidden aspect-square rounded-full border-2 border-solid object-cover"
 						width={150}
 					/>
 				</div>
@@ -58,6 +65,14 @@ import Card from "../global/Card.astro";
 </div>
 
 <style>
+	:global(html[data-theme="light"]) .profile-image-dark {
+		display: none;
+	}
+
+	:global(html[data-theme="light"]) .profile-image-light {
+		display: block;
+	}
+
 	#title {
 		background: linear-gradient(
 			90deg,

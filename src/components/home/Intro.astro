@@ -3,6 +3,7 @@ import Card from "../global/Card.astro";
 import Socials from "../socials/Socials.astro";
 import Greeting from "./Greeting.svelte";
 import pfp_new from "../images/pfp_new.webp";
+import pfp_light from "../images/pfp_light.webp";
 import { Image } from "astro:assets";
 ---
 
@@ -20,7 +21,15 @@ import { Image } from "astro:assets";
 							alt="Ryan"
 							width="80"
 							height="80"
-							class="max-w-full rounded-full bg-[#505050]"
+							class="profile-image-dark max-w-full rounded-full bg-[#505050]"
+							loading="eager"
+						/>
+						<Image
+							src={pfp_light}
+							alt="Ryan"
+							width="80"
+							height="80"
+							class="profile-image-light hidden max-w-full rounded-full bg-[#505050]"
 							loading="eager"
 						/>
 					</div>
@@ -32,13 +41,13 @@ import { Image } from "astro:assets";
 							Ryan Lee
 						</div>
 						<div
-							class="flex flex-row items-center justify-start gap-5"
+							class="flex flex-row items-start justify-start gap-3 text-sm"
 						>
 							<div
-								class="flex flex-row items-center justify-start gap-1 text-lg"
+								class="flex flex-row items-center justify-start gap-1"
 							>
 								<svg
-									class="size-5"
+									class="size-4"
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
 									viewBox="0 0 24 24"
@@ -54,10 +63,10 @@ import { Image } from "astro:assets";
 								<div>Full Stack Developer</div>
 							</div>
 							<div
-								class="flex flex-row items-center justify-start gap-1 text-lg"
+								class="flex flex-row items-center justify-start gap-1"
 							>
 								<svg
-									class="size-5"
+									class="size-4"
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
 									viewBox="0 0 24 24"
@@ -92,8 +101,8 @@ import { Image } from "astro:assets";
 					<Greeting client:load />!
 				</div>
 				<p class="text-left">
-					I am a content creator and software developer, creating
-					software for 100+ content creators, garnering 3,500+
+					I am a content creator and software developer, building
+					software for 100+ content creators, garnering 4,000+
 					followers across platforms. I worked as a developer at 3+
 					companies in Malaysia and Australia, and looking for my next
 					role after graduation.
@@ -107,6 +116,14 @@ import { Image } from "astro:assets";
 </div>
 
 <style>
+	:global(html[data-theme="light"]) .profile-image-dark {
+		display: none;
+	}
+
+	:global(html[data-theme="light"]) .profile-image-light {
+		display: block;
+	}
+
 	#name {
 		background: linear-gradient(
 			90deg,
