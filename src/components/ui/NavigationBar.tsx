@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
-import { Cross as HamburgerCross } from "hamburger-react";
 import { useEffect, useState, useRef } from "react";
 
 declare module "react" {
@@ -23,7 +22,7 @@ export const HoverNavigation = ({
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
 	const [hamburgerOpen, setHamburgerOpen] = useState(false);
 	const [theme, setTheme] = useState<"light" | "dark">("dark");
-	const hamburgerRef = useRef<HTMLDivElement>(null);
+	const hamburgerRef = useRef<HTMLButtonElement>(null);
 	const menuRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -117,9 +116,26 @@ export const HoverNavigation = ({
 			}
 		};
 
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key === "Escape") setHamburgerOpen(false);
+		};
+
 		document.addEventListener("mousedown", handleClickOutside);
+		document.addEventListener("keydown", handleKeyDown);
 		return () => {
 			document.removeEventListener("mousedown", handleClickOutside);
+			document.removeEventListener("keydown", handleKeyDown);
+		};
+	}, [hamburgerOpen]);
+
+	useEffect(() => {
+		if (!hamburgerOpen) return;
+
+		const previousOverflow = document.body.style.overflow;
+		document.body.style.overflow = "hidden";
+
+		return () => {
+			document.body.style.overflow = previousOverflow;
 		};
 	}, [hamburgerOpen]);
 
@@ -187,16 +203,63 @@ export const HoverNavigation = ({
 					</div>
 				</div>
 			</div>
-			<div className="theme-surface bg-secondary/50 fixed top-5 left-1/2 z-50 flex w-4/5 -translate-x-1/2 items-center justify-end rounded-full border-2 border-solid border-gray-700 pr-5 backdrop-blur-xl lg:hidden">
-				<ThemeToggle theme={theme} onToggle={toggleTheme} />
-				<div
-					ref={hamburgerRef}
-					className="flex rounded-full px-1 py-1 md:hidden [&>div]:rounded-full [&>div_div]:bg-current!"
+			<div
+				className={cn(
+					"fixed top-4 right-4 left-4 z-50 flex h-16 items-center justify-between rounded-[1.25rem] border px-3 shadow-[0_12px_40px_rgba(0,0,0,0.16)] backdrop-blur-2xl transition-colors md:hidden",
+					theme === "dark"
+						? "border-white/10 bg-neutral-950/85 text-white"
+						: "border-black/10 bg-white/85 text-neutral-950",
+				)}
+			>
+				<a
+					href="/#home"
+					onClick={() => setHamburgerOpen(false)}
+					className="flex items-center gap-2.5 rounded-xl px-2 py-2 font-semibold tracking-tight"
+					aria-label="Go to home"
 				>
-					<HamburgerCross
-						toggle={setHamburgerOpen}
-						toggled={hamburgerOpen}
-					></HamburgerCross>
+					<span
+						className={cn(
+							"grid size-8 place-items-center rounded-lg text-sm font-black",
+							theme === "dark"
+								? "bg-white text-neutral-950"
+								: "bg-neutral-950 text-white",
+						)}
+					>
+						RL
+					</span>
+					<span className="text-sm opacity-65">Portfolio</span>
+				</a>
+				<div className="flex items-center gap-1">
+					<ThemeToggle theme={theme} onToggle={toggleTheme} />
+					<button
+						ref={hamburgerRef}
+						type="button"
+						onClick={() => setHamburgerOpen((open) => !open)}
+						aria-expanded={hamburgerOpen}
+						aria-controls="mobile-navigation"
+						aria-label={hamburgerOpen ? "Close menu" : "Open menu"}
+						className={cn(
+							"group grid size-11 cursor-pointer place-items-center rounded-xl transition-all active:scale-95",
+							theme === "dark"
+								? "bg-white text-neutral-950"
+								: "bg-neutral-950 text-white",
+						)}
+					>
+						<span
+							className="relative block h-4 w-5"
+							aria-hidden="true"
+						>
+							<span
+								className={`absolute top-0 right-0 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${hamburgerOpen ? "translate-y-[7px] -rotate-45" : ""}`}
+							/>
+							<span
+								className={`absolute top-[7px] right-0 h-0.5 rounded-full bg-current transition-all duration-300 ${hamburgerOpen ? "w-0 opacity-0" : "w-3.5"}`}
+							/>
+							<span
+								className={`absolute top-[14px] right-0 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${hamburgerOpen ? "-translate-y-[7px] rotate-45" : ""}`}
+							/>
+						</span>
+					</button>
 				</div>
 			</div>
 
@@ -205,33 +268,68 @@ export const HoverNavigation = ({
 				{hamburgerOpen && (
 					<motion.div
 						ref={menuRef}
-						initial={{ opacity: 0, scale: 0.95 }}
-						animate={{ opacity: 1, scale: 1 }}
-						exit={{ opacity: 0, scale: 0.95 }}
-						transition={{ duration: 0.2 }}
-						className="theme-surface bg-secondary/50 fixed top-24 right-0 left-1/2 z-40 w-4/5 -translate-x-1/2 rounded-2xl py-2 backdrop-blur-xl md:hidden"
+						id="mobile-navigation"
+						initial={{ opacity: 0, y: -12 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: -12 }}
+						transition={{
+							duration: 0.25,
+							ease: [0.22, 1, 0.36, 1],
+						}}
+						className={cn(
+							"fixed inset-0 z-40 flex flex-col overflow-hidden px-5 pt-28 pb-7 transition-colors md:hidden",
+							theme === "dark"
+								? "bg-neutral-950 text-white"
+								: "bg-[#f4f3ef] text-neutral-950",
+						)}
 					>
-						<nav aria-label="Mobile Navigation">
-							<ul className="flex flex-col gap-2">
+						<nav
+							aria-label="Mobile Navigation"
+							className="relative flex flex-1 items-center"
+						>
+							<ul className="w-full">
 								{items.map((item, idx) => (
 									<motion.li
 										key={item?.link}
-										initial={{ opacity: 0, y: -20 }}
-										animate={{ opacity: 1, y: 0 }}
+										initial={{ opacity: 0, x: -24 }}
+										animate={{ opacity: 1, x: 0 }}
 										transition={{
-											delay: idx * 0.1,
-											duration: 0.3,
+											delay: 0.06 + idx * 0.055,
+											duration: 0.35,
 										}}
-										className="rounded-2xl px-3"
+										className={cn(
+											"border-b last:border-b-0",
+											theme === "dark"
+												? "border-white/10"
+												: "border-black/10",
+										)}
 									>
 										<a
 											href={item?.link}
-											className="block rounded-lg px-4 py-3 text-center text-lg transition-colors"
+											className="group flex items-center gap-4 py-4"
 											onClick={() =>
 												setHamburgerOpen(false)
 											}
 										>
-											{item.label}
+											<span className="w-6 text-xs font-medium opacity-35">
+												{String(idx + 1).padStart(
+													2,
+													"0",
+												)}
+											</span>
+											<span className="flex-1 text-[clamp(2rem,11vw,3.25rem)] leading-none font-semibold tracking-[-0.055em]">
+												{item.label}
+											</span>
+											<span
+												className={cn(
+													"grid size-9 place-items-center rounded-full border text-lg transition-all group-hover:rotate-[-45deg]",
+													theme === "dark"
+														? "border-white/20 group-hover:bg-white group-hover:text-neutral-950"
+														: "border-black/20 group-hover:bg-neutral-950 group-hover:text-white",
+												)}
+											>
+												↗
+											</span>
 										</a>
 									</motion.li>
 								))}
