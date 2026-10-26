@@ -44,7 +44,9 @@ const renderLayer = (
 			isLight
 				? "project-image-light hidden border-gray-300"
 				: "project-image-dark border-gray-800",
-			isBackground ? "background-img opacity-40" : "frontfacing-img opacity-100",
+			isBackground
+				? "background-img opacity-40"
+				: "frontfacing-img opacity-100",
 			isBackground && isLight ? "brightness-75" : "",
 			side,
 		]

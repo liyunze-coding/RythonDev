@@ -87,7 +87,11 @@
 			{/if}
 		{/snippet}
 
-		{@render renderLayer("image", "background-img", "opacity-40 brightness-75")}
+		{@render renderLayer(
+			"image",
+			"background-img",
+			"opacity-40 brightness-75",
+		)}
 		{@render renderLayer("video", "frontfacing-vid", "opacity-100")}
 	</div>
 	<div

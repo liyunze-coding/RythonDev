@@ -28,7 +28,8 @@ import { ClientRouter } from "astro:transitions";
 				const theme =
 					savedTheme === "light" || savedTheme === "dark"
 						? savedTheme
-						: window.matchMedia("(prefers-color-scheme: light)").matches
+						: window.matchMedia("(prefers-color-scheme: light)")
+									.matches
 							? "light"
 							: "dark";
 
