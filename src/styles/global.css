@@ -29,7 +29,7 @@ html[data-theme="light"] {
 	--page-background: #fafafa;
 	--page-foreground: #171717;
 	--page-dot: #d4d4d4;
-	--surface: rgb(255 255 255 / 0.78);
+	--surface: rgb(230 230 230 / 0.78);
 	--surface-border: #d4d4d4;
 }
 
