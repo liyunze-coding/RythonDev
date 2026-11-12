@@ -4,6 +4,10 @@ dist/
 # generated types
 .astro/
 
+# editor
+.zed/
+.vscode/
+
 # dependencies
 node_modules/
 
