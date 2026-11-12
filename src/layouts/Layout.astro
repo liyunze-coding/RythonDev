@@ -9,6 +9,7 @@ interface Props {
 const { title, description, thumbnail, metaURL } = Astro.props;
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
+import MetaTags from "@/components/global/MetaTags.astro";
 ---
 
 <!doctype html>
@@ -37,9 +38,12 @@ import { ClientRouter } from "astro:transitions";
 			})();
 		</script>
 
-		{thumbnail && <meta name="twitter:image" content={thumbnail} />}
-
-		{metaURL && <meta name="og:url" content={metaURL} />}
+		<MetaTags
+			title={title}
+			description={description}
+			thumbnail={thumbnail}
+			metaURL={metaURL}
+		/>
 
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />

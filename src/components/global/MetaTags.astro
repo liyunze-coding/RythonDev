@@ -1,0 +1,38 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	thumbnail?: string | null;
+	metaURL?: string;
+}
+
+const { title, description, thumbnail, metaURL } = Astro.props;
+
+// Discord and other crawlers require absolute URLs
+const site = Astro.site ?? Astro.url;
+const pageURL = new URL(metaURL ?? Astro.url.pathname, site).href;
+const imageURL = thumbnail ? new URL(thumbnail, site).href : null;
+---
+
+<link rel="canonical" href={pageURL} />
+
+<meta property="og:site_name" content="Rython" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={pageURL} />
+{
+	imageURL && (
+		<>
+			<meta property="og:image" content={imageURL} />
+			<meta property="og:image:alt" content={title} />
+		</>
+	)
+}
+
+<meta name="twitter:card" content={imageURL ? "summary_large_image" : "summary"} />
+<meta name="twitter:site" content="@RythonDev" />
+<meta name="twitter:creator" content="@RythonDev" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{imageURL && <meta name="twitter:image" content={imageURL} />}
