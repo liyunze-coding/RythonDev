@@ -2,11 +2,28 @@
 import VideoProject from "./VideoProject.svelte";
 import Project from "./Project.astro";
 import TwitchPlays from "../images/projects/twitchplays.webp";
+import MediaKitLight from "../images/projects/media-kit-light.webp";
+import MediaKitDark from "../images/projects/media-kit-dark.webp";
 import GoRyve from "../images/projects/goryve.webp";
 ---
 
 <div class="flex h-fit flex-col items-center pt-20 [perspective:1000px]">
 	<div class="w-full max-w-[1440px]">
+		<Project
+			position="right"
+			image={MediaKitDark}
+			image_light={MediaKitLight}
+			alt="Media Kit"
+			href="https://media-kit.rython.dev/"
+			title="Media Kit"
+			label="Visit Site"
+			description={`Allow brands to quickly learn about my channel and audience.
+			Twitch stats update automatically, while other content
+			are managed through a CMS. Brands can also generate
+			and download an up-to-date image of the media kit with
+			a single click.`}
+			tags={["Svelte", "Rust", "Typescript", "Axum"]}
+		/>
 		<Project
 			position="left"
 			image={TwitchPlays}
